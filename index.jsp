@@ -76,7 +76,7 @@
                     <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
                 </div>
                 <div class="video-list">
-                    <h3>推荐课程<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
+                    <h3>培训课程<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
                     <ul>
                         <li><a href="course!showCouDetail?couid=5">优秀员工是怎样炼成的</a></li>
                         <li><a href="course!showCouDetail?couid=6">企业沙盘视频</a></li>
@@ -127,7 +127,7 @@
                     <h2 class="tile-title"><img src="img/mingshitang.jpg" /></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="teacher!show">更多>></a></li>
+                            <li><a href="teacher!show">更多</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        
@@ -183,7 +183,7 @@
                 
                 <div class="tile-content cf">        
                     <div class="little-slide">
-                        <img src="img/slider-box-placeholder.jpg" />
+                        <img src="img/shouye-img.jpg" />
                     </div>
                     <div class="post-list-r">
                     
@@ -199,13 +199,13 @@
                             <div class="tab-pages">
                                 <div class="tab-page color-list" id="page_1">
                                     <ul>
-                                        <li class="item_1"><a href="course!showCouDetail?couid=61">总裁战略管控8</a><span>[2014.01.05]</span></li>
-                                        <li class="item_2"><a href="course!showCouDetail?couid=62">总裁战略管控9</a><span>[2013.01.05]</span></li>
-                                        <li class="item_3"><a href="course!showCouDetail?couid=63">总裁管控六法则1</a><span>[2013.12.23]</span></li>
-                                        <li class="item_4"><a href="course!showCouDetail?couid=64">总裁管控六法则2</a><span>[2013.12.23]</span></li>
-                                        <li class="item_5"><a href="course!showCouDetail?couid=65">总裁管控六法则3</a><span>[2013.12.23]</span></li>
-                                        <li class="item_6"><a href="course!showCouDetail?couid=66">总裁管控六法则4</a><span>[2013.12.23]</span></li>
-                                        <li class="item_7"><a href="course!showCouDetail?couid=67">总裁管控六法则5</a><span>[2013.12.23]</span></li>
+                                        <li class="item_0"><a href="course!showCouDetail?couid=61">总裁战略管控8</a><span>[2014.01.05]</span></li>
+                                        <li class="item_1"><a href="course!showCouDetail?couid=62">总裁战略管控9</a><span>[2013.01.05]</span></li>
+                                        <li class="item_2"><a href="course!showCouDetail?couid=63">总裁管控六法则1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_3"><a href="course!showCouDetail?couid=64">总裁管控六法则2</a><span>[2013.12.23]</span></li>
+                                        <li class="item_4"><a href="course!showCouDetail?couid=65">总裁管控六法则3</a><span>[2013.12.23]</span></li>
+                                        <li class="item_5"><a href="course!showCouDetail?couid=66">总裁管控六法则4</a><span>[2013.12.23]</span></li>
+                                        <li class="item_6"><a href="course!showCouDetail?couid=67">总裁管控六法则5</a><span>[2013.12.23]</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -218,30 +218,30 @@
         <!-- floor-r -->
         <div class="floor-r">
         	<div class="aside-box h_300">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
+            	<h2>最新新闻<a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
+                	<dt>2014年01月06日</dt>
+                    <dd><a href="business!showDetailArticle?artid=24">成功从关注客户的客户开始</a></dd>
+                    <dd><a href="business!showDetailArticle?artid=21">如何提高客户服务质量</a></dd>
                 </dl>
                 <dl class="last">
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
+                	<dt>2014年01月06日</dt>
+                    <dd><a href="business!showDetailArticle?artid=43">表义含糊是老板的艺术</a></dd>
+                    <dd><a href="business!showDetailArticle?artid=47">当被下属告状后</a></dd>
                 </dl>                
             </div>
             
         	<div class="aside-box h_300">
-            	<h2>最新课程<a class="more" href="#">更多>></a></h2>
+            	<h2>最新课程<a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
+                	<dt>2014年01月06日</dt>
+                    <dd><a href="course!showCouDetail?couid=202">工作分析与职位说明书</a></dd>
+                    <dd><a href="course!showCouDetail?couid=208">这样才叫职业化</a></dd>
                 </dl>
                 <dl class="last">
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
+                	<dt>2014年01月06日</dt>
+                    <dd><a href="course!showCouDetail?couid=210">社区工作者队伍建设</a></dd>
+                    <dd><a href="course!showCouDetail?couid=238">幼师保教知识与能力</a></dd>
                 </dl>                
             </div>             
         </div><!-- end floor-r -->

@@ -2,17 +2,107 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>login</title>
+<title>注册页面</title>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<div class="wrapper">
-	<label for="username">用户名<input id="username" name="username" type="text" /><span class="tips"></span></label>
-    <label for="useremail">email<input id="useremail" name="useremail" type="text" /><span class="tips"></span></label>
-    <label for="pwd1">密码<input id="pwd1" name="pwd1" type="password" /><span class="tips"></span></label>
-    <label for="pwd2">确认密码<input id="pwd2" name="pwd2" type="password" /><span class="tips"></span></label>
-    <label for="authcode">验证码<input id="authcode" name="authcode" type="text" /><span class="tips"></span></label>
+<!-- header -->
+<div id="header">
+	<div class="header-con">
+    	<a class="logo" href="index.jsp"><img src="img/login-logo.jpg" /></a>
+        <div class="top-nav">
+        	<ul>
+            	<li><a href="#">社区</a></li>
+                <li class="separator">|</li>
+                <li><a href="#">马上优惠</a></li>
+                <li class="separator">|</li>
+                <li><a>服务热线：400-700-7000</a></li>
+            </ul>        
+        </div>
+    </div>
 </div>
+<!-- end header -->
+
+<div class="hr"></div>
+
+<!-- main -->
+<div id="main">
+    <div class="form">
+        <h2>注册新会员</h2>
+        <div class="input-con">
+            <label for="username">用户名</label>
+            <input id="username" name="username" type="text" />
+            <strong>*</strong>
+            <span class="tips">可使用字母、数字或下划线</span>
+        </div>
+        <div class="input-con">
+            <label for="useremail">email</label>
+            <input id="useremail" name="useremail" type="text" />
+            <strong>*</strong>
+            <span class="tips">请输入正确的邮箱地址</span>        
+        </div>
+        <div class="input-con">
+            <label for="pwd1">密码</label>
+            <input id="pwd1" name="pwd1" type="password" />
+            <strong>*</strong>
+            <span class="tips">6-20位字符。可使用字母、数字或下划线</span>         
+        </div>
+        <div class="input-con">
+            <label for="pwd2">确认密码</label>
+            <input id="pwd2" name="pwd2" type="password" />
+            <strong>*</strong>
+            <span class="tips">请再次输入密码</span>        
+        </div>
+        <div class="input-con">
+            <label for="authcode">验证码</label>
+            <input id="authcode" name="authcode" type="text" />
+            <img id="auth-img" style="height: 22px;" src="img/authcode.jpg" />
+            <span class="tips">看不清？</span>
+            <a href="javascript:;" onclick="setTimeout(function() {$('#auth-img').click()}, 50);">换一张</a>
+        </div>  
+        <div class="input-con">
+            <input class="reg-btn" type="button" value="立即注册" />
+        </div>  
+    </div>
+</div><!-- end main -->
+
+<div class="clear-both"></div>
+
+<!-- footer -->
+<div id="footer">
+	<p>
+    	<a href="#">关于我们</a>
+        <span>|</span>
+    	<a href="#">培训课程</a>
+        <span>|</span>
+    	<a href="#">名师堂</a>
+        <span>|</span>
+    	<a href="#">商学院</a>
+        <span>|</span>
+    	<a href="#">在线商学院</a>
+        <span>|</span>
+    	<a href="#">如何购买</a>
+        <span>|</span>
+    	<a href="#">在线付款</a>
+        <span>|</span>
+    	<a href="#">中企会</a>
+        <span>|</span>
+    	<a href="#">我要加盟</a>
+        <span>|</span>
+    	<a href="#">帮助中心</a>
+        <span>|</span>
+    	<a href="#">手机版</a>
+        <span>|</span>
+    	<a href="#">合作机构</a>
+        <span>|</span>    
+    	<a href="#">常见问题</a>                                                                                                   
+    </p>
+    
+    <p class="copyright">
+    	深圳市公安局罗湖分局备案编号：110181681 粤ICP备08009054号  音箱制品经营许可证苏宿批005号<br />
+        CopyRight &copy; 2003-2013 中国企业在线大学  版权所有
+    </p>
+</div><!-- end footer -->
 </body>
 </html>

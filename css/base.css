@@ -547,34 +547,34 @@ p.post-info span {
 	font-size: 12px;
 	border-bottom: 1px dashed #e3e3e3;
 }
-.color-list li.item_1 {
+.color-list li.item_0 {
 	background: url(../img/item_1.jpg) no-repeat left center;
 }
-.color-list li.item_2 {
+.color-list li.item_1 {
 	background: url(../img/item_2.jpg) no-repeat left center;
 }
-.color-list li.item_3 {
+.color-list li.item_2 {
 	background: url(../img/item_3.jpg) no-repeat left center;
 }
-.color-list li.item_4 {
+.color-list li.item_3 {
 	background: url(../img/item_4.jpg) no-repeat left center;
 }
-.color-list li.item_5 {
+.color-list li.item_4 {
 	background: url(../img/item_5.jpg) no-repeat left center;
 }
-.color-list li.item_6 {
+.color-list li.item_5 {
 	background: url(../img/item_6.jpg) no-repeat left center;
 }
-.color-list li.item_7 {
+.color-list li.item_6 {
 	background: url(../img/item_7.jpg) no-repeat left center;
 }
-.color-list li.item_8 {
+.color-list li.item_7 {
 	background: url(../img/item_8.jpg) no-repeat left center;
 }
-.color-list li.item_9 {
+.color-list li.item_8 {
 	background: url(../img/item_9.jpg) no-repeat left center;
 }
-.color-list li.item_10 {
+.color-list li.item_9 {
 	background: url(../img/item_10.jpg) no-repeat left center;
 }
 .color-list li span {
@@ -710,6 +710,9 @@ p.post-info span {
 #nav a:hover span {
 	background: #FFF;
 	color:#2b6656;
+}
+#nav a span:hover {
+	background: #fff;
 }
 #nav a span {
 	padding: 6px 15px;

@@ -1,6 +1,189 @@
 @charset "utf-8";
 /* CSS Document */
 
-label {
-	display: block;
+/*============ yahoo_reset =============*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
 }
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+/*============ end_yahoo_reset ===============*/
+.clear-both {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+body {
+	font-family: Arial,"宋体",Lucida,Verdana,Helvetica,sans-serif;;
+	font-size: 12px;
+}
+#header {
+	padding-top: 6px;
+	background: url(../img/login-topbar-bg.jpg) repeat-x left top;
+}
+.header-con {
+	width: 1005px;
+	margin: 0 auto;
+	position: relative;
+}
+.logo img {
+	margin-top: 10px;
+	margin-left: 50px;
+}
+.top-nav {
+	width: 322px;
+	height: 38px;
+	position: absolute;
+	right: 0;
+	top: -6px;
+	color: #fff;
+	background: url(../img/topbar-r-bg.jpg) no-repeat left top;
+}
+.top-nav ul {
+	margin: 12px 0 0 14px;
+}
+.top-nav li {
+	float: left;
+}
+.top-nav a {
+	padding: 0 13px;	
+	color: #fff;
+	text-decoration: none;
+}
+
+.hr {
+	width: 886px;
+	height: 2px;
+	margin: 10px auto 70px;
+	background: #035551;
+}
+
+#main {
+	width: 886px;
+	margin: 0 auto;
+}
+.form {
+	padding: 20px 0 0 185px;
+	color: #424242;
+}
+.form h2 {
+	height: 32px;
+	margin-bottom: 10px;	
+	line-height: 32px;
+	padding-left: 40px;
+	color: #424242;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	font-weight: bold;
+	background: url(../img/group-icon.jpg) no-repeat left top;
+}
+.input-con {
+	margin-bottom: 15px;
+	line-height: 22px;
+}
+.input-con label {
+	float: left;
+	width: 80px;
+	margin-right: 13px;
+	text-align: right;
+}
+.input-con input {
+	float: left;
+	width: 182px;
+	height: 20px;
+	margin-right: 8px;
+	text-indent: 5px;
+}
+.input-con strong {
+	color: #F00;
+}
+span.tips {
+	color: #6d6d6d;
+}
+input#authcode {
+	width: 60px;
+}
+
+.input-con .reg-btn {
+	width: 120px;
+	height: 34px;
+	margin-left: 130px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 34px;
+	background: url(../img/reg-btn.jpg) no-repeat left top;
+	border: 0 none;
+	cursor: pointer;
+}
+.input-con a {
+	text-decoration: none;
+}
+
+#footer {
+	width: 972px;
+	padding: 20px 0 25px;
+	margin: 135px auto 0;
+	text-align: center;
+	border-top: 1px solid #d9d9d9;
+}
+#footer p {
+	margin-bottom: 10px;
+}
+#footer a {
+	padding: 0 8px;
+	color: #393939;
+	text-decoration: none;
+}
+#footer p.copyright {
+	color: #717171;
+	line-height: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
