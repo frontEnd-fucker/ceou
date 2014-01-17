@@ -88,10 +88,10 @@
             
 			<div class="tile-content cf">
                 <div class="little-slide">
-                    <img src="img/slider-box-placeholder.jpg" />
+                    <img src="img/shouye-img.jpg" />
                 </div>     
                 <div class="video-list">
-                    <h3>成考<a href="edu!showCoubyindustry?couIndustry=1">更多>></a></h3>
+                    <h3><span>成考</span><a href="edu!showCoubyindustry?couIndustry=1">更多>></a></h3>
                     <ul>
                     	<s:iterator value="adultexamlist">
                         	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
@@ -99,7 +99,7 @@
                     </ul>
                 </div>      
                 <div class="video-list">
-                    <h3>自考<a href="edu!showCoubyindustry?couIndustry=2">更多>></a></h3>
+                    <h3><span>自考</span><a href="edu!showCoubyindustry?couIndustry=2">更多>></a></h3>
                     <ul>
 						<s:iterator value="selfexamlist">
                         <li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>

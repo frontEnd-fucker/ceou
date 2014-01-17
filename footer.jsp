@@ -84,11 +84,11 @@
 	<dl class="list_1">
     	<dt><img src="img/qq-icon.jpg" /></dt>
         <dd>
-        	<h2>在线客户</h2>
+        	<h2>在线客服</h2>
             <h3>ONLINE CUSTOMERS</h3>
-            <a class="online" href="#">在线克服1</a>
-            <a href="#">在线克服2</a>
-            <a href="#">在线克服3</a>
+            <a class="online" href="#">在线客服1</a>
+            <a href="#">在线客服2</a>
+            <a href="#">在线客服3</a>
         </dd>
     </dl>
     <dl class="list_2">
