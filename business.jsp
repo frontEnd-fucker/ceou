@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,7 +20,7 @@
 	<div class="floor">
     	<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
+            	<a href="/CEOU">首页</a>
                 <span>></span>
                 <a href="#">商学院</a>
             </div>
@@ -29,7 +30,7 @@
                 	<h2 class="tile-title"><img src="img/bzzxkc.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a class="cur" href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
+                            <li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
                             <li>|</li>
                             <li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
                             <li>|</li>
@@ -49,8 +50,8 @@
                     </div>   
                     <div class="color-list">
                         <ul>
-                        	<s:iterator value="subceoulist">
-                            	<li class="item_1"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:property value="updatetime"/></span></li>
+                        	<s:iterator value="subceoulist" status="status">
+                            	<li class="item_<s:property value="#status.index"/>"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /></span></li>
                             </s:iterator>                         
                         </ul>
                     </div>                                 	
@@ -81,7 +82,7 @@
                     <div class="post-list-bottom cf">
                         <ul>
                         	<s:iterator value="ceouvideolist1">
-                        	<li><a href="#"><s:property value="couname"/></a></li>
+                        	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         	</s:iterator>
                         </ul>
                     </div>                                                             
@@ -95,7 +96,7 @@
                     <h2 class="tile-title"><img src="img/bzqysxy.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a class="cur" href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=1">效率提升系列</a></li>
+                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=1">效率提升系列</a></li>
                             <li>|</li>
                             <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=2">员工管理系列</a></li>
                             <li>|</li>
@@ -121,11 +122,11 @@
                         <div class="tab-pages">
                             <div class="tab-page" id="page_1">
 			                    <a href="course!showCouDetail?couid=<s:property value="firstceoubybusi.couid"/>">
-			                        <img src="img/slider-box-placeholder.jpg" />
+			                        <img src="<s:property value="firstceoubybusi.coupicurl"/>" />
 			                    </a>                     
                                 <ul class="color-list">
-                                	<s:iterator value="subusilist1">
-                                    	<li class="item_1"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:property value="updatetime"/> </span></li>
+                                	<s:iterator value="subusilist1" status="status">
+                                    	<li class="item_<s:property value="#status.index"/>"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /> </span></li>
                                     </s:iterator>                                     
                                 </ul>
                             </div>
@@ -157,10 +158,10 @@
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
         	<div class="aside-box" style="height: 625px">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
+            	<h2><span>最新新闻</span><a class="more" href="course!show">更多>></a></h2>
                 <s:iterator value="randCourseList">
                 <dl>
-                	<dt><s:property value="updatetime"/></dt>
+                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
                     <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
                 </dl> 
                 </s:iterator>               

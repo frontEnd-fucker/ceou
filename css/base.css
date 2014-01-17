@@ -196,7 +196,7 @@ a.read-more {
 	background: #fff url(../img/floor-top.jpg) repeat-x left top;
 	border-bottom: 3px solid #f5f5f5;
 }	
-#onlineCollege .tile-top {
+#onlineCollege .tile-top, #bizCollege .tile-top {
 	background: #fff url(../img/floor-top-2.jpg) repeat-x left top;
 }
 .tile-title {
@@ -609,7 +609,7 @@ p.post-info span {
 	background: #7fb102 url(../img/header-top.jpg) repeat-x left top;
 	border-bottom: 30px solid #7fb102;
 }
-#onlineCollege #header {
+#onlineCollege #header, #bizCollege #header {
 	border-bottom: 30px solid #64880a;
 }
 .header-top {
@@ -687,7 +687,7 @@ p.post-info span {
 }
 
 	/*======= nav ======*/
-#onlineCollege #nav {
+#onlineCollege #nav, #bizCollege #nav {
 	border-bottom: 1px solid #a2b86c;
 }
 #nav {
@@ -705,7 +705,7 @@ p.post-info span {
 	padding-left: 10px;
 	background: url(../img/purple-arrow.jpg) no-repeat left center;
 }
-#onlineCollege #nav li.sub-nav:hover ul {
+#onlineCollege #nav li.sub-nav:hover ul, #bizCollege #nav li.sub-nav:hover ul {
 	background: url(../img/purple-arrow-2.jpg) no-repeat left center;
 }
 #nav li.sub-nav ul{
@@ -729,7 +729,7 @@ p.post-info span {
 	color: #2b6656;
 	background: none;
 }
-#onlineCollege #nav li.sub-nav ul a:hover {
+#onlineCollege #nav li.sub-nav ul a:hover, #bizCollege #nav li.sub-nav ul a:hover {
 	color: #9cd526;
 }
 #nav a {
@@ -1223,7 +1223,7 @@ dl.course-intro {
 #onlineCollege .video-list {
 	width: 350px;
 }
-#onlineCollege .video-list h3 {
+#onlineCollege .video-list h3, #bizCollege .video-list h3 {
 	border-left: 4px solid #64880a;
 }
 #onlineCollege .video-list li {
