@@ -27,9 +27,9 @@
     	<!-- floor-l -->
 		<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
+            	<a href="/CEOU">首页</a>
                 <span>></span>
-                <a href="#">名师堂</a>
+                <a href="teacher!show">名师堂</a>
             </div>            
             
 			<div class="tile-box">
@@ -43,7 +43,7 @@
 						<s:iterator value="teacherList">
                         <div class="tIntro-box">
                             <div class="tIntro-box-hd">
-                                <a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"><img src="img/kecheng-list.jpg" /></a>
+                                <a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"><img src="<s:property value="tpicurl"/>" /></a>
                                 <p class="teacher-name">
 									<a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"><s:property value="tname"/></a>
 								</p>
@@ -56,7 +56,7 @@
 						</s:iterator>	                                                                                                                     
                     </div>
                     
-                    <div class="clear-both" style="height:50px;"></div>
+                    <div class="clear-both" style="height:89px; *height: 84px;"></div>
                     
                     <div class="page-nav cf">
                     	<div class="page-num">
@@ -89,10 +89,9 @@
                         	<form action="teacher!show">
                             	<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
                         		<input type="hidden" name="couSkill" value="<s:property value="couSkill"/>"/>
-                        		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>
-                        		
-                            	跳至第<input type="text" name="page" />页
-                            	<input type="submit" value="跳转"/>
+                        		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>                        		
+                            	跳至第<input class="page-input" type="text" name="page" />页
+                            	<input type="submit" value="确定"/>
                             </form> 
                     	</div>
                     </div><!-- end page-nav -->                                     
@@ -106,18 +105,21 @@
             <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
             
             <div class="aside-box">
-            	<h2 class="longer">讲师人气排名<a class="more" href="#">更多>></a></h2>
+            	<h2 class="longer"><span>讲师人气排名</span><a class="more" href="teacher!show">更多>></a></h2>
                 <div class="hot-teacher">
                     <ul class="color-list">
-                        <s:iterator value="randCourseList">
-                        	<li class="item_7"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                        <s:iterator value="teacherList" status="status">
+                			<s:if test="#status.index <= 4">
+                				<li class="item_<s:property value="#status.index"/>"><a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"/><s:property value="tname"/></a></li>
+                			</s:if>
+                        
                         </s:iterator>
                     </ul>
                 </div>            
             </div>         
             
             <div class="aside-box">
-            	<h2 class="longer">热点管理文章<a class="more" href="#">更多>></a></h2>
+            	<h2 class="longer"><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <div class="hot-post">
                     <ul class="color-list">
                         <s:iterator value="randArticleList">
@@ -128,57 +130,57 @@
             </div>
             
         	<div class="aside-box weibo-con cf">
-            	<h2>华誉在线专家微博<a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
                 <ul class="weibo-list cf">
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/512566567">王占伟</a>
+                        <a class="follow-btn" href="http://weibo.com/512566567"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/3y10"><img src="img/wb/zhanwen.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/3y10">张文</a>
+                        <a class="follow-btn" href="http://weibo.com/3y10"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/hongzhibo"><img src="img/wb/hongzhibo.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/hongzhibo">红智博</a>
+                        <a class="follow-btn" href="http://weibo.com/hongzhibo"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/u/2281034985"><img src="img/wb/chengsheming.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2281034985">程社明</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2281034985"></a>                        
                     </li>    
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/u/1641106772"><img src="img/wb/zouzhongtang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/1641106772">邹中棠</a>
+                        <a class="follow-btn" href="http://weibo.com/u/1641106772"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/xinlizixushi"><img src="img/wb/zhaoxigang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/xinlizixushi">赵喜刚</a>
+                        <a class="follow-btn" href="http://weibo.com/xinlizixushi"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/u/2236201582"><img src="img/wb/jiangyongsheng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2236201582">江永胜</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2236201582"></a>                        
                     </li>
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/houdaxue"><img src="img/wb/aizhipeng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/houdaxue">艾志朋</a>
+                        <a class="follow-btn" href="http://weibo.com/houdaxue"></a>                        
                     </li>   
                 	<li>
-                    	<a href="#"><img src="img/weibo.jpeg" /></a>
-                        <a class="wb-name" href="#">华企商学院</a>
-                        <a class="follow-btn" href="#"></a>                        
+                    	<a href="http://weibo.com/jiuyuan99"><img src="img/wb/zhanjiuyuan.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/jiuyuan99">张九元</a>
+                        <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 7px auto 6px;">一键关注</a>
-        	</div>                                              
-        </div><!-- end floor-r -->
+                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+        	</div>
+		</div><!-- end floor-r -->
     </div><!-- end floor -->
 </div><!-- end main -->
 

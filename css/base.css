@@ -541,8 +541,9 @@ p.post-info span {
 .page-nav .page-skip {
 	float: left;
 	margin-left: 10px;
+	padding-bottom: 10px;;
 }
-.page-nav .page-skip input {
+.page-nav .page-skip .page-input {
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
