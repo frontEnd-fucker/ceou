@@ -397,6 +397,5 @@
 <div class="clear-both"></div>
 
 <jsp:include page="footer.jsp" flush="true" />
-
 </body>
 </html>
