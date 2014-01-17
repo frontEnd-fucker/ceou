@@ -6,7 +6,8 @@
             <strong>欢迎来到中国企业在线大学！</strong>
             <div class="top-login">
                 <form>
-                    帐号<input class="login-name" type="text" value="帐号或手机号" onfocus="if(this.value==this.defaultValue) this.value = ''" onblur="if(this.value=='') this.value = this.defaultValue" />
+                    <!--帐号<input class="login-name" type="text" value="帐号或手机号" onfocus="if(this.value==this.defaultValue) this.value = ''" onblur="if(this.value=='') this.value = this.defaultValue" />-->
+                    帐号<input class="login-name" type="text" />
                     密码<input class="login-pwd" type="password" />
                     <input class="loginBtn" type="submit" value="登录" />
                     <a href="#">忘记密码？</a>

@@ -284,6 +284,9 @@ a.read-more {
 	line-height: 32px;
 	background: url(../img/aside-box-title.jpg) no-repeat left top;
 }
+.aside-box h2 span {
+	float: left;
+}
 .aside-box h2.longer {
 	background:  url(../img/title-longer.jpg) no-repeat left top;
 }
@@ -318,7 +321,8 @@ a.read-more {
 }
 .weibo-list li {
 	float: left;
-	margin: 10px 0 0 4px;
+	margin: 10px 0 7px 4px;
+	yu-*margin-bottom: 16px;
 }
 .weibo-list a{
 	display: block;
@@ -337,6 +341,7 @@ a.read-more {
 	width: 60px;
 	height: 23px;
 	margin-left: 9px;
+	margin-bottom: 0;
 	background: url(../img/follow-btn.jpg) no-repeat left top;
 }
 /* end aside-box通用样式 */
@@ -361,6 +366,9 @@ a.read-more {
 	border-left: 4px solid #7fb102;
 	border-bottom: 1px solid #e3e3e3;
 }
+.video-list h3 span {
+	float: left;
+}
 .video-list h3 a {
 	float: right;
 	color: #000;
@@ -371,6 +379,7 @@ a.read-more {
 }
 .video-list li {
 	padding: 6px 0 6px 40px;
+	*padding: 7px 0 7px 40px;
 	background: url(../img/video-icon.jpg) no-repeat 3px center;
 	border-bottom: 1px dashed #e3e3e3;
 }
@@ -399,6 +408,7 @@ a.read-more {
 }
 p.post-info {
 	margin-top: 10px;
+	font-size: 14px;
 }
 p.post-info span {	
 	color: #7a7c7f;
@@ -546,6 +556,7 @@ p.post-info span {
 	padding-left: 25px;
 	font-size: 12px;
 	border-bottom: 1px dashed #e3e3e3;
+	overflow: hidden;
 }
 .color-list li.item_0 {
 	background: url(../img/item_1.jpg) no-repeat left center;
@@ -576,6 +587,9 @@ p.post-info span {
 }
 .color-list li.item_9 {
 	background: url(../img/item_10.jpg) no-repeat left center;
+}
+.color-list a {
+	float: left;
 }
 .color-list li span {
 	float: right;
@@ -686,40 +700,50 @@ p.post-info span {
 	width: 400px;
 	position: absolute;
 	left: 16px;
-	top: 36px;
+	top: 40px;
 }
 #nav li.sub-nav ul li {
 	margin-right: 25px;
 	background: none;
 }
 #nav li.sub-nav ul a {
+	padding: 0;
+	margin: 0;
 	font-size: 13px;
 	font-weight: normal;
 }
 #nav li.sub-nav ul a:hover {
 	color: #2b6656;
+	background: none;
 }
 #nav a {
 	display: block;
-	yu-padding: 0 24px;
-	line-height: 40px;
+	height: 28px;
+	padding: 0 0 0 15px;
+	line-height: 28px;
+	margin: 6px;
 	color: #fff;
 	font-size: 15px;
 	font-weight: bold;
-}
-#nav a:hover span {
-	background: #FFF;
-	color:#2b6656;
-}
-#nav a span:hover {
-	background: #fff;
-}
-#nav a span {
-	padding: 6px 15px;
-	margin: 0 6px;
-	border-radius: 3px;
+	yu-background: url(../img/nav-bg.jpg) no-repeat left top;
 }
 
+#nav a span {
+	display: block;
+	height: 28px;
+	padding-right: 15px;
+	cursor: pointer;
+	yu-padding: 6px 15px;
+	yu-border-radius: 3px;
+	yu-background: url(../img/nav-bg.jpg) no-repeat right top;
+}
+#nav a:hover {
+	color: #2b6656;
+	background: url(../img/nav-bg.jpg) no-repeat left center;
+}
+#nav a:hover span {
+	background: url(../img/nav-bg.jpg) no-repeat right center;
+}
 #nav .searchbar {
 	float: right;
 	width: 190px;
@@ -771,6 +795,7 @@ p.post-info span {
 .apply-form .submit-btn {
 	height: auto;
 	margin: 10px 0 0 70px;
+	*margin: 0 0 0 50px;
 }
 
 .little-slide {
@@ -814,7 +839,7 @@ p.post-info span {
 	border-right: 1px solid #e3e3e3;
 }
 .partner ul {
-	padding: 8px 0 0;
+	padding: 8px 0;
 }
 .partner li {
 	float: left;

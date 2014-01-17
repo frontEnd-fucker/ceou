@@ -50,19 +50,19 @@
                 <h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
                 <div class="tile-top-nav">
                     <ul>
-					       <li> <a href="course!showList?couPosition=-1&couSkill=1&couIndustry=-1&page=1">市场营销</a></li>
+					       <li><a href="course!showList?couPosition=-1&couSkill=1&couIndustry=-1&page=1">市场营销</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=2&couIndustry=-1&page=1">生产制造</a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=2&couIndustry=-1&page=1">生产制造</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=3&couIndustry=-1&page=1">行政后勤 </a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=3&couIndustry=-1&page=1">行政后勤</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=4&couIndustry=-1&page=1">财务管理</a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=4&couIndustry=-1&page=1">财务管理</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=5&couIndustry=-1&page=1">店面管理</a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=5&couIndustry=-1&page=1">店面管理</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=6&couIndustry=-1&page=1">人力资源</a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=6&couIndustry=-1&page=1">人力资源</a></li>
 						   <li>|</li>
-                           <li> <a href="course!showList?couPosition=-1&couSkill=7&couIndustry=-1&page=1">案例分析</a></li>
+                           <li><a href="course!showList?couPosition=-1&couSkill=7&couIndustry=-1&page=1">案例分析</a></li>
 						   <li>|</li>
                            <li><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多</a></li>
                     </ul>
@@ -76,7 +76,7 @@
                     <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
                 </div>
                 <div class="video-list">
-                    <h3>培训课程<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
+                    <h3><span>培训课程</span><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
                     <ul>
                         <li><a href="course!showCouDetail?couid=5">优秀员工是怎样炼成的</a></li>
                         <li><a href="course!showCouDetail?couid=6">企业沙盘视频</a></li>
@@ -133,24 +133,24 @@
                 </div><!-- end tile-top -->        
                 
                 <div class="tile-content">
-                    <div class="post-box">
-                        <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/msai.jpg" /></a>
-                        <p class="post-info">讲师：艾志朋<br /><span>职务：教授</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszou.jpg" /></a>
-                        <p class="post-info">讲师：周斌<br /><span>职务：教授</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhang.jpg" /></a>
-                        <p class="post-info">讲师：张九元<br /><span>职务：教授</span></p>
-                    </div>
-                    <div class="post-box last">
-                        <a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhao.jpg" /></a>
-                        <p class="post-info">讲师：赵喜刚<br /><span>职务：教授</span></p>
-                    </div> 
-                    
-                    <div class="clear-both"></div>
+                    <div class="post-box-con cf" style="margin-top: 0;">
+                        <div class="post-box">
+                            <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/msai.jpg" /></a>
+                            <p class="post-info">讲师：艾志朋<br /><span>职务：教授</span></p>
+                        </div>
+                        <div class="post-box">
+                            <a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszou.jpg" /></a>
+                            <p class="post-info">讲师：周斌<br /><span>职务：教授</span></p>
+                        </div>
+                        <div class="post-box">
+                            <a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhang.jpg" /></a>
+                            <p class="post-info">讲师：张九元<br /><span>职务：教授</span></p>
+                        </div>
+                        <div class="post-box last">
+                            <a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhao.jpg" /></a>
+                            <p class="post-info">讲师：赵喜刚<br /><span>职务：教授</span></p>
+                        </div> 
+                    </div>    
                     
                     <div class="post-list-bottom cf">
                         <ul>
@@ -218,7 +218,7 @@
         <!-- floor-r -->
         <div class="floor-r">
         	<div class="aside-box h_300">
-            	<h2>最新新闻<a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
+            	<h2><span>最新新闻</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
                 	<dt>2014年01月06日</dt>
                     <dd><a href="business!showDetailArticle?artid=24">成功从关注客户的客户开始</a></dd>
@@ -232,7 +232,7 @@
             </div>
             
         	<div class="aside-box h_300">
-            	<h2>最新课程<a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
+            	<h2><span>最新课程</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
                 	<dt>2014年01月06日</dt>
                     <dd><a href="course!showCouDetail?couid=202">工作分析与职位说明书</a></dd>
@@ -275,24 +275,24 @@
                 
                 <!-- tile-content -->
                 <div class="tile-content">
-                    <div class="post-box">
-                        <a href="course!showCouDetail?couid=316"><img src="image/couid316.jpg" /></a>
-                        <p class="post-info">生产效率提升与问题分析（1）</p>
-                    </div>
-                    <div class="post-box">
-                        <a href="course!showCouDetail?couid=317"><img src="image/couid317.jpg" /></a>
-                        <p class="post-info">生产效率提升与问题分析（2）</p>
-                    </div>
-                    <div class="post-box">
-                        <a href="course!showCouDetail?couid=318"><img src="image/couid318.jpg" /></a>
-                        <p class="post-info">ISM提升制药企业生产效率</p>
-                    </div>
-                    <div class="post-box last">
-                        <a href="course!showCouDetail?couid=319"><img src="image/couid319.jpg" /></a>
-                        <p class="post-info">生产效率提升专家</p>
-                    </div> 
-                    
-                    <div class="clear-both"></div>
+                    <div class="post-box-con cf" style="margin-top: 0;">
+                        <div class="post-box">
+                            <a href="course!showCouDetail?couid=316"><img src="image/couid316.jpg" /></a>
+                            <p class="post-info">生产效率提升与问题分析(1)</p>
+                        </div>
+                        <div class="post-box">
+                            <a href="course!showCouDetail?couid=317"><img src="image/couid317.jpg" /></a>
+                            <p class="post-info">生产效率提升与问题分析(2)</p>
+                        </div>
+                        <div class="post-box">
+                            <a href="course!showCouDetail?couid=318"><img src="image/couid318.jpg" /></a>
+                            <p class="post-info">ISM提升制药企业生产效率</p>
+                        </div>
+                        <div class="post-box last">
+                            <a href="course!showCouDetail?couid=319"><img src="image/couid319.jpg" /></a>
+                            <p class="post-info">生产效率提升专家</p>
+                        </div> 
+                    </div>	
                     
                     <div class="post-list-bottom cf">
                         <ul>
@@ -339,7 +339,7 @@
         <!-- floor-r -->
         <div class="floor-r">
         	<div class="aside-box weibo-con cf">
-            	<h2>倍增在线专家微博<a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
