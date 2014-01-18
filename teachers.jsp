@@ -111,8 +111,7 @@
                         <s:iterator value="teacherList" status="status">
                 			<s:if test="#status.index <= 4">
                 				<li class="item_<s:property value="#status.index"/>"><a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"/><s:property value="tname"/></a></li>
-                			</s:if>
-                        
+                			</s:if>                        
                         </s:iterator>
                     </ul>
                 </div>            

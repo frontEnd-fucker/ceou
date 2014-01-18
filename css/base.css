@@ -270,6 +270,9 @@ a.read-more {
 .cate-box dd a {
 	margin-right: 18px;
 }
+.cate-box dd a.cur {
+	color: #8bbd19;
+}
 /* end cate-box通用样式 */
 
 /* aside-box通用样式 */
@@ -1245,7 +1248,7 @@ dl.course-intro {
 #course-list a.read-more {
 	position: absolute;
 	right: 16px;
-	bottom: 30px;
+	bottom: 10px;
 }
 /*=============== end培训课程3级页面 =================*/
 
