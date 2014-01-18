@@ -136,19 +136,19 @@
                     <div class="post-box-con cf" style="margin-top: 0;">
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/msai.jpg" /></a>
-                            <p class="post-info">讲师：艾志朋<br /><span>职务：教授</span></p>
+                            <p class="post-info">讲师： <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">艾志朋</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszou.jpg" /></a>
-                            <p class="post-info">讲师：周斌<br /><span>职务：教授</span></p>
+                            <p class="post-info">讲师：<a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">周斌</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhang.jpg" /></a>
-                            <p class="post-info">讲师：张九元<br /><span>职务：教授</span></p>
+                            <p class="post-info">讲师：<a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">张九元</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box last">
                             <a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhao.jpg" /></a>
-                            <p class="post-info">讲师：赵喜刚<br /><span>职务：教授</span></p>
+                            <p class="post-info">讲师<a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">：赵喜刚</a><br /><span>职务：教授</span></p>
                         </div> 
                     </div>    
                     
@@ -278,19 +278,19 @@
                     <div class="post-box-con cf" style="margin-top: 0;">
                         <div class="post-box">
                             <a href="course!showCouDetail?couid=316"><img src="image/couid316.jpg" /></a>
-                            <p class="post-info">生产效率提升与问题分析(1)</p>
+                            <p class="post-info"><a href="course!showCouDetail?couid=316">生产效率提升与问题分析(1)</a></p>
                         </div>
                         <div class="post-box">
                             <a href="course!showCouDetail?couid=317"><img src="image/couid317.jpg" /></a>
-                            <p class="post-info">生产效率提升与问题分析(2)</p>
+                            <p class="post-info"><a href="course!showCouDetail?couid=317">生产效率提升与问题分析(2)</a></p>
                         </div>
                         <div class="post-box">
                             <a href="course!showCouDetail?couid=318"><img src="image/couid318.jpg" /></a>
-                            <p class="post-info">ISM提升制药企业生产效率</p>
+                            <p class="post-info"><a href="course!showCouDetail?couid=318">ISM提升制药企业生产效率</a></p>
                         </div>
                         <div class="post-box last">
                             <a href="course!showCouDetail?couid=319"><img src="image/couid319.jpg" /></a>
-                            <p class="post-info">生产效率提升专家</p>
+                            <p class="post-info"><a href="course!showCouDetail?couid=319">生产效率提升专家</a></p>
                         </div> 
                     </div>	
                     

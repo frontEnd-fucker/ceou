@@ -158,7 +158,7 @@
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
         	<div class="aside-box" style="height: 625px">
-            	<h2><span>最新新闻</span><a class="more" href="course!show">更多>></a></h2>
+            	<h2><span>最新课程</span><a class="more" href="course!show">更多>></a></h2>
                 <s:iterator value="randCourseList">
                 <dl>
                 	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
