@@ -432,6 +432,7 @@ p.post-info span {
 .ad {
 	width: 1005px;
 	margin: 10px auto;
+	*margin-top: 0;
 }
 
 

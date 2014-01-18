@@ -14,7 +14,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div id="slider"><img src="img/slider2.jpg" /></div>
+	<div class="ad"><img src="img/slider2.jpg" /></div>
     <div class="portal">
     	<a href="#"><img src="img/portal1.jpg" /></a>
         <a href="#"><img src="img/portal2.jpg" /></a>
@@ -22,19 +22,19 @@
         <a href="#"><img src="img/portal4.jpg" /></a>
     </div>
     
-	<div class="floor">
+	<div class="floor cf">
     
     	<!-- floor-l -->
     	<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
-                <span>|</span>
+            	<a href="/CEOU">首页</a>
+                <span>></span>
                 <a href="#">培训课程</a>
             </div>
             
             <!-- cate-box --> 
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i><a href="#">更多>></a></h2>
+            	<h2 class="cate-title"><i></i></h2>
                 <div class="cate-content">
                 	<dl class="cf">
                     	<dt><a href="business!showEnterpriseCou?catId=4&couPosition=1">效率提升系列</a></dt>
@@ -63,7 +63,7 @@
 	                        	</h3>
 	                            <p class="course-meta">
 	                            	<span>讲师：<s:property value="coulecturer"/></span>
-	                                <span class="rate">评分：<s:property value="couscore"/></span>
+	                                <span class="rate">评分：</span>
 	                                <span>发布时间:<s:date name="updatetime" format="yyyy-MM-dd" /></span>
 	                            </p>
 	                            <p class="course-intro-content"><s:property value="couprofile"/></p>
@@ -71,23 +71,23 @@
 	                        <a class="read-more" href="course!showCouDetail?couid=<s:property value="couid"/>"></a>
 	                    </dl>
                     </s:iterator>
-                    
+                    <!-- pagi-nav -->
                     <div class="page-nav cf">
                     	<div class="page-num">
-		                    <a class="page-home" href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=1">首页</a>
+                      		<a class="page-home" href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
 		                    <s:if test="page==1">
 		                		<a href="#">上一页</a>
 		                	</s:if>
 		                	<s:else>
-		                		<a href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=<s:property value="page-1"/>" >上一页</a>
+		                		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page-1"/>">上一页</a>
 		                	</s:else>
 		                    
 		                    <s:iterator begin="1" end="totalPage" var="p">
 		                    	<s:if test="#p==page">
-		                    		<a href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
 		                    	</s:if>
 		                    	<s:else>
-		                    		<a href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=<s:property />"><s:property/></a>
+		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
 		                    	</s:else>
 		                    </s:iterator>
 		                    
@@ -95,66 +95,101 @@
 		                    	<a href="#">下一页</a>
 		                    </s:if>
 		                    <s:else>
-		                    	<a href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=<s:property value="page+1"/>">下一页</a>
+		                    	<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page+1"/>">下一页</a>
 		                    </s:else>
-		                    <a href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&page=<s:property value="totalPage"/>">末页</a>
+		                    <a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="totalPage"/>">末页</a>
                         </div>
                         <div class="page-skip">
-                        	<form action="business!showEnterpriseCou">
-                        		<input type="hidden" name="catId" value="4"/>
-                        		<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
-                            	跳至第<input type="text" name="page" />页
-                            	<input type="submit" value="跳转"/>
+                        	<form action="teacher!show">
+                            	<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
+                        		<input type="hidden" name="couSkill" value="<s:property value="couSkill"/>"/>
+                        		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>                        		
+                            	跳至第<input class="page-input" type="text" name="page" />页
+                            	<input type="submit" value="确定"/>
                             </form> 
-                            	总共<s:property value="totalPage"/>页
-                        </div>
-                    </div>                                     
+                    	</div>
+                    </div><!-- end page-nav -->                                                           
                 </div>                             	
             </div>         
         </div><!-- end floor-l -->
         
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
-            <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
-        	<div class="aside-box">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
+            <div class="portal-vertical">
+                <a href="#"><img src="img/portal1.jpg" /></a>
+                <a href="#"><img src="img/portal2.jpg" /></a>
+                <a href="#"><img src="img/portal3.jpg" /></a>
+                <a href="#"><img src="img/portal4.jpg" /></a>
+            </div>  
+            
+            <div class="weixin-con"><img src="img/weixin.jpg"></div>       
+            
+        	<div class="aside-box" style="height: 440px">
+            	<h2><span>最新新闻</span><a class="more" href="course!showList">更多>></a></h2>
                 <s:iterator value="randCourseList">
-	                <dl>
-	                	<dt><s:property value="updatetime"/></dt>
+	            	<dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
 	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
 	                </dl> 
-                </s:iterator>
+                </s:iterator>                
             </div> 
             
-            <div class="aside-box">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
-                <div id="page_1" class="aside-box-page_1">
-                    <ul>
-                        <s:iterator value="randCourseList">
-                        	<li class="item_7"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
-                        </s:iterator>
-                    </ul>
-                </div>            
-            </div>         
-            
-            <div class="aside-box hot-post">
-            	<h2>热点管理文章<a class="more" href="#">更多>></a></h2>
-                <div id="page_1" class="aside-box-page_1">
-                    <ul>
-                         <s:iterator value="randArticleList">
-                        	<li><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
-                        </s:iterator>
-                    </ul>
-                </div>            
-            </div>
-            
-        	<div class="aside-box weibo-con">
-            	<h2>华誉在线专家微博<a class="more" href="#">更多>></a></h2>
-        	</div>                                              
+        	<div class="aside-box weibo-con cf">
+            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+                <ul class="weibo-list cf">
+                	<li>
+                    	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/512566567">王占伟</a>
+                        <a class="follow-btn" href="http://weibo.com/512566567"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/3y10"><img src="img/wb/zhanwen.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/3y10">张文</a>
+                        <a class="follow-btn" href="http://weibo.com/3y10"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/hongzhibo"><img src="img/wb/hongzhibo.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/hongzhibo">红智博</a>
+                        <a class="follow-btn" href="http://weibo.com/hongzhibo"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2281034985"><img src="img/wb/chengsheming.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2281034985">程社明</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2281034985"></a>                        
+                    </li>    
+                	<li>
+                    	<a href="http://weibo.com/u/1641106772"><img src="img/wb/zouzhongtang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/1641106772">邹中棠</a>
+                        <a class="follow-btn" href="http://weibo.com/u/1641106772"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/xinlizixushi"><img src="img/wb/zhaoxigang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/xinlizixushi">赵喜刚</a>
+                        <a class="follow-btn" href="http://weibo.com/xinlizixushi"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2236201582"><img src="img/wb/jiangyongsheng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2236201582">江永胜</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2236201582"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/houdaxue"><img src="img/wb/aizhipeng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/houdaxue">艾志朋</a>
+                        <a class="follow-btn" href="http://weibo.com/houdaxue"></a>                        
+                    </li>   
+                	<li>
+                    	<a href="http://weibo.com/jiuyuan99"><img src="img/wb/zhanjiuyuan.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/jiuyuan99">张九元</a>
+                        <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
+                    </li>                                                                                              
+                </ul>
+                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+        	</div>                                           
         </div><!-- end floor-r -->
     </div>
 </div><!-- end main -->
+
 <jsp:include page="footer.jsp" flush="true" />
+
 </body>
 </html>
