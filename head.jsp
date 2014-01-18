@@ -31,15 +31,15 @@
         <div class="wrapper">
             <ul>
                 <li><a href="index.jsp"><span>首页</span></a></li>
-                <li><a href="course!show"><span>培训课程</span></a></li>
-                <li><a href="teacher!show"><span>名师堂</span></a></li>
+                <li><a href="business!showbeizeng"><span>倍增商学院</span></a></li>
                 <li class="sub-nav">
                 	<a href="business!show"><span>商学院</span></a>     
                     <ul>
-                        <li><a href="business!showbeizeng">倍增学院</a></li>
                         <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=-1">企业商学院</a></li>
                     </ul>                                
-                </li>
+                </li>                
+                <li><a href="course!show"><span>培训课程</span></a></li>
+                <li><a href="teacher!show"><span>名师堂</span></a></li>
                 <li><a href="edu!show"><span>在线学历院</span></a>                    
                 </li>
                 <li><a href="#"><span>在线服务</span></a></li>

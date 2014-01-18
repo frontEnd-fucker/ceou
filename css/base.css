@@ -736,7 +736,7 @@ p.post-info span {
 #nav a {
 	display: block;
 	height: 28px;
-	padding: 0 0 0 15px;
+	padding-left: 14px;
 	line-height: 28px;
 	margin: 6px;
 	color: #fff;
@@ -748,7 +748,7 @@ p.post-info span {
 #nav a span {
 	display: block;
 	height: 28px;
-	padding-right: 15px;
+	padding-right: 14px;
 	cursor: pointer;
 	yu-padding: 6px 15px;
 	yu-border-radius: 3px;
@@ -1037,7 +1037,7 @@ dl.course-intro dd span.rate {
 	float: left;
 }
 .jiathis_style {
-	float: right;
+	yu-float: right;
 }
 .post-nav {
 	padding: 34px 0;

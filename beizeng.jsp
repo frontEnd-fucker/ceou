@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>beizeng</title>
+<title>倍增商学院</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -155,7 +155,7 @@
             
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
-        	<div class="aside-box" style="height: 440px">
+        	<div class="aside-box" style="height: 629px">
             	<h2><span>最新新闻</span><a class="more" href="course!showList">更多>></a></h2>
                 <s:iterator value="randCourseList">
 	            	<dl>

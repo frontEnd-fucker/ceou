@@ -17,36 +17,23 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div id="slider"><img src="img/slider2.jpg" /></div>
+	<div class="ad"><img src="img/slider2.jpg" /></div>
     
     <div class="floor cf">
     	<!-- floor-l -->
     	<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
+            	<a href="/CEOU">首页</a>
                 <span>></span>
-                <a href="#">商学院</a>
-                <span>></span>
-                <a href="#">倍增学院</a>
-                <span>></span>
-                <a href="#">绩效管理真谛</a>
+                <s:if test="courseDetail.catid==1" ><a href="course!show">培训课程</a> </s:if>
+                <s:if test="courseDetail.catid==2" ><s:if test="courseDetail.ifceou==0"><a href="teacher!show">名师堂</a></s:if><s:if test="courseDetail.ifceou==1"><a href="business!showbeizeng">倍增学院</a><span>></span><a href="business!showBZCouByTh?catId=2&ifceou=1&couPosition=-1">名师堂</a></s:if></s:if>
+                <s:if test="courseDetail.catid==3" ><a href="business!show">商学院</a> <span>></span> <a href="business!showbeizeng">倍增学院</a></s:if>
+                <s:if test="courseDetail.catid==4" ><a href="business!show">商学院</a> <span>></span> <a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=-1">企业商学院</a></s:if>
+                <s:if test="courseDetail.catid==6" ><a href="edu!show">在线学历院</a> <span>></span> <a href="edu!showCoubyskill?couSkill=-1">技能院校</a></s:if>
+                <s:if test="courseDetail.catid==7" ><a href="edu!show">在线学历院</a> <span>></span> <a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></s:if>     
                 <span>></span>      
-                <a href="#">正文</a>          
-            </div>
-            
-            <div class="cate-box">
-            	<h2 class="cate-title"><i></i></h2>
-                <div class="cate-content">
-                	<dl>
-                    	<dt>按课程分类</dt>
-                        <dd>
-                        	<a href="#">绩效管理真谛</a>
-                            <a href="#">绩效管理真谛</a>
-                            <a href="#">绩效管理真谛</a>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
+                <a href="#">正文</a>      
+            </div>            
             
             <div class="tile-box">
             	<div class="tile-top cf">
@@ -81,10 +68,11 @@
                         	<h3><s:property value="courseDetail.couname"/> </h3>
                             <p class="course-meta cf">
                             	<span>讲师：<s:property value="courseDetail.coulecturer"/></span>
-                                <span class="rate">评分：<s:property value="courseDetail.couscore"/></span>
+                                <span class="rate">评分:</span>
                             </p>
                             <p class="course-intro-content"><strong>课程简介：</strong><s:property value="courseDetail.couprofile"/> </p>
                         </dd>
+						<a class="learn-btn" href="#"></a>
                     </dl>                
                 </div>
             </div>
@@ -97,12 +85,13 @@
                     </h2>                
                 </div>
                 <div class="tile-content">
-                	<embed src="<s:property value="courseDetail.couvideourl"/>"></embed>
+                	<embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
                 </div>
             </div>
             <!--end 视频-->
             
-            <div class="tile-box">
+            <!-- 猜你喜欢 -->
+            <!--<div class="tile-box">
             	<div class="tile-top cf">
                 	<h2 class="tile-title">
                     	<img src="img/beixunkechen.jpg" />
@@ -142,7 +131,7 @@
                         <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
                     </div>                                	
                 </div>
-            </div>
+            </div>--><!-- end 猜你喜欢 -->
         </div><!-- end floor-l -->
         
         <!-- floor-r -->
@@ -156,23 +145,14 @@
             <div class="weixin-con">
             	<img src="img/weixin.jpg" />
             </div>    	
-        	<div class="aside-box" style="height: 440px">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
-                <dl class="last">
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
+        	<div class="aside-box" style="height: 452px">
+            	<h2><span>最新新闻</span><a class="more" href="#">更多>></a></h2>
+				<s:iterator value="randCourseList">
+				<dl>
+					<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+				    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+				</dl>
+				</s:iterator>               
             </div>            
         </div><!-- end floor-r -->
     </div>
