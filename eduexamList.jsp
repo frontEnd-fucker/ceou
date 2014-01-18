@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>courseList</title>
+<title>在线学历院课程</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -14,7 +14,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div id="slider"><img src="img/slider2.jpg" /></div>
+	<div class="ad"><img src="img/slider2.jpg" /></div>
     <div class="portal">
     	<a href="#"><img src="img/portal1.jpg" /></a>
         <a href="#"><img src="img/portal2.jpg" /></a>
@@ -27,26 +27,26 @@
     	<!-- floor-l -->
     	<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
-                <span>|</span>
-                <a href="#">技能院校</a>
+            	<a href="/CEOU">首页</a>
+                <span>></span>
+                <a href="#">在线学历院课程</a>
             </div>
             
-            <!-- cate-box --> 
+         <!-- cate-box --> 
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i><a href="#">更多>></a></h2>
+            	<h2 class="cate-title"><i></i><!--<a href="#">更多>></a>--></h2>
                 <div class="cate-content">
-                    	
                 	<dl class="cf">
                     	<dt>按能力分类:</dt>
                         <dd>
-                       		<a href="edu!showCoubyindustry?couIndustry=1">成考</a>
-                       		<a href="edu!showCoubyindustry?couIndustry=2">自考</a>
+                        	<a <s:if test="couIndustry==-1">class="cur"</s:if> href="edu!showCoubyindustry?couIndustry=-1">不限</a>
+                        	<a <s:if test="couIndustry==1">class="cur"</s:if> href="edu!showCoubyindustry?couIndustry=1">成考</a>
+                       		<a <s:if test="couIndustry==2">class="cur"</s:if> href="edu!showCoubyindustry?couIndustry=2">自考</a>
                         </dd>
-                    </dl>                            
+                    </dl>
                 </div>
-            </div><!-- end cate-box -->   
-            
+            </div><!-- end cate-box -->
+              
             <div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
@@ -57,16 +57,18 @@
                     <s:iterator value="examlist">
 	                	<dl class="course-intro cf">
 	                    	<dt>
-	                    	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="img/kecheng-list.jpg" /></a>
+	                    		<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="img/kecheng-list.jpg" /></a>
 	                    	</dt>
 	                        <dd>
 	                        	<h3>
 	                        	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a>
 	                        	</h3>
 	                            <p class="course-meta">
-	                            	<span>讲师：<s:property value="coulecturer"/></span>
-	                                <span class="rate">评分：<s:property value="couscore"/></span>
-	                                <span>发布时间：<s:property value="updatetime"/></span>
+	                            	<span>讲师：
+	                            		<s:property value="coulecturer"/>
+	                            	</span>
+	                                <span class="rate">评分：<!--<s:property value="couscore"/>--></span>
+	                                <span>发布时间:<s:date name="updatetime" format="yyyy-MM-dd" /></span>
 	                            </p>
 	                            <p class="course-intro-content"><s:property value="couprofile"/></p>
 	                        </dd>
@@ -74,6 +76,7 @@
 	                    </dl>
                     </s:iterator>
                     
+					<!-- page-nav -->
                     <div class="page-nav cf">
                     	<div class="page-num">
 		                    <a class="page-home" href="edu!showCoubyindustry?couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
@@ -102,15 +105,14 @@
 		                    <a href="edu!showCoubyindustry?couIndustry=<s:property value="couIndustry"/>&page=<s:property value="totalPage"/>">末页</a>
                         </div>
                         <div class="page-skip">
-                        	<form action="edu!showCoubyskill">
+                        	<form action="edu!showCoubyindustry">
                         		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>
                         		
-                            	跳至第<input type="text" name="page" />页
+                            	跳至第<input class="page-input" type="text" name="page" />页
                             	<input type="submit" value="跳转"/>
-                            </form> 
-                            	总共<s:property value="totalPage"/>页
-                        </div>
-                    </div>                                     
+                            </form>  
+                    	</div>
+                    </div><!-- end page-nav -->                                    
                 </div>                             	
             </div>         
         </div><!-- end floor-l -->
@@ -120,60 +122,93 @@
         	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
             <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
         	<div class="aside-box">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
-                <dl class="last">
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
+            	<h2><span>最新课程</span><a class="more" href="course!showList">更多>></a></h2>
+                 <s:iterator value="randCourseList">
+	                <dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+	                </dl> 
+                </s:iterator>                
             </div> 
             
-            <div class="aside-box">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
+            <!--<div class="aside-box">
+            	<h2><span>最新新闻<span><a class="more" href="course!showList">更多>></a></h2>
                 <div id="page_1" class="aside-box-page_1">
                     <ul>
-                        <li class="item_1"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_2"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_3"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_4"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_5"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_6"><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li class="item_7"><a href="#">五种培训让你的员工焕然一新</a></li>
+                        <s:iterator value="randCourseList" status="status">
+                        	<li class="item_<s:property value="#status.index"/>"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                        </s:iterator>
                     </ul>
                 </div>            
-            </div>         
+            </div>  -->       
             
-            <div class="aside-box hot-post">
-            	<h2>热点管理文章<a class="more" href="#">更多>></a></h2>
-                <div id="page_1" class="aside-box-page_1">
-                    <ul>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
-                        <li><a href="#">五种培训让你的员工焕然一新</a></li>
+            <div class="aside-box">
+            	<h2 class="longer"><span>热点管理文章</span><a class="more" href="#">更多>></a></h2>
+                <div class="hot-post">
+                    <ul class="color-list">
+                        <s:iterator value="randArticleList">
+                        	<li><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
+                        </s:iterator>
                     </ul>
                 </div>            
             </div>
             
-        	<div class="aside-box weibo-con">
-            	<h2>华誉在线专家微博<a class="more" href="#">更多>></a></h2>
-        	</div>                                              
+        	<div class="aside-box weibo-con cf">
+            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+                <ul class="weibo-list cf">
+                	<li>
+                    	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/512566567">王占伟</a>
+                        <a class="follow-btn" href="http://weibo.com/512566567"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/3y10"><img src="img/wb/zhanwen.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/3y10">张文</a>
+                        <a class="follow-btn" href="http://weibo.com/3y10"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/hongzhibo"><img src="img/wb/hongzhibo.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/hongzhibo">红智博</a>
+                        <a class="follow-btn" href="http://weibo.com/hongzhibo"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2281034985"><img src="img/wb/chengsheming.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2281034985">程社明</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2281034985"></a>                        
+                    </li>    
+                	<li>
+                    	<a href="http://weibo.com/u/1641106772"><img src="img/wb/zouzhongtang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/1641106772">邹中棠</a>
+                        <a class="follow-btn" href="http://weibo.com/u/1641106772"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/xinlizixushi"><img src="img/wb/zhaoxigang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/xinlizixushi">赵喜刚</a>
+                        <a class="follow-btn" href="http://weibo.com/xinlizixushi"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2236201582"><img src="img/wb/jiangyongsheng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2236201582">江永胜</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2236201582"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/houdaxue"><img src="img/wb/aizhipeng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/houdaxue">艾志朋</a>
+                        <a class="follow-btn" href="http://weibo.com/houdaxue"></a>                        
+                    </li>   
+                	<li>
+                    	<a href="http://weibo.com/jiuyuan99"><img src="img/wb/zhanjiuyuan.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/jiuyuan99">张九元</a>
+                        <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
+                    </li>                                                                                              
+                </ul>
+                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+        	</div>  
+		                                               
         </div><!-- end floor-r -->
     </div>
 </div><!-- end main -->
+<div class="clear-both"></div>
 <jsp:include page="footer.jsp" flush="true" />
 </body>
 </html>
