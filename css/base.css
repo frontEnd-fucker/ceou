@@ -1136,6 +1136,7 @@ dl.course-intro {
 }
 .kejian a.read-more {
 	float: left;
+	position: static;
 }
 /*===============end课件列表页kejianList========================*/
 

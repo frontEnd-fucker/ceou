@@ -4,58 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>bizCollegeList</title>
+<title>文章列表</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body id="course-list">
+<body id="allArticleList">
 
-<!-- header -->
-<div id="header">
-    <div class="header-top wrapper cf">
-        <div class="header-top-l">
-            <h3>欢迎来到中国企业在线大学！</h3>
-            <form>
-            	<label>帐号<input type="text" value="帐号或手机号" onfocus="if(this.value==this.defaultValue) this.value = ''" onblur="if(this.value=='') this.value = this.defaultValue" /></label>
-                <label>密码<input type="password" /></label>
-                <input class="submitBtn" type="submit" value="登录" />
-                <a href="#">忘记密码？</a>
-            </form>
-        </div>
-        <div class="header-top-r">
-        	<ul>
-            	<li><a href="#">社区</a></li>
-                <li class="separator">|</li>
-                <li><a href="#">马上优惠</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：400-700-7000</a></li>
-            </ul>
-        </div>        
-    </div>
-    <div class="header-banner wrapper"><img src="img/header-banner.jpg" /></div>
-    
-    <!-- nav -->
-    <div id="nav">
-        <div class="wrapper">
-            <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">培训课程</a></li>
-                <li><a href="#">名师堂</a></li>
-                <li><a href="#">商学院</a></li>
-                <li><a href="#">在线学历院</a></li>
-                <li><a href="#">在线服务</a></li>
-                <li><a href="#">在线购买</a></li>
-            </ul>
-            <div class="searchbar">
-            	<input type="text" value="请输入关键字"/>
-            </div>
-        </div>
-    </div><!-- end nav -->
-</div><!-- end header -->
+<jsp:include page="head.jsp" flush="true" />
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div id="slider"><img src="img/slider2.jpg" /></div>
+	<div class="ad"><img src="img/slider2.jpg" /></div>
     
 	<div class="floor">
     
@@ -64,16 +23,12 @@
         	<div class="crumb">
             	<a href="#">首页</a>
                 <span>></span>
-                <a href="#">商学院</a>
-                <span>></span>
-                <a href="#">倍增学院</a>
-                <span>></span>
-                <a href="#">课件</a>
+                <a href="business!showArticleByCondition">文章列表</a>
             </div>
             
             <!-- cate-box --> 
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i><a href="#">更多>></a></h2>
+            	<h2 class="cate-title"><i></i></h2>
                 <div class="cate-content">
                 	<dl class="cf">
                         <dd>
@@ -103,11 +58,13 @@
                         <s:iterator value="allArticleByCon">
                     	<div class="kejian cf">
                         	<div class="kejian-hd">
-                            	<h3><s:property value="artname"/></h3>
+                            	<h3>
+                            		<a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a>
+								</h3>
                                 <p class="kejian-meta">
                                 	来源：<span class="from"><s:property value="artfrom"/></span>&nbsp;&nbsp;|&nbsp;
-                                                                                               点击数：<span class="clickCount">55555555555555555</span>&nbsp;&nbsp;|&nbsp;
-                                                                                               发布时间：<span class="pub-date"><s:property value="updatetime"/></span>                             
+                                    点击数：<span class="clickCount">53819</span>&nbsp;&nbsp;|&nbsp;
+                                    发布时间：<span class="pub-date"><s:date name="updatetime" format="yyyy-MM-dd" /></span>                             
                                 </p>
                             </div>
                             <div class="kejian-bd">
@@ -149,10 +106,9 @@
                         	<form action="business!showArticleByCondition">
                         		<input type="hidden" name="articleCatId" value="3"/>
                         		<input type="hidden" name="artcategory" value="<s:property value="artcategory"/>"/>
-                            	跳至第<input type="text" name="page" />页
+                            	跳至第<input class="page-input" type="text" name="page" />页
                             	<input type="submit" value="跳转"/>
                             </form> 
-                            	总共<s:property value="totalPage"/>页
                         </div>
                     </div>                                     
                 </div>                             	
@@ -169,27 +125,66 @@
             </div>          
         	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
         	<div class="aside-box">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>
-                <dl>
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
-                <dl class="last">
-                	<dt>2013年10月12日</dt>
-                    <dd><a href="#">产品实现策划审核及顾客有关的资源</a></dd>
-                    <dd><a href="#">管理责任的审核要点</a></dd>
-                </dl>                
-            </div>                                 
+            	<h2><span>最新新闻</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
+                <s:iterator value="randCourseList">
+	                <dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+	                </dl> 
+                </s:iterator>                
+            </div>                               
             
-        	<div class="aside-box weibo-con">
-            	<h2>华誉在线专家微博<a class="more" href="#">更多>></a></h2>
-        	</div>                                              
+        	<div class="aside-box weibo-con cf">
+            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+                <ul class="weibo-list cf">
+                	<li>
+                    	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/512566567">王占伟</a>
+                        <a class="follow-btn" href="http://weibo.com/512566567"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/3y10"><img src="img/wb/zhanwen.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/3y10">张文</a>
+                        <a class="follow-btn" href="http://weibo.com/3y10"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/hongzhibo"><img src="img/wb/hongzhibo.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/hongzhibo">红智博</a>
+                        <a class="follow-btn" href="http://weibo.com/hongzhibo"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2281034985"><img src="img/wb/chengsheming.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2281034985">程社明</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2281034985"></a>                        
+                    </li>    
+                	<li>
+                    	<a href="http://weibo.com/u/1641106772"><img src="img/wb/zouzhongtang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/1641106772">邹中棠</a>
+                        <a class="follow-btn" href="http://weibo.com/u/1641106772"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/xinlizixushi"><img src="img/wb/zhaoxigang.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/xinlizixushi">赵喜刚</a>
+                        <a class="follow-btn" href="http://weibo.com/xinlizixushi"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/u/2236201582"><img src="img/wb/jiangyongsheng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/u/2236201582">江永胜</a>
+                        <a class="follow-btn" href="http://weibo.com/u/2236201582"></a>                        
+                    </li>
+                	<li>
+                    	<a href="http://weibo.com/houdaxue"><img src="img/wb/aizhipeng.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/houdaxue">艾志朋</a>
+                        <a class="follow-btn" href="http://weibo.com/houdaxue"></a>                        
+                    </li>   
+                	<li>
+                    	<a href="http://weibo.com/jiuyuan99"><img src="img/wb/zhanjiuyuan.jpg" /></a>
+                        <a class="wb-name" href="http://weibo.com/jiuyuan99">张九元</a>
+                        <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
+                    </li>                                                                                              
+                </ul>
+                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+        	</div>                                            
         </div><!-- end floor-r -->
     </div>
 </div><!-- end main -->
@@ -198,84 +193,6 @@
 
 <div class="ad"><img src="img/ad-placeholder.jpg" /></div>
 
-<!-- footer -->
-<div id="footer">
-	<!--合作伙伴-->
-    <div class="partner wrapper">
-    	<h2><span>合作伙伴</span></h2>
-        <ul class="cf">
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>            
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>                        
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>                                                
-        	<li><a href="#">somesome class</a></li>
-            <li>|</li>            
-        </ul>
-    </div><!-- end 合作伙伴 -->
-    
-    <div class="footer-top">
-    	<div class="wrapper"></div>
-    </div>
-    <div class="footer-bottom">
-    	<div class="wrapper cf">
-        	<ul>
-            	<li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-            </ul>
-            
-        	<ul>
-            	<li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-            </ul>   
-              
-        	<ul>
-            	<li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li class="jiameng"><a href="#"><img src="img/jiamen.jpg" /></a></li>
-            </ul>  
-             
-        	<ul>
-            	<li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-            </ul> 
-            
-        	<ul>
-            	<li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">公司简介</a></li>
-            </ul>                                              
-        </div>
-    </div>
-</div><!-- end footer -->
+<jsp:include page="footer.jsp" flush="true" />
 </body>
 </html>
