@@ -104,6 +104,7 @@
 	                    </dl>
                     </s:iterator>
                     
+					<!-- page-nav -->
                     <div class="page-nav cf">
                     	<div class="page-num">
                       		<a class="page-home" href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
@@ -163,7 +164,7 @@
             	<h2 class="longer"><span>讲师人气排名</span><a class="more" href="teacher!show">更多>></a></h2>
                 <div class="hot-teacher">
                     <ul class="color-list">
-                        <s:iterator value="teacherList" status="status">
+                        <s:iterator value="teacherRanking" status="status">
                 			<s:if test="#status.index <= 4">
                 				<li class="item_<s:property value="#status.index"/>"><a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"/><s:property value="tname"/></a></li>
                 			</s:if>                        
