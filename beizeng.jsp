@@ -20,11 +20,11 @@
 	<div class="floor">
     	<div class="floor-l">
         	<div class="crumb">
-            	<a href="#">首页</a>
+            	<a href="/CEOU">首页</a>
                 <span>></span>
-                <a href="#">商学院</a>
+                <a href="business!show">商学院</a>
                 <span>></span>
-                <a href="#">倍增学院</a>
+                <a href="business!showbeizeng">倍增学院</a>
             </div>
             
             <!-- 最新课程 -->
@@ -33,7 +33,7 @@
                 	<h2 class="tile-title"><img src="img/bzzxkc.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a class="cur" href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
+                            <li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
                             <li>|</li>
                             <li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
                             <li>|</li>
@@ -53,8 +53,8 @@
                     </div>   
                     <div class="color-list">
                         <ul>
-                        	<s:iterator value="subceoulist">
-                            	<li class="item_1"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:property value="updatetime"/></span></li>
+                        	<s:iterator value="subceoulist" status="status">
+                            	<li class="item_<s:property value="#status.index"/>"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /></span></li>
                             </s:iterator>                         
                         </ul>
                     </div>                                 	
@@ -75,6 +75,7 @@
                 
                 <div class="tile-content">
 					<div class="post-box-con">
+						<s:iterator value="ceoufightlist1">
 	                    <div class="post-box">
                         	<a href="course!showCouDetail?couid=<s:property value="couid"/>">
 								<img src="<s:property value="coupicurl"/>" />
@@ -84,6 +85,7 @@
 								<span>讲师：<s:property value="coulecturer"/></span>
 							</p>
 	                    </div>
+						</s:iterator>
                     </div>
                     
                     <div class="post-list-bottom cf">
@@ -154,10 +156,10 @@
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
         	<div class="aside-box" style="height: 440px">
-            	<h2>最新新闻<a class="more" href="#">更多>></a></h2>
+            	<h2><span>最新新闻</span><a class="more" href="course!showList">更多>></a></h2>
                 <s:iterator value="randCourseList">
 	            	<dl>
-	                	<dt><s:property value="updatetime"/></dt>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
 	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
