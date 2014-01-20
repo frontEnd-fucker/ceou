@@ -46,7 +46,7 @@ body {
 	background: #1e7b76;
 }
 #header {
-	height: 145px;
+	height: 115px;
 	padding-top: 6px;
 	background: url(../img/reg-topbar-bg.jpg) repeat-x left top;
 }
@@ -77,18 +77,99 @@ body {
 }
 
 #main {
-	height: 500px;
 	background: url(../img/reg-bg.jpg) repeat left top;
 }
 .main-con {
 	width: 1000px;
-	padding-top: 276px;
+	padding-top: 165px;
 	margin: 0 auto;
-	background: url(../img/reg-logo.png) no-repeat 45px top;
+	background: url(../img/reg-logo.png) no-repeat 45px -60px;
+}
+.signup-form {
+	width: 529px;
+	height: 225px;
+	padding: 70px 0 0 240px;
+	margin-left: 100px;
+	color: #3d4d72;
+	background: url(../img/signup-bg.png) no-repeat left top;
+}
+.signup-form form {
+	float: left;
+	width: 280px;
+}
+.input-con {
+	margin-bottom: 30px;
+	line-height: 20px;
+}
+.input-con input {
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #a0a0a0;
+}
+.radio-con {
+
+}
+.radio-con input {
+	margin-left: 20px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.btn-con {
+	margin-top: 28px;
+	*margin-top: 18px;
+}
+.btn-con input{
+	float: left;
+	width: 70px;
+	height: 25px;
+	background: none;
+	border: 0 none;
+	cursor: pointer;
+}
+.btn-con a {
+	float: left;
+	width: 70px;
+	height: 25px;
+	margin-left: 15px;
+	color: #3d4d72;
+	font-size: 14px;
+	line-height: 25px;
+	text-decoration: none;
+}
+.signup-form .other-accounts {
+	float: left;
+	width: 180px;
+	margin: -30px 0 0 50px;
+}
+.other-accounts h2 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.other-accounts ul {
+	margin: 33px 0 0 40px;
+}
+.other-accounts li {
+	margin-bottom: 35px;
+}
+.other-accounts a {
+	color: #0192dc;
+	font-size: 14px;
+	text-decoration: none;
+}
+.copyright {
+	height: 43px;
+	margin-top: 20px;
+	color: #fff;
+	line-height: 43px;
+	text-align: center;
+	background: url(../img/copyright-bg.png) no-repeat center center;
 }
 
-
-
+#footer {
+	height: 120px;
+	background: #1f7a75;
+}
 
 
 
