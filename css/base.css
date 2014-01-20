@@ -623,6 +623,7 @@ p.post-info span {
 }
 .header-top-l {
 	float: left;
+	width: 600px;
 }
 .header-top-l strong {
 	float: left;
