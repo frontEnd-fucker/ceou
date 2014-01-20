@@ -1,4 +1,4 @@
-// JavaScript Document
+
 $(function() {
 	//slider效果
 	var sliderTimer = null;
@@ -21,7 +21,7 @@ $(function() {
 			index++;
 			if(index==len) {index=0;}
 		}, 3000);
-	}).trigger('mouseleave');
+	}).trigger('mouseleave');	
 });
 
 function showImg(index) {

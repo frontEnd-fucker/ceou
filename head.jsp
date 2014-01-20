@@ -24,7 +24,7 @@
             </ul>
         </div>        
     </div>
-    <div class="header-banner wrapper"><img src="img/header-banner.jpg" /></div>
+    <div class="header-banner wrapper"><img src="img/logo.png" /></div>
     
     <!-- nav -->
     <div id="nav">

@@ -4,12 +4,13 @@
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
 	
 	<!--  -->
-		<package name="struts2" extends="struts-default" namespace="/">
+		<package name="struts2" extends="json-default" namespace="/">
 		<!-- 培训课程模块 -->
 		<action name="course" class="com.ceou.action.CourseAction" method="show">
 			<result name="show">/course.jsp</result>
 			<result name="showList">/courseList.jsp</result>
 			<result name="showCouDetail">/videoCourse.jsp</result>
+			<result name="insufficient">/testPage/bh.gif</result>
 		</action>
 		
 		<!-- 名师堂模块 -->
@@ -41,7 +42,22 @@
 		<!-- 用户管理模块 -->
 		<action name="user" class="com.ceou.action.LoginAction">
 			<result name="fail">/login.jsp</result>
-			<result name="success">/index.html</result>
+			<result name="success">/testPage/test.jsp</result>
+			<result name="editSuccess">/</result>
+			
+			<result name="userStatus" type="json">
+				<param name="root">
+					userStatus
+				</param>
+			</result>
+		</action>
+		
+		
+		<!-- 验证码 -->
+		<action name="imageCode" class="com.ceou.action.ImageCodeAction">
+			<result name="success" type="stream">
+				<param name="inputName">imageStream</param>
+				</result>
 		</action>
 	</package>    
 </struts>    
