@@ -17,10 +17,14 @@ $(function() {
 	$('.reg-btn').click(function() {
 		$('#username, #useremail, ')
 	});
+	//更新验证码
 	$('#auth-img').click(function() {
 		setTimeout(function() {
-			$('#auth-img').attr('src', "http://192.168.1.105:8080/CEOU/imageCode?date="+new Date().getTime());		
+			$('#auth-img').attr('src', "imageCode?date="+new Date().getTime());		
 		}, 50);		
+	});
+	$('#J_changeImg').click(function() {
+		$('#auth-img').trigger('click');
 	});
 });
 
