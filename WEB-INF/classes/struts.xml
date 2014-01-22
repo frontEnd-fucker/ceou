@@ -45,9 +45,21 @@
 			<result name="success">/testPage/test.jsp</result>
 			<result name="editSuccess">/</result>
 			
+			<result name="authcodeStatus" type="json">
+				<param name="root">
+					authcodeStatus
+				</param>
+			</result>
+			
 			<result name="userStatus" type="json">
 				<param name="root">
 					userStatus
+				</param>
+			</result>
+			
+			<result name="emailStatus" type="json">
+				<param name="root">
+					emailStatus
 				</param>
 			</result>
 		</action>

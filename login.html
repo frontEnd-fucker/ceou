@@ -32,40 +32,37 @@
 <div id="main">
     <div class="form">
         <h2>注册新会员</h2>
-        <div class="input-con">
+        <div class="input-con cf">
             <label for="username">用户名</label>
-            <input id="username" name="username" type="text" />
-            <strong>*</strong>
-            <span class="tips">可使用字母、数字或下划线</span>
+            <input id="username" name="username" type="text" />            
+            <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
         </div>
-        <div class="input-con">
+        <div class="input-con cf">
             <label for="useremail">email</label>
             <input id="useremail" name="useremail" type="text" />
-            <strong>*</strong>
-            <span class="tips">请输入正确的邮箱地址</span>        
+            <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
         </div>
-        <div class="input-con">
+        <div class="input-con cf">
             <label for="pwd1">密码</label>
             <input id="pwd1" name="pwd1" type="password" />
-            <strong>*</strong>
-            <span class="tips">6-20位字符。可使用字母、数字或下划线</span>         
+            <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
         </div>
-        <div class="input-con">
+        <div class="input-con cf">
             <label for="pwd2">确认密码</label>
             <input id="pwd2" name="pwd2" type="password" />
-            <strong>*</strong>
-            <span class="tips">请再次输入密码</span>        
+            <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
         </div>
         <div class="input-con">
             <label for="authcode">验证码</label>
             <input id="authcode" name="authcode" type="text" />
+            <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
             <img id="auth-img" style="height: 22px;" src="imageCode" />
             <!--<script type="text/javascript">$('#auth-img').click()</script>-->
-            <span class="tips">看不清？</span>
-            <a id="J_changeImg" href="javascript:;">换一张</a>
+            <span>看不清？</span>
+            <a id="J_changeImg" href="javascript:;">换一张</a>            
         </div>  
         <div class="input-con">
-            <input class="reg-btn" type="submit" value="立即注册" />
+            <input id="J_loginSubmit" class="reg-btn" type="button" value="立即注册" />
         </div>  
     </div>
 </div><!-- end main -->
