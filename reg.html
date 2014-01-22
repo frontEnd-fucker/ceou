@@ -33,10 +33,12 @@
             	<div class="input-con">
                 	<label for="username">用户名：</label>
                     <input id="username" name="username" type="text" />
+                    <p id="J_usernameTips">请输入用户名</p>
                 </div>
                 <div class="input-con">
                 	<label for="pwd">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
                     <input id="pwd" name="pwd" type="password" />
+                    <p id="J_pwdTips">请输入密码</p>
                 </div>
                 <div class="radio-con">
                 	<input name="usertype" type="radio" checked="checked" style="margin-left:0;" />个人
@@ -44,8 +46,8 @@
                     <input name="usertype" type="radio" />公务员
                 </div>
                 <div class="btn-con">
-                	<input type="submit" value=""/>
-                    <a id="J_regBtn" class="login-btn" href="login.html"></a>
+                	<input id="J_regBtn" type="button" value=""/>
+                    <a class="login-btn" href="login.html"></a>
                     <a href="#">忘记密码？</a>
                 </div>
             </form>

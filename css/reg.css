@@ -100,6 +100,19 @@ body {
 .input-con {
 	margin-bottom: 30px;
 	line-height: 20px;
+	position: relative;
+}
+.input-con p {
+	display: none;
+	width: 180px;
+	height: 20px;
+	position: absolute;
+	left: 51px;
+	color: #e6393d;
+	line-height: 20px;
+	text-indent: 5px;
+	background: #ffebec;	
+	border: 1px solid #ffbdbf;
 }
 .input-con input {
 	width: 180px;
