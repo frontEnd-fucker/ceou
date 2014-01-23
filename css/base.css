@@ -41,6 +41,12 @@ abbr,acronym { border:0;
 
 
 /*=================== global ==============================*/
+.fl {
+	float: left;	
+}
+.fr {
+	float: right;
+}
 /* 网站所有button的样式 */
 .submit-btn {
 	height: auto;
@@ -1254,6 +1260,170 @@ dl.course-intro {
 }
 /*=============== end培训课程3级页面 =================*/
 
+
+/*=================== 个人中心页面 passport.jsp =====================*/
+.passport-l {
+	width: 250px;
+}
+.passport-r {
+	width: 740px;
+}
+.gray-box {
+	margin-bottom: 10px;
+	background: #f0f0f0;
+	border: 1px solid #dcdcdc;
+	border-top: 0;
+}
+.gray-title {
+	height: 37px;
+	padding-top: 4px;
+	background: #dcdcdc url(../img/passport-title-top.jpg) repeat-x left top;
+}
+.gray-list {
+	padding: 15px 4px;
+}
+.gray-list li {
+	padding: 4px 0;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #bdbdbd;
+}
+.gray-list a {
+	display: block;
+	padding: 3px 0 3px 35px;
+	color: #000;
+	font-size: 16px;
+}
+.gray-list a:hover {
+	color: #FFF;
+	background: #1e7b76;
+}
+.user-info {
+	padding-bottom: 20px;
+	text-align: center;
+}
+.user-info a {
+	display: block;	
+}
+.user-info .avatar {
+	margin-top: 13px;
+}
+.user-info .avatar img {
+	width: 200px;
+	height: 200px;
+}
+.user-info .name {
+	margin-top: 14px;
+	color: #1e7b76;
+	font-size: 15px;
+	font-weight: bold;
+}
+.user-info .setting-btn {
+	width: 140px;
+	height: 30px;
+	margin: 15px auto 0;
+	color: #035551;
+	font-size: 16px;
+	line-height: 30px;
+	text-indent: 30px;
+	background: url(../img/setting-icon.jpg) no-repeat 20px center;
+	border: 1px solid #dadada;
+	border-radius: 3px;
+}
+
+.plain-box {
+	padding-top: 4px;
+	margin-bottom: 35px;
+	background: url(../img/passport-title-top.jpg) repeat-x left top;
+}
+.rect-title {
+	padding: 7px 13px 12px 25px;
+	color: #1e7b7b;
+	font-family: "黑体";
+	font-size: 17px;
+	letter-spacing: 2px;
+	background: url(../img/retangle.jpg) no-repeat left 7px;
+}
+.try-course .fl {
+	width: 415px;
+}
+.try-course ul.fr {
+	width: 290px;
+}
+.try-course ul.fr li {
+	height: 20px;
+	margin-bottom: 10px;
+	line-height: 20px;
+	border-bottom: 1px dashed #ccc;
+}
+.try-course ul.fr a {
+	padding-left: 25px;
+	font-size: 14px;
+	background: url(../img/headset-icon.jpg) no-repeat left center;
+}
+.try-course ul.fr a:hover {
+	color: #1e7b76;
+	background-image: url(../img/headset-icon-cur.jpg);
+}
+.my-course {
+	margin-bottom: 10px;
+}
+.my-course .courses {
+	width: 770px;
+}
+.my-course .course {
+	float: left;
+	width: 225px;
+	margin-right: 30px;
+	margin-bottom: 24px;
+}
+.my-course .course img {
+	width: 225px;
+	height: 168px;
+}
+.course-hd {
+	margin-bottom: 10px;
+}
+.course-bd {
+	margin-bottom: 10px;
+}
+.my-course .course-bd h3{
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-weight: bold;
+}
+.my-course .course-bd p {
+	font-size: 15px;
+}
+.course-ft {
+	width: 250px;
+	height: 18px;
+	line-height: 18px;
+}
+.course-ft a {
+	float: left;
+	margin-right: 26px;
+}
+.course-ft a.start {
+	padding-left: 15px;
+	background: url(../img/start-icon.jpg) no-repeat left center;
+}
+.course-ft a.view-count {
+	padding-left: 30px;
+	background: url(../img/passport-group-icon.jpg) no-repeat left center;	
+}
+.course-ft a.comment-count {
+	padding-left: 30px;
+	background: url(../img/comment-icon.jpg) no-repeat left center;
+}
+.intro-course .kejian-list{
+	width: 830px;
+	font-size: 15px;
+}
+.intro-course .kejian-list li {
+	margin-right: 95px;
+	background: url(../img/passport-arrow.jpg) no-repeat left center;
+}
+/*=================== end 个人中心页面 passport.jsp =====================*/
 
 
 
