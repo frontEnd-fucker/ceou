@@ -5,6 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>个人中心</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 </head>
 
 <body id="passport">
@@ -186,5 +188,22 @@
 
 <jsp:include page="footer.jsp" flush="true" />
 
+<script>
+//读取cookie
+$(function() {
+	var cookieUsername = $.cookie('cookieUsername');
+	if(cookieUsername) {
+		alert(cookieUsername);
+	}
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+

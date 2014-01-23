@@ -1,6 +1,5 @@
-
-$(function() {
-	//slider效果
+//slider效果
+$(function() {	
 	var sliderTimer = null;
 	var $controlNav  = $('.control-nav a');
 	var len = $controlNav.length;

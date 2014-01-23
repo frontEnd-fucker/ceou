@@ -24,14 +24,15 @@ $(function() {
 		$.post('user!login', {'username':username,'pwd':pwd}, function(data) {	
 			//-2为用户名不存在
 			//-1为用户名和密码不匹配
-			//1则为通过，跳转到个人中心页面	
+			//1则为成功登录，跳转到个人中心页面	
 			if(data==-2) {
 				$('#J_usernameTips').text('您输入用账户名不存在').show();
 			}else if(data==-1) {
 				$('#J_pwdTips').text('您输入的账户名和密码不匹配').show();
 			}else if(data==1) {
-				alert('登陆成功');
-				//location.href = '';
+				//登录成功，设置账户cookie
+				$.cookie('cookieUsername', username, {expires: 365, path: '/'});
+				location.href = 'http://www.ceou.com.cn/CEOU/passport.jsp';
 			}
 		});
 	});

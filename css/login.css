@@ -194,6 +194,63 @@ input#authcode {
 	background: url(../img/msg-error.png) no-repeat left center;
 }
 
+/*======= 最后异步页面emailAuth.jsp =======*/
+h2.reg-tips {
+	color: #7abd54;
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 150px;
+}
+.check-email {
+	width: 520px;
+	padding: 30px;
+	margin: 20px auto 45px;		
+	color: #333;
+	line-height: 150%;	
+	background: #fcfffa;
+	border: 1px solid #d0e4c2;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.email {
+	color: #F00;
+}
+.check-email a {
+	color: #005EA7;
+	text-decoration: none;
+}
+.check-email a:hover {
+	text-decoration: underline;
+}
+.check-email .red-btn {
+	display: block;
+	margin-top: 10px;
+	width: 76px;
+	height: 25px;
+	color: #FFF;
+	line-height: 25px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	background: #e33c3f;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.resend-email-suc {
+	display: none;
+	width: 120px;
+	height: 25px;
+	margin-top: 8px;
+	line-height: 25px;
+	padding-left: 25px;
+	background: #FFF url(../img/msg-ok.png) no-repeat 3px center;
+	border: 1px solid #CCC;
+}
+/*======= end 最后异步页面emailAuth.jsp =======*/
+
 
 
 
