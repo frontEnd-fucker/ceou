@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册页面</title>
+<meta property="wb:webmaster" content="92e9db77c6634248" />
+<title>登录页面</title>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script src="js/login.js"></script>
 </head>
 
@@ -12,7 +14,6 @@
 <!-- header -->
 <div id="header">
 	<div class="header-con">
-    	<a class="logo" href="index.jsp"><img src="img/login-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
             	<li><a href="#">社区</a></li>
@@ -21,88 +22,51 @@
                 <li class="separator">|</li>
                 <li><a>服务热线：400-700-7000</a></li>
             </ul>        
-        </div>
+        </div>    	
     </div>
-</div>
-<!-- end header -->
-
-<div class="hr"></div>
+</div><!-- end header -->
 
 <!-- main -->
 <div id="main">
-    <div class="form">
-        <h2>注册新会员</h2>
-        <div class="input-con cf">
-            <label for="username">用户名</label>
-            <input id="username" name="username" type="text" />            
-            <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
+	<div class="main-con">
+    	<div class="signup-form">
+        	<form>
+            	<div class="input-con">
+                	<label for="username">用户名：</label>
+                    <input id="username" name="username" type="text" />
+                    <p id="J_usernameTips">请输入用户名</p>
+                </div>
+                <div class="input-con">
+                	<label for="pwd">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                    <input id="pwd" name="pwd" type="password" />
+                    <p id="J_pwdTips">请输入密码</p>
+                </div>
+                <div class="radio-con">
+                	<input name="usertype" type="radio" checked="checked" style="margin-left:0;" />个人
+                    <input name="usertype" type="radio" />企业
+                    <input name="usertype" type="radio" />公务员
+                </div>
+                <div class="btn-con">
+                	<input id="J_loginBtn" type="button" value=""/>
+                    <a class="login-btn" href="reg.html"></a>
+                    <a href="#">忘记密码？</a>
+                </div>
+            </form>
+            <div class="other-accounts">
+            	<h2>使用其他帐号登录</h2>
+                <ul>
+                	<li><a href="#">腾讯登录</a></li>
+                    <li><a href="#">新浪微博登录</a></li>
+                </ul>
+            </div>            
         </div>
-        <div class="input-con cf">
-            <label for="useremail">email</label>
-            <input id="useremail" name="useremail" type="text" />
-            <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
-        </div>
-        <div class="input-con cf">
-            <label for="pwd1">密码</label>
-            <input id="pwd1" name="pwd1" type="password" />
-            <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
-        </div>
-        <div class="input-con cf">
-            <label for="pwd2">确认密码</label>
-            <input id="pwd2" name="pwd2" type="password" />
-            <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
-        </div>
-        <div class="input-con">
-            <label for="authcode">验证码</label>
-            <input id="authcode" name="authcode" type="text" />
-            <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
-            <img id="auth-img" style="height: 22px;" src="imageCode" />
-            <!--<script type="text/javascript">$('#auth-img').click()</script>-->
-            <span>看不清？</span>
-            <a id="J_changeImg" href="javascript:;">换一张</a>            
-        </div>  
-        <div class="input-con">
-            <input id="J_loginSubmit" class="reg-btn" type="button" value="立即注册" />
-        </div>  
+    </div>
+    <div class="copyright">
+    	CopyRight &copy; 2003-2013 中国企业在线大学 粤ICP备08009054
     </div>
 </div><!-- end main -->
 
-<div class="clear-both"></div>
-
-<!-- footer -->
-<div id="footer">
-	<p>
-    	<a href="#">关于我们</a>
-        <span>|</span>
-    	<a href="#">培训课程</a>
-        <span>|</span>
-    	<a href="#">名师堂</a>
-        <span>|</span>
-    	<a href="#">商学院</a>
-        <span>|</span>
-    	<a href="#">在线商学院</a>
-        <span>|</span>
-    	<a href="#">如何购买</a>
-        <span>|</span>
-    	<a href="#">在线付款</a>
-        <span>|</span>
-    	<a href="#">中企会</a>
-        <span>|</span>
-    	<a href="#">我要加盟</a>
-        <span>|</span>
-    	<a href="#">帮助中心</a>
-        <span>|</span>
-    	<a href="#">手机版</a>
-        <span>|</span>
-    	<a href="#">合作机构</a>
-        <span>|</span>    
-    	<a href="#">常见问题</a>                                                                                                   
-    </p>
-    
-    <p class="copyright">
-    	深圳市公安局罗湖分局备案编号：110181681 粤ICP备08009054号  音箱制品经营许可证苏宿批005号<br />
-        CopyRight &copy; 2003-2013 中国企业在线大学  版权所有
-    </p>
-</div><!-- end footer -->
+<!--footer-->
+<div id="footer"></div><!-- end footer -->
 </body>
 </html>

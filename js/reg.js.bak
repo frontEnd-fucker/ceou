@@ -56,8 +56,6 @@ $(function() {
 					alert('恭喜您注册成功');	
 					location.href = 'http://www.ceou.com.cn';
 				}							
-			}).fail(function() {
-				alert('网络超时，请重新提交');
 			});			
 		}
 	});

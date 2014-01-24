@@ -9,7 +9,7 @@
         	<ul>                
                 <li class="top-r-subnav">
                 	<a class="username" href="#">李某某</a>
-                    <a class="hide" href="#">个人中心</a>
+                    <a class="hide" href="passport.jsp">个人中心</a>
                     <a class="hide" href="#">退出</a>
                 </li>
                 <li class="separator show">|</li>
@@ -17,10 +17,10 @@
             </ul>
         </div>-->
         <div class="header-top-r">
-        	<ul>
-                <li><a href="#">登录</a></li>
+        	<ul style="margin-left: 33px;">
+                <li><a href="login.html">登录</a></li>
                 <li class="separator">|</li>
-                <li><a href="#">免费注册</a></li>
+                <li><a href="reg.html">免费注册</a></li>
                 <li class="separator show">|</li>
                 <li class="show">服务热线：400-700-7000</li>                
 	        </ul>
