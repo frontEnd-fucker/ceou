@@ -4,23 +4,20 @@
     <div class="header-top wrapper cf">
         <div class="header-top-l">
             <strong>欢迎来到中国企业在线大学！</strong>
-            <div class="top-login">
-                <form>
-                    <!--帐号<input class="login-name" type="text" value="帐号或手机号" onfocus="if(this.value==this.defaultValue) this.value = ''" onblur="if(this.value=='') this.value = this.defaultValue" />-->
-                    帐号<input class="login-name" type="text" />
-                    密码<input class="login-pwd" type="password" />
-                    <input class="loginBtn" type="submit" value="登录" />
-                    <a href="#">忘记密码？</a>
-                </form>
-            </div>
         </div>
         <div class="header-top-r">
         	<ul>
-            	<li><a href="#">社区</a></li>
+                <!--<li><a href="#">登录</a></li>
                 <li class="separator">|</li>
-                <li><a href="#">马上优惠</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：400-700-7000</a></li>
+                <li><a href="#">免费注册</a></li>-->
+                
+                <li class="top-r-subnav">
+                	<a class="username" href="#">李某某</a>
+                    <a class="hide" href="#">个人中心</a>
+                    <a class="hide" href="#">退出</a>
+                </li>
+                <li class="separator show">|</li>
+                <li class="show">服务热线：400-700-7000</li>
             </ul>
         </div>        
     </div>

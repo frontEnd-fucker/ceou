@@ -630,10 +630,10 @@ p.post-info span {
 .header-top-l {
 	float: left;
 	width: 600px;
+	margin-left: 11px;
 }
 .header-top-l strong {
 	float: left;
-	margin-right: 25px;
 	color: #FFF;
 	font-weight: bold;
 }
@@ -678,19 +678,46 @@ p.post-info span {
 	margin-right: -5px;
 	background: url(../img/header-top-r.jpg) no-repeat left top;
 }
+.hide-list {
+	display: none;
+}
+.header-top-r .triangle {
+	border-top-color: #FFF;
+	margin-left: 5px;
+}
 .header-top-r ul {
 	margin-top: 2px;
-	margin-left: 14px;
+	margin-left: 15px;
 }
 .header-top-r li {
 	float: left;
+	padding: 0 6px;
 }
-.header-top-r a {
-	padding: 0 13px;
+.header-top-r li.separator {
+	padding: 0;
+}
+.header-top-r a {	
 	color: #fff;
 }
 .header-top-r a:hover {
 	text-decoration: underline;
+}
+.top-r-subnav {
+	width: 130px;
+	cursor: pointer;
+}
+.top-r-subnav .username {
+	padding-right: 14px;
+	background: url(../img/triangle.png) no-repeat right center;
+}
+.top-r-subnav:hover .username{
+	background: url(../img/triangle-right.png) no-repeat right center;
+}
+.top-r-subnav .hide {
+	display: none;
+}
+.top-r-subnav a {
+	margin: 0 5px;
 }
 .header-banner {
 	margin-top: 22px;

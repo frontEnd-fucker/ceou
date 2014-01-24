@@ -30,3 +30,16 @@ function showImg(index) {
 	$controlNav.eq(index).addClass('cur')
 					   .siblings().removeClass('cur');
 }
+
+//topbar菜单的效果
+$(function() {
+	$('.top-r-subnav').hover(function() {
+		$('.header-top-r').find('.show').hide();
+		$(this).css('width', 'auto');
+		$('.header-top-r').find('.hide').show();
+	}, function() {
+		$('.header-top-r').find('.hide').hide();
+		$(this).css('width', 130);
+		$('.header-top-r').find('.show').show();
+	});
+});
