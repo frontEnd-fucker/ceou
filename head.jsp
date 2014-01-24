@@ -5,12 +5,8 @@
         <div class="header-top-l">
             <strong>欢迎来到中国企业在线大学！</strong>
         </div>
-        <div class="header-top-r">
-        	<ul>
-                <!--<li><a href="#">登录</a></li>
-                <li class="separator">|</li>
-                <li><a href="#">免费注册</a></li>-->
-                
+       <!-- <div class="header-top-r">
+        	<ul>                
                 <li class="top-r-subnav">
                 	<a class="username" href="#">李某某</a>
                     <a class="hide" href="#">个人中心</a>
@@ -19,6 +15,15 @@
                 <li class="separator show">|</li>
                 <li class="show">服务热线：400-700-7000</li>
             </ul>
+        </div>-->
+        <div class="header-top-r">
+        	<ul>
+                <li><a href="#">登录</a></li>
+                <li class="separator">|</li>
+                <li><a href="#">免费注册</a></li>
+                <li class="separator show">|</li>
+                <li class="show">服务热线：400-700-7000</li>                
+	        </ul>
         </div>        
     </div>
     <div class="header-banner wrapper"><img src="img/logo.png" /></div>
