@@ -2,24 +2,25 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
-	
+
 	<!--  -->
-		<package name="struts2" extends="json-default" namespace="/">
+	<package name="struts2" extends="json-default" namespace="/">
 		<!-- 培训课程模块 -->
-		<action name="course" class="com.ceou.action.CourseAction" method="show">
+		<action name="course" class="com.ceou.action.CourseAction"
+			method="show">
 			<result name="show">/course.jsp</result>
 			<result name="showList">/courseList.jsp</result>
 			<result name="showCouDetail">/videoCourse.jsp</result>
 			<result name="insufficient">/testPage/bh.gif</result>
 		</action>
-		
+
 		<!-- 名师堂模块 -->
 		<action name="teacher" class="com.ceou.action.TeacherAction">
 			<result name="show">/teachers.jsp</result>
 			<result name="showCouByteacher">/teacherCouList.jsp</result>
 			<result name="showCouByThAndCou">/videoCourse.jsp</result>
 		</action>
-		
+
 		<!-- 商学院模块 -->
 		<action name="business" class="com.ceou.action.BusinessAction">
 			<result name="show">/business.jsp</result>
@@ -31,46 +32,76 @@
 			<result name="showArticleByCondition">/allArticleList.jsp</result>
 			<result name="showDetailArticle">/article.jsp</result>
 		</action>
-		
+
 		<!-- 在线学历模块 -->
 		<action name="edu" class="com.ceou.action.EduAction">
 			<result name="show">/eduonline.jsp</result>
 			<result name="showskill">/eduList.jsp</result>
 			<result name="showexam">/eduexamList.jsp</result>
 		</action>
-		
+
 		<!-- 用户管理模块 -->
 		<action name="user" class="com.ceou.action.LoginAction">
+			<result name="error">/error.jsp</result>
 			<result name="fail">/login.jsp</result>
 			<result name="success">/testPage/test.jsp</result>
-			<result name="editSuccess">/</result>
-			
+			<result name="editSuccess">/login.jsp</result>
+
 			<result name="authcodeStatus" type="json">
 				<param name="root">
 					authcodeStatus
 				</param>
 			</result>
-			
+
+
 			<result name="userStatus" type="json">
 				<param name="root">
 					userStatus
 				</param>
 			</result>
-			
+
 			<result name="emailStatus" type="json">
 				<param name="root">
 					emailStatus
 				</param>
 			</result>
+
+			<result name="userLoginStatus" type="json">
+				<param name="root">
+					userLoginStatus
+				</param>
+			</result>
 		</action>
-		
-		
+
+		<!-- 用户注册 -->
+		<action name="userReg" class="com.ceou.action.LoginAction"
+			method="userRegist">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="tokenSession" />
+			<!-- 如果重复提交，不会跳转到错误页面 -->
+			<result name="fail">/reg.jsp</result>
+            <result name="success">
+            	/emailAuth.jsp
+            </result>
+		</action>
+
 		<!-- 验证码 -->
 		<action name="imageCode" class="com.ceou.action.ImageCodeAction">
 			<result name="success" type="stream">
 				<param name="inputName">imageStream</param>
-				</result>
+			</result>
 		</action>
-	</package>    
+		<!-- 邮箱激活验证 -->
+		<action name="validateEmail" class="com.ceou.action.ValidateEmailAction">
+			<result name="vaEmailStatus" type="json">
+				<param name="root">
+					vaEmailStatus
+				</param>
+			</result>
+			<result name="success">
+				/passport.jsp
+			</result>
+		</action>
+	</package>
 </struts>    
 

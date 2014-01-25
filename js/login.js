@@ -31,8 +31,8 @@ $(function() {
 				$('#J_pwdTips').text('您输入的账户名和密码不匹配').show();
 			}else if(data==1) {
 				//登录成功，设置账户cookie
-				$.cookie('cookieUsername', username, {expires: 365, path: '/'});
-				location.href = 'http://www.ceou.com.cn/CEOU/passport.jsp';
+				//$.cookie('cookieUsername', username, {expires: 365, path: '/'});
+				location.href = 'http://www.ceou.com.cn/passport.jsp';
 			}
 		});
 	});

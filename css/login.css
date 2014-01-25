@@ -108,6 +108,7 @@ body {
 	height: 20px;
 	position: absolute;
 	left: 51px;
+	top: 22px;
 	color: #e6393d;
 	line-height: 20px;
 	text-indent: 5px;
@@ -140,7 +141,7 @@ body {
 	border: 0 none;
 	cursor: pointer;
 }
-.btn-con a {
+/*.btn-con a {
 	float: left;
 	width: 70px;
 	height: 25px;
@@ -149,7 +150,7 @@ body {
 	font-size: 14px;
 	line-height: 25px;
 	text-decoration: none;
-}
+}*/
 .signup-form .other-accounts {
 	float: left;
 	width: 180px;
@@ -184,6 +185,24 @@ body {
 	background: #1f7a75;
 }
 
+.blue-btn {
+	float: left;
+	width: 70px;
+	height: 28px;
+	margin-right: 10px;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+	text-decoration: none;
+	background: url(../img/blue-btn.jpg) no-repeat left top;
+}
+.forget-btn {
+	color: #3d4d72;
+	font-size: 14px;
+	line-height: 25px;
+	text-decoration: none;	
+}
 
 
 

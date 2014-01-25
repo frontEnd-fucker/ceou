@@ -1,6 +1,11 @@
 
 //注册页面总流程
 $(function() {
+	//判断验证码
+	var authcodeStatus = document.getElementById("authcodeStatus").value;
+	if(authcodeStatus == -1){
+		alert("验证码错误");
+	}
 	var usernameValid = false;
 	var useremailValid = false;
 	var pwd1Valid = false;
@@ -45,18 +50,19 @@ $(function() {
 		//alert('fuck');
 		$('#username, #useremail, #pwd1, #pwd2').trigger('blur');
 		if(usernameValid && useremailValid && pwd1Valid && pwd2Valid) {		
-			var authcode = $('#authcode').val();
-			var username = $('#username').val();	
-			var useremail = $('#useremail').val();
-			var pwd2 = $('#pwd2').val();
-			$.post('user!userRegist', {'username':username, 'pwd':pwd2, 'useremail':useremail, 'authcode':authcode}, function(data) {
-				if(data==-1) {
-					alert('验证码错误！');
-				}else if(data==1) {
-					alert('恭喜您注册成功');	
-					location.href = 'http://www.ceou.com.cn';
-				}							
-			});			
+//			var authcode = $('#authcode').val();
+//			var username = $('#username').val();	
+//			var useremail = $('#useremail').val();
+//			var pwd2 = $('#pwd2').val();
+//			$.post('user!userRegist', {'username':username, 'pwd':pwd2, 'useremail':useremail, 'authcode':authcode}, function(data) {
+//				if(data==-1) {
+//					alert('验证码错误！');
+//				}else if(data==1) {
+//					alert('恭喜您注册成功');	
+//					location.href = 'http://www.ceou.com.cn';
+//				}							
+			});		
+			$('form[name=reg-form]').submit();
 		}
 	});
 	

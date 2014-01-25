@@ -39,7 +39,7 @@ $(function() {
 		$('.header-top-r').find('.hide').show();
 	}, function() {
 		$('.header-top-r').find('.hide').hide();
-		$(this).css('width', 130);
+		$(this).css('width', 120);
 		$('.header-top-r').find('.show').show();
 	});
 });

@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!-- header -->
 <div id="header">
-    <div class="header-top wrapper cf">
-        <div class="header-top-l">
-            <strong>欢迎来到中国企业在线大学！</strong>
+    <div class="header-con cf">
+        <div class="logo">
+            <a href="http://www.ceou.com.cn"><img src="img/logo.png" /></a>
         </div>
        <!-- <div class="header-top-r">
-        	<ul>                
+        	<ul class="topbar_2">                
                 <li class="top-r-subnav">
                 	<a class="username" href="#">李某某</a>
                     <a class="hide" href="passport.jsp">个人中心</a>
@@ -17,7 +17,7 @@
             </ul>
         </div>-->
         <div class="header-top-r">
-        	<ul style="margin-left: 33px;">
+        	<ul class="topbar_1">
                 <li><a href="login.html">登录</a></li>
                 <li class="separator">|</li>
                 <li><a href="reg.html">免费注册</a></li>
@@ -26,13 +26,12 @@
 	        </ul>
         </div>        
     </div>
-    <div class="header-banner wrapper"><img src="img/logo.png" /></div>
     
     <!-- nav -->
     <div id="nav">
         <div class="wrapper">
             <ul>
-                <li><a href="index.jsp"><span>首页</span></a></li>
+                <li><a href="http://www.ceou.com.cn"><span>首页</span></a></li>
                 <li><a href="business!showbeizeng"><span>倍增商学院</span></a></li>
                 <li class="sub-nav">
                 	<a href="business!show"><span>商学院</span></a>     

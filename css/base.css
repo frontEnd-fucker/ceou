@@ -619,6 +619,15 @@ p.post-info span {
 	background: #7fb102 url(../img/header-top.jpg) repeat-x left top;
 	border-bottom: 30px solid #7fb102;
 }
+.header-con {
+	width: 1005px;
+	margin: 0 auto;
+	background: url(../img/slogen.png) no-repeat 500px 46px;
+}
+.header-con .logo {
+	float: left;
+	margin: 10px 0;
+}
 #onlineCollege #header, #bizCollege #header {
 	border-bottom: 30px solid #64880a;
 }
@@ -626,6 +635,9 @@ p.post-info span {
 	height: 30px;
 	line-height: 30px;
 	color: #fff;
+}
+.header-top .logo {
+	float: left;
 }
 .header-top-l {
 	float: left;
@@ -676,6 +688,8 @@ p.post-info span {
 	height: 34px;
 	margin-top: -3px;
 	margin-right: -5px;
+	color: #fff;
+	line-height: 30px;
 	background: url(../img/header-top-r.jpg) no-repeat left top;
 }
 .hide-list {
@@ -689,11 +703,17 @@ p.post-info span {
 	margin-top: 2px;
 	margin-left: 15px;
 }
+.header-top-r ul.topbar_1 {
+	margin-left: 14px;
+}
 .header-top-r li {
 	float: left;
 	padding: 0 6px;
 }
-.header-top-r li.separator {
+.header-top-r ul.topbar_1 li {
+	padding: 0 13px;
+}
+.header-top-r ul.topbar_1 li.separator {
 	padding: 0;
 }
 .header-top-r a {	
@@ -708,6 +728,7 @@ p.post-info span {
 }
 .top-r-subnav .username {
 	padding-right: 14px;
+	color: #E0FF00;
 	background: url(../img/triangle.png) no-repeat right center;
 }
 .top-r-subnav:hover .username{
