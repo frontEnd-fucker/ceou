@@ -1,6 +1,5 @@
-// JavaScript Document
-$(function() {
-	//slider效果
+//slider效果
+$(function() {	
 	var sliderTimer = null;
 	var $controlNav  = $('.control-nav a');
 	var len = $controlNav.length;
@@ -21,7 +20,7 @@ $(function() {
 			index++;
 			if(index==len) {index=0;}
 		}, 3000);
-	}).trigger('mouseleave');
+	}).trigger('mouseleave');	
 });
 
 function showImg(index) {
@@ -31,3 +30,16 @@ function showImg(index) {
 	$controlNav.eq(index).addClass('cur')
 					   .siblings().removeClass('cur');
 }
+
+//topbar菜单的效果
+$(function() {
+	$('.top-r-subnav').hover(function() {
+		$('.header-top-r').find('.show').hide();
+		$(this).css('width', 'auto');
+		$('.header-top-r').find('.hide').show();
+	}, function() {
+		$('.header-top-r').find('.hide').hide();
+		$(this).css('width', 120);
+		$('.header-top-r').find('.show').show();
+	});
+});

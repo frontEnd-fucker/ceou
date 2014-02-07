@@ -6,6 +6,7 @@
 <title>中国企业在线大学</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script src="js/base.js"></script>
 </head>
 
