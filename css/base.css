@@ -469,7 +469,8 @@ p.post-info span {
 	margin-left: 510px;
 	position: fixed;
 	left: 50%;
-	top: 242px;
+	top: 198px;
+	*top: 191px;
 	background: #fff url(../img/service-hd.jpg) no-repeat center top;
 	border: 1px solid #97c92e;
 }
@@ -723,7 +724,7 @@ p.post-info span {
 	text-decoration: underline;
 }
 .top-r-subnav {
-	width: 130px;
+	width: 116px;
 	cursor: pointer;
 }
 .top-r-subnav .username {
@@ -1414,6 +1415,9 @@ dl.course-intro {
 }
 .my-course {
 	margin-bottom: 10px;
+}
+#favorite .my-course, #timeline .my-course {
+	min-height: 773px;
 }
 .my-course .courses {
 	width: 770px;

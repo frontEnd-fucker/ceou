@@ -22,7 +22,7 @@
                 <li class="separator">|</li>
                 <li><a href="reg.html">免费注册</a></li>
                 <li class="separator show">|</li>
-                <li class="show">服务热线：400-700-7000</li>                
+                <li class="show">服务热线：0755-22315621</li>                
 	        </ul>
         </div>        
     </div>

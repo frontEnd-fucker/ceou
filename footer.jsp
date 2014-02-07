@@ -2,7 +2,7 @@
 <!-- footer -->
 <div id="footer">
 	<!--合作伙伴-->
-    <div class="partner wrapper">
+    <!--<div class="partner wrapper">
     	<h2><span>合作伙伴</span></h2>
         <ul class="cf">
 			<li><a href="#">聚成培训咨询</a></li>
@@ -26,7 +26,7 @@
         	<li><a href="#">科技政策</a></li>
             <li>|</li>                                                           
         </ul>
-    </div><!-- end 合作伙伴 -->
+    </div>--><!-- end 合作伙伴 -->
     
     <div class="footer-top">
     	<div class="wrapper"></div>
@@ -34,11 +34,11 @@
     <div class="footer-bottom">
     	<div class="wrapper cf">
         	<ul>
-            	<li><a href="#">公司简介</a></li>
+            	<li><a href="about.jsp">公司简介</a></li>
                 <li><a href="#">发展历程</a></li>
                 <li><a href="#">华誉宣传片</a></li>
                 <li><a href="#">加入我们</a></li>
-                <li><a href="#">联系我们</a></li>
+                <!--<li><a href="#">联系我们</a></li>-->
                 <li><a href="#">法律声明</a></li>
                 <li><a href="#">合作机构</a></li>
             </ul>
@@ -86,8 +86,8 @@
         <dd>
         	<h2>在线客服</h2>
             <h3>ONLINE CUSTOMERS</h3>
-            <a class="online" href="#">在线客服1</a>
-            <a href="#">在线客服2</a>
+            <a class="online" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2628091184&site=qq&menu=yes">在线客服1</a>
+            <a class="online" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2628091184&site=qq&menu=yes">在线客服2</a>
             <a href="#">在线客服3</a>
         </dd>
     </dl>
@@ -96,7 +96,7 @@
         <dd>
         	<h2>在线电话</h2>
             <h3>ONLINE PHONE</h3>
-            <p>400-0000-8888</p>
+            <p>0755-22315621</p>
         </dd>
     </dl>
     <dl class="list_3">
