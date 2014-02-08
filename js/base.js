@@ -43,3 +43,26 @@ $(function() {
 		$('.header-top-r').find('.show').show();
 	});
 });
+
+//视频收藏功能
+$(function() {
+	$('.fav').click(function() {
+		$.post('', {'couseId':couseId}, function() {
+			//1为收藏成功
+			//-1为未登录
+			if(data==1) {
+				$(this).replaceWith('<a href="passport.jsp" class="favorited">已收藏</a>');
+			}else if(data==-1) {
+				bb.login();
+			}
+		});
+	});
+});
+
+
+
+
+
+
+
+

@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>videoCourse</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body id="introPage">
@@ -40,7 +42,7 @@
             		<h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
                 </div>
                 <div class="tile-content cf">
-                	<dl class="course-intro cf">
+                	<dl class="course-intro cf" style="padding-bottom: 10px; margin:0; border: 0;">
                     	<dt>
                         	<img src="img/kecheng-list.jpg" />
                             <!-- JiaThis Button BEGIN -->
@@ -62,7 +64,9 @@
                             }
                             </script>
                             <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1868491" charset="utf-8"></script>
-                            <!-- JiaThis Button END -->                             
+                            <!-- JiaThis Button END -->   
+                            
+                            <a href="javascript:;" class="fav">收藏</a>                        
                         </dt>
                         <dd>
                         	<h3><s:property value="courseDetail.couname"/> </h3>

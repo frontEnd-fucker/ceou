@@ -102,7 +102,7 @@
     <dl class="list_3">
     	<dt><img src="img/help-icon.jpg" /></dt>
         <dd>
-        	<a href="#">
+        	<a href="help.jsp">
             	<h2>帮助中心</h2>
                 <h3>HELP CENTER</h3>
             </a>
