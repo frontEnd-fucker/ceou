@@ -47,6 +47,7 @@ $(function() {
 //视频收藏功能
 $(function() {
 	$('.fav').click(function() {
+		bb.login();
 		$.post('', {'couseId':couseId}, function() {
 			//1为收藏成功
 			//-1为未登录

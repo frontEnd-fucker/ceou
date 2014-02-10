@@ -36,7 +36,6 @@
         	<ul>
             	<li><a href="about.jsp">公司简介</a></li>
                 <li><a href="#">发展历程</a></li>
-                <li><a href="#">华誉宣传片</a></li>
                 <li><a href="#">加入我们</a></li>
                 <!--<li><a href="#">联系我们</a></li>-->
                 <li><a href="#">法律声明</a></li>
