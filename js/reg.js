@@ -1,11 +1,6 @@
 
 //注册页面总流程
 $(function() {
-	//判断验证码
-	var authcodeStatus = document.getElementById("authcodeStatus").value;
-	if(authcodeStatus == -1){
-		alert("验证码错误");
-	}
 	var usernameValid = false;
 	var useremailValid = false;
 	var pwd1Valid = false;
@@ -61,8 +56,50 @@ $(function() {
 //					alert('恭喜您注册成功');	
 //					location.href = 'http://www.ceou.com.cn';
 //				}							
-			});		
+//			});		
 			$('form[name=reg-form]').submit();
+		}
+	});
+	
+	//找回密码第一步
+	$('#J_findPwdStep1').click(function() {		
+		checkUseremail();
+		if(useremailValid) {
+			var useremail = $('#useremail').val();
+			var authcode = $('#authcode').val();
+			$.post('url', {'useremail': useremail, 'authcode': authcode}, function(data) {
+				if(data==-1) {
+					//验证码错误，弹提示语
+					alert('验证码错误');
+				}else if(data==1) {
+					//验证码正确，跳到step2
+					alert('验证码正确');
+					location.href = 'http://www.ceou.com.cn/findPwdStep2.jsp'
+				}
+			});
+		}
+	});	
+	
+	//找回密码第二步
+	$('#J_findPwdStep2').click(function() {
+		var emailAuth = $('#emailAuth').val();
+		if(!emailAuth) {
+			//当验证码表单为空
+			alert('请输入验证码');
+		}else {
+			//验证码不为空，发到后台
+			alert('验证码不为空');
+			location.href = 'http://www.ceou.com.cn/findPwdStep3.jsp'
+		}
+	});
+	
+	//找回密码第三步
+	$('#J_findPwdStep3').click(function() {
+		checkPwd();
+		if(pwd1Valid && pwd2Valid) {
+			//密码通过格式验证
+			var pwd2 = $('#pwd2').val();
+			alert('可以向后台发送密码了');
 		}
 	});
 	
@@ -126,7 +163,7 @@ $(function() {
 		var pwd1 = $('#pwd1').val();
 		var pwd2 = $('#pwd2').val();
 		//判断pwd1
-		if(pwd1.length<=6 || pwd1.length>=20) {
+		if(pwd1.length<6 || pwd1.length>20) {
 			$('#J_pwd1Tips').removeClass('msg-ok').addClass('msg-error').text('密码长度只能在6-20位字符之间');
 			pwd1Valid = false;
 			return;

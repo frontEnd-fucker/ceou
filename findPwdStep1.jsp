@@ -4,18 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册页面</title>
+<title>找回密码第一步</title>
 <link href="css/reg.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/reg.js"></script>
-<script>
-/*$(function() {
-	var authcodeStatus = document.getElementById("authcodeStatus").value;
-	if(authcodeStatus == -1){
-		alert("验证码错误");
-	}
-});*/
-</script>
 </head>
 
 <body>
@@ -40,43 +32,29 @@
 
 <!-- main -->
 <div id="main">
-    <div class="form">
-    	<form name="reg-form" action="userReg" method="post">
-        <h2>注册新会员</h2>
-        <div class="input-con cf">
-            <label for="username">用户名</label>
-            <input type="text" id="username" name="username" />  
-            <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
-        </div>
-        <div class="input-con cf">
-            <label for="useremail">email</label>
-            <input type="text" id="useremail" name="useremail" />
-            <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
-        </div>
-        <div class="input-con cf">
-            <label for="pwd1">密码</label>
-            <input type="password" id="pwd1" name="pwd1" />
-            <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
-        </div>
-        <div class="input-con cf">
-            <label for="pwd2">确认密码</label>
-            <input type="password" id="pwd2" name="pwd" />
-            <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
-        </div>
-        <div class="input-con">
-            <label for="authcode">验证码</label>
-            <input type="text" id="authcode" name="authcode" />
-            <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
-            <img id="auth-img" style="height: 22px;" src="imageCode" />
-            <span>看不清？</span>
-            <a id="J_changeImg" href="javascript:;">换一张</a> 
-            <!-- 验证码对错信息 -->
-            <span class="tips msg-error"><s:property value="authcodeStatus"/></span>                       
-        </div>  
-        <s:token></s:token>
-        <div class="input-con">
-            <input id="J_regSubmit" class="reg-btn" type="button" value="立即注册" />
-        </div>  
+	<h2 class="reg-tips" style="margin-left: 215px;">请填写以下资料找回密码</h2>
+    <div class="form">    	
+    	<form name="reg-form" action="userReg" method="post">        
+            <div class="input-con cf">
+                <label for="useremail">登录邮箱</label>
+                <s:textfield id="useremail" name="useremail"></s:textfield>
+                <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
+            </div>
+            <div class="input-con">
+                <label for="authcode">验证码</label>
+                <s:textfield id="authcode" name="authcode"></s:textfield>
+                <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
+                <img id="auth-img" style="height: 22px;" src="imageCode" />
+                <!--<script type="text/javascript">$('#auth-img').click()</script>-->
+                <span>看不清？</span>
+                <!-- 验证码对错信息 -->
+                <span><s:property value="authcodeStatus"/></span>
+                <a id="J_changeImg" href="javascript:;">换一张</a>            
+            </div>  
+            <s:token></s:token>
+            <div class="input-con">
+                <input id="J_findPwdStep1" class="reg-btn" type="button" value="发送验证邮件" />
+            </div>  
         </form>
     </div>
 </div><!-- end main -->

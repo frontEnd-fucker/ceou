@@ -25,7 +25,7 @@
     	<a class="logo" href="index.jsp"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="#">社区</a></li>
+            	<li><a href="#">放回主页</a></li>
                 <li class="separator">|</li>
                 <li><a href="#">马上优惠</a></li>
                 <li class="separator">|</li>
@@ -45,33 +45,33 @@
         <h2>注册新会员</h2>
         <div class="input-con cf">
             <label for="username">用户名</label>
-            <input type="text" id="username" name="username" />  
+            <s:textfield id="username" name="username"></s:textfield>        
             <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
         </div>
         <div class="input-con cf">
             <label for="useremail">email</label>
-            <input type="text" id="useremail" name="useremail" />
+            <s:textfield id="useremail" name="useremail"></s:textfield>
             <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
         </div>
         <div class="input-con cf">
             <label for="pwd1">密码</label>
-            <input type="password" id="pwd1" name="pwd1" />
+            <s:password id="pwd1" name="pwd1"></s:password>
             <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
         </div>
         <div class="input-con cf">
             <label for="pwd2">确认密码</label>
-            <input type="password" id="pwd2" name="pwd" />
+            <s:password id="pwd2" name="pwd"></s:password>
             <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
         </div>
         <div class="input-con">
             <label for="authcode">验证码</label>
-            <input type="text" id="authcode" name="authcode" />
+            <s:textfield id="authcode" name="authcode"></s:textfield>
+	        <s:hidden id="authcodeStatus" name="authcodeStatus"></s:hidden>
             <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
             <img id="auth-img" style="height: 22px;" src="imageCode" />
+            <!--<script type="text/javascript">$('#auth-img').click()</script>-->
             <span>看不清？</span>
-            <a id="J_changeImg" href="javascript:;">换一张</a> 
-            <!-- 验证码对错信息 -->
-            <span class="tips msg-error"><s:property value="authcodeStatus"/></span>                       
+            <a id="J_changeImg" href="javascript:;">换一张</a>            
         </div>  
         <s:token></s:token>
         <div class="input-con">
