@@ -61,7 +61,7 @@ $(function() {
 //					alert('恭喜您注册成功');	
 //					location.href = 'http://www.ceou.com.cn';
 //				}							
-			});		
+//			});		
 			$('form[name=reg-form]').submit();
 		}
 	});

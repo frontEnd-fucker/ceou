@@ -184,7 +184,7 @@
                 </div><!-- end tile-top -->  
                 
                 <div class="tile-content cf">        
-                    <a href="course!showCouDetail?couid=47" class="little-slide">
+                    <a href="#" class="little-slide">
                         <img src="img/shouye-img.jpg" />
                         <p class="info-bg"><span>5S推行实用手法和步骤</span> <span class="author">讲师：安岷</span></p>
                     </a>
