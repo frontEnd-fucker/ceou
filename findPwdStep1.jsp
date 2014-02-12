@@ -36,22 +36,17 @@
     <div class="form">    	
     	<form name="reg-form" action="userReg" method="post">        
             <div class="input-con cf">
-                <label for="useremail">登录邮箱</label>
-                <s:textfield id="useremail" name="useremail"></s:textfield>
-                <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
+                <label for="findPwdEmail">登录邮箱</label>
+                <input type="text" id="findPwdEmail" name="useremail" />
+                <span class="tips" id="J_useremailTips">请输入注册时的邮箱地址</span>        
             </div>
-            <div class="input-con">
+            <div class="input-con cf">
                 <label for="authcode">验证码</label>
-                <s:textfield id="authcode" name="authcode"></s:textfield>
-                <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
-                <img id="auth-img" style="height: 22px;" src="imageCode" />
-                <!--<script type="text/javascript">$('#auth-img').click()</script>-->
-                <span>看不清？</span>
-                <!-- 验证码对错信息 -->
-                <span><s:property value="authcodeStatus"/></span>
-                <a id="J_changeImg" href="javascript:;">换一张</a>            
+                <input id="authcode" name="authcode" />
+                <img id="auth-img" style="float: left; height: 22px; margin-right: 5px;" src="imageCode" />
+				<p class="fl" style="margin-right: 5px;">看不清？<a id="J_changeImg" href="javascript:;">换一张</a></p>
+                <span class="tips" id="J_findPwdAuthcodeTips">请输入验证码</span>        
             </div>  
-            <s:token></s:token>
             <div class="input-con">
                 <input id="J_findPwdStep1" class="reg-btn" type="button" value="发送验证邮件" />
             </div>  

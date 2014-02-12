@@ -32,24 +32,27 @@
 
 <!-- main -->
 <div id="main">
-	<h2 class="reg-tips" style="margin-left: 215px;">验证成功，请输入您的新密码：</h2>
+	<h2 class="reg-tips" style="margin-left: 215px;">
+		验证成功，请输入您的新密码：
+	</h2>
     <div class="form">    	
     	<form name="reg-form" action="userReg" method="post">        
             <div class="input-con cf">
                 <label for="pwd1">密码</label>
-                <s:password id="pwd1" name="pwd1"></s:password>
+                <input type="password" id="pwd1" name="pwd1" />
                 <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
             </div>
             <div class="input-con cf">
                 <label for="pwd2">确认密码</label>
-                <s:password id="pwd2" name="pwd"></s:password>
+                <input type="password" id="pwd2" name="pwd2" />
                 <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
             </div> 
             <div class="input-con">
                 <input id="J_findPwdStep3" class="reg-btn" type="button" value="提交" />
-            </div>              
+            </div>  
         </form>
     </div>
+    <span id="step3useremail" style="display: none;"><%= request.getParameter("useremail") %></span>
 </div><!-- end main -->
 
 <div class="clear-both"></div>

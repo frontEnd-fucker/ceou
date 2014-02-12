@@ -32,11 +32,14 @@
 
 <!-- main -->
 <div id="main">
-	<h2 class="reg-tips" style="margin-left: 120px;">邮箱验证码已经发送到您的注册邮箱<span class="email" style="font-size: 15px;">12***24@qq.com</span>上，请在下框中输入验证码：</h2>
+	<h2 class="reg-tips" style="margin-left: 120px;">
+		邮箱验证码已经发送到您的注册邮箱<span id="step2useremail" class="email" style="font-size: 15px;"><%= request.getParameter("useremail")%></span>上，请在下框中输入验证码：
+	</h2>
     <div class="form">    	
 		<form>
         	<div class="input-con cf">
             	<input id="emailAuth" type="text" style="margin-left: 160px; margin-top: 20px;" />
+                <span id="J_emailAuthTips" style="float: left; padding-left: 20px; margin-top: 20px;"></span>   
             </div>
             <div class="input-con cf">
                 <input id="J_findPwdStep2" class="reg-btn" type="button" value="提交" style="margin-left: 160px;" />

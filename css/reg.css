@@ -49,6 +49,12 @@ abbr,acronym { border:0;
 .cf {
 	*zoom: 1;
 }
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
 body {
 	font-family: Arial,"宋体",Lucida,Verdana,Helvetica,sans-serif;;
 	font-size: 12px;
