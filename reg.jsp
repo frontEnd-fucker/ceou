@@ -1,5 +1,3 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,28 +6,18 @@
 <link href="css/reg.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/reg.js"></script>
-<script>
-/*$(function() {
-	var authcodeStatus = document.getElementById("authcodeStatus").value;
-	if(authcodeStatus == -1){
-		alert("验证码错误");
-	}
-});*/
-</script>
 </head>
 
 <body>
 <!-- header -->
 <div id="header">
 	<div class="header-con">
-    	<a class="logo" href="index.jsp"><img src="img/reg-logo.jpg" /></a>
+    	<a class="logo" href="/CEOU"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="#">社区</a></li>
+            	<li><a href="/CEOU">返回主页</a></li>
                 <li class="separator">|</li>
-                <li><a href="#">马上优惠</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：400-700-7000</a></li>
+                <li><a>服务热线：0755-22315621</a></li>
             </ul>        
         </div>
     </div>
@@ -71,7 +59,7 @@
                 <span>看不清？</span>
                 <a id="J_changeImg" href="javascript:;">换一张</a>
             </p>        
-            <span class="tips" id="J_authcodeTips">请输入验证码</span>                                                   
+            <span id="J_authcodeTips" style="padding-left: 20px; margin-left: 5px;"></span>                                                   
         </div>  
         <div class="input-con">
             <input id="J_regSubmit" class="reg-btn" type="button" value="立即注册" />

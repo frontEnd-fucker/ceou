@@ -34,6 +34,11 @@ $(function() {
 		$('#J_pwd2Tips').removeClass('msg-ok msg-error').text('请再次输入密码');
 	});
 	
+	//验证码验证
+	$('#authcode').focus(function() {
+		$('#J_authcodeTips').removeClass('msg-ok msg-error').text('');
+	});
+	
 	//找回密码第一步的邮箱验证
 	$('#findPwdEmail').blur(function() {
 		checkFindPwdEmail();
@@ -74,7 +79,7 @@ $(function() {
 					$('#J_regSubmit').removeClass('disabled').val('立即注册');						
 					$('#J_authcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
 				}else if(data==1) {				
-					location.href = 'http://localhost:8080/CEOU/userReg!toEmailAuth?useremail=' + useremail;
+					location.href = 'http://www.ceou.com.cn/userReg!toEmailAuth?useremail=' + useremail;
 				}							
 			});		
 		}
@@ -96,7 +101,7 @@ $(function() {
 					$('#J_findPwdAuthcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
 				}else if(data==1) {
 					//验证码正确，跳到step2
-					location.href = 'http://localhost:8080/CEOU/findPwdStep2.jsp?useremail=' + useremail
+					location.href = 'http://www.ceou.com.cn/findPwdStep2.jsp?useremail=' + useremail
 				}
 			});					
 		}		
@@ -115,7 +120,7 @@ $(function() {
 			$.post('validateEmail!findPwdStep2',{'ufindpwdcode':emailAuth,'useremail':useremail},function(data){
 				//data=1为验证码正确
 				if(data==1){
-					location.href = 'http://localhost:8080/ceou/validateEmail!toStep3?useremail=' + useremail + '&ufindpwdcode=' + emailAuth;
+					location.href = 'http://www.ceou.com.cn/validateEmail!toStep3?useremail=' + useremail + '&ufindpwdcode=' + emailAuth;
 				}else{
 					$('#J_emailAuthTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
 				}
@@ -133,7 +138,7 @@ $(function() {
 			$.post('validateEmail!findPwdStep3',{'password':pwd2,'useremail':useremail},function(data){
 				if(data==1){
 					alert("修改成功，请重新登录");
-					location.href = 'http://localhost:8080/ceou/login.html';
+					location.href = 'http://www.ceou.com.cn/login.html';
 				}else{
 					alert("网络超时，请重新发送");
 				}

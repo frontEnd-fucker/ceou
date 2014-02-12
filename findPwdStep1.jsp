@@ -14,14 +14,12 @@
 <!-- header -->
 <div id="header">
 	<div class="header-con">
-    	<a class="logo" href="index.jsp"><img src="img/reg-logo.jpg" /></a>
+    	<a class="logo" href="/CEOU"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="#">社区</a></li>
+            	<li><a href="/CEOU">返回主页</a></li>
                 <li class="separator">|</li>
-                <li><a href="#">马上优惠</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：400-700-7000</a></li>
+                <li><a>服务热线：0755-22315621</a></li>
             </ul>        
         </div>
     </div>
