@@ -60,22 +60,23 @@ $(function() {
 	
 	//注册按钮点击验证全部表单，通过则提交
 	$('#J_regSubmit').click(function() {		
-		//alert('fuck');
 		$('#username, #useremail, #pwd1, #pwd2').trigger('blur');
-		if(usernameValid && useremailValid && pwd1Valid && pwd2Valid) {		
+		if(usernameValid && useremailValid && pwd1Valid && pwd2Valid) {	
+			$('#J_regSubmit')[0].disabled = true;
+			$('#J_regSubmit').addClass('disabled').val('提交中,请等待');				
 			var authcode = $('#authcode').val();
 			var username = $('#username').val();	
 			var useremail = $('#useremail').val();
 			var pwd2 = $('#pwd2').val();
 			$.post('userReg!userRegist', {'username':username, 'pwd':pwd2, 'useremail':useremail, 'authcode':authcode}, function(data) {
 				if(data==-1) {
-					alert('验证码错误！');
-				}else if(data==1) {
-					alert('恭喜您注册成功');	
-					location.href = 'http://localhost:8080/CEOU/userReg!emailAuth?useremail='+useremail;
+					$('#J_regSubmit')[0].disabled = false;
+					$('#J_regSubmit').removeClass('disabled').val('立即注册');						
+					$('#J_authcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
+				}else if(data==1) {				
+					location.href = 'http://localhost:8080/CEOU/userReg!toEmailAuth?useremail=' + useremail;
 				}							
 			});		
-			//$('form[name=reg-form]').submit();
 		}
 	});
 	
@@ -95,7 +96,7 @@ $(function() {
 					$('#J_findPwdAuthcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
 				}else if(data==1) {
 					//验证码正确，跳到step2
-					location.href = 'http://localhost:8080/ceou/findPwdStep2.jsp?useremail=' + useremail
+					location.href = 'http://localhost:8080/CEOU/findPwdStep2.jsp?useremail=' + useremail
 				}
 			});					
 		}		

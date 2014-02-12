@@ -63,17 +63,16 @@
             <input type="password" id="pwd2" name="pwd" />
             <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
         </div>
-        <div class="input-con">
+        <div class="input-con cf">
             <label for="authcode">验证码</label>
             <input type="text" id="authcode" name="authcode" />
-            <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
-            <img id="auth-img" style="height: 22px;" src="imageCode" />
-            <span>看不清？</span>
-            <a id="J_changeImg" href="javascript:;">换一张</a> 
-            <!-- 验证码对错信息 -->
-            <span class="tips msg-error"><s:property value="authcodeStatus"/></span>                       
+            <img id="auth-img" style="height: 22px; float: left; padding-right: 5px;" src="imageCode" />
+            <p class="fl">            	
+                <span>看不清？</span>
+                <a id="J_changeImg" href="javascript:;">换一张</a>
+            </p>        
+            <span class="tips" id="J_authcodeTips">请输入验证码</span>                                                   
         </div>  
-        <s:token></s:token>
         <div class="input-con">
             <input id="J_regSubmit" class="reg-btn" type="button" value="立即注册" />
         </div>  

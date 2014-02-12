@@ -157,6 +157,9 @@ input#authcode {
 	border: 0 none;
 	cursor: pointer;
 }
+#J_regSubmit.disabled {
+	background: #919191;
+}
 .input-con a {
 	text-decoration: none;
 }
