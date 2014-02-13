@@ -94,11 +94,15 @@ $(function() {
 		checkFindPwdEmail();
 		
 		if(findPwdEmailValid) {
+			$('#J_findPwdStep1')[0].disabled = true;
+			$('#J_findPwdStep1').val('发送中...');
 			//通过判断提交邮箱和验证码		
 			$.post('user!findPwdStep1', {'useremail': useremail, 'authcode': authcode}, function(data) {
 				if(data==-1) {
 					//验证码错误，弹提示语
 					$('#J_findPwdAuthcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
+					$('#J_findPwdStep1')[0].disabled = false;
+					$('#J_findPwdStep1').val('发送验证邮件');					
 				}else if(data==1) {
 					//验证码正确，跳到step2
 					location.href = 'http://www.ceou.com.cn/findPwdStep2.jsp?useremail=' + useremail
