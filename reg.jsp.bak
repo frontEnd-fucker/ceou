@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,6 +8,14 @@
 <link href="css/reg.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/reg.js"></script>
+<script>
+/*$(function() {
+	var authcodeStatus = document.getElementById("authcodeStatus").value;
+	if(authcodeStatus == -1){
+		alert("验证码错误");
+	}
+});*/
+</script>
 </head>
 
 <body>
@@ -15,7 +25,7 @@
     	<a class="logo" href="index.jsp"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="#">社区</a></li>
+            	<li><a href="#">放回主页</a></li>
                 <li class="separator">|</li>
                 <li><a href="#">马上优惠</a></li>
                 <li class="separator">|</li>
@@ -31,39 +41,43 @@
 <!-- main -->
 <div id="main">
     <div class="form">
+    	<form name="reg-form" action="userReg" method="post">
         <h2>注册新会员</h2>
         <div class="input-con cf">
             <label for="username">用户名</label>
-            <input id="username" name="username" type="text" />            
+            <s:textfield id="username" name="username"></s:textfield>        
             <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
         </div>
         <div class="input-con cf">
             <label for="useremail">email</label>
-            <input id="useremail" name="useremail" type="text" />
+            <s:textfield id="useremail" name="useremail"></s:textfield>
             <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
         </div>
         <div class="input-con cf">
             <label for="pwd1">密码</label>
-            <input id="pwd1" name="pwd1" type="password" />
+            <s:password id="pwd1" name="pwd1"></s:password>
             <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
         </div>
         <div class="input-con cf">
             <label for="pwd2">确认密码</label>
-            <input id="pwd2" name="pwd2" type="password" />
+            <s:password id="pwd2" name="pwd"></s:password>
             <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
         </div>
         <div class="input-con">
             <label for="authcode">验证码</label>
-            <input id="authcode" name="authcode" type="text" />
+            <s:textfield id="authcode" name="authcode"></s:textfield>
+	        <s:hidden id="authcodeStatus" name="authcodeStatus"></s:hidden>
             <!--<span class="tips hide" id="J_authcodeTips">验证码错误</span>-->
             <img id="auth-img" style="height: 22px;" src="imageCode" />
             <!--<script type="text/javascript">$('#auth-img').click()</script>-->
             <span>看不清？</span>
             <a id="J_changeImg" href="javascript:;">换一张</a>            
         </div>  
+        <s:token></s:token>
         <div class="input-con">
             <input id="J_regSubmit" class="reg-btn" type="button" value="立即注册" />
         </div>  
+        </form>
     </div>
 </div><!-- end main -->
 

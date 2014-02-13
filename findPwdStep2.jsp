@@ -1,8 +1,10 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册页面</title>
+<title>找回密码第二步</title>
 <link href="css/reg.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/reg.js"></script>
@@ -28,42 +30,18 @@
 
 <!-- main -->
 <div id="main">
-    <div class="form">
-    	<form name="reg-form" action="userReg" method="post">
-        <h2>注册新会员</h2>
-        <div class="input-con cf">
-            <label for="username">用户名</label>
-            <input type="text" id="username" name="username" />  
-            <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
-        </div>
-        <div class="input-con cf">
-            <label for="useremail">email</label>
-            <input type="text" id="useremail" name="useremail" />
-            <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
-        </div>
-        <div class="input-con cf">
-            <label for="pwd1">密码</label>
-            <input type="password" id="pwd1" name="pwd1" />
-            <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
-        </div>
-        <div class="input-con cf">
-            <label for="pwd2">确认密码</label>
-            <input type="password" id="pwd2" name="pwd" />
-            <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
-        </div>
-        <div class="input-con cf">
-            <label for="authcode">验证码</label>
-            <input type="text" id="authcode" name="authcode" />
-            <img id="auth-img" style="height: 22px; float: left; padding-right: 5px;" src="imageCode" />
-            <p class="fl">            	
-                <span>看不清？</span>
-                <a id="J_changeImg" href="javascript:;">换一张</a>
-            </p>        
-            <span id="J_authcodeTips" style="padding-left: 20px; margin-left: 5px;"></span>                                                   
-        </div>  
-        <div class="input-con">
-            <input id="J_regSubmit" class="reg-btn" type="button" value="立即注册" />
-        </div>  
+	<h2 class="reg-tips" style="margin-left: 120px;">
+		邮箱验证码已经发送到您的注册邮箱<span id="step2useremail" class="email" style="font-size: 15px;"><%= request.getParameter("useremail")%></span>上，请在下框中输入验证码：
+	</h2>
+    <div class="form">    	
+		<form>
+        	<div class="input-con cf">
+            	<input id="emailAuth" type="text" style="margin-left: 160px; margin-top: 20px;" />
+                <span id="J_emailAuthTips" style="float: left; padding-left: 20px; margin-top: 20px;"></span>   
+            </div>
+            <div class="input-con cf">
+                <input id="J_findPwdStep2" class="reg-btn" type="button" value="提交" style="margin-left: 160px;" />
+            </div>             
         </form>
     </div>
 </div><!-- end main -->

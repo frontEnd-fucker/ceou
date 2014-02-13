@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,14 +13,12 @@
 <!-- header -->
 <div id="header">
 	<div class="header-con">
-    	<a class="logo" href="http://www.ceou.com.cn"><img src="img/reg-logo.jpg" /></a>
+    	<a class="logo" href="/CEOU"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="#">社区</a></li>
+            	<li><a href="/CEOU">返回主页</a></li>
                 <li class="separator">|</li>
-                <li><a href="#">马上优惠</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：400-700-7000</a></li>
+                <li><a>服务热线：0755-22315621</a></li>
             </ul>        
         </div>
     </div>
@@ -30,9 +30,9 @@
 <div id="main">
 	<h2 class="reg-tips">恭喜，只剩最后一步就能注册成功！</h2>
     <div class="check-email">
-    	<p>系统已向您的邮箱<span class="email">xinlian@qq.com</span>发送了一封验证邮件，请您登录邮箱，点击邮件中的链接完成邮箱验证。如果您超过2分钟未收到邮件，您可以点击<a id="J_resendEmail" href="javascript:;">重新发送</a>。</p>
+    	<p>系统已向您的邮箱<span class="email"><s:property value="useremail"/> </span>发送了一封验证邮件，请您登录邮箱，点击邮件中的链接完成邮箱验证。如果您超过2分钟未收到邮件，您可以点击<a id="J_resendEmail" href="javascript:;">重新发送</a>。</p>
         <p class="resend-email-suc">验证邮件已重新发送</p>
-        <p><a class="red-btn" href="#">登录邮箱</a></p>
+        <p><a class="red-btn" href="http://<s:property value="mailURL"/>">登录邮箱</a></p>
     </div>
 </div>
 <!-- end main -->
