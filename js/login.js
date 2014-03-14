@@ -20,11 +20,11 @@ $(function() {
 		var pwd = $('#pwd').val();
 		//var usertype = $('radio[name=usertype]:checked').val();
 		if(!username) {
-			$('#J_usernameTips').show();
+			$('#J_usernameTips').text('请输入用户名').show();
 			return;
 		}
 		if(!pwd) {
-			$('#J_pwdTips').show();
+			$('#J_pwdTips').text('请输入密码').show();
 			return;
 		}
 		
@@ -33,9 +33,9 @@ $(function() {
 			//-1为用户名和密码不匹配
 			//1则为成功登录，跳转到个人中心页面	
 			if(data==-2) {
-				$('#J_usernameTips').text('您输入的用账户名不存在').show();
+				$('#J_usernameTips').text('您输入的用户名不存在').show();
 			}else if(data==-1) {
-				$('#J_pwdTips').text('您输入的账户名和密码不匹配').show();
+				$('#J_pwdTips').text('您输入的用户名和密码不匹配').show();
 			}else if(data==1) {
 				//登录成功，设置账户cookie
 				//$.cookie('cookieUsername', username, {expires: 365, path: '/'});
