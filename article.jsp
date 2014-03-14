@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>正文</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body>
@@ -37,6 +39,7 @@
                 <div class="cate-content">
 					<dl>
 						<dd>
+							<a href="business!showArticleByCondition?articleCatId=3&artcategory=-1">不限</a>
 			    			<a href="business!showArticleByCondition?articleCatId=3&artcategory=1">电子商务</a>
 			                <a href="business!showArticleByCondition?articleCatId=3&artcategory=2">客户服务</a>
 			                <a href="business!showArticleByCondition?articleCatId=3&artcategory=3">领导力</a>
@@ -63,7 +66,7 @@
                 <div class="post">
                 	<div class="post-hd">
                     	<h1><s:property value="articleDetail.artname"/></h1>
-                        <p class="post-info">来源：<s:property value="articleDetail.artfrom"/>| 点击率：869 | 发表时间：<s:date name="articleDetail.updatetime" format="yyyy-MM-dd" /></p>
+                        <p class="post-info">来源：<s:property value="articleDetail.artfrom"/>| 点击率：<s:property value="articleDetail.clicks"/> | 发表时间：<s:date name="articleDetail.updatetime" format="yyyy-MM-dd" /></p>
                     </div>
                     <div class="post-bd">
                     	<div class="post-summary"><s:property value="articleDetail.artprofile"/></div>
@@ -123,17 +126,15 @@
             </div>
             
             <div class="aside-box">
-            	<h2 class="longer"><span>文章人气排名</span><a class="more" href="teacher!show">更多>></a></h2>
-                <div class="hot-teacher">
+            	<h2 class="longer"><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+                <div class="hot-post">
                     <ul class="color-list">
-                        <s:iterator value="teacherList" status="status">
-                			<s:if test="#status.index <= 4">
-                				<li class="item_<s:property value="#status.index"/>"><a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"/><s:property value="tname"/></a></li>
-                			</s:if>                        
+                        <s:iterator value="randArticleList">
+                        	<li><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
                         </s:iterator>
                     </ul>
                 </div>            
-            </div>             
+            </div>            
             
         	<div class="aside-box weibo-con cf">
             	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>

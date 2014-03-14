@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>名师堂</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body>
@@ -68,14 +70,55 @@
 		                		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page-1"/>">上一页</a>
 		                	</s:else>
 		                    
-		                    <s:iterator begin="1" end="totalPage" var="p">
-		                    	<s:if test="#p==page">
-		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    <!-- test1 begin -->
+		                    <s:if test="%{(page<=3)}">
+		                     	<s:if test="%{(totalPage<=5)}">
+		                         	<s:iterator begin="1" end="totalPage" var="p">
+										<s:if test="#p==page">
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>		                     
+		                     	</s:if>
+			                 	<s:else>
+			                 		<s:iterator begin="1" end="5" var="p">
+										<s:if test="#p==page">
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>		
+			                 	</s:else>		                 			                 
+		                    </s:if>
+		                   <!-- test1 end -->   
+		                   <!-- test2 begin -->  
+		                    <s:if test="%{page>3}">
+		                    	<s:if test="%{totalPage-page>2}">
+		                      		<s:iterator begin="page-2" end="page+2" var="p">
+		                    			<s:if test="#p==page">
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>
 		                    	</s:if>
 		                    	<s:else>
-		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    	 	<s:iterator begin="totalPage-4" end="totalPage" var="p">
+		                    			<s:if test="#p==page">
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>
 		                    	</s:else>
-		                    </s:iterator>
+		                    </s:if>
+		                    <!-- test2 end  -->
+		                    
 		                    
 		                    <s:if test="page==totalPage">
 		                    	<a href="#">下一页</a>
@@ -111,7 +154,8 @@
                         <s:iterator value="teacherList" status="status">
                 			<s:if test="#status.index <= 4">
                 				<li class="item_<s:property value="#status.index"/>"><a href="teacher!showCouByTeacher?thid=<s:property value="tid"/>&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1"/><s:property value="tname"/></a></li>
-                			</s:if>                        
+                			</s:if>
+                        
                         </s:iterator>
                     </ul>
                 </div>            

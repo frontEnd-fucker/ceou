@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>在线学历院</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body id="onlineCollege">
@@ -31,21 +33,7 @@
                 <h2 class="tile-title"><img src="img/jnxybxkc.jpg" /></h2>
                 <div class="tile-top-nav">
                     <ul>
-                        <li><a class="cur" href="edu!showCoubyskill?couSkill=1">会计</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=2">人力资源</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=3">社会</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=4">心理咨询师</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=5">教师资格</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=6">造价员</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=7">物流</a></li>
-                        <li>|</li>
-                        <li><a href="edu!showCoubyskill?couSkill=-1">更多>></a></li>                                                                                           
+                         <li><a href="edu!showCoubyskill?catId=4&ifceou=1">更多>></a></li>                                                                                          
                     </ul>
                 </div>                                              
             </div><!-- end tile-top -->          	
@@ -53,8 +41,8 @@
             <div class="tile-content cf">
             	<div class="tile-content-l">
                     <div class="post-box">
-                        <a href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><img class="bigger" src="img/post-placeholder.jpg" /></a>
-						<p class="post-info"><s:property value="firstedu.couname"/><br /><span>讲师：<s:property value="firstedu.coulecturer"/></span></p>
+                        <a href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><img class="bigger" src="<s:property value="firstedu.coupicurl"/>" /></a>
+						<p class="post-info"><a href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><s:property value="firstedu.couname"/></a><br /><span>讲师：<s:property value="firstedu.coulecturer"/></span></p>
                     </div>
                 </div>
                 <div class="tile-content-r">
@@ -62,8 +50,8 @@
 		                <s:iterator value="eduskilllist1">
 		                <div class="post-box">                    
 		                	<!--<a href="#"><img src="<s:property value="coupicurl"/>" /></a> --> 
-		                	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="img/post-placeholder.jpg" /></a>
-		                	<p class="post-info"><s:property value="couname"/><br /><span><s:property value="coulecturer"/></span></p>
+		                	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
+		                	<p class="post-info"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span><s:property value="coulecturer"/></span></p>
 		                </div> 
 		                </s:iterator>
 	                </div>    
@@ -83,12 +71,18 @@
         <div class="tile-box">
             <!-- tile-top -->
             <div class="tile-top cf">
-                <h2 class="tile-title"><img src="img/zmxf.jpg" /></h2>                                             
+                <h2 class="tile-title"><img src="img/zmxf.jpg" /></h2>      
+                <div class="tile-top-nav">
+                    <ul>
+                         <li><a href="edu!showCoubyskill?catId=4&ifceou=2">更多>></a></li>                                                                                          
+                    </ul>
+                </div>                                       
             </div><!-- end tile-top -->   
             
 			<div class="tile-content cf">
                 <div class="little-slide">
-                    <img src="img/shouye-img.jpg" />
+                    <a href="course!showCouDetail?couid=<s:property value="firstexam.couid"/>"><img src="img/shouye-img.jpg" /></a>
+                 <p class="info-bg"><span><s:property value="firstexam.couname"/> </span> <span class="author">讲师：<s:property value="firstexam.coulecturer"/> </span></p>
                 </div>     
                 <div class="video-list">
                     <h3><span>成考</span><a href="edu!showCoubyindustry?couIndustry=1">更多>></a></h3>

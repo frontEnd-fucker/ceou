@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>商学院</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body id="bizCollege">
@@ -30,11 +32,14 @@
                 	<h2 class="tile-title"><img src="img/bzzxkc.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
-                            <li>|</li>
-                            <li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
-                            <li>|</li>
-                            <li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>  
+                        	<!-- 
+                        		<li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
+                            	<li>|</li>
+                            	<li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
+                            	<li>|</li>
+                            	<li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>
+                        	 -->
+                              <li><a href="business!showBeizengCou?catId=3">更多>></a></li>
                        </ul>                  	
                     </div>
                 </div>
@@ -64,7 +69,7 @@
                     <h2 class="tile-title"><img src="img/bzmst.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="business!showBZCouByTh?catId=2&ifceou=1&couPosition=-1">更多>></a></li>
+                            <li><a href="business!showBZCouByTh?catId=2&ifceou=1">更多>></a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        
@@ -96,13 +101,16 @@
                     <h2 class="tile-title"><img src="img/bzqysxy.jpg"></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=1">效率提升系列</a></li>
-                            <li>|</li>
-                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=2">员工管理系列</a></li>
-                            <li>|</li>
-                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=3">领导人系列</a></li>
-                            <li>|</li>
-                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=4">财务管理系列</a></li>
+                        	<!-- 
+                        		<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=1">效率提升系列</a></li>
+                            	<li>|</li>
+                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=2">员工管理系列</a></li>
+                            	<li>|</li>
+                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=3">领导人系列</a></li>
+                           		<li>|</li>
+                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=4">财务管理系列</a></li>
+                        	 -->
+                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1">更多>></a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->  
@@ -157,15 +165,15 @@
             
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
-        	<div class="aside-box" style="height: 625px">
-            	<h2><span>最新课程</span><a class="more" href="course!show">更多>></a></h2>
-                <s:iterator value="randCourseList">
-                <dl>
-                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
-                </dl> 
-                </s:iterator>               
-            </div>                
+        	<div class="aside-box" style="height: 629px">
+            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+                <s:iterator value="randArticleList">
+	            	<dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
+	                </dl> 
+                </s:iterator>                
+            </div>                 
         </div>
     </div>
 </div><!-- end main -->

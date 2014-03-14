@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>培训课程</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body id="course">
@@ -38,72 +40,47 @@
             	<h2 class="cate-title"><i></i><a href="#"></a></h2>
                 <div class="cate-content">
                 	<dl class="cf">
-                    	<dt>按岗位分类:</dt>
+                    	<dt>通用课程:</dt>
                         <dd>
-                        	<!-- lixinnian 2014.01.06____________________________________ -->
-                        	<a href="course!showList?couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">公务员</a>
-                            <a href="course!showList?couPosition=2&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">董事长 </a>
-                            <a href="course!showList?couPosition=3&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总裁</a>
-                            <a href="course!showList?couPosition=4&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总经理</a>
-                            <a href="course!showList?couPosition=5&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总监</a>
-                            <a href="course!showList?couPosition=6&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">经理</a>
-                            <a href="course!showList?couPosition=7&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">主管</a>
-                            <a href="course!showList?couPosition=8&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">职员</a>
+                        	<a <s:if test="couSkill==1">class="cur"</s:if> href="course!showList?couPosition=1&couSkill=1&couIndustry=<s:property value="couIndustry"/>&page=1">创业课程</a>
+                            <a <s:if test="couSkill==2">class="cur"</s:if> href="course!showList?couPosition=1&couSkill=2&couIndustry=<s:property value="couIndustry"/>&page=1">管理课程</a>
+                            <a <s:if test="couSkill==3">class="cur"</s:if> href="course!showList?couPosition=1&couSkill=3&couIndustry=<s:property value="couIndustry"/>&page=1">营销课程</a>
+                            <a <s:if test="couSkill==4">class="cur"</s:if> href="course!showList?couPosition=1&couSkill=4&couIndustry=<s:property value="couIndustry"/>&page=1">职场课程</a>
+                            <a <s:if test="couSkill==5">class="cur"</s:if> href="course!showList?couPosition=1&couSkill=5&couIndustry=<s:property value="couIndustry"/>&page=1">生活</a>
                         </dd>
                     </dl>
-                	<dl class="cf">
-                    	<dt>按能力分类:</dt>
+                    
+                    <dl class="cf">
+                    	<dt>行业:</dt>
                         <dd>
-                        	<!-- lixinnian 2014.01.06_____________________________________ -->
-                           	<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=1&couIndustry=<s:property value="couIndustry"/>&page=1">市场营销</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=2&couIndustry=<s:property value="couIndustry"/>&page=1">生产制造</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=3&couIndustry=<s:property value="couIndustry"/>&page=1">行政后勤 </a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=4&couIndustry=<s:property value="couIndustry"/>&page=1">财务管理</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=5&couIndustry=<s:property value="couIndustry"/>&page=1">店面管理</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=6&couIndustry=<s:property value="couIndustry"/>&page=1">人力资源</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=7&couIndustry=<s:property value="couIndustry"/>&page=1">案例分析</a>
+                        	<a <s:if test="couIndustry==210001">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210001&page=1">医疗</a>
+                            <a <s:if test="couIndustry==210002">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210002&page=1">餐饮</a>
+                            <a <s:if test="couIndustry==210003">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210003&page=1">房地产</a>
+                            <a <s:if test="couIndustry==210004">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210004&page=1">汽车</a>
+                            <a <s:if test="couIndustry==210005">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210005&page=1">保险</a>
+                            <a <s:if test="couIndustry==210006">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210006&page=1">酒店</a>
+                            <a <s:if test="couIndustry==210007">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210007&page=1">零售</a>
+                            <a <s:if test="couIndustry==210008">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210008&page=1">银行</a>
+                            <a <s:if test="couIndustry==210009">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210009&page=1">美容美发</a>
+                            <a <s:if test="couIndustry==210010">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210010&page=1">制造</a>
+                            <a <s:if test="couIndustry==210011">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210011&page=1">服装</a>
+                            <a <s:if test="couIndustry==210012">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210012&page=1">电子商务</a>
+                            <a <s:if test="couIndustry==210013">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210013&page=1">物业管理</a>
+                            <a <s:if test="couIndustry==210014">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210014&page=1">家居建材</a>
+                            <a <s:if test="couIndustry==210015">class="cur"</s:if> href="course!showList?couPosition=2&couSkill=1&couIndustry=210015&page=1">物流</a>
                         </dd>
                     </dl>
-                	<dl class="cf">
-                    	<dt>按行业分类:</dt>
-                        <dd>
-                        	<!-- lixinnian 2014.01.06________________________________________ -->
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=1&page=1">餐饮商学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=2&page=1">电子商务学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=3&page=1">连锁商学学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=4&page=1">美容商学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=5&page=1">物流商学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=6&page=1">物业商学院</a>
-                            <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=7&page=1">政务商学院</a>
-                        </dd>
-                    </dl>                                        
                 </div>
             </div><!-- end cate-box -->    
              
-        	<!-- 岗位培训课程 -->
+        	<!-- 通用培训课程 -->
         	<div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
                     <h2 class="tile-title"><img src="img/gangwei.jpg" /></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="course!showList?couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">公务员</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=2&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">董事长</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=3&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总裁</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=4&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总经理</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=5&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">总监</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=6&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">经理</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=7&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">主管</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=8&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">职员</a></li>
-                			<li>|</li>
-                            <li><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></li>                            
+                            <li><a href="course!showList?couPosition=1&page=1">更多>></a></li>                            
                         </ul>
                     </div>                
                 </div><!-- end tile-top --> 
@@ -115,9 +92,8 @@
                         <p class="post-info"><a href="course!showCouDetail?couid=<s:property value="firstCouByPos.couid"/>"><s:property value="firstCouByPos.couname"/></a><br /><span>讲师：<s:property value="firstCouByPos.coulecturer"/></span></p>
                     </div>
                     <div class="video-list">
-                        <h3>课程推荐<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
+                        <h3>课程推荐<a href="course!showList?couPosition=1&page=1">更多>></a></h3>
                         <ul>
-                        	<!-- lixinnian 2014.01.06 ________________________________ -->
                             <s:iterator value="subposlist">
                             	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                             </s:iterator>
@@ -133,21 +109,7 @@
                     <h2 class="tile-title"><img src="img/guangli.jpg" /></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=1&couIndustry=<s:property value="couIndustry"/>&page=1">市场管理</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=2&couIndustry=<s:property value="couIndustry"/>&page=1">生产制造</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=3&couIndustry=<s:property value="couIndustry"/>&page=1">行政后勤</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=4&couIndustry=<s:property value="couIndustry"/>&page=1">财务</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=5&couIndustry=<s:property value="couIndustry"/>&page=1">店面</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=6&couIndustry=<s:property value="couIndustry"/>&page=1">人力资源</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=7&couIndustry=<s:property value="couIndustry"/>&page=1">案例分析</a></li>
-                            <li>|</li>
-                            <li><a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=-1&couIndustry=<s:property value="couIndustry"/>&page=1">更多>></a></li>                                                      
+                            <li><a href="course!showList?couPosition=2&page=1">更多>></a></li>                                                      
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->  
@@ -184,15 +146,15 @@
         <div class="floor-r">
         	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
         
-        	<div class="aside-box" style="height: 434px">
-            	<h2><span>最新新闻</span><a class="more" href="#">更多>></a></h2>
-                <s:iterator value="randCourseList">
-	                <dl>
-	                	<dt><s:property value="updatetime"/></dt>
-	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+        	<div class="aside-box" style="height: 378px">
+            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+                <s:iterator value="randArticleList">
+	            	<dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
-            </div>
+            </div> 
             
         	<div class="aside-box weibo-con cf">
             	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
@@ -250,80 +212,7 @@
 
     <div class="ad"><a href="#"><img src="img/add1.jpg" /></a></div>
     
-    <!-- floor_2 -->
-    <div class="floor cf">
-    	<div class="floor-l">
-                                
-            <!-- 最新行业培训课程 -->
-            <div class="tile-box">
-                <!-- tile-top -->
-                <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/hangye.jpg" /></h2>
-                    <div class="tile-top-nav">
-                        <ul>
-                            <li><a class="cur" href="#">餐饮商学</a></li>
-                            <li>|</li>
-                            <li><a href="#">电子商务</a></li>
-                            <li>|</li>
-                            <li><a href="#">连锁商学</a></li>
-                            <li>|</li>
-                            <li><a href="#">美容美发</a></li>
-                            <li>|</li>
-                            <li><a href="#">物流商学</a></li>
-                            <li>|</li>
-                            <li><a href="#">物业管理</a></li>
-                            <li>|</li>
-                            <li><a href="#">政务商学</a></li>
-                        </ul>
-                    </div>                
-                </div><!-- end tile-top -->  
-                <div class="tile-content">
-                	<dl class="course-intro cf">
-                    	<dt>
-							<a href="course!showCouDetail?couid=<s:property value="firstCouByind.couid"/>"><img src="<s:property value="firstCouByind.coupicurl"/>" /></a>
-						</dt>
-                        <dd>
-                        	<h3><a href="course!showCouDetail?couid=<s:property value="firstCouByind.couid"/>"><s:property value="firstCouByind.couname"/></a></h3>
-                            <p>
-								讲师：<a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="firstCouByind.coulecturer"/></a>
-								<span class="rate">评分：</span>
-							</p>
-                            <p class="course-intro-content"><strong>课程介绍：</strong>课程简介： <s:property value="firstCouByind.couprofile"/></p>
-                        </dd>
-                    </dl>
-
-                    <div class="post-box-con cf">
-                        <s:iterator value="subindlist">
-                        <div class="post-box">
-                            <a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
-                            <p class="post-info">
-								<a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br />
-								<span>讲师：<s:property value="coulecturer"/></span>
-							</p>
-                        </div> 
-						</s:iterator>
-                    </div>                    
-                </div>           
-            </div><!-- end 最新行业培训课程 -->       
-        </div>
-        
-        <div class="floor-r">
-        	<div class="aside-box">
-            	<h2>学习心得<a class="more" href="#">更多>></a></h2>
-                <div class="author-intros">
-                    <s:iterator value="randArticleList">
-	                    <div class="author-intro">
-	                        <div class="author-hd"><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artpicurl"/></a></div>
-	                        <div class="author-bd">
-	                            <h3><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artlecturer"/></a> </h3>
-	                            <p><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></p>
-	                        </div>
-	                    </div>
-                    </s:iterator>							 
-                </div>                                                              
-            </div>
-        </div>
-    </div><!-- end floor_2 -->
+    
 </div><!-- end main -->
 
 <jsp:include page="footer.jsp" flush="true" />

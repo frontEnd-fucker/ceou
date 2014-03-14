@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,9 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>videoCourse</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
-<link href="css/login.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
-<script src="js/bb.js"></script>
 <script src="js/base.js"></script>
 </head>
 
@@ -37,16 +35,33 @@
                 <s:if test="courseDetail.catid==7" ><a href="edu!show">在线学历院</a> <span>></span> <a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></s:if>     
                 <span>></span>      
                 <a href="#">正文</a>      
-            </div>            
+            </div>      
+            
+            <!--视频-->
+            <div class="tile-box">
+            	<div class="tile-top cf">
+                	<h2 class="tile-title">
+                    	<img src="img/beixunkechen.jpg" />
+                    </h2>                
+                </div>
+                
+                <div class="tile-content">
+                	<!-- ccPlayer -->
+                	<!--<div class="ccPlayer-con">
+						<script src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=false&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1" type="text/javascript"></script>
+                    </div>--><!-- end ccPlayer -->        
+                    <embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>        
+                </div>
+            </div><!--end 视频-->                  
             
             <div class="tile-box">
             	<div class="tile-top cf">
             		<h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
                 </div>
                 <div class="tile-content cf">
-                	<dl class="course-intro cf" style="padding-bottom: 10px; margin:0; border: 0;">
+                	<dl class="course-intro cf">
                     	<dt>
-                        	<img src="img/kecheng-list.jpg" />
+                        	<img src="<s:property value="courseDetail.coupicurl"/>" />
                             <!-- JiaThis Button BEGIN -->
                             <div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
                             <a class="jiathis_button_qzone"></a>
@@ -66,9 +81,7 @@
                             }
                             </script>
                             <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1868491" charset="utf-8"></script>
-                            <!-- JiaThis Button END -->   
-                            
-                            <a href="javascript:;" class="fav">收藏</a>                        
+                            <!-- JiaThis Button END -->                             
                         </dt>
                         <dd>
                         	<h3><s:property value="courseDetail.couname"/> </h3>
@@ -81,20 +94,7 @@
 						<a class="learn-btn" href="#"></a>
                     </dl>                
                 </div>
-            </div>
-            
-            <!--视频-->
-            <div class="tile-box">
-            	<div class="tile-top cf">
-                	<h2 class="tile-title">
-                    	<img src="img/beixunkechen.jpg" />
-                    </h2>                
-                </div>
-                <div class="tile-content">
-                	<embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
-                </div>
-            </div>
-            <!--end 视频-->
+            </div>            
             
             <!-- 猜你喜欢 -->
             <!--<div class="tile-box">
@@ -152,13 +152,13 @@
             	<img src="img/weixin.jpg" />
             </div>    	
         	<div class="aside-box" style="height: 452px">
-            	<h2><span>最新新闻</span><a class="more" href="#">更多>></a></h2>
-				<s:iterator value="randCourseList">
-				<dl>
-					<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-				    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
-				</dl>
-				</s:iterator>               
+            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+                <s:iterator value="randArticleList">
+	            	<dl>
+	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
+	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
+	                </dl> 
+                </s:iterator>                
             </div>            
         </div><!-- end floor-r -->
     </div>

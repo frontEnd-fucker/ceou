@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>企业商学院</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/base.js"></script>
 </head>
 
 <body id="course-list">
@@ -28,20 +30,165 @@
     	<div class="floor-l">
         	<div class="crumb">
             	<a href="/CEOU">首页</a>
-                <span>></span>
-                <a href="#">培训课程</a>
+            	<span>></span>
+                <a href="business!show">商学院</a>
+            	<span>></span>
+                <a href="#">企业商学院</a>
             </div>
             
             <!-- cate-box --> 
             <div class="cate-box">
             	<h2 class="cate-title"><i></i></h2>
                 <div class="cate-content">
-                	<dl class="cf">
-                    	<dt><a href="business!showEnterpriseCou?catId=4&couPosition=1">效率提升系列</a></dt>
-                    	<dt><a href="business!showEnterpriseCou?catId=4&couPosition=2">员工管理系列</a></dt>
-                    	<dt><a href="business!showEnterpriseCou?catId=4&couPosition=3">领导力系列</a></dt>
-                    	<dt><a href="business!showEnterpriseCou?catId=4&couPosition=4">业务管理系列</a></dt>
-                    </dl>                                      
+                	<s:if test="couPosition==-1 && couSkill==-1">
+	                	<dl class="cf">
+	                    	<dt>通用课程:</dt>
+	                        <dd>
+	                        	<a <s:if test="couSkill==1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=1&page=1">创业课程</a>
+	                            <a <s:if test="couSkill==2">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=2&page=1">管理课程</a>
+	                            <a <s:if test="couSkill==3">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=3&page=1">营销课程</a>
+	                            <a <s:if test="couSkill==4">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=4&page=1">职场课程</a>
+	                            <a <s:if test="couSkill==5">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=5&page=1">生活</a>
+	                        </dd>
+	                    </dl>
+	                    
+	                    <dl class="cf">
+	                    <dt>行业:</dt>
+	                        <dd>
+	                        	<a <s:if test="couIndustry==210001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210001&page=1">医疗</a>
+	                            <a <s:if test="couIndustry==210002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210002&page=1">餐饮</a>
+	                            <a <s:if test="couIndustry==210003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210003&page=1">房地产</a>
+	                            <a <s:if test="couIndustry==210004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210004&page=1">汽车</a>
+	                            <a <s:if test="couIndustry==210005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210005&page=1">保险</a>
+	                            <a <s:if test="couIndustry==210006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210006&page=1">酒店</a>
+	                            <a <s:if test="couIndustry==210007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210007&page=1">零售</a>
+	                            <a <s:if test="couIndustry==210008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210008&page=1">银行</a>
+	                            <a <s:if test="couIndustry==210009">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210009&page=1">美容美发</a>
+	                            <a <s:if test="couIndustry==210010">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210010&page=1">制造</a>
+	                            <a <s:if test="couIndustry==210011">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210011&page=1">服装</a>
+	                            <a <s:if test="couIndustry==210012">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210012&page=1">电子商务</a>
+	                            <a <s:if test="couIndustry==210013">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210013&page=1">物业管理</a>
+	                            <a <s:if test="couIndustry==210014">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210014&page=1">家居建材</a>
+	                            <a <s:if test="couIndustry==210015">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210015&page=1">物流</a>
+	                        </dd>
+	                    </dl>
+                	</s:if>
+                
+                
+                	<s:if test="couPosition==1 && couSkill==1">
+                		<dl class="cf">
+	                    	<dt>创业课程:</dt>
+	                        <dd>
+								<a <s:if test="couIndustry==-1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=-1&page=1">不限</a>
+	                        	<a <s:if test="couIndustry==110001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110001&page=1">创业心路</a>
+	                            <a <s:if test="couIndustry==110002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110002&page=1">商业模式 </a>
+	                            <a <s:if test="couIndustry==110003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110003&page=1">创业团队</a>
+	                            <a <s:if test="couIndustry==110004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110004&page=1">产品战略</a>
+	                            <a <s:if test="couIndustry==110005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110005&page=1">股权期权</a>
+	                            <a <s:if test="couIndustry==110006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110006&page=1">投资融资</a>
+	                            <a <s:if test="couIndustry==110007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110007&page=1">运营实务</a>
+	                            <a <s:if test="couIndustry==110008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=110008&page=1">税务法律</a>
+	                        </dd>
+                    	</dl>
+                	</s:if>
+                		
+                	<s:if test="couPosition==1 && couSkill==2">
+                		<dl class="cf">
+	                    	<dt>管理课程:</dt>
+	                        <dd>
+	                			<a <s:if test="couIndustry==-1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=-1&page=1">不限</a>
+	                        	<a <s:if test="couIndustry==120001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120001&page=1">领导力</a>
+	                            <a <s:if test="couIndustry==120002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120002&page=1">运营管理 </a>
+	                            <a <s:if test="couIndustry==120003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120003&page=1">战略管理</a>
+	                            <a <s:if test="couIndustry==120004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120004&page=1">人力资源管理</a>
+	                            <a <s:if test="couIndustry==120005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120005&page=1">资本运作管理</a>
+	                            <a <s:if test="couIndustry==120006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120006&page=1">企业文化</a>
+	                            <a <s:if test="couIndustry==120007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120007&page=1">财务管理</a>
+	                            <a <s:if test="couIndustry==120008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120008&page=1">危机管理</a>
+	                            <a <s:if test="couIndustry==120009">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120009&page=1">项目管理</a>
+	                            <a <s:if test="couIndustry==120010">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120010&page=1">生产制造</a>
+	                            <a <s:if test="couIndustry==120011">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=120011&page=1">物流管理</a>
+	                        </dd>
+                   		</dl>
+                	</s:if>
+                	
+                	<s:if test="couPosition==1 && couSkill==3">
+                		<dl class="cf">
+	                    	<dt>营销课程:</dt>
+	                        <dd>
+	                            <a <s:if test="couIndustry==-1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=-1&page=1">不限</a>
+	                        	<a <s:if test="couIndustry==130001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=3&couIndustry=130001&page=1">营销系列</a>
+	                        </dd>
+                    	</dl>
+                	</s:if>
+                	
+                	<s:if test="couPosition==1 && couSkill==4">
+                		    
+                    <dl class="cf">
+                    	<dt>职场课程:</dt>
+	                        <dd>
+	                			<a <s:if test="couIndustry==-1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=-1&page=1">不限</a>
+	                        	<a <s:if test="couIndustry==140001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140001&page=1">职业规划</a>
+	                            <a <s:if test="couIndustry==140002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140002&page=1">成功励志 </a>
+	                            <a <s:if test="couIndustry==140003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140003&page=1">情商管理</a>
+	                            <a <s:if test="couIndustry==140004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140004&page=1">团队建设</a>
+	                            <a <s:if test="couIndustry==140005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140005&page=1">情绪管理</a>
+	                            <a <s:if test="couIndustry==140006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140006&page=1">求职面试</a>
+	                            <a <s:if test="couIndustry==140007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140007&page=1">销售技巧</a>
+	                            <a <s:if test="couIndustry==140008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140008&page=1">谈判沟通</a>
+	                            <a <s:if test="couIndustry==140009">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140009&page=1">高效工作</a>
+	                            <a <s:if test="couIndustry==140010">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140010&page=1">升职加薪</a>
+	                            <a <s:if test="couIndustry==140011">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140011&page=1">与老板相处</a>
+	                            <a <s:if test="couIndustry==140012">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140012&page=1">职场礼仪</a>
+	                            <a <s:if test="couIndustry==140013">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140013&page=1">创新思维</a>
+	                            <a <s:if test="couIndustry==140014">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140014&page=1">时间管理</a>
+	                            <a <s:if test="couIndustry==140015">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140015&page=1">辞职跳槽</a>
+	                            <a <s:if test="couIndustry==140016">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=140016&page=1">工作汇报</a>
+	                        </dd>
+                    	</dl>
+                	</s:if>
+                	
+                	<s:if test="couPosition==1 && couSkill==5">
+                		<dl class="cf">
+                    	<dt>生活:</dt>
+	                        <dd>
+	                			<a <s:if test="couIndustry==-1">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=-1&page=1">不限</a>
+	                        	<a <s:if test="couIndustry==150001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150001&page=1">兴趣爱好</a>
+	                            <a <s:if test="couIndustry==150002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150002&page=1">人生感悟 </a>
+	                            <a <s:if test="couIndustry==150003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150003&page=1">国学智慧</a>
+	                            <a <s:if test="couIndustry==150004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150004&page=1">语言技能</a>
+	                            <a <s:if test="couIndustry==150005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150005&page=1">风水文化</a>
+	                            <a <s:if test="couIndustry==150006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150006&page=1">情感婚姻</a>
+	                            <a <s:if test="couIndustry==150007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150007&page=1">教育考试</a>
+	                            <a <s:if test="couIndustry==150008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150008&page=1">理财投资</a>
+	                            <a <s:if test="couIndustry==150009">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150009&page=1">亲子教育</a>
+	                            <a <s:if test="couIndustry==150010">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=1&couSkill=<s:property value="couSkill"/>&couIndustry=150010&page=1">养生保健</a>
+	                        </dd>
+                    	</dl>
+                	</s:if>
+                	
+                	<s:if test="couPosition==2 && couSkill==1">
+                		<dl class="cf">
+                    	<dt>行业:</dt>
+	                        <dd>
+	                        	<a <s:if test="couIndustry==210001">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210001&page=1">医疗</a>
+	                            <a <s:if test="couIndustry==210002">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210002&page=1">餐饮</a>
+	                            <a <s:if test="couIndustry==210003">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210003&page=1">房地产</a>
+	                            <a <s:if test="couIndustry==210004">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210004&page=1">汽车</a>
+	                            <a <s:if test="couIndustry==210005">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210005&page=1">保险</a>
+	                            <a <s:if test="couIndustry==210006">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210006&page=1">酒店</a>
+	                            <a <s:if test="couIndustry==210007">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210007&page=1">零售</a>
+	                            <a <s:if test="couIndustry==210008">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210008&page=1">银行</a>
+	                            <a <s:if test="couIndustry==210009">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210009&page=1">美容美发</a>
+	                            <a <s:if test="couIndustry==210010">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210010&page=1">制造</a>
+	                            <a <s:if test="couIndustry==210011">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210011&page=1">服装</a>
+	                            <a <s:if test="couIndustry==210012">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210012&page=1">电子商务</a>
+	                            <a <s:if test="couIndustry==210013">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210013&page=1">物业管理</a>
+	                            <a <s:if test="couIndustry==210014">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210014&page=1">家居建材</a>
+	                            <a <s:if test="couIndustry==210015">class="cur"</s:if> href="business!showEnterpriseCou?catId=4&couPosition=2&couSkill=1&couIndustry=210015&page=1">物流</a>
+	                        </dd>
+                    	</dl>
+                	</s:if>                                      
                 </div>
             </div><!-- end cate-box -->   
             
@@ -71,42 +218,86 @@
 	                        <a class="read-more" href="course!showCouDetail?couid=<s:property value="couid"/>"></a>
 	                    </dl>
                     </s:iterator>
-                    <!-- pagi-nav -->
+                    
+                    
+                    <!-- page-nav -->
                     <div class="page-nav cf">
                     	<div class="page-num">
-                      		<a class="page-home" href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
+		                    <a class="page-home" href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=1">首页</a>
 		                    <s:if test="page==1">
 		                		<a href="#">上一页</a>
 		                	</s:if>
 		                	<s:else>
-		                		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page-1"/>">上一页</a>
+		                		<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property value="page-1"/>" >上一页</a>
 		                	</s:else>
 		                    
-		                    <s:iterator begin="1" end="totalPage" var="p">
-		                    	<s:if test="#p==page">
-		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+		                    
+		                    <!-- test1 begin -->
+		                    <s:if test="%{(page<=3)}">
+		                     	<s:if test="%{(totalPage<=5)}">
+		                         	<s:iterator begin="1" end="totalPage" var="p">
+										<s:if test="#p==page">
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>		                     
+		                     	</s:if>
+			                 	<s:else>
+			                 		<s:iterator begin="1" end="5" var="p">
+										<s:if test="#p==page">
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>		
+			                 	</s:else>		                 			                 
+		                    </s:if>
+		                   <!-- test1 end -->   
+		                   <!-- test2 begin -->  
+		                    <s:if test="%{page>3}">
+		                    	<s:if test="%{totalPage-page>2}">
+		                      		<s:iterator begin="page-2" end="page+2" var="p">
+		                    			<s:if test="#p==page">
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>
 		                    	</s:if>
 		                    	<s:else>
-		                    		<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
+		                    	 	<s:iterator begin="totalPage-4" end="totalPage" var="p">
+		                    			<s:if test="#p==page">
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />" class="page-home"><s:property/></a>
+		                    			</s:if>
+		                    			<s:else>
+		                    				<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property />"><s:property/></a>
+		                    			</s:else>
+		                    		</s:iterator>
 		                    	</s:else>
-		                    </s:iterator>
+		                    </s:if>
+		                    <!-- test2 end  -->
+		                    
 		                    
 		                    <s:if test="page==totalPage">
 		                    	<a href="#">下一页</a>
 		                    </s:if>
 		                    <s:else>
-		                    	<a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page+1"/>">下一页</a>
+		                    	<a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property value="page+1"/>">下一页</a>
 		                    </s:else>
-		                    <a href="teacher!show?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="totalPage"/>">末页</a>
+		                    <a href="business!showEnterpriseCou?couPosition=<s:property value="couPosition" />&couSkill=<s:property value="couSkill" />&couIndustry=<s:property value="couIndustry" />&page=<s:property value="totalPage"/>">末页</a>
                         </div>
                         <div class="page-skip">
-                        	<form action="teacher!show">
-                            	<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
+                        	<form action="business!showEnterpriseCou">
+                        		<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
                         		<input type="hidden" name="couSkill" value="<s:property value="couSkill"/>"/>
-                        		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>                        		
+                        		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>
                             	跳至第<input class="page-input" type="text" name="page" />页
                             	<input type="submit" value="确定"/>
-                            </form> 
+                            </form>
                     	</div>
                     </div><!-- end page-nav -->                                                           
                 </div>                             	
@@ -124,12 +315,12 @@
             
             <div class="weixin-con"><img src="img/weixin.jpg"></div>       
             
-        	<div class="aside-box" style="height: 440px">
-            	<h2><span>最新新闻</span><a class="more" href="course!showList">更多>></a></h2>
-                <s:iterator value="randCourseList">
+        	<div class="aside-box" style="height: 629px">
+            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+                <s:iterator value="randArticleList">
 	            	<dl>
 	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
             </div> 

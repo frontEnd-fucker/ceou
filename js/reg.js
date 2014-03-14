@@ -78,6 +78,7 @@ $(function() {
 					$('#J_regSubmit')[0].disabled = false;
 					$('#J_regSubmit').removeClass('disabled').val('立即注册');						
 					$('#J_authcodeTips').removeClass('msg-ok').addClass('msg-error').text('验证码错误');
+					$('#J_changeImg').click();
 				}else if(data==1) {				
 					location.href = 'http://www.ceou.com.cn/userReg!toEmailAuth?useremail=' + useremail;
 				}							

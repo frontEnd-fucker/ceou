@@ -61,6 +61,47 @@ $(function() {
 });
 
 
+$(function() {
+	
+	//个人设置切换tab 切换表单功能
+	$('.J_tabNav li a').click(function() {
+		var tabIndex = $('.J_tabNav li a').index(this);
+		$(this).addClass('curr').parent('li').siblings('li').find('a').removeClass('curr');
+		$('.setting-form form').eq(tabIndex).show()
+			.siblings('form').hide();
+	});
+	
+	//个人设置修改密码	
+	$('#J_pwdSave').click(function() {
+		var currPwd = $('#currPwd').val();
+		var newPwd1 = $('#newPwd1').val();
+		var newPwd2 = $('#newPwd2').val();		
+		
+		if(newPwd1.length<6 || newPwd1.length>20) {
+			alert('密码长度只能在6-20位字符之间');
+			return;
+		}else if(newPwd1 != newPwd2) {
+			alert('两次输入密码不一致');
+			return;			
+		}else {
+			$.post('personal!editPwd', {'pwd':currPwd,'newPwd':newPwd2}, function(data) {
+				if(data == -1) {
+					alert('旧密码错误');
+				}else if(data == 1) {
+					alert('修改成功');
+					location.href="http://www.ceou.com.cn/login.html";
+				}else {
+					alert('网络超时,请重新提交');
+				}
+			});
+		}				
+	});
+});
+
+
+
+
+
 
 
 

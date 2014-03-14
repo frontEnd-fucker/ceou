@@ -2,23 +2,38 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
-
+	
 	<!--  -->
 	<package name="struts2" extends="json-default" namespace="/">
+		<!-- 防止同一时间同时登录拦截器 -->
+		<interceptors>
+			<!-- ip检查拦截器 -->
+			<interceptor name="IPInter" class="com.ceou.interceptor.IPInter">
+			</interceptor>
+			<interceptor-stack name="IPInterStack">
+     			<interceptor-ref name="defaultStack"></interceptor-ref>
+     			<interceptor-ref name="IPInter">
+     				<param name="includeMethods">showCouDetail</param>
+     			</interceptor-ref>
+    		</interceptor-stack>
+		</interceptors>
 		<!-- 培训课程模块 -->
-		<action name="course" class="com.ceou.action.CourseAction"
-			method="show">
+		<action name="course" class="com.ceou.action.CourseAction">
+			<!-- ip拦截器 -->
+			<interceptor-ref name="IPInterStack"></interceptor-ref>
+			
 			<result name="show">/course.jsp</result>
 			<result name="showList">/courseList.jsp</result>
+			<result name="showCouDetailCC">/videoCourseCC.jsp</result>
 			<result name="showCouDetail">/videoCourse.jsp</result>
 			<result name="insufficient">/testPage/bh.gif</result>
+			<result name="reLogin">/login.html</result>
 		</action>
 
 		<!-- 名师堂模块 -->
 		<action name="teacher" class="com.ceou.action.TeacherAction">
 			<result name="show">/teachers.jsp</result>
 			<result name="showCouByteacher">/teacherCouList.jsp</result>
-			<result name="showCouByThAndCou">/videoCourse.jsp</result>
 		</action>
 
 		<!-- 商学院模块 -->
@@ -37,14 +52,12 @@
 		<action name="edu" class="com.ceou.action.EduAction">
 			<result name="show">/eduonline.jsp</result>
 			<result name="showskill">/eduList.jsp</result>
-			<result name="showexam">/eduexamList.jsp</result>
 		</action>
 
 		<!-- 用户管理模块 -->
 		<action name="user" class="com.ceou.action.LoginAction">
 			<result name="error">/error.jsp</result>
 			<result name="fail">/login.jsp</result>
-			<result name="success">/testPage/test.jsp</result>
 			<result name="editSuccess">/login.jsp</result>
 			
 			<!-- 退出登录 -->
@@ -128,7 +141,7 @@
 				</param>
 			</result>
 			<result name="success">
-				/passport.jsp
+				/login.html
 			</result>
 			<!-- 邮箱激活 end-->
 			
@@ -170,6 +183,129 @@
 			</result>
 		</action>
 		
-	</package>
+		<!-- 个人中心 -->
+		<action name="personal" class="com.ceou.action.PersonalAction">
+			<result name="show">/WEB-INF/passport.jsp</result>
+			<result name="relogin">/login.html</result>
+			<result name="showMyCou">/WEB-INF/myCourse.jsp</result>
+			<result name="showUCRecord">/WEB-INF/timeline.jsp</result>
+			<result name="showFavorite">/WEB-INF/favorite.jsp</result>
+			<result name="findUserById">/WEB-INF/setting.jsp</result>
+			<result name="editUser" type="redirect">
+				/personal!show
+			</result>
+			<result name="editPwdStatus" type="json">
+				<param name="root">
+					editPwdStatus
+				</param>
+			</result>
+		</action>
+		
+		
+    </package>
+    
+    <package name="struts" extends="json-default" namespace="/ad">
+    <!--   网站后台 -->
+		<!-- 管理员登陆 -->
+		
+		<action name="adminlogin" class="com.ceou.action.AdminLoginAction">
+			<result name="success">/ad/addcourse.jsp</result>
+			<result name="fail">/ad/login.jsp</result>
+			<result name="outlogin" type="redirectAction">/login.jsp</result>
+		</action>
+		<!-- 会员管理 -->
+		
+		<action name="adminusers" class="com.ceou.action.AdminUserAction">
+			<result name="show">/ad/adminallusers.jsp</result>
+            <!--添加 --> 	
+            <result name="adduser">/ad/addusers.jsp</result>
+            <!-- 显示修改页面 -->
+            <result name="showupdateuser">/ad/updateusers.jsp</result>
+            <!-- 修改 -->
+            <result name="updateuser" type="redirectAction">
+			<param name="actionName">adminusers!show</param>
+			<param name="page">${page}</param>
+            </result> 
+            <!-- 删除 -->
+            <result name="deleteuser" type="redirectAction">
+			<param name="actionName">adminusers!show</param>
+			<param name="page">${page}</param>
+            </result> 
+		</action>
+		
+	 	  <!-- 课程管理 -->
+       <action name="admincourse" class="com.ceou.action.AdminCourseAction">
+			<!-- <interceptor-ref name="fileUploadStack"/> -->
+			 <interceptor-ref name="fileUpload"> 
+			 	<!-- 特别注意jpg图片要增加imagepeg，否则有可能上传不了 -->
+			 	<!-- 你可以先获取头部信息看看！！！ -->
+                <param name ="allowedTypes"> 
+                    image/bmp,image/png,image/gif,imagepeg,image/jpeg,image/jpg
+                </param >
+                <!-- 限制上传文件的大小,单位是字节 -->
+                <param name ="maximumSize">1024*1024</param > 
+            </interceptor-ref> 
+            <interceptor-ref name ="defaultStack"/>
+            <!-- 显示 -->            
+            <result name ="showadminallcourse">/ad/adminallcourse.jsp</result> 	
+            <!--添加 --> 	
+            <result name="addcourse">/ad/addcourse.jsp</result> 
+            <!-- 修改 -->
+            <result name="updatecourse" type="redirectAction">
+			<param name="actionName">admincourse!show</param>
+			<param name="couPosition">${couPosition}</param>
+			<param name="couSkill">${couSkill}</param>
+			<param name="couIndustry">${couIndustry}</param>
+			<param name="catId">${catId}</param>
+			<param name="ifceou">${ifceou}</param>
+            </result> 
+            <!-- 显示修改页面 -->
+            <result name="showupdatecourse">/ad/updatecourse.jsp</result>
+            <!-- 删除 -->
+            <result name="deletecourse" type="redirectAction">
+			<param name="actionName">admincourse!show</param>
+			<param name="couPosition">${couPosition}</param>
+			<param name="couSkill">${couSkill}</param>
+			<param name="couIndustry">${couIndustry}</param>
+			<param name="catId">${catId}</param>
+			<param name="ifceou">${ifceou}</param>
+			<param name="page">${page}</param>
+            </result> 
+            <!-- 上传错误 -->
+            <result name="input">/ad/error.jsp</result>
+		</action>  
+
+            	<!-- 文章管理 -->
+		<action name="adminarticle" class="com.ceou.action.AdminArticleAction">
+			
+            <!-- 显示 -->            
+            <result name ="showadminallarticle">/ad/adminallarticle.jsp</result> 	
+            <!--添加 --> 	
+            <result name="addarticle" type="redirect">
+            	adminarticle!show
+            </result> 
+            <!-- 修改 -->
+            <result name="updatarticle" type="redirectAction">
+			<param name="actionName">adminarticle!show</param>
+			<param name="catId">${catId}</param>
+			<param name="artcategory">${artcategory}</param>
+			<param name="artstatus">${artstatus}</param>
+            </result> 
+            <!-- 显示修改页面 -->
+            <result name="showupdatearticle">/ad/updatearticle.jsp</result>
+            <!-- 删除 -->
+            <result name="deletearticle" type="redirectAction">
+			<param name="actionName">adminarticle!show</param>
+			<param name="catId">${catId}</param>
+			<param name="artcategory">${artcategory}</param>
+			<param name="artstatus">${artstatus}</param>
+			<param name="page">${page}</param>
+            </result> 
+            <!-- 上传错误 -->
+            <result name="input">/ad/error.jsp</result>
+		</action>
+    
+    
+    </package>
 </struts>    
 

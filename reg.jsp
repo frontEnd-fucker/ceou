@@ -33,27 +33,27 @@
         <h2>注册新会员</h2>
         <div class="input-con cf">
             <label for="username">用户名</label>
-            <input type="text" id="username" name="username" />  
+            <input type="text" id="username" name="username" maxlength="20"/>  
             <span class="tips" id="J_usernameTips">可使用字母、数字或下划线</span>
         </div>
         <div class="input-con cf">
             <label for="useremail">email</label>
-            <input type="text" id="useremail" name="useremail" />
+            <input type="text" id="useremail" name="useremail" maxlength="25"/>
             <span class="tips" id="J_useremailTips">请输入正确的邮箱地址</span>        
         </div>
         <div class="input-con cf">
             <label for="pwd1">密码</label>
-            <input type="password" id="pwd1" name="pwd1" />
+            <input type="password" id="pwd1" name="pwd1" maxlength="20"/>
             <span class="tips" id="J_pwd1Tips">6-20位字符。可使用字母、数字或符号的组合</span>         
         </div>
         <div class="input-con cf">
             <label for="pwd2">确认密码</label>
-            <input type="password" id="pwd2" name="pwd" />
+            <input type="password" id="pwd2" name="pwd" maxlength="20"/>
             <span class="tips" id="J_pwd2Tips">请再次输入密码</span>        
         </div>
         <div class="input-con cf">
             <label for="authcode">验证码</label>
-            <input type="text" id="authcode" name="authcode" />
+            <input type="text" id="authcode" name="authcode" maxlength="6"/>
             <img id="auth-img" style="height: 22px; float: left; padding-right: 5px;" src="imageCode" />
             <p class="fl">            	
                 <span>看不清？</span>

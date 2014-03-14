@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,16 +21,16 @@
 	<!-- slider -->
     <div id="slider">
     	<div class="slides">
-        	<div class="slide"><a href="#"><img src="img/1.jpg" /></a></div>
-            <div class="slide"><img src="img/2.jpg" /></div>
-            <div class="slide"><img src="img/3.jpg" /></div>
-            <div class="slide"><img src="img/4.jpg" /></div>
+        	<div class="slide"><a href="reg.jsp"><img src="img/1.jpg" /></a></div>
+            <div class="slide"><a href="reg.jsp"><img src="img/2.jpg" /></a></div>
+            <div class="slide"><a href="reg.jsp"><img src="img/3.jpg" /></a></div>
+            <div class="slide"><a href="reg.jsp"><img src="img/4.jpg" /></a></div>
         </div>
         <div class="control-nav">
-        	<a class="cur" href="#"><img src="img/1.1.jpg" /></a>
-            <a href="#"><img src="img/2.1.jpg" /></a>
-            <a href="#"><img src="img/3.1.jpg" /></a>
-            <a href="#"><img src="img/4.1.jpg" /></a>
+        	<a class="cur" href="reg.jsp"><img src="img/1.1.jpg" /></a>
+            <a href="reg.jsp"><img src="img/2.1.jpg" /></a>
+            <a href="reg.jsp"><img src="img/3.1.jpg" /></a>
+            <a href="reg.jsp"><img src="img/4.1.jpg" /></a>
         </div>
     </div><!-- end slider -->
     
@@ -52,21 +52,7 @@
                 <h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
                 <div class="tile-top-nav">
                     <ul>
-					       <li><a href="course!showList?couPosition=-1&couSkill=1&couIndustry=-1&page=1">市场营销</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=2&couIndustry=-1&page=1">生产制造</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=3&couIndustry=-1&page=1">行政后勤</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=4&couIndustry=-1&page=1">财务管理</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=5&couIndustry=-1&page=1">店面管理</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=6&couIndustry=-1&page=1">人力资源</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=7&couIndustry=-1&page=1">案例分析</a></li>
-						   <li>|</li>
-                           <li><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多</a></li>
+                           <li><a href="course!showList">更多</a></li>
                     </ul>
                 </div>
             </div><!-- end tile-top -->  
@@ -74,27 +60,27 @@
             <!-- tile-content -->   
             <div class="tile-content cf">   
                 <div class="video-box">
-                    <a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>
-                    <p class="post-info"><a href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
+                    <a href="course!showCouDetail?couid=393"><img src="img/video-placeholder.jpg" /></a>
+                    <p class="post-info"><a href="course!showCouDetail?couid=44">微演说1</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
                 </div>
                 <div class="video-list">
                     <h3><span>培训课程</span><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
                     <ul>
-                        <li><a href="course!showCouDetail?couid=5">优秀员工是怎样炼成的</a></li>
-                        <li><a href="course!showCouDetail?couid=6">企业沙盘视频</a></li>
-                        <li><a href="course!showCouDetail?couid=7">现代企业人才系统整体解决方案</a></li>
-                        <li><a href="course!showCouDetail?couid=8">智取订单之如何了解客户的需求1</a></li>
-                        <li><a href="course!showCouDetail?couid=9">智取订单之如何了解客户的需求2</a></li>
-                        <li><a href="course!showCouDetail?couid=10">智取订单之如何了解客户的需求3</a></li>
-                        <li><a href="course!showCouDetail?couid=11">国学与商道—时中与权变</a></li>
-                        <li><a href="course!showCouDetail?couid=12">国学与商道—举贤</a></li>
+                        <li><a href="course!showCouDetail?couid=456">消费者行为心理学2</a></li>
+                        <li><a href="course!showCouDetail?couid=457">消费者行为心理学3</a></li>
+                        <li><a href="course!showCouDetail?couid=458">消费者行为心理学4</a></li>
+                        <li><a href="course!showCouDetail?couid=381">智慧演讲法3</a></li>
+                        <li><a href="course!showCouDetail?couid=392">智慧演讲法4</a></li>
+                        <li><a href="course!showCouDetail?couid=393">智慧演讲法5</a></li>
+                        <li><a href="course!showCouDetail?couid=384">智慧演讲法6</a></li>
+                        <li><a href="course!showCouDetail?couid=385">智慧演讲法7</a></li>
                     </ul>
                 </div>
                 <div class="apply-form">            	
                     <form>
-                        <label><strong>*</strong>公司：<input type="text" /></label>
-                        <label><strong>*</strong>姓名：<input type="text" /></label>
-                        <label><strong>*</strong>手机：<input type="text" /></label>
+                        <label><strong>*</strong>公司：<input type="text" maxlength="20" /></label>
+                        <label><strong>*</strong>姓名：<input type="text" maxlength="20" /></label>
+                        <label><strong>*</strong>手机：<input type="text" maxlength="20" /></label>
                         <label>
                             城市：
                             <select>
@@ -178,7 +164,7 @@
                         <ul>
                             <li><a href="business!showbeizeng">倍增学院</a></li>
                             <li>|</li>
-                            <li><a href="business!showBZCouByTh?catId=2&ifceou=1&couPosition=-1">企业商学院</a></li>
+                            <li><a href="business!showEnterpriseCou?catId=3&ifceou=1">企业商学院</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->  
@@ -186,7 +172,7 @@
                 <div class="tile-content cf">        
                     <a href="course!showCouDetail?couid=47" class="little-slide">
                         <img src="img/shouye-img.jpg" />
-                        <p class="info-bg"><span>5S推行实用手法和步骤</span> <span class="author">讲师：安岷</span></p>
+                        <p class="info-bg"><span>领导者场景讲话艺术</span> <span class="author">讲师：侯希平</span></p>
                     </a>
                     <div class="post-list-r">
                     
@@ -194,21 +180,23 @@
                         <div class="tab-con">
                             <div class="tab-nav">
                                 <ul class="cf">
+                            		<!--
                                     <li class="cur" id="tab-nav_1"><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a><i class="triangle"></i></li>
                                     <li id="tab-nav_2"><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a><i class="triangle"></i></li>                               
                                     <li id="tab-nav_3" class="last"><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a><i class="triangle"></i></li>
+                                    -->
                                 </ul> 
                             </div>
                             <div class="tab-pages">
                                 <div class="tab-page color-list" id="page_1">
                                     <ul>
-                                        <li class="item_0"><a href="course!showCouDetail?couid=61">总裁战略管控8</a><span>[2014.01.05]</span></li>
-                                        <li class="item_1"><a href="course!showCouDetail?couid=62">总裁战略管控9</a><span>[2013.01.05]</span></li>
-                                        <li class="item_2"><a href="course!showCouDetail?couid=63">总裁管控六法则1</a><span>[2013.12.23]</span></li>
-                                        <li class="item_3"><a href="course!showCouDetail?couid=64">总裁管控六法则2</a><span>[2013.12.23]</span></li>
-                                        <li class="item_4"><a href="course!showCouDetail?couid=65">总裁管控六法则3</a><span>[2013.12.23]</span></li>
-                                        <li class="item_5"><a href="course!showCouDetail?couid=66">总裁管控六法则4</a><span>[2013.12.23]</span></li>
-                                        <li class="item_6"><a href="course!showCouDetail?couid=67">总裁管控六法则5</a><span>[2013.12.23]</span></li>
+                                        <li class="item_0"><a href="course!showCouDetail?couid=428">总裁倍增绩效1</a><span>[2014.02.26]</span></li>
+                                        <li class="item_1"><a href="course!showCouDetail?couid=429">总裁倍增绩效2</a><span>[2014.02.26]</span></li>
+                                        <li class="item_2"><a href="course!showCouDetail?couid=430">总裁倍增绩效3</a><span>[2014.02.26]</span></li>
+                                        <li class="item_3"><a href="course!showCouDetail?couid=468">信任管理1</a><span>[2014.02.26]</span></li>
+                                        <li class="item_4"><a href="course!showCouDetail?couid=467">信任管理2</a><span>[2014.02.26]</span></li>
+                                        <li class="item_5"><a href="course!showCouDetail?couid=468">信任管理3</a><span>[2014.02.26]</span></li>
+                                        <li class="item_6"><a href="course!showCouDetail?couid=469">信任管理4</a><span>[2014.02.26]</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -221,7 +209,7 @@
         <!-- floor-r -->
         <div class="floor-r">
         	<div class="aside-box h_300">
-            	<h2><span>最新新闻</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
+            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <dl>
                 	<dt>2014年01月06日</dt>
                     <dd><a href="business!showDetailArticle?artid=24">成功从关注客户的客户开始</a></dd>
@@ -269,9 +257,9 @@
                     <h2 class="tile-title"><img src="img/zaixianxueli.jpg" /></h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a class="cur" href="edu!showCoubyskill?couSkill=-1">技能学院</a></li>
+                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">技能学院</a></li>
                             <li>|</li>
-                            <li><a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></li>
+                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">知名学府</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->      
