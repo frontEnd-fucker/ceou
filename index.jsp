@@ -157,7 +157,7 @@
                         <ul>
                             <li><a href="business!showbeizeng">倍增学院</a></li>
                             <li>|</li>
-                            <li><a href="business!showEnterpriseCou?catId=3&ifceou=1">企业商学院</a></li>
+                            <li><a href="business!showBusinessList?catId=3&ifceou=1">企业商学院</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->  
@@ -171,13 +171,6 @@
                     
                         <!-- 标签页 -->
                         <div class="tab-con">
-                            <div class="tab-nav">
-                                <ul class="cf">
-                                    <li class="cur" id="tab-nav_1"><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a><i class="triangle"></i></li>
-                                    <li id="tab-nav_2"><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a><i class="triangle"></i></li>                               
-                                    <li id="tab-nav_3" class="last"><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a><i class="triangle"></i></li>
-                                </ul> 
-                            </div>
                             <div class="tab-pages">
                                 <div class="tab-page color-list" id="page_1">
                                     <ul>
@@ -242,7 +235,7 @@
                     <h2 class="tile-title">在线学历院</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a class="cur" href="edu!showCoubyskill?couSkill=-1">技能学院</a></li>
+                            <li><a href="edu!showCoubyskill?couSkill=-1">技能学院</a></li>
                             <li>|</li>
                             <li><a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></li>
                         </ul>
