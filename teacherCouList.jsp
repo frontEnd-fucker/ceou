@@ -1,13 +1,14 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>教师课程列表</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body id="course-list">
@@ -17,12 +18,6 @@
 <!-- main -->
 <div id="main" class="wrapper">
 	<div class="ad"><img src="img/slider2.jpg" /></div>
-    <div class="portal">
-    	<a href="#"><img src="img/portal1.jpg" /></a>
-        <a href="#"><img src="img/portal2.jpg" /></a>
-        <a href="#"><img src="img/portal3.jpg" /></a>
-        <a href="#"><img src="img/portal4.jpg" /></a>
-    </div>
     
 	<div class="floor">
     
@@ -401,7 +396,6 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
         	</div>  
 		                                               
         </div><!-- end floor-r -->
