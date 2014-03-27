@@ -124,8 +124,8 @@
                             <p class="post-info"><a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：周斌</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box">
-                            <a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhang.jpg" /></a>
-                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：张九元</a><br /><span>职务：教授</span></p>
+                            <a href="teacher!showCouByTeacher?thid=14&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszw.jpg" /></a>
+                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=14&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：张文</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box last">
                             <a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhao.jpg" /></a>
