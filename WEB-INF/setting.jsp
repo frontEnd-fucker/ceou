@@ -14,7 +14,7 @@
 
 <body id="setting">
 
-<jsp:include page="head.jsp" flush="true" />
+<jsp:include page="../head.jsp" flush="true" />
 
 <!-- main -->
 <div id="main" class="wrapper">
@@ -45,15 +45,15 @@
                 </div>
                 <div class="input-con">
                 	<label for="realname">真实姓名：</label>
-                    <input id="realname" name="perBean.realname" value="${perBean.realname}" type="text" maxlength="20"/>
+                    <input id="realname" name="perBean.realname" value="${perBean.realname}" type="text" />
                 </div>
                 <div class="input-con">
                 	<label for="tel">联系电话：</label>
-                    <input id="tel" name="perBean.phone" value="${perBean.phone}" type="text" maxlength="20"/>
+                    <input id="tel" name="perBean.phone" value="${perBean.phone}" type="text" />
                 </div>
                 <div class="input-con">
                 	<label for="qq">QQ：</label>
-                    <input id="qq" name="perBean.qq" value="${perBean.qq}" type="text" maxlength="20"/>
+                    <input id="qq" name="perBean.qq" value="${perBean.qq}" type="text" />
                 </div>
                 <div class="input-con">
                 	<label for="edu">教育背景：</label>
@@ -67,8 +67,9 @@
                     </select>
                 </div>
                 <div class="input-con">
-                	<label for="work">从事行业：</label>
+                	<label for="work">从事行业：${perBean.position}</label>
                     <select id="work" name="perBean.position">
+                    	
                     	<option>请选择</option>
                         <option value="0" <s:if test="perBean.position==0"> selected="selected" </s:if>>在校学生</option>
                         <option value="1" <s:if test="perBean.position==1"> selected="selected" </s:if>>计算机·网络·技术</option>
@@ -110,7 +111,7 @@
                 </div>
                 <div class="input-con">
                 	<label for="addr">邮寄地址：</label>
-                    <input id="addr" name="perBean.address" value="${perBean.address}" type="text" maxlength="30"/>
+                    <input id="addr" name="perBean.address" value="${perBean.address}" type="text" />
                 </div>
                	<div class="input-con">
                 	<input type="submit" class="reg-btn" value="保存" />
@@ -126,15 +127,15 @@
             <form id="form_3">
             	<div class="input-con">
                 	<label for="currPwd">当前密码：</label>
-                    <input id="currPwd" name="currPwd" type="password" maxlength="20" />
+                    <input id="currPwd" name="currPwd" type="text" style="width: 128px;" />
                 </div>
             	<div class="input-con">
                 	<label for="newPwd1">新密码：</label>
-                    <input id="newPwd1" name="newPwd1" type="password" maxlength="20" />
+                    <input id="newPwd1" name="newPwd1" type="password" />
                 </div>         
             	<div class="input-con">
                 	<label for="newPwd2">新密码：</label>
-                    <input id="newPwd2" name="newPwd2" type="password" maxlength="20" />
+                    <input id="newPwd2" name="newPwd2" type="password" />
                 </div>   
                	<div class="input-con">
                 	<input id="J_pwdSave" type="button" class="reg-btn" value="保存" style="margin-left: 110px;" />
@@ -147,7 +148,7 @@
 
 <div class="clear-both"></div>
 		
-<jsp:include page="footer.jsp" flush="true" />
+<jsp:include page="../footer.jsp" flush="true" />
 
 </body>
 </html>

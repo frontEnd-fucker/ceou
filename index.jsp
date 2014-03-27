@@ -1,12 +1,14 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="wb:webmaster" content="956c14eeccb2d352" />
 <meta property="qc:admins" content="1545573273635756375636" />
 <title>中国企业在线大学</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
 </head>
@@ -21,85 +23,76 @@
 	<!-- slider -->
     <div id="slider">
     	<div class="slides">
-        	<div class="slide"><a href="reg.jsp"><img src="img/1.jpg" /></a></div>
-            <div class="slide"><a href="reg.jsp"><img src="img/2.jpg" /></a></div>
-            <div class="slide"><a href="reg.jsp"><img src="img/3.jpg" /></a></div>
-            <div class="slide"><a href="reg.jsp"><img src="img/4.jpg" /></a></div>
+        	<div class="slide"><a href="#"><img src="whimg/banner1.jpg" /></a></div>
+            <div class="slide"><img src="whimg/banner2.jpg" /></div>
+            <div class="slide"><img src="whimg/banner3.jpg" /></div>
+            <!--<div class="slide"><img src="whimg/4.jpg" /></div>-->
         </div>
-        <div class="control-nav">
-        	<a class="cur" href="reg.jsp"><img src="img/1.1.jpg" /></a>
-            <a href="reg.jsp"><img src="img/2.1.jpg" /></a>
-            <a href="reg.jsp"><img src="img/3.1.jpg" /></a>
-            <a href="reg.jsp"><img src="img/4.1.jpg" /></a>
+        <a class="controler prev" href="javascript:;"></a>
+        <a class="controler next" href="javascript:;"></a>
+        <div class="indicator">
+        	<a class="cur indi_1" href="#"></a>
+            <a class="indi_2" href="#"></a>
+            <a class="indi_3" href="#"></a>
         </div>
     </div><!-- end slider -->
     
-    <div class="portal">
+   <!-- <div class="portal">
     	<a href="#"><img src="img/portal1.jpg" /></a>
         <a href="#"><img src="img/portal2.jpg" /></a>
         <a href="#"><img src="img/portal3.jpg" /></a>
         <a href="#"><img src="img/portal4.jpg" /></a>
-    </div>
+    </div>-->
     
     <!-- 培训课程 -->
-    <div class="floor">
+    <div class="floor cf">
         
-        <!-- floor-whole -->
-        <div class="floor-whole cf">
+        <!-- floor-l -->
+        <div class="floor-l cf">
         
-            <!-- tile-top -->
-            <div class="tile-top cf">
-                <h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
-                <div class="tile-top-nav">
-                    <ul>
-                           <li><a href="course!showList">更多</a></li>
-                    </ul>
-                </div>
-            </div><!-- end tile-top -->  
-            
-            <!-- tile-content -->   
-            <div class="tile-content cf">   
-                <div class="video-box">
-                    <a href="course!showCouDetail?couid=393"><img src="img/video-placeholder.jpg" /></a>
-                    <p class="post-info"><a href="course!showCouDetail?couid=44">微演说1</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
-                </div>
-                <div class="video-list">
-                    <h3><span>培训课程</span><a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h3>
-                    <ul>
-                        <li><a href="course!showCouDetail?couid=456">消费者行为心理学2</a></li>
-                        <li><a href="course!showCouDetail?couid=457">消费者行为心理学3</a></li>
-                        <li><a href="course!showCouDetail?couid=458">消费者行为心理学4</a></li>
-                        <li><a href="course!showCouDetail?couid=381">智慧演讲法3</a></li>
-                        <li><a href="course!showCouDetail?couid=392">智慧演讲法4</a></li>
-                        <li><a href="course!showCouDetail?couid=393">智慧演讲法5</a></li>
-                        <li><a href="course!showCouDetail?couid=384">智慧演讲法6</a></li>
-                        <li><a href="course!showCouDetail?couid=385">智慧演讲法7</a></li>
-                    </ul>
-                </div>
-                <div class="apply-form">            	
-                    <form>
-                        <label><strong>*</strong>公司：<input type="text" maxlength="20" /></label>
-                        <label><strong>*</strong>姓名：<input type="text" maxlength="20" /></label>
-                        <label><strong>*</strong>手机：<input type="text" maxlength="20" /></label>
-                        <label>
-                            城市：
-                            <select>
-                                <option>所在地区</option>
-                            </select>
-                            <select>
-                                <option>城市</option>
-                            </select>                        
-                        </label>
-                        <label>
-                            <strong>*</strong>类型：
-                            <input type="radio" name="userType" style="height: auto"/>会员
-                            <input type="radio" name="userType" style="height: auto"/>非会员
-                        </label>
-                        <input class="submit-btn" type="submit" value="立即申请" />
-                    </form>
-                </div>										
-            </div><!-- end tile-content -->
-        </div><!-- end floor-whole -->
+            <!-- tile-box -->
+            <div class="tile-box">
+                
+                <!-- tile-top -->
+                <div class="tile-top cf">
+                    <h2 class="tile-title">培训课程</h2>
+                    <div class="tile-top-nav">
+                        <ul>
+                            <li><a class="more" href="course!showList">更多</a></li>
+                        </ul>
+                    </div>
+                </div><!-- end tile-top -->  
+                
+                <!-- tile-content -->   
+                <div class="tile-content cf" >   
+                    <div class="video-box">
+                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
+                        <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
+                        <p class="video-info"><a href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
+                    </div>
+                    <div class="video-list">
+                        <h3><span>培训课程</span><!--<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a>--><i class="triangle"></i></h3>
+                        <ul>
+                            <li><a href="course!showCouDetail?couid=5">优秀员工是怎样炼成的</a></li>
+                            <li><a href="course!showCouDetail?couid=6">企业沙盘视频</a></li>
+                            <li><a href="course!showCouDetail?couid=7">现代企业人才系统整体解决方案</a></li>
+                            <li><a href="course!showCouDetail?couid=8">智取订单之如何了解客户的需求1</a></li>
+                            <li><a href="course!showCouDetail?couid=9">智取订单之如何了解客户的需求2</a></li>
+                            <li><a href="course!showCouDetail?couid=10">智取订单之如何了解客户的需求3</a></li>
+                            <li><a href="course!showCouDetail?couid=11">国学与商道—时中与权变</a></li>
+                            <li><a href="course!showCouDetail?couid=12">国学与商道—举贤</a></li>
+                        </ul>
+                    </div>									
+                </div><!-- end tile-content -->
+            </div><!-- end tile-box -->
+        </div><!-- end floor-l -->
+        
+        <!-- floor-r -->
+        <div class="floor-r">
+            <div class="aside-box" style="background: #eff4e3; padding: 5px;">
+                <img src="whimg/goodness.jpg" />
+            </div>
+        </div><!-- end floor-r -->
     </div><!-- end 培训课程 -->
     
 
@@ -109,13 +102,13 @@
     	<div class="floor-l">
         
         	<!-- 名师堂 -->
-            <div class="tile-box h_300">
+            <div class="tile-box h_290">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/mingshitang.jpg" /></h2>
+                    <h2 class="tile-title">名师堂</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="teacher!show">更多</a></li>
+                            <li><a class="more" href="teacher!show">更多</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        
@@ -124,19 +117,19 @@
                     <div class="post-box-con cf" style="margin-top: 0;">
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/msai.jpg" /></a>
-                            <p class="post-info">讲师： <a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">艾志朋</a><br /><span>职务：教授</span></p>
+                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=1&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：艾志朋</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszou.jpg" /></a>
-                            <p class="post-info">讲师：<a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">周斌</a><br /><span>职务：教授</span></p>
+                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=2&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：周斌</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box">
                             <a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhang.jpg" /></a>
-                            <p class="post-info">讲师：<a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">张九元</a><br /><span>职务：教授</span></p>
+                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=3&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：张九元</a><br /><span>职务：教授</span></p>
                         </div>
                         <div class="post-box last">
                             <a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="img/mszhao.jpg" /></a>
-                            <p class="post-info">讲师<a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">：赵喜刚</a><br /><span>职务：教授</span></p>
+                            <p class="post-info"><a href="teacher!showCouByTeacher?thid=4&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">讲师：赵喜刚</a><br /><span>职务：教授</span></p>
                         </div> 
                     </div>    
                     
@@ -156,10 +149,10 @@
             </div><!-- end 名师堂 -->
             
             <!-- 商学院 -->
-            <div class="tile-box h_300">
+            <div class="tile-box h_290">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/shangxueyuan.jpg" /></h2>
+                    <h2 class="tile-title">商学院</h2>
                     <div class="tile-top-nav">
                         <ul>
                             <li><a href="business!showbeizeng">倍增学院</a></li>
@@ -180,23 +173,21 @@
                         <div class="tab-con">
                             <div class="tab-nav">
                                 <ul class="cf">
-                            		<!--
                                     <li class="cur" id="tab-nav_1"><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a><i class="triangle"></i></li>
                                     <li id="tab-nav_2"><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a><i class="triangle"></i></li>                               
                                     <li id="tab-nav_3" class="last"><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a><i class="triangle"></i></li>
-                                    -->
                                 </ul> 
                             </div>
                             <div class="tab-pages">
                                 <div class="tab-page color-list" id="page_1">
                                     <ul>
-                                        <li class="item_0"><a href="course!showCouDetail?couid=428">总裁倍增绩效1</a><span>[2014.02.26]</span></li>
-                                        <li class="item_1"><a href="course!showCouDetail?couid=429">总裁倍增绩效2</a><span>[2014.02.26]</span></li>
-                                        <li class="item_2"><a href="course!showCouDetail?couid=430">总裁倍增绩效3</a><span>[2014.02.26]</span></li>
-                                        <li class="item_3"><a href="course!showCouDetail?couid=468">信任管理1</a><span>[2014.02.26]</span></li>
-                                        <li class="item_4"><a href="course!showCouDetail?couid=467">信任管理2</a><span>[2014.02.26]</span></li>
-                                        <li class="item_5"><a href="course!showCouDetail?couid=468">信任管理3</a><span>[2014.02.26]</span></li>
-                                        <li class="item_6"><a href="course!showCouDetail?couid=469">信任管理4</a><span>[2014.02.26]</span></li>
+                                        <li class="item_0"><a href="course!showCouDetail?couid=61">总裁战略管控8</a><span>[2014.01.05]</span></li>
+                                        <li class="item_1"><a href="course!showCouDetail?couid=62">总裁战略管控9</a><span>[2013.01.05]</span></li>
+                                        <li class="item_2"><a href="course!showCouDetail?couid=63">总裁管控六法则1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_3"><a href="course!showCouDetail?couid=64">总裁管控六法则2</a><span>[2013.12.23]</span></li>
+                                        <li class="item_4"><a href="course!showCouDetail?couid=65">总裁管控六法则3</a><span>[2013.12.23]</span></li>
+                                        <li class="item_5"><a href="course!showCouDetail?couid=66">总裁管控六法则4</a><span>[2013.12.23]</span></li>
+                                        <li class="item_6"><a href="course!showCouDetail?couid=67">总裁管控六法则5</a><span>[2013.12.23]</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -208,8 +199,8 @@
         
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="aside-box h_300">
-            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+        	<div class="aside-box h_290">
+            	<h2><span>最新新闻</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
                 	<dt>2014年01月06日</dt>
                     <dd><a href="business!showDetailArticle?artid=24">成功从关注客户的客户开始</a></dd>
@@ -222,7 +213,7 @@
                 </dl>                
             </div>
             
-        	<div class="aside-box h_300">
+        	<div class="aside-box h_290">
             	<h2><span>最新课程</span><a class="more" href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a></h2>
                 <dl>
                 	<dt>2014年01月06日</dt>
@@ -236,13 +227,7 @@
                 </dl>                
             </div>             
         </div><!-- end floor-r -->
-    </div><!-- end floor-2 -->
-    
-
-    
-    <div class="ad">
-    	<a href="#"><img src="img/ad-placeholder.jpg" /></a>
-    </div>
+    </div><!-- end floor-2 -->       
     
     <!-- floor3 -->
     <div class="floor">
@@ -254,12 +239,12 @@
         	<div class="tile-box">
             	<!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/zaixianxueli.jpg" /></h2>
+                    <h2 class="tile-title">在线学历院</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">技能学院</a></li>
+                            <li><a class="cur" href="edu!showCoubyskill?couSkill=-1">技能学院</a></li>
                             <li>|</li>
-                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">知名学府</a></li>
+                            <li><a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->      
@@ -302,7 +287,7 @@
             
             <!-- brand -->
             <div class="brand cate-box">
-            	<h2 class="cate-title"><i></i><a href="#">更多>></a></h2>
+            	<h2 class="cate-title">推荐企业会员</h2>
                 <div class="brand-con">
                     <a href="#"><img src="img/hy/hy_1.jpg" /></a>
                     <a href="#"><img src="img/hy/hy_2.jpg" /></a>
@@ -329,7 +314,7 @@
 
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="aside-box weibo-con cf">
+        	<div class="aside-box weibo-con cf" style="*margin-bottom: 10px;">
             	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
                 <ul class="weibo-list cf">
                 	<li>
@@ -378,9 +363,20 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+                <!--<a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>-->
         	</div>
-            <div class="weixin-con"><img src="img/weixin.jpg" /></div>
+            
+            <!-- weibo -->
+            <div class="weixin-con aside-box">
+            	<h2>关注微博</h2>
+                <div class="weibo-content cf">
+                	<img class="hd" src="whimg/weibo-logo.jpg" />
+                    <div class="bd">
+                    	<p>关注中国企业在线官方微博，第一时间获取信息！</p>
+                        <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
+                    </div>
+                </div>                
+            </div><!-- end weibo -->
         </div><!-- end floor-r -->
     </div><!-- end floor3 -->
 </div><!-- end main -->

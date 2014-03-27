@@ -12,7 +12,7 @@
 
 <body id="passport">
 
-<jsp:include page="head.jsp" flush="true" />
+<jsp:include page="../head.jsp" flush="true" />
 
 <!-- main -->
 <div id="main" class="wrapper">
@@ -31,26 +31,12 @@
         <div class="gray-box">
         	<h2 class="gray-title"><img src="img/wdx.jpg" /></h2>
             <ul class="gray-list">
-            	<li><a href="personal!showUCRecord?status=1&page=1">我的收藏</a></li>
-                <li><a href="personal!showMyCou?page=1">我的课程</a></li>
-                <li><a href="personal!showUCRecord?status=0&page=1">学习记录</a></li>
-                <!--<li><a href="#">我的笔记</a></li>
-                <li><a href="#">我的讨论</a></li>
-                <li><a href="#">我的活动</a></li>-->
+            	<li><a href="personal!showMyCou?status=1&recommend=-1&page=1">我的收藏</a></li>
+                <li><a href="personal!showMyCou?status=-1&recommend=-1&page=1">我的课程</a></li>
+                <li><a href="personal!showMyCou?status=0&recommend=-1&page=1">学习记录</a></li>
             </ul>
         </div>
-        <!-- 订单管理 -->
-        <!--<div class="gray-box">
-        	<h2 class="gray-title"><img src="img/wdx.jpg" /></h2>
-            <ul class="gray-list">
-            	<li><a href="#">我的订单</a></li>
-                <li><a href="#">我的购买记录</a></li>
-                <li><a href="#">我的优惠券</a></li>
-                <li><a href="#">我的兑换码</a></li>
-                <li><a href="#">账户余额</a></li>
-                <li><a href="#">账户充值</a></li>
-            </ul>
-        </div> -->  
+    
         <!-- 客户端下载 -->
         <div class="gray-box">
         	<h2 class="gray-title"><img src="img/khdxz.jpg" /></h2>
@@ -93,7 +79,7 @@
 	                    	<h3>讲师：<s:property value="coulecturer"/> </h3>
 	                    </div>
 	                    <div class="course-ft">
-	                    	<a class="start" href="course!showCouDetail?couid=<s:property value="couid"/>">开始学习</a>
+	                    	<a class="start" href="#">开始学习</a>
 	                        <a class="view-count" href="#">3518</a>
 	                        <a class="comment-count" href="#">3518</a>
 	                    </div>
@@ -103,7 +89,7 @@
         </div>
         <!-- 推荐课程 -->
         <div class="plain-box intro-course cf">
-        	<h2 class="rect-title"><span>推荐课程</span><a class="more" href="#">更多>></a></h2>
+        	<h2 class="rect-title"><span>推荐课程</span><a class="more" href="personal!showMyCou?status=-1&recommend=1">更多>></a></h2>
             <ul class="kejian-list">
             	<s:iterator value="recomList">
                     	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
@@ -137,19 +123,12 @@
         </div>        
     </div><!-- end passport-r -->
     
+    <div class="ad"><img src="img/tuozhanyin.jpg" /></div>
 </div><!-- main -->
 
 <div class="clear-both"></div>
 
-<jsp:include page="footer.jsp" flush="true" />
-
-<script>
-$(function() {
-	$('.course-hd img').error(function() {
-		$(this).attr('src', 'img/cousePlaceholder.jpg');
-	});
-});
-</script>
+<jsp:include page="../footer.jsp" flush="true" />
 
 </body>
 </html>

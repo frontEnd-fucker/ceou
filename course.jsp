@@ -1,13 +1,14 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>培训课程</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body id="course">
@@ -15,14 +16,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><a href="#"><img src="img/slider2.jpg" /></a></div>
-
-    <div class="portal">
-    	<a href="#"><img src="img/portal1.jpg" /></a>
-        <a href="#"><img src="img/portal2.jpg" /></a>
-        <a href="#"><img src="img/portal3.jpg" /></a>
-        <a href="#"><img src="img/portal4.jpg" /></a>
-    </div>   
+	<div class="ad"><a href="#"><img src="img/slider2.jpg" /></a></div> 
     
     <!-- floor_1 -->
     <div class="floor">    
@@ -37,7 +31,7 @@
             
             <!-- cate-box --> 
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i><a href="#"></a></h2>
+            	<h2 class="cate-title">管理分类</h2>
                 <div class="cate-content">
                 	<dl class="cf">
                     	<dt>通用课程:</dt>
@@ -77,7 +71,7 @@
         	<div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/gangwei.jpg" /></h2>
+                    <h2 class="tile-title">最新岗位培训</h2>
                     <div class="tile-top-nav">
                         <ul>
                             <li><a href="course!showList?couPosition=1&page=1">更多>></a></li>                            
@@ -88,14 +82,15 @@
                 <!-- tile-content -->   
                 <div class="tile-content cf">   
                     <div class="video-box">
-                        <a href="course!showCouDetail?couid=<s:property value="firstCouByPos.couid"/>"><img src="img/video-placeholder.jpg" /></a>
-                        <p class="post-info"><a href="course!showCouDetail?couid=<s:property value="firstCouByPos.couid"/>"><s:property value="firstCouByPos.couname"/></a><br /><span>讲师：<s:property value="firstCouByPos.coulecturer"/></span></p>
+                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
+                        <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
+                        <p class="video-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
                     </div>
                     <div class="video-list">
                         <h3>课程推荐<a href="course!showList?couPosition=1&page=1">更多>></a></h3>
                         <ul>
                             <s:iterator value="subposlist">
-                            	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                            	<li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                             </s:iterator>
                         </ul>
                     </div>									
@@ -106,7 +101,7 @@
             <div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/guangli.jpg" /></h2>
+                    <h2 class="tile-title">最新管理培训</h2>
                     <div class="tile-top-nav">
                         <ul>
                             <li><a href="course!showList?couPosition=2&page=1">更多>></a></li>                                                      
@@ -116,10 +111,10 @@
                 <div class="tile-content">
                 	<dl class="course-intro cf">
                     	<dt>
-							<a href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><img src="<s:property value="firstCouBySki.coupicurl"/>" /></a>
+							<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><img src="<s:property value="firstCouBySki.coupicurl"/>" /></a>
 						</dt>
                         <dd>
-                        	<h3><a href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><s:property value="firstCouBySki.couname"/></a></h3>
+                        	<h3><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><s:property value="firstCouBySki.couname"/></a></h3>
                             <p class="course-meta">
                             	<span>讲师：<s:property value="firstCouBySki.coulecturer"/></span>
                                 <span class="rate">评分：</span>
@@ -128,11 +123,11 @@
                         </dd>
                     </dl>
 
-                    <div class="post-box-con cf">
+                    <div class="post-box-con cf" style="margin-top: 10px;">
 						<s:iterator value="subsklist">
                         <div class="post-box">
-                            <a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
-                            <p class="post-info"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br />
+                            <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
+                            <p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br />
 								<span>讲师：<s:property value="coulecturer"/></span>
 							</p>
                         </div> 
@@ -144,14 +139,24 @@
         
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
+            <!-- weibo -->
+            <div class="weixin-con aside-box">
+                <h2>关注微博</h2>
+                <div class="weibo-content cf">
+                    <img class="hd" src="whimg/weibo-logo.jpg" />
+                    <div class="bd">
+                        <p>关注中国企业在线官方微博，第一时间获取信息！</p>
+                        <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
+                    </div>
+                </div>                
+            </div><!-- end weibo -->  
         
-        	<div class="aside-box" style="height: 378px">
+        	<div class="aside-box" style="height: 399px">
             	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <s:iterator value="randArticleList">
 	            	<dl>
 	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
+	                    <dd><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
             </div> 
@@ -205,7 +210,6 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
         	</div>       
         </div><!-- end floor-r -->        
     </div><!-- end floor_1 -->

@@ -1,79 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!-- footer -->
 <div id="footer">
-	<!--合作伙伴-->
-    <!--<div class="partner wrapper">
-    	<h2><span>合作伙伴</span></h2>
-        <ul class="cf">
-			<li><a href="#">聚成培训咨询</a></li>
-            <li>|</li>
-        	<li><a href="#">杂志</a></li>
-            <li>|</li>
-        	<li><a href="#">留学</a></li>
-            <li>|</li>          
-        	<li><a href="#">数字商业时代 </a></li>
-            <li>|</li>
-        	<li><a href="#">日照房产网</a></li>
-            <li>|</li>                        
-        	<li><a href="#">车问网</a></li>
-            <li>|</li>
-        	<li><a href="#">上海招聘网</a></li>
-            <li>|</li>
-        	<li><a href="#">中国童装网</a></li>
-            <li>|</li>
-        	<li><a href="#">家教114</a></li>
-            <li>|</li>                                               
-        	<li><a href="#">科技政策</a></li>
-            <li>|</li>                                                           
-        </ul>
-    </div>--><!-- end 合作伙伴 -->
     
     <div class="footer-top">
-    	<div class="wrapper"></div>
+    	<div class="wrapper">
+        	<ul>
+            	<li><a class="sprite_1" href="about.jsp">公司简介</a></li>
+                <li class="separator"></li>
+                <li><a class="sprite_2" href="joinUs.jsp">加入我们</a></li>
+                <li class="separator"></li>
+                <li><a class="sprite_3" href="about.jsp">联系我们</a></li>
+                <li class="separator"></li>
+                <li><a class="sprite_4" href="help.jsp">帮助中心</a></li>
+                <li class="separator"></li>
+                <li><a class="sprite_5" href="reg.jsp">免费注册</a></li>
+                <li class="separator"></li>
+                <li><span class="tel">客服电话：0755-22315621</span><span class="tel">合作电话：0755-22310465</span></li>
+            </ul>
+        </div>
     </div>
     <div class="footer-bottom">
-    	<div class="wrapper cf">
-        	<ul>
-            	<li><a href="about.jsp">公司简介</a></li>                
-                <li><a href="joinUs.jsp">加入我们</a></li>
-                <li><a href="#">发展历程</a></li>
-                <!--<li><a href="#">联系我们</a></li>-->
-                <li><a href="#">法律声明</a></li>
-                <li><a href="#">合作机构</a></li>
-            </ul>
-            
-        	<ul>
-            	<li><a href="#">分公司购买</a></li>
-                <li><a href="#">电话购买</a></li>
-                <li><a href="#">400在线购买</a></li>
-                <li><a href="#">定制方案</a></li>
-                <li><a href="#">申请内训</a></li>
-                <li><a href="#">马上优惠</a></li>
-            </ul>   
-              
-        	<ul>
-            	<li><a href="#">Iphone应用</a></li>
-                <li><a href="#">Ipad应用</a></li>
-                <li><a href="#">android应用</a></li>
-                <li class="jiameng"><a href="#"><img src="img/jiamen.jpg" /></a></li>
-            </ul>  
-             
-        	<ul>
-            	<li><a href="#">网站地图</a></li>
-                <li><a href="#">常见问题</a></li>
-                <li><a href="#">控件下载</a></li>
-                <li><a href="#">网站测速</a></li>
-                <li><a href="#">找回密码</a></li>
-            </ul> 
-            
-        	<ul>
-            	<li><a href="#">倍增学院</a></li>
-                <li><a href="#">企业商学院</a></li>
-                <li><a href="#">政企学院</a></li>
-                <li><a href="#">佳能学院</a></li>
-                <li><a href="#">知名学府</a></li>
-                <li><a href="#">国际学院</a></li>
-            </ul>                                              
+		<div class="wrapper cf">
+	    	<p>
+            	<a href="index.jsp">首页</a>
+                <span>|</span>
+                <a href="course!show">培训课程</a>
+                <span>|</span>
+                <a href="teacher!show">名师堂</a>
+                <span>|</span>
+                <a href="business!showbeizeng">倍增商学院</a>
+                <span>|</span>
+                <a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=-1">企业商学院</a>
+                <span>|</span>
+                <a href="business!show">商学院</a>
+            </p> 
+            <p class="copyright">深圳市倍增科技有限公司Copyright &copy; 2013-2014 www.ceou.com.cn All Right Reserved</p>                                    
         </div>
     </div>
 </div><!-- end footer -->
@@ -90,15 +51,15 @@
             <a href="#">在线客服3</a>
         </dd>
     </dl>
-    <dl class="list_2">
+   <!--  <dl class="list_2">
     	<dt><img src="img/tel-icon.jpg" /></dt>
         <dd>
         	<h2>在线电话</h2>
             <h3>ONLINE PHONE</h3>
             <p>0755-22315621</p>
         </dd>
-    </dl>
-    <dl class="list_3">
+    </dl> -->
+    <!-- <dl class="list_3">
     	<dt><img src="img/help-icon.jpg" /></dt>
         <dd>
         	<a href="help.jsp">
@@ -106,7 +67,19 @@
                 <h3>HELP CENTER</h3>
             </a>
         </dd>
-    </dl>
+    </dl> -->
 </div>
 <!-- end在线咨询框 -->
+
+<!-- QR-code -->
+<div id="QRcode">
+    <img src="whimg/QR-code.jpg" />
+</div>
+<!-- end QR-code -->
+
+<!-- b2t -->
+<div id="b2t">
+    <a href="#"><img src="whimg/b2t.png"></a>
+</div>
+<!-- end b2t -->
 

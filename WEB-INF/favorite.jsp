@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +14,7 @@
 
 <body id="timeline">
 
-<jsp:include page="head.jsp" flush="true" />
+<jsp:include page="../head.jsp" flush="true" />
 
 <!-- main -->
 <div id="main" class="wrapper">
@@ -81,7 +81,7 @@
 	                    	<h3>讲师：<s:property value="coulecturer"/> </h3>
 	                    </div>
 	                    <div class="course-ft">
-	                    	<a class="start" href="course!showCouDetail?couid=<s:property value="couid"/>">开始学习</a>
+	                    	<a class="start" href="#">开始学习</a>
 	                        <a class="view-count" href="#">3518</a>
 	                        <a class="comment-count" href="#">3518</a>
 	                    </div>
@@ -167,12 +167,15 @@
                     	</div>
                     </div><!-- end page-nav -->                 
     </div><!-- end passport-r 002-->
-        
+    
+
+    
+    <div class="ad"><img src="img/tuozhanyin.jpg" /></div>
 </div><!-- main -->
 
 <div class="clear-both"></div>
 
-<jsp:include page="footer.jsp" flush="true" />
+<jsp:include page="../footer.jsp" flush="true" />
 
 </body>
 </html>

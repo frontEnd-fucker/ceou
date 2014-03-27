@@ -1,12 +1,13 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>关于我们</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         
         <div class="tile-box">
         	<div class="tile-top cf">
-            	<h2 class="tile-title"><img src="img/gsjj.jpg" /></h2>
+            	<h2 class="tile-title">公司简介</h2>
             </div>
             <div class="tile-content">
             	<div class="post-content" style="font-size: 14px; color: #646464;">
@@ -44,7 +45,17 @@
     
     <!-- floor-r -->
     <div class="floor-r" style="margin-top: 32px; *margin-top: 30px;">
-    	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
+        <!-- weibo -->
+        <div class="weixin-con aside-box">
+            <h2>关注微博</h2>
+            <div class="weibo-content cf">
+                <img class="hd" src="whimg/weibo-logo.jpg" />
+                <div class="bd">
+                    <p>关注中国企业在线官方微博，第一时间获取信息！</p>
+                    <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
+                </div>
+            </div>                
+        </div><!-- end weibo -->
         <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
     </div><!-- end floor-r -->
 </div><!-- end main -->

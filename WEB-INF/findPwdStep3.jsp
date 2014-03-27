@@ -12,20 +12,20 @@
 
 <body>
 <!-- header -->
-<!-- header -->
 <div id="header">
 	<div class="header-con">
-    	<a class="logo" href="/CEOU"><img src="img/reg-logo.jpg" /></a>
+    	<a class="logo" href="index.jsp"><img src="img/reg-logo.jpg" /></a>
         <div class="top-nav">
         	<ul>
-            	<li><a href="/CEOU">返回主页</a></li>
+            	<li><a href="#">社区</a></li>
                 <li class="separator">|</li>
-                <li><a>服务热线：0755-22315621</a></li>
+                <li><a href="#">马上优惠</a></li>
+                <li class="separator">|</li>
+                <li><a>服务热线：400-700-7000</a></li>
             </ul>        
         </div>
     </div>
 </div>
-<!-- end header -->
 <!-- end header -->
 
 <div class="hr"></div>
@@ -33,7 +33,9 @@
 <!-- main -->
 <div id="main">
 	<h2 class="reg-tips" style="margin-left: 215px;">
-		验证成功，请输入您的新密码：
+		验证成功，
+		<span id="step3useremail"><%= request.getParameter("useremail") %></span>
+		请输入您的新密码：
 	</h2>
     <div class="form">    	
     	<form name="reg-form" action="userReg" method="post">        
@@ -52,7 +54,6 @@
             </div>  
         </form>
     </div>
-    <span id="step3useremail" style="display: none;"><%= request.getParameter("useremail") %></span>
 </div><!-- end main -->
 
 <div class="clear-both"></div>

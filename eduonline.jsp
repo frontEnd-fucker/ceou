@@ -30,7 +30,7 @@
         <div class="tile-box">
             <!-- tile-top -->
             <div class="tile-top cf">
-                <h2 class="tile-title"><img src="img/jnxybxkc.jpg" /></h2>
+                <h2 class="tile-title">技能培训课程</h2>
                 <div class="tile-top-nav">
                     <ul>
                          <li><a href="edu!showCoubyskill?catId=4&ifceou=1">更多>></a></li>                                                                                          
@@ -41,8 +41,8 @@
             <div class="tile-content cf">
             	<div class="tile-content-l">
                     <div class="post-box">
-                        <a href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><img class="bigger" src="<s:property value="firstedu.coupicurl"/>" /></a>
-						<p class="post-info"><a href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><s:property value="firstedu.couname"/></a><br /><span>讲师：<s:property value="firstedu.coulecturer"/></span></p>
+                        <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><img class="bigger" src="<s:property value="firstedu.coupicurl"/>" /></a>
+						<p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstedu.couid"/>"><s:property value="firstedu.couname"/></a><br /><span>讲师：<s:property value="firstedu.coulecturer"/></span></p>
                     </div>
                 </div>
                 <div class="tile-content-r">
@@ -50,8 +50,8 @@
 		                <s:iterator value="eduskilllist1">
 		                <div class="post-box">                    
 		                	<!--<a href="#"><img src="<s:property value="coupicurl"/>" /></a> --> 
-		                	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
-		                	<p class="post-info"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span><s:property value="coulecturer"/></span></p>
+		                	<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
+		                	<p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span><s:property value="coulecturer"/></span></p>
 		                </div> 
 		                </s:iterator>
 	                </div>    
@@ -59,7 +59,7 @@
                     <div class="post-list-bottom cf">
                         <ul>
                        		<s:iterator value="eduskilllist2">
-                        	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                        	<li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         	</s:iterator>
                         </ul>
                     </div>                  	
@@ -71,7 +71,7 @@
         <div class="tile-box">
             <!-- tile-top -->
             <div class="tile-top cf">
-                <h2 class="tile-title"><img src="img/zmxf.jpg" /></h2>      
+                <h2 class="tile-title">知名学府</h2>      
                 <div class="tile-top-nav">
                     <ul>
                          <li><a href="edu!showCoubyskill?catId=4&ifceou=2">更多>></a></li>                                                                                          
@@ -81,14 +81,14 @@
             
 			<div class="tile-content cf">
                 <div class="little-slide">
-                    <a href="course!showCouDetail?couid=<s:property value="firstexam.couid"/>"><img src="img/shouye-img.jpg" /></a>
+                    <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstexam.couid"/>"><img src="img/shouye-img.jpg" /></a>
                  <p class="info-bg"><span><s:property value="firstexam.couname"/> </span> <span class="author">讲师：<s:property value="firstexam.coulecturer"/> </span></p>
                 </div>     
                 <div class="video-list">
                     <h3><span>成考</span><a href="edu!showCoubyindustry?couIndustry=1">更多>></a></h3>
                     <ul>
                     	<s:iterator value="adultexamlist">
-                        	<li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                        	<li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         </s:iterator>
                     </ul>
                 </div>      
@@ -96,20 +96,14 @@
                     <h3><span>自考</span><a href="edu!showCoubyindustry?couIndustry=2">更多>></a></h3>
                     <ul>
 						<s:iterator value="selfexamlist">
-                        <li><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
+                        <li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         </s:iterator>
                     </ul>
                 </div>                                  
             </div>                  	
         </div>                
     </div><!-- end知名学府 -->   
-    
-    <div class="portal">
-        <a href="#"><img src="img/portal1.jpg" /></a>
-        <a href="#"><img src="img/portal2.jpg" /></a>
-        <a href="#"><img src="img/portal3.jpg" /></a>
-        <a href="#"><img src="img/portal4.jpg" /></a>
-    </div>     
+      
 </div><!-- end main -->
 
 <div class="clear-both"></div>

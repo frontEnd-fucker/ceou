@@ -8,17 +8,6 @@
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
 <style type="text/css">
-.tile-title {
-	width: 143px;
-	height: 32px;	
-	color: #fff;
-	font-family: 黑体;
-	font-size: 16px;
-	line-height: 35px;
-	text-indent: 16px;
-	letter-spacing: 2px;
-	background: url(img/tile-title-bg.jpg) no-repeat left top;
-}
 </style>
 </head>
 

@@ -2,13 +2,14 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>videoCourse</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body id="introPage">
@@ -41,7 +42,7 @@
             <div class="tile-box">
             	<div class="tile-top cf">
                 	<h2 class="tile-title">
-                    	<img src="img/beixunkechen.jpg" />
+                    	培训课程
                     </h2>                
                 </div>
                 
@@ -56,7 +57,7 @@
             
             <div class="tile-box">
             	<div class="tile-top cf">
-            		<h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>
+            		<h2 class="tile-title">课程简介</h2>
                 </div>
                 <div class="tile-content cf">
                 	<dl class="course-intro cf">
@@ -142,21 +143,26 @@
         
         <!-- floor-r -->
         <div class="floor-r">
-            <div class="portal-vertical">
-                <a href="#"><img src="img/portal1.jpg" /></a>
-                <a href="#"><img src="img/portal2.jpg" /></a>
-                <a href="#"><img src="img/portal3.jpg" /></a>
-                <a href="#"><img src="img/portal4.jpg" /></a>
-            </div>    
-            <div class="weixin-con">
-            	<img src="img/weixin.jpg" />
-            </div>    	
+            <div class="aside-box" style="background: #eff4e3; padding: 5px;">
+                <img src="whimg/goodness.jpg" />
+            </div>   
+            <!-- weibo -->
+            <div class="weixin-con aside-box">
+                <h2>关注微博</h2>
+                <div class="weibo-content cf">
+                    <img class="hd" src="whimg/weibo-logo.jpg" />
+                    <div class="bd">
+                        <p>关注中国企业在线官方微博，第一时间获取信息！</p>
+                        <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
+                    </div>
+                </div>                
+            </div><!-- end weibo -->    	
         	<div class="aside-box" style="height: 452px">
             	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <s:iterator value="randArticleList">
 	            	<dl>
 	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-	                    <dd><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
+	                    <dd><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
             </div>            

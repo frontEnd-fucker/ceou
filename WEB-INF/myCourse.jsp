@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>浏览记录</title>
+<title>
+<s:if test="status==0 && recommend==-1">浏览记录</s:if>
+<s:if test="status==1 && recommend==-1">收藏课程</s:if>
+<s:if test="status==-1 && recommend==-1">我的课程</s:if>
+<s:if test="status==-1 && recommend==0">试听课程</s:if>
+<s:if test="status==-1 && recommend==1">推荐课程</s:if>
+</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
@@ -14,7 +20,7 @@
 
 <body id="timeline">
 
-<jsp:include page="head.jsp" flush="true" />
+<jsp:include page="../head.jsp" flush="true" />
 
 <!-- main -->
 <div id="main" class="wrapper">
@@ -33,45 +39,31 @@
         <div class="gray-box">
         	<h2 class="gray-title"><img src="img/wdx.jpg" /></h2>
             <ul class="gray-list">
-            	<li><a href="personal!showUCRecord?status=1&page=1">我的收藏</a></li>
-                <li><a href="personal!showMyCou?page=1">我的课程</a></li>
-                <li><a href="personal!showUCRecord?status=0&page=1">学习记录</a></li>
-                <!--<li><a href="#">我的笔记</a></li>
-                <li><a href="#">我的讨论</a></li>
-                <li><a href="#">我的活动</a></li>-->
+            	<li><a href="personal!showMyCou?status=1&recommend=-1&page=1">我的收藏</a></li>
+                <li><a href="personal!showMyCou?status=-1&recommend=-1&page=1">我的课程</a></li>
+                <li><a href="personal!showMyCou?status=0&recommend=-1&page=1">学习记录</a></li>
             </ul>
         </div>
-        <!-- 订单管理 -->
-        <!--<div class="gray-box">
-        	<h2 class="gray-title"><img src="img/wdx.jpg" /></h2>
-            <ul class="gray-list">
-            	<li><a href="#">我的订单</a></li>
-                <li><a href="#">我的购买记录</a></li>
-                <li><a href="#">我的优惠券</a></li>
-                <li><a href="#">我的兑换码</a></li>
-                <li><a href="#">账户余额</a></li>
-                <li><a href="#">账户充值</a></li>
-            </ul>
-        </div> -->  
         <!-- 客户端下载 -->
         <div class="gray-box">
         	<h2 class="gray-title"><img src="img/khdxz.jpg" /></h2>
             <img style="margin: 30px 0 25px 40px;" src="img/RQ.jpg" />
         </div>
-        <!-- vertical-portal --> 
-        <!--<div class="portal-vertical" style="margin-left: 3px;">
-        	<a href="#"><img src="img/portal1.jpg" /></a>
-            <a href="#"><img src="img/portal2.jpg" /></a>
-            <a href="#"><img src="img/portal3.jpg" /></a>
-            <a href="#"><img src="img/portal4.jpg" /></a>
-        </div>-->    
     </div><!-- end passport-l -->
     
     <!-- passport-r-->
     <div class="fr passport-r">
         <!-- 我的课程 -->
         <div class="plain-box my-course cf">
-        	<h2 class="rect-title"><span>我的课程</span></h2>
+        	<h2 class="rect-title">
+        		<span>
+       	 			<s:if test="status==0 && recommend==-1">浏览记录</s:if>
+					<s:if test="status==1 && recommend==-1">收藏课程</s:if>
+					<s:if test="status==-1 && recommend==-1">我的课程</s:if>
+					<s:if test="status==-1 && recommend==0">试听课程</s:if>
+					<s:if test="status==-1 && recommend==1">推荐课程</s:if>
+ 	      		</span>
+        	</h2>
 			<div class="courses">
             	<s:iterator value="myCourseList">
                     <div class="course">
@@ -81,7 +73,7 @@
 	                    	<h3>讲师：<s:property value="coulecturer"/> </h3>
 	                    </div>
 	                    <div class="course-ft">
-	                    	<a class="start" href="course!showCouDetail?couid=<s:property value="couid"/>"/>">开始学习</a>
+	                    	<a class="start" href="#">开始学习</a>
 	                        <a class="view-count" href="#">3518</a>
 	                        <a class="comment-count" href="#">3518</a>
 	                    </div>
@@ -92,12 +84,12 @@
                    <!-- page-nav -->
                    <div class="page-nav cf">
                     	<div class="page-num">
-		                    <a class="page-home" href="personal!showMyCou?page=1">首页</a>
+		                    <a class="page-home" href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=1">首页</a>
 		                    <s:if test="page==1">
 		                		<a href="#">上一页</a>
 		                	</s:if>
 		                	<s:else>
-		                		<a href="personal!showMyCou?page=<s:property value="page-1"/>" >上一页</a>
+		                		<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="page-1"/>" >上一页</a>
 		                	</s:else>
 		                    
 		                    
@@ -106,20 +98,20 @@
 		                     	<s:if test="%{(totalPage<=5)}">
 		                         	<s:iterator begin="1" end="totalPage" var="p">
 										<s:if test="#p==page">
-		                    				<a href="personal!showMyCou?page=<s:property />" class="page-home"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
 		                    			</s:if>
 		                    			<s:else>
-		                    				<a href="personal!showMyCou?page=<s:property />"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
 		                    			</s:else>
 		                    		</s:iterator>		                     
 		                     	</s:if>
 			                 	<s:else>
 			                 		<s:iterator begin="1" end="5" var="p">
 										<s:if test="#p==page">
-		                    				<a href="personal!showMyCou?page=<s:property />" class="page-home"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
 		                    			</s:if>
 		                    			<s:else>
-		                    				<a href="personal!showMyCou?page=<s:property />"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
 		                    			</s:else>
 		                    		</s:iterator>		
 			                 	</s:else>		                 			                 
@@ -130,20 +122,20 @@
 		                    	<s:if test="%{totalPage-page>2}">
 		                      		<s:iterator begin="page-2" end="page+2" var="p">
 		                    			<s:if test="#p==page">
-		                    				<a href="personal!showMyCou?page=<s:property />" class="page-home"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
 		                    			</s:if>
 		                    			<s:else>
-		                    				<a href="personal!showMyCou?page=<s:property />"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
 		                    			</s:else>
 		                    		</s:iterator>
 		                    	</s:if>
 		                    	<s:else>
 		                    	 	<s:iterator begin="totalPage-4" end="totalPage" var="p">
 		                    			<s:if test="#p==page">
-		                    				<a href="personal!showMyCou?page=<s:property />" class="page-home"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
 		                    			</s:if>
 		                    			<s:else>
-		                    				<a href="personal!showMyCou?page=<s:property />"><s:property/></a>
+		                    				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
 		                    			</s:else>
 		                    		</s:iterator>
 		                    	</s:else>
@@ -154,12 +146,14 @@
 		                    	<a href="#">下一页</a>
 		                    </s:if>
 		                    <s:else>
-		                    	<a href="personal!showMyCou?page=<s:property value="page+1"/>">下一页</a>
+		                    	<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="page+1"/>">下一页</a>
 		                    </s:else>
-		                    <a href="personal!showMyCou?page=<s:property value="totalPage"/>">末页</a>
+		                    <a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="totalPage"/>">末页</a>
                         </div>
                         <div class="page-skip">
-                        	<form action="personal!showMyCou">
+                        	<form action="personal!showMyCou" >
+                        		<input type="hidden" name="status" value="<s:property value="status"/>"/>
+                        		<input type="hidden" name="recommend" value="<s:property value="recommend"/>"/>
                             	跳至第<input class="page-input" type="text" name="page" />页
                             	<input type="submit" value="确定"/>
                             </form>  
@@ -167,11 +161,12 @@
                     </div><!-- end page-nav -->                 
     </div><!-- end passport-r-->
     
+    <div class="ad"><img src="img/tuozhanyin.jpg" /></div>
 </div><!-- main -->
 
 <div class="clear-both"></div>
 
-<jsp:include page="footer.jsp" flush="true" />
+<jsp:include page="../footer.jsp" flush="true" />
 
 </body>
 </html>

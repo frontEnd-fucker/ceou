@@ -40,10 +40,13 @@
 		<action name="business" class="com.ceou.action.BusinessAction">
 			<result name="show">/business.jsp</result>
 			<result name="showbeizeng">/beizeng.jsp</result>
+			<result name="showBusinessList">/businessCouList.jsp</result>
+			<!-- 
 			<result name="showBeizengList">/beizengCouList.jsp</result>
 			<result name="showBZCouByTh">/bzCouByThList.jsp</result>
 			<result name="showEnterpriseCou">/enterpriseCouList.jsp</result>
 			<result name="showBZFightCou">/bzFightCou.jsp</result>
+			 -->
 			<result name="showArticleByCondition">/allArticleList.jsp</result>
 			<result name="showDetailArticle">/article.jsp</result>
 		</action>
@@ -61,6 +64,7 @@
 			<result name="editSuccess">/login.jsp</result>
 			
 			<!-- 退出登录 -->
+			<result name="userLogin">/login.html</result>
 			<result name="outLogin">/index.jsp</result>
 			
 			<!-- 忘记密码-->
@@ -188,8 +192,6 @@
 			<result name="show">/WEB-INF/passport.jsp</result>
 			<result name="relogin">/login.html</result>
 			<result name="showMyCou">/WEB-INF/myCourse.jsp</result>
-			<result name="showUCRecord">/WEB-INF/timeline.jsp</result>
-			<result name="showFavorite">/WEB-INF/favorite.jsp</result>
 			<result name="findUserById">/WEB-INF/setting.jsp</result>
 			<result name="editUser" type="redirect">
 				/personal!show
@@ -201,6 +203,12 @@
 			</result>
 		</action>
 		
+		<!-- 活动 -->
+		<action name="activity" class="com.ceou.action.ActivityAction">
+			<result name="showCouDetail">/videoCourseCC.jsp</result>
+			<result name="activityShow">/activity.jsp</result>
+			<result name="showArtDetail">/article.jsp</result>
+		</action>
 		
     </package>
     
@@ -258,6 +266,10 @@
 			<param name="couIndustry">${couIndustry}</param>
 			<param name="catId">${catId}</param>
 			<param name="ifceou">${ifceou}</param>
+			<param name="str">${str}</param>
+			<param name="page">${page}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
             </result> 
             <!-- 显示修改页面 -->
             <result name="showupdatecourse">/ad/updatecourse.jsp</result>
@@ -269,10 +281,35 @@
 			<param name="couIndustry">${couIndustry}</param>
 			<param name="catId">${catId}</param>
 			<param name="ifceou">${ifceou}</param>
-			<param name="page">${page}</param>
+			<param name="str">${str}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
             </result> 
             <!-- 上传错误 -->
             <result name="input">/ad/error.jsp</result>
+            <!-- 试听课程和推荐课程管理 -->
+             <!-- 显示推荐或试听课程 -->            
+            <result name="showtry">/ad/adminalltry.jsp</result>
+			<result name="showrecommend">/ad/adminallrecommend.jsp</result>
+			<!-- 删除推荐或试听课程 -->
+            <result name="deleterecommend" type="redirectAction">
+			<param name="actionName">admincourse!showrecommend</param>
+			<param name="recommend">${recommend}</param>
+			<param name="page">${page}</param>
+            </result> 
+            <!-- 添加到推荐或试听课程 -->
+            <result name="addrecommend" type="redirectAction">
+			<param name="actionName">admincourse!show</param>
+			<param name="couPosition">${couPosition}</param>
+			<param name="couSkill">${couSkill}</param>
+			<param name="couIndustry">${couIndustry}</param>
+			<param name="catId">${catId}</param>
+			<param name="ifceou">${ifceou}</param>
+			<param name="str">${str}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
+            </result> 
+            
 		</action>  
 
             	<!-- 文章管理 -->
@@ -289,7 +326,9 @@
 			<param name="actionName">adminarticle!show</param>
 			<param name="catId">${catId}</param>
 			<param name="artcategory">${artcategory}</param>
-			<param name="artstatus">${artstatus}</param>
+			<param name="str">${str}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
             </result> 
             <!-- 显示修改页面 -->
             <result name="showupdatearticle">/ad/updatearticle.jsp</result>
@@ -298,14 +337,14 @@
 			<param name="actionName">adminarticle!show</param>
 			<param name="catId">${catId}</param>
 			<param name="artcategory">${artcategory}</param>
-			<param name="artstatus">${artstatus}</param>
 			<param name="page">${page}</param>
+			<param name="str">${str}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
             </result> 
             <!-- 上传错误 -->
             <result name="input">/ad/error.jsp</result>
 		</action>
-    
-    
     </package>
 </struts>    
 

@@ -1,20 +1,33 @@
 //slider效果
 $(function() {	
 	var sliderTimer = null;
-	var $controlNav  = $('.control-nav a');
-	var len = $controlNav.length;
+	var $indicator  = $('.indicator a');
+	var len = $indicator.length;
 	var index = 0;
 	
-	$controlNav.mouseover(function() {
-        index = $controlNav.index(this);
+	$indicator.mouseover(function() {
+        index = $indicator.index(this);
         showImg(index);	
 	}).eq(0).mouseover();
 	
+	$('.prev').click(function() {
+		index--;
+		if(index<0) {index=len-1}
+		showImg(index);
+	});
+	$('.next').click(function() {
+		index++;
+		if(index==len) {index=0}
+		showImg(index);
+	});
+	
 	$('#slider').hover(function() {
+		$('.controler').show();
 		if(sliderTimer) {
 			clearInterval(sliderTimer);
 		}
 	}, function() {
+		$('.controler').hide();
 		sliderTimer = setInterval(function() {
 			showImg(index);
 			index++;
@@ -24,10 +37,10 @@ $(function() {
 });
 
 function showImg(index) {
-	var $controlNav  = $('.control-nav a');
+	var $indicator  = $('.indicator a');
 	$('.slide').eq(index).stop(true, true).fadeIn('slow')
 	           .siblings().fadeOut('slow');
-	$controlNav.eq(index).addClass('cur')
+	$indicator.eq(index).addClass('cur')
 					   .siblings().removeClass('cur');
 }
 
@@ -97,10 +110,44 @@ $(function() {
 		}				
 	});
 });
+//滚动固定nav功能
+$(function() {
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 120) {
+			$('#nav').css({
+				position: 'fixed',
+				top: 0
+			});
+		}else if($(this).scrollTop() <= 120) {
+			$('#nav').css({
+				position: 'static'
+			});
+		}
+	});
+});
 
 
+//当nav中有二级菜单的连接hover时，将nav的border-bottom改为31px
+$(function() {
+	$('.sub-nav').hover(function() {
+		$('#nav').css('border-bottom-width', 31);
+	}, function() {
+		$('#nav').css('border-bottom-width', 11);
+	});
+});
 
+//-------------点击率
+//文章增加点击数
+function clicks(artid){
+  $.post('business!articleClicks',{'artid':artid})
+}
 
+//课程增加点击数
+function couclicks(couid){
+  $.post('course!courseClicks',{'couid':couid})
+}
+
+//==============点击率 end
 
 
 

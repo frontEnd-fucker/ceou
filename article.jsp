@@ -18,12 +18,6 @@
 <!-- main -->
 <div id="main" class="wrapper">
 	<div class="ad"><img src="img/slider2.jpg" /></div>
-    <div class="portal">
-    	<a href="#"><img src="img/portal1.jpg" /></a>
-        <a href="#"><img src="img/portal2.jpg" /></a>
-        <a href="#"><img src="img/portal3.jpg" /></a>
-        <a href="#"><img src="img/portal4.jpg" /></a>
-    </div>	
     
     <div class="floor cf">
     	<!-- floor-l -->
@@ -35,7 +29,7 @@
             </div>
             
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i></h2>
+            	<h2 class="cate-title">管理分类</h2>
                 <div class="cate-content">
 					<dl>
 						<dd>
@@ -61,7 +55,7 @@
             
             <div class="tile-box">
             	<div class="tile-top cf">
-            		<h2 class="tile-title"><img src="img/zrldl.jpg" /></h2>
+            		<h2 class="tile-title">最热领导力</h2>
                 </div>
                 <div class="post">
                 	<div class="post-hd">
@@ -112,7 +106,9 @@
         
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
+            <div class="aside-box" style="background: #eff4e3; padding: 5px;">
+                <img src="whimg/goodness.jpg" />
+            </div>  
             <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
             
         	<div class="aside-box">
@@ -120,17 +116,17 @@
                 <s:iterator value="randCourseList">
                 <dl>
                 	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+                    <dd><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
                 </dl> 
                 </s:iterator>               
             </div>
             
             <div class="aside-box">
-            	<h2 class="longer"><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+            	<h2><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <div class="hot-post">
                     <ul class="color-list">
                         <s:iterator value="randArticleList">
-                        	<li><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
+                        	<li><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
                         </s:iterator>
                     </ul>
                 </div>            

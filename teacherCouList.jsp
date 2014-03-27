@@ -38,7 +38,7 @@
             
             <!-- cate-box --> 
             <div class="cate-box">
-            	<h2 class="cate-title"><i></i></h2>
+            	<h2 class="cate-title">分类管理</h2>
                 <div class="cate-content">
                 	<s:if test="couPosition==-1 && couSkill==-1">
 	                	<dl class="cf">
@@ -195,18 +195,18 @@
             <div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title"><img src="img/beixunkechen.jpg" /></h2>            
+                    <h2 class="tile-title">培训课程</h2>            
                 </div><!-- end tile-top -->  
                 
                 <div class="tile-content cf">
                     <s:iterator value="allCouByTeacher">
 	                	<dl class="course-intro cf">
 	                    	<dt>
-	                    		<a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="img/kecheng-list.jpg" /></a>
+	                    		<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="img/kecheng-list.jpg" /></a>
 	                    	</dt>
 	                        <dd>
 	                        	<h3>
-	                        	<a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a>
+	                        	<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a>
 	                        	</h3>
 	                            <p class="course-meta">
 	                            	<span>讲师：
@@ -217,7 +217,7 @@
 	                            </p>
 	                            <p class="course-intro-content"><s:property value="couprofile"/></p>
 	                        </dd>
-	                        <a class="read-more" href="course!showCouDetail?couid=<s:property value="couid"/>"></a>
+	                        <a onclick="couclicks(<s:property value="couid"/>)" onclick="couclicks(<s:property value="couid"/>)" class="read-more" href="course!showCouDetail?couid=<s:property value="couid"/>"></a>
 	                    </dl>
                     </s:iterator>
                     
@@ -308,14 +308,24 @@
         
         <!-- floor-r -->
         <div class="floor-r">
-        	<div class="weixin-con"><img src="img/weixin.jpg" /></div>
+			<!-- weibo -->
+			<div class="weixin-con aside-box">
+			    <h2>关注微博</h2>
+			    <div class="weibo-content cf">
+			        <img class="hd" src="whimg/weibo-logo.jpg" />
+			        <div class="bd">
+			            <p>关注中国企业在线官方微博，第一时间获取信息！</p>
+			            <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
+			        </div>
+			    </div>                
+			</div><!-- end weibo --> 
             <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
         	<div class="aside-box">
             	<h2><span>最新课程</span><a class="more" href="course!showList">更多>></a></h2>
                  <s:iterator value="randCourseList">
 	                <dl>
 	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-	                    <dd><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
+	                    <dd><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></dd>
 	                </dl> 
                 </s:iterator>                
             </div> 
@@ -332,11 +342,11 @@
             </div>  -->       
             
             <div class="aside-box">
-            	<h2 class="longer"><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
+            	<h2><span>热点管理文章</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
                 <div class="hot-post">
                     <ul class="color-list">
                         <s:iterator value="randArticleList">
-                        	<li><a href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
+                        	<li><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
                         </s:iterator>
                     </ul>
                 </div>            
