@@ -235,9 +235,9 @@
                     <h2 class="tile-title">在线学历院</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="edu!showCoubyskill?couSkill=-1">技能学院</a></li>
+                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">技能学院</a></li>
                             <li>|</li>
-                            <li><a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></li>
+                            <li><a href="edu!showCoubyskill?catId=4&ifceou=2">知名学府</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->      
