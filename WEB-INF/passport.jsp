@@ -31,7 +31,7 @@
         <div class="gray-box">
         	<h2 class="gray-title"><img src="img/wdx.jpg" /></h2>
             <ul class="gray-list">
-            	<li><a href="personal!showMyCou?status=1&recommend=-1&page=1">我的收藏</a></li>
+        		<!--<li><a href="personal!showMyCou?status=1&recommend=-1&page=1">我的收藏</a></li> -->            	
                 <li><a href="personal!showMyCou?status=-1&recommend=-1&page=1">我的课程</a></li>
                 <li><a href="personal!showMyCou?status=0&recommend=-1&page=1">学习记录</a></li>
             </ul>
