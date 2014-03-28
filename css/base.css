@@ -432,8 +432,11 @@ a.read-more {
 	border: 1px solid #cfe2a1;
 	background: #faf9f9;
 }
+.video-cover img {
+	width: 100%;
+}
 .video-box .video-info {
-	padding: 10px 0 0px 15px;
+	padding: 3px 0 0px 15px;
 	color: #474747;
 	font-size: 12px;
 	line-height: 20px;

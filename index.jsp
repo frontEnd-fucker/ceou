@@ -66,21 +66,20 @@
                 <!-- tile-content -->   
                 <div class="tile-content cf" >   
                     <div class="video-box">
-                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
-                        <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
-                        <p class="video-info"><a href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
+						<a class="video-cover" href="activity!showCouDetail?couid=528"><img src="image/couid528.jpg"></a>
+                        <p class="video-info"><a href="activity!showCouDetail?couid=528">总裁倍增绩效</a><br /><span>讲师：张文</span></p>
                     </div>
                     <div class="video-list">
                         <h3><span>培训课程</span><!--<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a>--><i class="triangle"></i></h3>
                         <ul>
-                            <li><a href="course!showCouDetail?couid=5">优秀员工是怎样炼成的</a></li>
-                            <li><a href="course!showCouDetail?couid=6">企业沙盘视频</a></li>
-                            <li><a href="course!showCouDetail?couid=7">现代企业人才系统整体解决方案</a></li>
-                            <li><a href="course!showCouDetail?couid=8">智取订单之如何了解客户的需求1</a></li>
-                            <li><a href="course!showCouDetail?couid=9">智取订单之如何了解客户的需求2</a></li>
-                            <li><a href="course!showCouDetail?couid=10">智取订单之如何了解客户的需求3</a></li>
-                            <li><a href="course!showCouDetail?couid=11">国学与商道—时中与权变</a></li>
-                            <li><a href="course!showCouDetail?couid=12">国学与商道—举贤</a></li>
+                            <li><a href="course!showCouDetail?couid=360">总裁管控六法则1</a></li>
+                            <li><a href="course!showCouDetail?couid=369">总裁战略管控1</a></li>
+                            <li><a href="course!showCouDetail?couid=372">沟通的艺术1</a></li>
+                            <li><a href="course!showCouDetail?couid=379">智慧演讲法1</a></li>
+                            <li><a href="course!showCouDetail?couid=386">5s推行实战分享1</a></li>
+                            <li><a href="course!showCouDetail?couid=393">微演说1</a></li>
+                            <li><a href="course!showCouDetail?couid=410">好父母成就好家庭1</a></li>
+                            <li><a href="course!showCouDetail?couid=415">简易化经营12招1</a></li>
                         </ul>
                     </div>									
                 </div><!-- end tile-content -->
@@ -163,9 +162,9 @@
                 </div><!-- end tile-top -->  
                 
                 <div class="tile-content cf">        
-                    <a href="course!showCouDetail?couid=47" class="little-slide">
-                        <img src="img/shouye-img.jpg" />
-                        <p class="info-bg"><span>领导者场景讲话艺术</span> <span class="author">讲师：侯希平</span></p>
+                    <a href="course!showCouDetail?couid=415" class="little-slide">
+                        <img src="image/couid415.jpg" />
+                        <p class="info-bg"><span>简易化经营12招1</span> <span class="author">讲师：严世华</span></p>
                     </a>
                     <div class="post-list-r">
                     
@@ -174,13 +173,13 @@
                             <div class="tab-pages">
                                 <div class="tab-page color-list" id="page_1">
                                     <ul>
-                                        <li class="item_0"><a href="course!showCouDetail?couid=61">总裁战略管控8</a><span>[2014.01.05]</span></li>
-                                        <li class="item_1"><a href="course!showCouDetail?couid=62">总裁战略管控9</a><span>[2013.01.05]</span></li>
-                                        <li class="item_2"><a href="course!showCouDetail?couid=63">总裁管控六法则1</a><span>[2013.12.23]</span></li>
-                                        <li class="item_3"><a href="course!showCouDetail?couid=64">总裁管控六法则2</a><span>[2013.12.23]</span></li>
-                                        <li class="item_4"><a href="course!showCouDetail?couid=65">总裁管控六法则3</a><span>[2013.12.23]</span></li>
-                                        <li class="item_5"><a href="course!showCouDetail?couid=66">总裁管控六法则4</a><span>[2013.12.23]</span></li>
-                                        <li class="item_6"><a href="course!showCouDetail?couid=67">总裁管控六法则5</a><span>[2013.12.23]</span></li>
+                                        <li class="item_0"><a href="course!showCouDetail?couid=428">总裁倍增绩效1</a><span>[2014.01.05]</span></li>
+                                        <li class="item_1"><a href="course!showCouDetail?couid=437">生产作业的精细化管理1</a><span>[2013.01.05]</span></li>
+                                        <li class="item_2"><a href="course!showCouDetail?couid=455">消费者行为心理学1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_3"><a href="course!showCouDetail?couid=468">信任管理1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_4"><a href="course!showCouDetail?couid=471">意愿沟通1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_5"><a href="course!showCouDetail?couid=491">企业家哲学1</a><span>[2013.12.23]</span></li>
+                                        <li class="item_6"><a href="course!showCouDetail?couid=480">智取订单1</a><span>[2013.12.23]</span></li>
                                     </ul>
                                 </div>
                             </div>
