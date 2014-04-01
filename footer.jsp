@@ -83,3 +83,21 @@
 </div>
 <!-- end b2t -->
 
+<!-- 统计工具 -->
+<div id="tongji" style="display: none">
+
+<!-- 站长统计 -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000346802'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000346802%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- 百度统计 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9656079c3ded8bc323ecbfa5ebc99ede' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- end 统计工具 -->
+
+<!-- end 百度统计 -->
+
+<!-- end footer -->
+
