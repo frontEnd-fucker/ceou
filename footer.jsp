@@ -34,7 +34,8 @@
                 <span>|</span>
                 <a href="business!show">商学院</a>
             </p> 
-            <p class="copyright">深圳市倍增科技有限公司Copyright &copy; 2013-2014 www.ceou.com.cn All Right Reserved</p>                                    
+            <p class="copyright">深圳市倍增科技有限公司Copyright &copy; 2013-2014 www.ceou.com.cn All Right Reserved</p>   
+            <p class="">粤ICP备1401604</p>                 
         </div>
     </div>
 </div><!-- end footer -->
