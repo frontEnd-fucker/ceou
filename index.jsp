@@ -245,33 +245,33 @@
                 <div class="tile-content">
                     <div class="post-box-con cf" style="margin-top: 0;">
                         <div class="post-box">
-                            <a href="course!showCouDetail?couid=316"><img src="image/couid316.jpg" /></a>
-                            <p class="post-info"><a href="course!showCouDetail?couid=316">生产效率提升与问题分析(1)</a></p>
+                            <a href="course!showCouDetail?couid=455"><img src="image/couid455.jpg" /></a>
+                            <p class="post-info"><a href="course!showCouDetail?couid=455">消费者行为心理学1</a></p>
                         </div>
                         <div class="post-box">
-                            <a href="course!showCouDetail?couid=317"><img src="image/couid317.jpg" /></a>
-                            <p class="post-info"><a href="course!showCouDetail?couid=317">生产效率提升与问题分析(2)</a></p>
+                            <a href="course!showCouDetail?couid=428"><img src="image/couid428.jpg" /></a>
+                            <p class="post-info"><a href="course!showCouDetail?couid=428">总裁倍增绩效1</a></p>
                         </div>
                         <div class="post-box">
-                            <a href="course!showCouDetail?couid=318"><img src="image/couid318.jpg" /></a>
-                            <p class="post-info"><a href="course!showCouDetail?couid=318">ISM提升制药企业生产效率</a></p>
+                            <a href="course!showCouDetail?couid=421"><img src="image/couid421.jpg" /></a>
+                            <p class="post-info"><a href="course!showCouDetail?couid=421">简易化经营12招5</a></p>
                         </div>
                         <div class="post-box last">
-                            <a href="course!showCouDetail?couid=319"><img src="image/couid319.jpg" /></a>
-                            <p class="post-info"><a href="course!showCouDetail?couid=319">生产效率提升专家</a></p>
+                            <a href="course!showCouDetail?couid=515"><img src="image/couid515.jpg" /></a>
+                            <p class="post-info"><a href="course!showCouDetail?couid=515">乐业员工的自我管理1</a></p>
                         </div> 
                     </div>	
                     
                     <div class="post-list-bottom cf">
                         <ul>
-                            <li><a href="course!showCouDetail?couid=320">工厂生产效率的提升</a></li>
-                            <li><a href="course!showCouDetail?couid=321">Shoplogix采访视频</a></li>
-                            <li><a href="course!showCouDetail?couid=322">企业管理培训课程（6）</a></li>
-                            <li><a href="course!showCouDetail?couid=323">九大控制方法提升效率</a></li>
-                            <li><a href="course!showCouDetail?couid=324">企业管理培训课程（5）</a></li>
-                            <li><a href="course!showCouDetail?couid=325">生产日提升效率HD</a></li>
-                            <li><a href="course!showCouDetail?couid=326">生产协调提升效率</a></li>
-                            <li><a href="course!showCouDetail?couid=327">机器人提升生产效率</a></li>
+                            <li><a href="course!showCouDetail?couid=456">消费者行为心理学2</a></li>
+                            <li><a href="course!showCouDetail?couid=523">职业生涯规划1</a></li>
+                            <li><a href="course!showCouDetail?couid=491">企业家哲学1</a></li>
+                            <li><a href="course!showCouDetail?couid=420">简易化经营12招4</a></li>
+                            <li><a href="course!showCouDetail?couid=386">5s推行实战分享1</a></li>
+                            <li><a href="course!showCouDetail?couid=360">总裁管控六法则1</a></li>
+                            <li><a href="course!showCouDetail?couid=429">总裁倍增绩效2</a></li>
+                            <li><a href="course!showCouDetail?couid=430">总裁倍增绩效3</a></li>
                         </ul>
                     </div>                                                             
                 </div><!-- end tile-content -->  
