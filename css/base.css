@@ -901,7 +901,7 @@ p.post-info span a {
 	background-repeat: no-repeat;
 	background-position: right center;
 }
-#nav li.curr {
+#index li.page-index, #nav li.curr {
 	background: #92c424;
 }
 #nav li.nav-login {

@@ -13,7 +13,7 @@
 <script src="js/base.js"></script>
 </head>
 
-<body>
+<body id="index">
 
 <jsp:include page="head.jsp" flush="true" />
 
