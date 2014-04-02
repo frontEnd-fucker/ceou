@@ -897,14 +897,17 @@ p.post-info span a {
 #nav li {
 	float: left;
 	position: relative;
-	yu-background: url(../img/nav-separator.jpg) no-repeat right center;
-	background: url(../whimg/nav-separator.jpg) no-repeat right center;
+	background-image: url(../whimg/nav-separator.jpg);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+#nav li.curr {
+	background: #92c424;
 }
 #nav li.nav-login {
 	margin-left: 140px;
 	z-index: 999;
-	background: #92c424;
-	
+	background: #92c424;	
 }
 #nav li.nav-login a.nav-login-btn {
 	padding: 0 17px;

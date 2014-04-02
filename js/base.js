@@ -136,6 +136,20 @@ $(function() {
 	});
 });
 
+/*
+ * 导航当前页选中状态
+*/
+$(function() {
+	var a1 = document.URL;
+	var a2 = $('#nav a').not('.sub-a');
+	for(var i=0; i<a2.length; i++) {
+		if( a1.indexOf($(a2[i]).attr('href')) != -1 ) {
+			$(a2[i]).parent().addClass('curr');
+			return;
+		}
+	}
+});
+
 //-------------点击率
 //文章增加点击数
 function clicks(artid){
