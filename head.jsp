@@ -36,7 +36,7 @@
     <div id="nav">
         <div class="wrapper">
             <ul>
-                <li><a href="http://www.ceou.com.cn">首页</a></li>                
+                <li class="page-index"><a href="index.jsp">首页</a></li>                
                 <li><a href="business!showbeizeng">倍增商学院</a></li>
                 <li class="sub-nav">
                 	<a href="business!show">商学院</a>     
