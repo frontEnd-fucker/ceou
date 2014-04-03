@@ -98,7 +98,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </div>
 <!-- end 统计工具 -->
 
-<!-- end 百度统计 -->
-
 <!-- end footer -->
 
