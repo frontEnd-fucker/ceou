@@ -52,23 +52,6 @@
             <a href="#">在线客服3</a>
         </dd>
     </dl>
-   <!--  <dl class="list_2">
-    	<dt><img src="img/tel-icon.jpg" /></dt>
-        <dd>
-        	<h2>在线电话</h2>
-            <h3>ONLINE PHONE</h3>
-            <p>0755-22315621</p>
-        </dd>
-    </dl> -->
-    <!-- <dl class="list_3">
-    	<dt><img src="img/help-icon.jpg" /></dt>
-        <dd>
-        	<a href="help.jsp">
-            	<h2>帮助中心</h2>
-                <h3>HELP CENTER</h3>
-            </a>
-        </dd>
-    </dl> -->
 </div>
 <!-- end在线咨询框 -->
 
