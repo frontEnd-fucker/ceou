@@ -33,7 +33,7 @@
 		<div class="logo fl"><a href="index.jsp"><img src="whimg/userCenter/logo.png"></a></div>
 	    <div class="fl">
             <ul>
-                <li class="page-index"><a href="index.jsp">首页</a></li>                
+                <li class="page-index"><a class="curr" href="index.jsp">首页</a></li>                
                 <li><a href="business!showbeizeng">倍增商学院</a></li>
                 <li><a href="business!show">商学院</a></li>                
                 <li><a href="course!show">培训课程</a></li>
@@ -67,7 +67,7 @@
 		<hr>
 
 		<ul>
-			<h2>个人设置</h2>
+			<h2><i class="icon-setting dib"></i>个人设置</h2>
 			<li><a href="#">基本信息</a></li>
 			<li><a href="#">职业信息</a></li>
 			<li><a href="#">教育信息</a></li>
@@ -76,14 +76,27 @@
 
 			<hr>
 
-			<h2>我的学习</h2>
+			<h2><i class="icon-book dib"></i>我的学习</h2>
+			<li><a class="curr" href="#">个人中心</a></li>
 			<li><a href="#">我的课程</a></li>
 			<li><a href="#">学习记录</a></li>
 		</ul>
 	</aside>
 
 	<!-- 内容 -->
-	<div class="content"></div>
+	<div id="content">
+
+		<!-- 我的课程 -->
+		<section class="mod-wrapper">
+			<h2>我的课程</h2>
+			<ul class="mod-video-list">
+				<li class="mod-video-item">
+					<div class="hd"><a href="#"><img src="whimg/userCenter/mod-placeholder.jpg"></a></div>
+					<div class="bd"></div>
+				</li>
+			</ul>
+		</section>
+	</div>
 </div>
 <!-- end main -->
 </body>
