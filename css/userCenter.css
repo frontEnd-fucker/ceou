@@ -1,0 +1,114 @@
+body {
+	font-family: arial, "宋体";
+	font-size: 12px;
+	color: #4d4d4d;
+}
+.wrapper {
+	width: 1005px;
+	margin: 0 auto;
+}
+
+/* header
+========================================================== */
+
+header {
+	color: #686868;
+	text-shadow: 1px 1px #fff;
+	background: #ebebeb;
+	border-top: 4px solid #92c416;
+}
+header .wrapper {
+	height: 36px;
+	line-height: 36px;
+}
+header .fr a {
+	margin: 0 24px;
+}
+header .fr a.avatar {
+	margin: 0;
+}
+header .fr a.user-name {
+	margin-left: 5px;
+}
+header .fr img {
+	width: 28px;
+	height: 28px;
+	vertical-align: middle;
+	border: 2px solid #92c416;
+	border-radius: 100%;
+}
+
+/* nav
+========================================================== */
+
+nav {
+	height: 62px;
+	line-height: 62px;
+	background: #2b6656;
+}
+nav .logo {
+	margin: 5px 50px 0 -10px;
+}
+nav li {
+	float: left;
+	background-image: url(../whimg/nav-separator.jpg);
+	background-repeat: no-repeat;
+	background-position: right center;	
+}
+nav li a {
+	display: block;
+	margin: 0 20px;	
+	color: #fff;
+	line-height: 62px;
+	font-size: 14px;
+	font-weight: bold;
+}
+nav li a:hover {
+	color: #c9ff54;
+}
+nav .searchbar {
+	width: 190px;
+	height: 23px;
+	margin-top: 20px;
+	line-height: 23px;
+	background: url(../img/searchbar.jpg) no-repeat center center;	
+}
+nav .searchbar input {
+	height: 23px;
+	width: 150px;
+	padding: 0 25px 0 15px;
+	color: #969696;
+	line-height: 23px;
+	border: 0 none;
+	background: none;	
+}
+
+/* aside 
+=============================================================== */
+
+aside {
+	position: absolute;
+	width: 232px;
+	color: #1c1e1d;
+	text-align: center;
+	background: #f2f2f2;m
+}
+.avatar-con {
+	width: 148px;
+	height: 142px;
+	background: url(../whimg/userCenter/avatar-con-bg.png) no-repeat center center;
+}
+.avatar-con .pd {
+	padding: 12px 17px 0 17px;
+}
+img.avatar-big {
+	width: 115px;
+	height: 115px;
+}
+aside p {
+	height: 29px;
+	line-height: 29px;
+}
+aside .red {
+	color: #ff1313;
+}
