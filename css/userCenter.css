@@ -63,7 +63,7 @@ nav li a {
 	font-size: 14px;
 	font-weight: bold;
 }
-nav li a:hover {
+nav li a:hover, nav li a.curr {
 	color: #c9ff54;
 }
 nav .searchbar {
@@ -87,15 +87,18 @@ nav .searchbar input {
 =============================================================== */
 
 aside {
-	position: absolute;
+	position: fixed;
 	width: 232px;
+	margin-left: 18px;
 	color: #1c1e1d;
 	text-align: center;
-	background: #f2f2f2;m
+	background: #f2f2f2;
+	border: 1px solid #e1e1e1;
 }
 .avatar-con {
 	width: 148px;
 	height: 142px;
+	margin-top: 20px;
 	background: url(../whimg/userCenter/avatar-con-bg.png) no-repeat center center;
 }
 .avatar-con .pd {
@@ -112,6 +115,7 @@ aside p {
 aside .red {
 	color: #ff1313;
 }
+
 aside h2 {
 	height: 29px;
 	font-weight: bold;
@@ -121,4 +125,55 @@ aside li a {
 	display: block;
 	height: 29px;
 	line-height: 29px;
+｝
+aside hr {
+	margin: 10px;
+}
+aside a, aside h2 {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+}
+aside h2 {
+	margin-left: -25px;
+	font-weight: bold;
+}
+aside i.icon-setting, aside i.icon-book {
+	width: 19px;
+	height: 18px;
+	margin-right: 5px;
+	vertical-align: -4px;
+}
+aside i.icon-setting {
+	background: url(../whimg/userCenter/icon-setting.png) no-repeat left center;
+}
+aside i.icon-book {
+	background: url(../whimg/userCenter/icon-book.png) no-repeat left center;
+}
+aside a:hover, aside a.curr {
+	background: #e1e1e1;
+	border-bottom: 1px solid #fcfcfc;
+}
+
+/* content
+=========================================================== */
+#content {
+	width: 750px;
+	height: 300px;
+	padding-left: 33px;
+	margin-left: 252px;
+	background: red;
+}
+.mod-video-item hd{
+	width: 204px;
+	height: 154px;
+}
+.mod-video-item hd img {
+	width: 204px;
+	height: 154px;
+	vertical-align: middle;
+}
+.mod-video-item bd {
+	
+
 }
