@@ -112,3 +112,13 @@ aside p {
 aside .red {
 	color: #ff1313;
 }
+aside h2 {
+	height: 29px;
+	font-weight: bold;
+	line-height: 29px;
+}
+aside li a {
+	display: block;
+	height: 29px;
+	line-height: 29px;
+}

@@ -247,6 +247,8 @@ hr {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
+    border-bottom: 1px inset #e0e0e0;
+    margin: 10px;
 }
 
 /**
