@@ -135,6 +135,6 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script>
+<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
 </body>
 </html>

@@ -89,7 +89,7 @@
 		<div class="form-con">
 
 			<!-- 基本信息表单 -->
-			<form id="form-base" style="display: block;">
+			<form id="form-base">
 				<p class="input-con">
 					<label>登录邮箱：</label><span>4431234561@qq.com</span>			
 				</p>
@@ -98,24 +98,24 @@
 				</p>	
 				<p class="input-con">
 					<label>性别：</label>
-					<input class="input-radio" name="sex" type="radio">男&nbsp;&nbsp;
+					<input class="input-radio" name="sex" type="radio" checked="">男&nbsp;&nbsp;
 					<input class="input-radio" name="sex" type="radio">女
 				</p>	
 				<p class="input-con">
-					<label>真实姓名：</label>
-					<input class="input-txt" type="text">
+					<label for="cname">真实姓名：</label>
+					<input id="cname" name="cname" class="input-txt" type="text">
 				</p>					
 				<p class="input-con">
-					<label>联系电话：</label>
-					<input class="input-txt" type="text">
+					<label for="tel">联系电话：</label>
+					<input id="tel" name="tel" class="input-txt" type="text">
 				</p>		
 				<p class="input-con">
-					<label>QQ：</label>
-					<input class="input-txt" type="text">
+					<label for="qq">QQ：</label>
+					<input id="qq" name="qq" class="input-txt" type="text">
 				</p>
 				<p class="input-con">
-					<label>邮寄地址：</label>
-					<input class="input-txt" type="text">
+					<label for="addr">邮寄地址：</label>
+					<input id="addr" name="addr" class="input-txt" type="text">
 				</p>
 				<input type="submit" class="btn-pill btn-pill-green" value="提交">
 			</form>
@@ -129,6 +129,6 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script>
+<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
 </body>
 </html>
