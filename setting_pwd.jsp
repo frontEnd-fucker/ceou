@@ -69,11 +69,11 @@
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a href="#">基本信息</a></li>
-			<li><a href="#">职业信息</a></li>
-			<li><a href="#">教育信息</a></li>
-			<li><a href="#">更改密码</a></li>
-			<li><a href="#">上传头像</a></li>
+			<li><a href="setting_base.jsp">基本信息</a></li>
+			<li><a href="setting_profession.jsp">职业信息</a></li>
+			<li><a href="setting_edu.jsp">教育信息</a></li>
+			<li><a class="curr" href="setting_pwd.jsp">更改密码</a></li>
+			<li><a href="setting_avatar.jsp">上传头像</a></li>
 
 			<hr>
 
@@ -88,51 +88,22 @@
 	<div id="content">
 		<div class="form-con">
 
-			<!-- 基本信息表单 -->
-			<form id="form-base">
+			<!-- 更改密码表单 -->
+			<form id="form-pwd">
 				<p class="input-con">
-					<label>登录邮箱：</label><span>4431234561@qq.com</span>			
+					<label>当前密码：</label>
+					<input class="input-txt" type="text">
 				</p>
 				<p class="input-con">
-					<label>用户名：</label><span>xxinxin</span>			
-				</p>	
-				<p class="input-con">
-					<label>性别：</label>
-					<input class="input-radio" name="sex" type="radio">男&nbsp;&nbsp;
-					<input class="input-radio" name="sex" type="radio">女
-				</p>	
-				<p class="input-con">
-					<label>真实姓名：</label>
-					<input class="input-txt" type="text">
-				</p>					
-				<p class="input-con">
-					<label>联系电话：</label>
+					<label>新密码：</label>
 					<input class="input-txt" type="text">
 				</p>		
 				<p class="input-con">
-					<label>QQ：</label>
+					<label>确认密码：</label>
 					<input class="input-txt" type="text">
-				</p>
-				<p class="input-con">
-					<label>邮寄地址：</label>
-					<input class="input-txt" type="text">
-				</p>
-				<input type="submit" style="margin: 30px 0 0 140px;" class="btn-pill btn-pill-green" value="提交">
+				</p>	
+				<input type="submit" class="btn-pill btn-pill-green" value="提交">								
 			</form>
-
-			<!-- 职业信息表单 -->
-			<form id="form-profession">
-				<p class="input-con"></p>
-			</form>
-
-			<!-- 教育信息表单 -->
-			<form id="form-edu"></form>
-
-			<!-- 更改密码表单 -->
-			<form id="form-pwd"></form>
-
-			<!-- 更换头像表单 -->
-			<form id="form-avatar"></form>
 		</div>	
 	</div>
 </div>
@@ -140,5 +111,9 @@
 <div class="clear-both"></div>
 
 <jsp:include page="footer.jsp" flush="true" />
+
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/userCenter.js"></script>
 </body>
 </html>

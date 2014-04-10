@@ -69,11 +69,11 @@
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a href="#">基本信息</a></li>
-			<li><a href="#">职业信息</a></li>
-			<li><a href="#">教育信息</a></li>
-			<li><a href="#">更改密码</a></li>
-			<li><a href="#">上传头像</a></li>
+			<li><a href="setting_base.jsp">基本信息</a></li>
+			<li><a href="setting_profession.jsp">职业信息</a></li>
+			<li><a href="setting_edu.jsp">教育信息</a></li>
+			<li><a href="setting_pwd.jsp">更改密码</a></li>
+			<li><a href="setting_avatar.jsp">上传头像</a></li>
 
 			<hr>
 

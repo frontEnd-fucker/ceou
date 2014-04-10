@@ -368,3 +368,6 @@ aside a:hover, aside a.curr {
 	border: 1px solid #e5e5e5;
 	border-radius: 3px;
 }
+.form-con .btn-pill {
+	margin: 30px 0 0 140px;
+}

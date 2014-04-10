@@ -1,4 +1,6 @@
 $(function() {
+
+	//aside跟随滚动
 	$(window).scroll(function() {
 		var scrollTop = $(this).scrollTop();
 		if( scrollTop >= 102) {
@@ -11,4 +13,5 @@ $(function() {
 			$('aside').css('position', 'absolute');
 		}
 	});
+
 });
