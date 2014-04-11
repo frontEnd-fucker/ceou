@@ -89,18 +89,18 @@
 		<div class="form-con">
 
 			<!-- 更改密码表单 -->
-			<form id="form-pwd">
+			<form id="form-pwd" name="form-pwd" method="post" action="">
 				<p class="input-con">
 					<label>当前密码：</label>
-					<input class="input-txt" type="text">
+					<input id="currPwd" name="currPwd" class="input-txt" type="text" required>
 				</p>
 				<p class="input-con">
 					<label>新密码：</label>
-					<input class="input-txt" type="text">
+					<input id="newPwd1" name="newPwd1" class="input-txt" type="password" required>
 				</p>		
 				<p class="input-con">
 					<label>确认密码：</label>
-					<input class="input-txt" type="text">
+					<input id="newPwd2" name="newPwd2" class="input-txt" type="password" required equalTo="#newPwd1">
 				</p>	
 				<input type="submit" class="btn-pill btn-pill-green" value="提交">								
 			</form>
@@ -114,6 +114,47 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/userCenter.js"></script>
+
+<script>
+$(function() {
+	$('#form-pwd').validate({
+		rules: {
+			newPwd1: {
+				rangelength: [6, 20]
+			}
+		},
+		errorElement: 'em',
+		messages: {
+			currPwd: {
+				required: '请输入当前密码'
+			},
+			newPwd1: {
+				required: '请输入新密码',
+				rangelength: '密码长度必须在6-20位'
+			},
+			newPwd2: {
+				required: '请再次输入新密码',
+				equalTo: '两次输入的密码必须相同'
+			}
+		},
+		submitHandler: function(form) {
+			//alert('fuck');
+			$.post('www.ceou.com.cn', {'pwd':currPwd,'newPwd':newPwd2}, function(data) {
+				if(data == -1) {
+					alert('旧密码错误');
+				}else if(data == 1) {
+					alert('修改成功');
+					location.href="http://www.ceou.com.cn/login.html";
+				}else {
+					alert('网络超时,请重新提交');
+				}
+			});
+			//return false;
+		}
+	});
+});	
+</script>
 </body>
 </html>

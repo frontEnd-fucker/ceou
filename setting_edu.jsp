@@ -90,12 +90,17 @@
 
 			<!-- 教育信息表单 -->
 			<form id="form-edu">
-				<p class="input-con">
-					<label>学校类型：</label>
-					<select>
-						<option>大学</option>
-					</select>
-				</p>
+                <div class="input-con">
+                	<label for="edu">教育背景：</label>
+                    <select id="edu" name="perBean.eduinfo">
+                    	<option value="0" <s:if test="perBean.eduinfo==0"> selected="selected" </s:if>>大学</option>
+                        <option value="1" <s:if test="perBean.eduinfo==1"> selected="selected" </s:if>>大专</option>
+                        <option value="2" <s:if test="perBean.eduinfo==2"> selected="selected" </s:if>>高中</option>
+                        <option value="3" <s:if test="perBean.eduinfo==3"> selected="selected" </s:if>>初中</option>
+                        <option value="4" <s:if test="perBean.eduinfo==4"> selected="selected" </s:if>>小学</option>
+                        <option value="5" <s:if test="perBean.eduinfo==5"> selected="selected" </s:if>>其他</option>
+                    </select>
+                </div>
 				<p class="input-con">
 					<label>学校名称：</label>
 					<input class="input-txt" type="text">
