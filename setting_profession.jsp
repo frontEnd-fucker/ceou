@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -61,7 +62,7 @@
 				<a href="#"><img class="avatar-big" src="whimg/userCenter/avatar-default.jpg"></a>
 			</div>	
 		</div>
-		<p><strong>用户名</strong></p>
+		<p><strong><s:property value="upBean.username" /></strong></p>
 		<p style="margin-left: -37px;"><strong>我的积分：<span class="red">1326</span></strong></p>
 		<p style="margin-left: -17px;"><strong>我的等级：</strong><span class="red">注册会员</span></p>
 
@@ -69,8 +70,8 @@
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a href="setting_base.jsp">基本信息</a></li>
-			<li><a class="curr" href="setting_profession.jsp">职业信息</a></li>
+			<li><a href="personal!findUserById">基本信息</a></li>
+			<li><a class="curr" href="personal!findUserPos">职业信息</a></li>
 			<li><a href="setting_edu.jsp">教育信息</a></li>
 			<li><a href="setting_pwd.jsp">更改密码</a></li>
 			<li><a href="setting_avatar.jsp">上传头像</a></li>
@@ -92,71 +93,60 @@
 			<form id="form-profession">
 				<p class="input-con">
 					<label for="province">所在地：</label>
-					<select id="province" name="province"></select>					
-					<select id="city" name="city"></select>									
+					<select id="province" name="upBean.province"></select>					
+					<select id="city" name="upBean.city"></select>									
 				</p>
                 <div class="input-con">
-                	<label for="work">从事行业：${perBean.position}</label>
-                    <select id="work" name="perBean.position">
-                    	
-                    	<option>请选择</option>
-                        <option value="0" <s:if test="perBean.position==0"> selected="selected" </s:if>>在校学生</option>
-                        <option value="1" <s:if test="perBean.position==1"> selected="selected" </s:if>>计算机·网络·技术</option>
-                        <option value="2" <s:if test="perBean.position==2"> selected="selected" </s:if>>经营管理</option>
-                        <option value="3" <s:if test="perBean.position==3"> selected="selected" </s:if>>娱乐业</option>
-                        <option value="4" <s:if test="perBean.position==4"> selected="selected" </s:if>>文体工作</option>
-                        <option value="5" <s:if test="perBean.position==5"> selected="selected" </s:if>>销售</option>
-                        <option value="6" <s:if test="perBean.position==6"> selected="selected" </s:if>>医疗卫生</option>
-                        <option value="7" <s:if test="perBean.position==7"> selected="selected" </s:if>>农林牧渔劳动者</option>
-                        <option value="8" <s:if test="perBean.position==8"> selected="selected" </s:if>>酒店·餐饮·旅游·其他服务</option>
-                        <option value="9" <s:if test="perBean.position==9"> selected="selected" </s:if>>美术·设计·创意</option>
-                        <option value="10" <s:if test="perBean.position==10"> selected="selected" </s:if>>电子·电器·通信技术</option>
-                        <option value="11" <s:if test="perBean.position==11"> selected="selected" </s:if>>外出务工人员</option>
-                        <option value="12" <s:if test="perBean.position==12"> selected="selected" </s:if>>贸易·物流·采购·运输</option>
-                        <option value="13" <s:if test="perBean.position==13"> selected="selected" </s:if>>建筑·房地产·装饰装修·物业管理</option>
-                        <option value="14" <s:if test="perBean.position==14"> selected="selected" </s:if>>财务·审计·统计</option>
-                        <option value="15" <s:if test="perBean.position==15"> selected="selected" </s:if>>电气·能源·动力</option>
-                        <option value="16" <s:if test="perBean.position==16"> selected="selected" </s:if>>个体经营·商业零售</option>
-                        <option value="17" <s:if test="perBean.position==17"> selected="selected" </s:if>>军人警察</option>
-                        <option value="18" <s:if test="perBean.position==18"> selected="selected" </s:if>>美容保健</option>
-                        <option value="19" <s:if test="perBean.position==19"> selected="selected" </s:if>>行政·后勤</option>
-                        <option value="20" <s:if test="perBean.position==20"> selected="selected" </s:if> >教育·培训</option>
-                        <option value="21" <s:if test="perBean.position==21"> selected="selected" </s:if>>党政机关事业单位工作者·公务员类</option>
-                        <option value="22" <s:if test="perBean.position==22"> selected="selected" </s:if>>市场·公关·咨询·媒介</option>
-                        <option value="23" <s:if test="perBean.position==23"> selected="selected" </s:if>>技工</option>
-                        <option value="24" <s:if test="perBean.position==24"> selected="selected" </s:if>>工厂生产</option>
-                        <option value="25" <s:if test="perBean.position==25"> selected="selected" </s:if>>宗教、神职人员</option>
-                        <option value="26" <s:if test="perBean.position==26"> selected="selected" </s:if>>工程师</option>
-                        <option value="27" <s:if test="perBean.position==27"> selected="selected" </s:if>>新闻出版·文化工作</option>
-                        <option value="28" <s:if test="perBean.position==28"> selected="selected" </s:if>>金融</option>
-                        <option value="29" <s:if test="perBean.position==29"> selected="selected" </s:if>>人力资源</option>
-                        <option value="30" <s:if test="perBean.position==30"> selected="selected" </s:if>>保险</option>
-                        <option value="31" <s:if test="perBean.position==31"> selected="selected" </s:if>>法律</option>
-                        <option value="32" <s:if test="perBean.position==32"> selected="selected" </s:if>>翻译</option>
-                        <option value="33" <s:if test="perBean.position==33"> selected="selected" </s:if>>自由职业者</option>
-                        <option value="34" <s:if test="perBean.position==34"> selected="selected" </s:if>>待业/无业/失业</option>
-                        <option value="35" <s:if test="perBean.position==35"> selected="selected" </s:if>>其他</option>
+                	<label for="work">从事行业：</label>                	
+                    <select id="work" name="upBean.position">                    	
+                    	<option value="">请选择</option>
+                        <option value="在校学生">在校学生</option>
+                        <option value="计算机·网络·技术">计算机·网络·技术</option>
+                        <option value="经营管理">经营管理</option>
+                        <option value="娱乐业">娱乐业</option>
+                        <option value="文体工作">文体工作</option>
+                        <option value="销售">销售</option>
+                        <option value="医疗卫生">医疗卫生</option>
+                        <option value="农林牧渔劳动者">农林牧渔劳动者</option>
+                        <option value="酒店·餐饮·旅游·其他服务">酒店·餐饮·旅游·其他服务</option>
+                        <option value="美术·设计·创意">美术·设计·创意</option>
+                        <option value="电子·电器·通信技术">电子·电器·通信技术</option>
+                        <option value="外出务工人员">外出务工人员</option>
+                        <option value="贸易·物流·采购·运输">贸易·物流·采购·运输</option>
+                        <option value="建筑·房地产·装饰装修·物业管理">建筑·房地产·装饰装修·物业管理</option>
+                        <option value="财务·审计·统计">财务·审计·统计</option>
+                        <option value="电气·能源·动力">电气·能源·动力</option>
+                        <option value="个体经营·商业零售">个体经营·商业零售</option>
+                        <option value="军人警察">军人警察</option>
+                        <option value="美容保健">美容保健</option>
+                        <option value="行政·后勤">行政·后勤</option>
+                        <option value="教育·培训">教育·培训</option>
+                        <option value="党政机关事业单位工作者·公务员类">党政机关事业单位工作者·公务员类</option>
+                        <option value="市场·公关·咨询·媒介">市场·公关·咨询·媒介</option>
+                        <option value="技工">技工</option>
+                        <option value="工厂生产">工厂生产</option>
+                        <option value="宗教、神职人员">宗教、神职人员</option>
+                        <option value="工程师">工程师</option>
+                        <option value="新闻出版·文化工作">新闻出版·文化工作</option>
+                        <option value="金融">金融</option>
+                        <option value="人力资源">人力资源</option>
+                        <option value="保险">保险</option>
+                        <option value="法律">法律</option>
+                        <option value="翻译">翻译</option>
+                        <option value="自由职业者">自由职业者</option>
+                        <option value="待业/无业/失业">待业/无业/失业</option>
+                        <option value="其他">其他</option>
                     </select>                   
                 </div>
 				<p class="input-con">
 					<label>公司名称：</label>
-					<input class="input-txt" type="text">
+					<input id="companyName" class="input-txt" name="upBean.companyName" value="${upBean.companyName}" type="text">
 				</p>
-<!-- 				<p class="input-con">
-					<label>工作时间：</label>
-					<select>
-						<option>请选择</option>
-					</select>
-					到
-					<select>
-						<option>请选择</option>
-					</select>										
-				</p> -->
 				<p class="input-con">
 					<label>部门/职位：</label>
-					<input class="input-txt" type="text">
+					<input id="positionName" class="input-txt" name="upBean.positionName" value="${upBean.positionName}" type="text">
 				</p>
-				<input type="submit" class="btn-pill btn-pill-green" value="提交">				
+				<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">				
 			</form>
 		</div>	
 	</div>
@@ -173,13 +163,42 @@
 <script src="js/userCenter.js"></script>
 
 <script>
-
-//初始化二级级联select
 $(function() {
-	areaUtil.initArea('');
+
+	// 初始化二级级联select
+	areaUtil.initArea('', '${upBean.province}', '${upBean.city}');
+
+	// 初始化从事行业
+	var currWork = '${upBean.position}';
+	//var currWork = '娱乐业';
+	$('#work option').each(function() {
+		if(this.value == currWork) {
+			this.selected = true;
+		}
+	});
+
+	// 动态生成二级级联
 	$('#province').change(function() {
 		var provinceVal = $(this).val();
 		areaUtil.changeProvince('', provinceVal);
+	});
+
+	// 提交数据
+	$('#btnSubmit').click(function() {
+		var province = $('select[name="upBean.province"] option:selected').val();
+		var city = $('select[name="upBean.city"] option:selected').val();
+		var work = $('select[name="upBean.position"] option:selected').val();		
+		var companyName = $('#companyName').val();
+		var positionName = $('#positionName').val();
+		console.log(province, city, work, companyName, positionName);
+		$.post('personal!editUserPosition', {'upBean.province':province, 'upBean.city':city, 'upBean.position':work, 'upBean.companyName':companyName,'upBean.positionName':positionName }, function(data) {
+			if(data == 1){
+				alert('ok');
+			}else{
+				alert('fail');
+			}			
+		});
+		return false;
 	});
 });
 </script>

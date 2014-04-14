@@ -69,9 +69,9 @@
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a href="setting_base.jsp">基本信息</a></li>
-			<li><a href="setting_profession.jsp">职业信息</a></li>
-			<li><a class="curr" href="setting_edu.jsp">教育信息</a></li>
+			<li><a href="personal!findUserById">基本信息</a></li>
+			<li><a href="personal!findUserPos">职业信息</a></li>
+			<li><a class="curr" href="personal!findUserEdu">教育信息</a></li>
 			<li><a href="setting_pwd.jsp">更改密码</a></li>
 			<li><a href="setting_avatar.jsp">上传头像</a></li>
 
@@ -93,23 +93,24 @@
                 <div class="input-con">
                 	<label for="edu">教育背景：</label>
                     <select id="edu" name="perBean.eduinfo">
-                    	<option value="0" <s:if test="perBean.eduinfo==0"> selected="selected" </s:if>>大学</option>
-                        <option value="1" <s:if test="perBean.eduinfo==1"> selected="selected" </s:if>>大专</option>
-                        <option value="2" <s:if test="perBean.eduinfo==2"> selected="selected" </s:if>>高中</option>
-                        <option value="3" <s:if test="perBean.eduinfo==3"> selected="selected" </s:if>>初中</option>
-                        <option value="4" <s:if test="perBean.eduinfo==4"> selected="selected" </s:if>>小学</option>
-                        <option value="5" <s:if test="perBean.eduinfo==5"> selected="selected" </s:if>>其他</option>
+                    	<option value="">请选择</option>
+                    	<option value="大学">大学</option>
+                        <option value="大专">大专</option>
+                        <option value="高中">高中</option>
+                        <option value="初中">初中</option>
+                        <option value="小学">小学</option>
+                        <option value="其他">其他</option>
                     </select>
                 </div>
 				<p class="input-con">
 					<label>学校名称：</label>
-					<input class="input-txt" type="text">
+					<input id="universityName" class="input-txt" name="ueBean.universityName" type="text">
 				</p>
 				<p class="input-con">
 					<label>院系：</label>
-					<input class="input-txt" type="text">
+					<input id="college" class="input-txt" name="ueBean.college"  type="text">
 				</p>	
-				<input type="submit" class="btn-pill btn-pill-green" value="提交">								
+				<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">								
 			</form>
 		</div>	
 	</div>
@@ -121,6 +122,25 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/userCenter.js"></script>
+
+<script>
+$(function() {
+	$('#btnSubmit').click(function() {
+		var edu = $('#edu').val();
+		var universityName = $('#universityName').val();
+		var college = $('#college').val();
+		console.log(edu, universityName, college);
+		$.post('personal!editUserEdu', {'ueBean.universityType': edu,'ueBean.universityName':universityName,'ueBean.college':college}, function(data) {
+			if(data == 1){
+				alert('ok');
+			}else{
+				alert('fail');
+			}			
+		});
+		return false;
+	});
+});
+</script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -69,9 +70,9 @@
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a class="curr" href="setting_base.jsp">基本信息</a></li>
-			<li><a href="setting_profession.jsp">职业信息</a></li>
-			<li><a href="setting_edu.jsp">教育信息</a></li>
+			<li><a class="curr" href="personal!findUserById">基本信息</a></li>
+			<li><a href="personal!findUserPos">职业信息</a></li>
+			<li><a href="personal!findUserEdu">教育信息</a></li>
 			<li><a href="setting_pwd.jsp">更改密码</a></li>
 			<li><a href="setting_avatar.jsp">上传头像</a></li>
 
@@ -87,37 +88,38 @@
 	<!-- 内容 -->
 	<div id="content">
 		<div class="form-con">
+		<input id="hSex" type="hidden" value="{perBean.gender}"/>
 
 			<!-- 基本信息表单 -->
 			<form id="form-base">
 				<p class="input-con">
-					<label>登录邮箱：</label><span>4431234561@qq.com</span>			
+					<label>登录邮箱：</label><span><s:property value="perBean.email"/></span>			
 				</p>
 				<p class="input-con">
-					<label>用户名：</label><span>xxinxin</span>			
+					<label>用户名：</label><span><s:property value="perBean.name"/></span>			
 				</p>	
 				<p class="input-con">
-					<label>性别：</label>
-					<input class="input-radio" name="sex" type="radio" checked="">男&nbsp;&nbsp;
-					<input class="input-radio" name="sex" type="radio">女
+					<label for="sex">性别：</label>
+					<input class="input-radio" name="perBean.sex" type="radio" checked value="男">男&nbsp;&nbsp;
+					<input class="input-radio" name="perBean.sex" type="radio" value="女">女
 				</p>	
 				<p class="input-con">
 					<label for="cname">真实姓名：</label>
-					<input id="cname" name="cname" class="input-txt" type="text">
+					<input id="cname" name="perBean.realname" value="${perBean.realname}" class="input-txt" type="text">
 				</p>					
 				<p class="input-con">
 					<label for="tel">联系电话：</label>
-					<input id="tel" name="tel" class="input-txt" type="text">
+					<input id="tel" name="perBean.phone" value="${perBean.phone}" class="input-txt" type="text">
 				</p>		
 				<p class="input-con">
 					<label for="qq">QQ：</label>
-					<input id="qq" name="qq" class="input-txt" type="text">
+					<input id="qq" name="perBean.qq" value="${perBean.qq}" class="input-txt" type="text">
 				</p>
 				<p class="input-con">
 					<label for="addr">邮寄地址：</label>
-					<input id="addr" name="addr" class="input-txt" type="text">
+					<input id="addr" name="perBean.mailaddress" value="${perBean.mailaddress}" class="input-txt" type="text">
 				</p>
-				<input type="submit" class="btn-pill btn-pill-green" value="提交">
+				<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">
 			</form>
 		</div>	
 	</div>
@@ -130,5 +132,66 @@
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script>
+$(function() {
+
+	// 联系电话(手机/电话皆可)验证方法
+	jQuery.validator.addMethod("isPhone", function (value, element) {  
+	   var length = value.length;  
+	   var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;  
+	   var tel = /^\d{3,4}-?\d{7,9}$/;  
+	   return this.optional(element) || (tel.test(value) || mobile.test(value));  	 	 
+	}, "请正确填写您的联系电话");  	
+
+	$('#form-base').validate({
+		errorElement: 'em',
+		rules: {
+			'perBean.phone': {
+				isPhone: true
+			},
+			'perBean.qq': {
+				digits: true
+			}
+		},
+		messages: {
+			'perBean.qq': {
+				digits: '请正确输入您的QQ号码'
+			}
+		},
+		submitHandler: function(form) {
+			var sex = $('input[name="perBean.sex"]:checked').val();
+			var cname = $('#cname').val();
+			var tel = $('#tel').val();
+			var qq = $('#qq').val();
+			var addr = $('#addr').val();
+			console.log(sex, cname, tel, qq, addr);
+			$.post('personal!editUserInfo', {'perBean.gender':sex, 'perBean.realname':cname, 'perBean.phone':tel, 'perBean.qq':qq, 'perBean.mailaddress':addr }, function(data) {
+				if(data == 1){
+					alert('ok');
+				}else{
+					alert('fail');
+				}				
+			});			
+		}
+	});
+	// $('#btnSubmit').click(function() {
+	// 	var sex = $('input[type="radio"]:checked').val();
+	// 	var cname = $('#cname').val();
+	// 	var tel = $('#tel').val();
+	// 	var qq = $('#qq').val();
+	// 	var addr = $('#addr').val();
+	// 	console.log(sex, cname, tel, qq, addr);
+	// 	$.post('personal!editUserInfo', {'perBean.gender': sex,'perBean.realname':cname,'perBean.phone':tel,'perBean.qq':qq,'perBean.mailaddress':addr }, function(data) {
+	// 		if(data == 1){
+	// 			alert('ok');
+	// 		}else{
+	// 			alert('fail');
+	// 		}
+			
+	// 	});
+	// 	return false;
+	// });
+});
+</script>
 </body>
 </html>
