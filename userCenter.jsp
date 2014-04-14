@@ -88,7 +88,7 @@
 	<div id="content">
 
 		<!-- 我的课程 -->
-		<section class="mod-wrapper">
+		<!-- <section class="mod-wrapper">
 			<h2>我的课程</h2>
 			<ul class="mod-video-list cf">
 				<li class="mod-video-item">
@@ -152,10 +152,10 @@
 					</div>
 				</li>																			
 			</ul>
-		</section>
+		</section> -->
 
 		<!-- 学习记录 -->
-		<section class="mod-wrapper">
+		<!-- <section class="mod-wrapper">
 			<h2>学习记录</h2>
 			<ul class="mod-video-list cf">
 				<li class="mod-video-item">
@@ -219,10 +219,10 @@
 					</div>
 				</li>																			
 			</ul>
-		</section>		
+		</section>	 -->	
 
 		<!-- 推荐课程 -->
-		<section class="mod-wrapper">
+		<!-- <section class="mod-wrapper">
 			<h2>推荐课程</h2>
 			<ul class="mod-video-list cf">
 				<li class="mod-video-item">
@@ -286,7 +286,7 @@
 					</div>
 				</li>																			
 			</ul>
-		</section>	
+		</section> -->	
 
 		<!-- 试听课程 -->
 		<section class="mod-wrapper last">
@@ -353,8 +353,89 @@
 					</div>
 				</li>																			
 			</ul>
-		</section>				
+		</section>	
+
+		<!-- page-nav -->
+        <div class="page-nav cf">
+        	<div class="page-num">
+                <a class="page-home" href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=1">首页</a>
+                <s:if test="page==1">
+            		<a href="#">上一页</a>
+            	</s:if>
+            	<s:else>
+            		<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="page-1"/>" >上一页</a>
+            	</s:else>
+                
+                
+                <!-- test1 begin -->
+                <s:if test="%{(page<=3)}">
+                 	<s:if test="%{(totalPage<=5)}">
+                     	<s:iterator begin="1" end="totalPage" var="p">
+							<s:if test="#p==page">
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
+                			</s:else>
+                		</s:iterator>		                     
+                 	</s:if>
+                 	<s:else>
+                 		<s:iterator begin="1" end="5" var="p">
+							<s:if test="#p==page">
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
+                			</s:else>
+                		</s:iterator>		
+                 	</s:else>		                 			                 
+                </s:if>
+               <!-- test1 end -->   
+               <!-- test2 begin -->  
+                <s:if test="%{page>3}">
+                	<s:if test="%{totalPage-page>2}">
+                  		<s:iterator begin="page-2" end="page+2" var="p">
+                			<s:if test="#p==page">
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
+                			</s:else>
+                		</s:iterator>
+                	</s:if>
+                	<s:else>
+                	 	<s:iterator begin="totalPage-4" end="totalPage" var="p">
+                			<s:if test="#p==page">
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property />"><s:property/></a>
+                			</s:else>
+                		</s:iterator>
+                	</s:else>
+                </s:if>
+                <!-- test2 end  -->
+                
+                <s:if test="page==totalPage">
+                	<a href="#">下一页</a>
+                </s:if>
+                <s:else>
+                	<a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="page+1"/>">下一页</a>
+                </s:else>
+                <a href="personal!showMyCou?status=<s:property value="status"/>&recommend=<s:property value="recommend"/>&page=<s:property value="totalPage"/>">末页</a>
+            </div>
+            <div class="page-skip">
+            	<form action="personal!showMyCou" >
+            		<input type="hidden" name="status" value="<s:property value="status"/>"/>
+            		<input type="hidden" name="recommend" value="<s:property value="recommend"/>"/>
+                	跳转到<input class="page-input" type="text" name="page" />
+                	<input class="page-nav-submit" type="submit" value="确定"/>
+                </form>  
+        	</div>
+        </div>
+        <!-- end page-nav -->   					
 	</div>
+	<!-- end content -->
 </div>
 <!-- end main -->
 
