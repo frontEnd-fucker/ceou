@@ -1,0 +1,37 @@
+/*! 视频播放页面 */
+
+#main {
+	margin-top: 20px;
+}
+
+/*	视频播放模块
+=============================================== */
+.mod-play {
+	width: 100%;
+}
+.mod-play .title {
+	color: #5a5a5a;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.mod-play .play-area {
+	width: 675px;
+	height: 490px;
+	overflow: hidden;
+}
+.mod-play .play-recommend {
+	width: 330px;
+	height: 490px;
+	background: #303030;
+	overflow: hidden;
+}
+.play-recommend h3 {
+	height: 36px;
+	padding-left: 13px;
+	color: #bbbbbb;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	line-height: 36px;
+}
