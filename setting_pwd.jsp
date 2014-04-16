@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -19,10 +20,10 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a>
-			<a class="user-name" href="#">用户名</a>
+			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
+			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
-			<a class="log-out" href="#">退出</a>
+			<a class="log-out" href="user!outLogin">退出</a>
 		</div>
 	</div>	
 </header>	
@@ -62,25 +63,34 @@
 			</div>	
 		</div>
 		<p><strong>用户名</strong></p>
-		<p style="margin-left: -37px;"><strong>我的积分：<span class="red">1326</span></strong></p>
-		<p style="margin-left: -17px;"><strong>我的等级：</strong><span class="red">注册会员</span></p>
-
+		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
+		<p style="margin-left: -17px;"><strong>我的等级：</strong>
+			<span class="red">
+				<s:if test='perBean.privilegeid == "0"'>普通会员</s:if>
+				<s:if test='perBean.privilegeid == "1"'>白金会员</s:if>
+				<s:if test='perBean.privilegeid == "2"'>黄金会员</s:if>
+				<s:if test='perBean.privilegeid == "3"'>铂金会员</s:if>
+				<s:if test='perBean.privilegeid == "4"'>钻石会员</s:if>
+			</span>
+		</p>
 		<hr>
 
 		<ul>
 			<h2><i class="icon-setting dib"></i>个人设置</h2>
-			<li><a href="setting_base.jsp">基本信息</a></li>
-			<li><a href="setting_profession.jsp">职业信息</a></li>
-			<li><a href="setting_edu.jsp">教育信息</a></li>
-			<li><a class="curr" href="setting_pwd.jsp">更改密码</a></li>
-			<li><a href="setting_avatar.jsp">上传头像</a></li>
+			<li><a href="personal!findUserById">基本信息</a></li>
+			<li><a href="personal!findUserPos">职业信息</a></li>
+			<li><a href="personal!findUserEdu">教育信息</a></li>
+			<li><a class="curr" href="personal!toEditPwd">更改密码</a></li>
+			<li><a href="personal!toAvatar">上传头像</a></li>
 
 			<hr>
 
 			<h2><i class="icon-book dib"></i>我的学习</h2>
-			<li><a class="curr" href="#">个人中心</a></li>
-			<li><a href="#">我的课程</a></li>
-			<li><a href="#">学习记录</a></li>
+			<li><a href="personal!show">个人中心</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=-1&page=1">我的课程</a></li>
+			<li><a href="personal!showMyCou?status=0&recommend=-1&page=1">学习记录</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=0&page=1">试听课程</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=1&page=1">推荐课程</a></li>
 		</ul>
 	</aside>	
 
@@ -107,6 +117,7 @@
 		</div>	
 	</div>
 </div>
+
 
 <div class="clear-both"></div>
 
@@ -141,14 +152,16 @@ $(function() {
 		},
 		submitHandler: function(form) {
 			//alert('fuck');
-			$.post('www.ceou.com.cn', {'pwd':currPwd,'newPwd':newPwd2}, function(data) {
+			var currPwd = $('#currPwd').val();
+			var newPwd2 = $('#newPwd2').val();
+			$.post('personal!editPwd', {'pwd':currPwd,'newPwd':newPwd2}, function(data) {
 				if(data == -1) {
 					alert('旧密码错误');
 				}else if(data == 1) {
-					alert('修改成功');
-					location.href="http://www.ceou.com.cn/login.html";
+					alert('修改成功，请重新登录');
+					location.href="login.html";
 				}else {
-					alert('网络超时,请重新提交');
+					yu.popFadeoutLayer(-1, '修改失败，请重新提交');
 				}
 			});
 			//return false;

@@ -2,7 +2,6 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
-	
 	<!--  -->
 	<package name="struts2" extends="json-default" namespace="/">
 		<!-- 防止同一时间同时登录拦截器 -->
@@ -189,18 +188,43 @@
 		
 		<!-- 个人中心 -->
 		<action name="personal" class="com.ceou.action.PersonalAction">
-			<result name="show">/WEB-INF/passport.jsp</result>
+			<result name="show">userCenter.jsp</result>
 			<result name="relogin">/login.html</result>
-			<result name="showMyCou">/WEB-INF/myCourse.jsp</result>
-			<result name="findUserById">/WEB-INF/setting.jsp</result>
-			<result name="editUser" type="redirect">
-				/personal!show
+			<result name="showMyCou">/setting_mycourse.jsp</result>
+			<!-- 修改基本信息 -->
+			<result name="findUserById">setting_base.jsp</result>
+			<result name="editUserInfo" type="json">
+				<param name="root">
+					perEditStatus
+				</param>
 			</result>
+			
+			<!-- 修改职业信息 -->
+			<result name="findUserPos">setting_profession.jsp</result>
+			<result name="editUserPos" type="json">
+				<param name="root">
+					perEditStatus
+				</param>
+			</result>
+			
+			<!-- 修改教育背景 -->
+			<result name="findUserEdu">setting_edu.jsp</result>
+			<result name="editUserEdu" type="json">
+				<param name="root">
+					perEditStatus
+				</param>
+			</result>
+			
+			<!-- 修改密码 -->
+			<result name="toEditPwd">/setting_pwd.jsp</result>
 			<result name="editPwdStatus" type="json">
 				<param name="root">
 					editPwdStatus
 				</param>
 			</result>
+			
+			<!-- 上传头像 -->
+			<result name="toAvatar">/setting_avatar.jsp</result>
 		</action>
 		
 		<!-- 活动 -->
@@ -208,6 +232,11 @@
 			<result name="showCouDetail">/videoCourseCC.jsp</result>
 			<result name="activityShow">/activity.jsp</result>
 			<result name="showArtDetail">/article.jsp</result>
+		</action>
+		
+		<!-- 在线考试模块 -->
+		<action name="exam" class="com.ceou.action.ExamAction">
+			<result name="examSuccess">/examSuccess.jsp</result>
 		</action>
 		
     </package>
@@ -265,7 +294,7 @@
 			<param name="couSkill">${couSkill}</param>
 			<param name="couIndustry">${couIndustry}</param>
 			<param name="catId">${catId}</param>
-			<param name="ifceou">${ifceou}</param>
+			<param name="ifCeou">${ifCeou}</param>
 			<param name="str">${str}</param>
 			<param name="page">${page}</param>
 			<param name="startDate">${startDate}</param>
@@ -280,7 +309,7 @@
 			<param name="couSkill">${couSkill}</param>
 			<param name="couIndustry">${couIndustry}</param>
 			<param name="catId">${catId}</param>
-			<param name="ifceou">${ifceou}</param>
+			<param name="ifCeou">${ifCeou}</param>
 			<param name="str">${str}</param>
 			<param name="startDate">${startDate}</param>
 			<param name="endDate">${endDate}</param>
@@ -304,7 +333,7 @@
 			<param name="couSkill">${couSkill}</param>
 			<param name="couIndustry">${couIndustry}</param>
 			<param name="catId">${catId}</param>
-			<param name="ifceou">${ifceou}</param>
+			<param name="ifCeou">${ifCeou}</param>
 			<param name="str">${str}</param>
 			<param name="startDate">${startDate}</param>
 			<param name="endDate">${endDate}</param>

@@ -1,0 +1,28 @@
+
+/* 会自动隐藏的弹出层
+=================================== */
+#fadeOutLayer {
+	z-index: 1000;
+	position: fixed;
+	left: 50%;
+	top: 250px;	
+	background: #fff;
+}
+#fadeOutLayer .cont.success {
+	border: 8px solid #d4e8d9;
+}
+#fadeOutLayer .cont.error {
+	border: 8px solid #f0d8d8;
+}
+#fadeOutLayer .cont p {
+	padding: 6px 26px 6px 55px;
+	line-height: 21px;	
+}
+#fadeOutLayer .cont.success p {
+	border: 1px solid #7bb78a;
+	background: url(../whimg/baseUI/success.png) no-repeat 16px center;
+}
+#fadeOutLayer .cont.error p {
+	border: 1px solid #e17777;
+	background: url(../whimg/baseUI/error.png) no-repeat 16px center;
+}

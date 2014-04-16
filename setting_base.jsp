@@ -9,6 +9,7 @@
 
 	<link href="css/normalize.css" rel="stylesheet">
 	<!-- <link href="css/base.css" rel="stylesheet"> -->
+	<link href="css/baseUI.css" rel="stylesheet">
 	<link href="css/userCenter.css" rel="stylesheet">
 	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
@@ -20,10 +21,10 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a>
-			<a class="user-name" href="#">用户名</a>
+			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
+			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
-			<a class="log-out" href="#">退出</a>
+			<a class="log-out" href="user!outLogin">退出</a>
 		</div>
 	</div>	
 </header>	
@@ -63,9 +64,16 @@
 			</div>	
 		</div>
 		<p><strong>用户名</strong></p>
-		<p style="margin-left: -37px;"><strong>我的积分：<span class="red">1326</span></strong></p>
-		<p style="margin-left: -17px;"><strong>我的等级：</strong><span class="red">注册会员</span></p>
-
+		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
+		<p style="margin-left: -17px;"><strong>我的等级：</strong>
+			<span class="red">
+				<s:if test='perBean.privilegeid == "0"'>普通会员</s:if>
+				<s:if test='perBean.privilegeid == "1"'>白金会员</s:if>
+				<s:if test='perBean.privilegeid == "2"'>黄金会员</s:if>
+				<s:if test='perBean.privilegeid == "3"'>铂金会员</s:if>
+				<s:if test='perBean.privilegeid == "4"'>钻石会员</s:if>
+			</span>
+		</p>
 		<hr>
 
 		<ul>
@@ -73,15 +81,17 @@
 			<li><a class="curr" href="personal!findUserById">基本信息</a></li>
 			<li><a href="personal!findUserPos">职业信息</a></li>
 			<li><a href="personal!findUserEdu">教育信息</a></li>
-			<li><a href="setting_pwd.jsp">更改密码</a></li>
-			<li><a href="setting_avatar.jsp">上传头像</a></li>
+			<li><a href="personal!toEditPwd">更改密码</a></li>
+			<li><a href="personal!toAvatar">上传头像</a></li>
 
 			<hr>
 
 			<h2><i class="icon-book dib"></i>我的学习</h2>
-			<li><a class="curr" href="#">个人中心</a></li>
-			<li><a href="#">我的课程</a></li>
-			<li><a href="#">学习记录</a></li>
+			<li><a href="personal!show">个人中心</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=-1&page=1">我的课程</a></li>
+			<li><a href="personal!showMyCou?status=0&recommend=-1&page=1">学习记录</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=0&page=1">试听课程</a></li>
+			<li><a href="personal!showMyCou?status=-1&recommend=1&page=1">推荐课程</a></li>
 		</ul>
 	</aside>	
 
@@ -100,8 +110,8 @@
 				</p>	
 				<p class="input-con">
 					<label for="sex">性别：</label>
-					<input class="input-radio" name="perBean.sex" type="radio" checked value="男">男&nbsp;&nbsp;
-					<input class="input-radio" name="perBean.sex" type="radio" value="女">女
+					<input class="input-radio" name="perBean.gender" type="radio" <s:if test='perBean.gender == "男"'>checked </s:if> value="男" >男&nbsp;&nbsp;
+					<input class="input-radio" name="perBean.gender" type="radio" <s:if test='perBean.gender == "女"'>checked </s:if> value="女">女
 				</p>	
 				<p class="input-con">
 					<label for="cname">真实姓名：</label>
@@ -131,7 +141,8 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/userCenter.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
 <script>
 $(function() {
 
@@ -159,7 +170,7 @@ $(function() {
 			}
 		},
 		submitHandler: function(form) {
-			var sex = $('input[name="perBean.sex"]:checked').val();
+			var sex = $('input[name="perBean.gender"]:checked').val();
 			var cname = $('#cname').val();
 			var tel = $('#tel').val();
 			var qq = $('#qq').val();
@@ -167,9 +178,9 @@ $(function() {
 			console.log(sex, cname, tel, qq, addr);
 			$.post('personal!editUserInfo', {'perBean.gender':sex, 'perBean.realname':cname, 'perBean.phone':tel, 'perBean.qq':qq, 'perBean.mailaddress':addr }, function(data) {
 				if(data == 1){
-					alert('ok');
+					yu.popFadeoutLayer(1, '保存成功');
 				}else{
-					alert('fail');
+					yu.popFadeoutLayer(-1, '保存失败，请重新提交');
 				}				
 			});			
 		}
