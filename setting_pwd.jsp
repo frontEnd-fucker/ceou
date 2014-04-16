@@ -62,7 +62,7 @@
 				<a href="#"><img class="avatar-big" src="whimg/userCenter/avatar-default.jpg"></a>
 			</div>	
 		</div>
-		<p><strong>用户名</strong></p>
+		<p><strong><s:property value="perBean.name"/></strong></p>
 		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
 		<p style="margin-left: -17px;"><strong>我的等级：</strong>
 			<span class="red">
