@@ -22,17 +22,66 @@
 	<!-- 视频播放模块 -->
 	<div class="mod-play">
 		<h2 class="title">如何获取大客户</h2>
-		<div class="play-area fl">
+
+		<!-- 播放区域 -->
+		<div class="p_area fl">
 			<script src="http://p.bokecc.com/player?vid=16F70EE580B0B8209C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=false&width=675&height=490&playerid=BF73B0FF969BF52C&playertype=1" type="text/javascript"></script>			
 		</div>
-		<div class="play-recommend fr">
+
+		<!-- 热门推荐 -->
+		<div class="p_recommend fr">
 			<h3>热门推荐</h3>
-			<ul class="play-list">
-				
+			<ul class="p_recommend-list">
+				<li class="recommend-item">
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>	
+				<li class="recommend-item">
+					<div class="pd">
+						<div class="hd">
+							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
+						</div>
+						<div class="bd">
+							<p class="course-name"><a href="#">如何获取大客户</a></p>
+							<p class="teacher">讲师：<a href="#">XXX</a></p>
+							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
+						</div>
+					</div>
+				</li>	
+				<li class="recommend-item">
+					<div class="pd">
+						<div class="hd">
+							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
+						</div>
+						<div class="bd">
+							<p class="course-name"><a href="#">如何获取大客户</a></p>
+							<p class="teacher">讲师：<a href="#">XXX</a></p>
+							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
+						</div>
+					</div>
+				</li>	
+				<li class="recommend-item">
+					<div class="pd">
+						<div class="hd">
+							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
+						</div>
+						<div class="bd">
+							<p class="course-name"><a href="#">如何获取大客户</a></p>
+							<p class="teacher">讲师：<a href="#">XXX</a></p>
+							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
+						</div>
+					</div>
+				</li>													
 			</ul>
-		</div>
+		</div>		
 	</div>
 	<!-- end 视频播放模块 -->
+
+	<!--  -->
 </div>
 <!-- end main -->
 

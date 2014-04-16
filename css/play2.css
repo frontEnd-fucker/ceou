@@ -8,6 +8,8 @@
 =============================================== */
 .mod-play {
 	width: 100%;
+	overflow: hidden;
+	margin-bottom: 20px;
 }
 .mod-play .title {
 	color: #5a5a5a;
@@ -15,18 +17,20 @@
 	font-weight: bold;
 }
 
-.mod-play .play-area {
+.mod-play .p_area {
 	width: 675px;
 	height: 490px;
 	overflow: hidden;
 }
-.mod-play .play-recommend {
+/* mod_1 */
+.mod-play .p_recommend {
 	width: 330px;
 	height: 490px;
+	color: #cccccc;
 	background: #303030;
 	overflow: hidden;
 }
-.play-recommend h3 {
+.p_recommend h3 {
 	height: 36px;
 	padding-left: 13px;
 	color: #bbbbbb;
@@ -34,4 +38,57 @@
 	font-weight: bold;
 	letter-spacing: 3px;
 	line-height: 36px;
+}
+
+.p_recommend-list .recommend-item {
+	position: relative;
+	width: 100%;
+	height: 102px;
+	margin-bottom: 8px;
+	overflow: hidden;
+	background: #444444;
+}
+.p_recommend-list .recommend-item .pd {
+	padding: 8px 8px 8px 18px;
+}
+.recommend-item .hd {
+	float: left;
+	width: 130px;
+	height: 86px;
+	margin-right: 16px;
+	overflow: hidden;
+}
+.recommend-item .hd img {
+	width: 130px;
+	height: 86px;
+}
+.recommend-item .bd {
+	height: 86px;	
+}
+.recommend-item .bd{
+	padding-top: 4px;
+	color: #cccccc;
+	line-height: 20px;
+	font-size: 12px;
+}
+.recommend-item .bd a {
+	color: #cccccc;
+	line-height: 20px;
+	font-size: 12px;
+}
+.recommend-item .bd .icon-start {
+	margin: -3px 3px 0 0;
+}
+.recommend-item .bd .start {
+	position: absolute;
+	bottom: 5px;
+	left: 162px;
+}
+/* mod_2 */
+.recommend-item a {
+	display: block;
+	padding: 8px 8px 8px 18px;
+}
+.recommend-item hd {
+	
 }
