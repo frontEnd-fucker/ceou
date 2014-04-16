@@ -20,7 +20,7 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a>
+			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
 			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
 			<a class="log-out" href="user!outLogin">退出</a>
@@ -66,11 +66,11 @@
 		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
 		<p style="margin-left: -17px;"><strong>我的等级：</strong>
 			<span class="red">
-				<s:if test='perBean.privilegeid == "1"'>普通会员</s:if>
-				<s:if test='perBean.privilegeid == "2"'>白金会员</s:if>
-				<s:if test='perBean.privilegeid == "3"'>黄金会员</s:if>
-				<s:if test='perBean.privilegeid == "4"'>铂金会员</s:if>
-				<s:if test='perBean.privilegeid == "5"'>钻石会员</s:if>
+				<s:if test='perBean.privilegeid == "0"'>普通会员</s:if>
+				<s:if test='perBean.privilegeid == "1"'>白金会员</s:if>
+				<s:if test='perBean.privilegeid == "2"'>黄金会员</s:if>
+				<s:if test='perBean.privilegeid == "3"'>铂金会员</s:if>
+				<s:if test='perBean.privilegeid == "4"'>钻石会员</s:if>
 			</span>
 		</p>
 		<hr>
@@ -99,7 +99,7 @@
 
 		<!-- 我的课程 -->
 		<section class="mod-wrapper">
-			<h2>我的课程</h2>
+			<h2>我的课程<a class="fr" href="personal!showMyCou?status=-1&recommend=-1&page=1">更多>></a></h2>
 			<ul class="mod-video-list cf">
 				<s:iterator value="myCourseList">
 					<li class="mod-video-item">
@@ -135,9 +135,28 @@
 		</section>		
 		  -->
 
-		<!-- 推荐课程 -->
+		<!-- 试听课程 -->
 		<section class="mod-wrapper">
-			<h2>推荐课程</h2>
+			<h2>试听课程<a class="fr" href="personal!showMyCou?status=-1&recommend=0&page=1">更多>></a></h2>
+			<ul class="mod-video-list cf">
+				<s:iterator value="listenList">
+					<li class="mod-video-item">
+						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
+						<div class="bd">
+							<div class="pd">
+								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
+								<p class="author-title"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></p>
+								<a class="btn-learn fl" href="course!showCouDetail?couid=<s:property value="couid"/>">开始学习</a>
+							</div>
+						</div>
+					</li>
+				</s:iterator>																
+			</ul>
+		</section>
+
+		<!-- 推荐课程 -->
+		<section class="mod-wrapper last">
+			<h2>推荐课程<a class="fr" href="personal!showMyCou?status=-1&recommend=1&page=1">更多>></a></h2>
 			<ul class="mod-video-list cf">
 				<s:iterator value="recomList">
 					<li class="mod-video-item">
@@ -154,24 +173,7 @@
 			</ul>
 		</section>	
 
-		<!-- 试听课程 -->
-		<section class="mod-wrapper last">
-			<h2>试听课程</h2>
-			<ul class="mod-video-list cf">
-				<s:iterator value="listenList">
-					<li class="mod-video-item">
-						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
-						<div class="bd">
-							<div class="pd">
-								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
-								<p class="author-title"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></p>
-								<a class="btn-learn fl" href="course!showCouDetail?couid=<s:property value="couid"/>">开始学习</a>
-							</div>
-						</div>
-					</li>
-				</s:iterator>																
-			</ul>
-		</section>				
+				
 	</div>
 </div>
 <!-- end main -->

@@ -33,6 +33,16 @@ body {
 	border-radius: 5px;
 }
 
+/**
+ * jquery validate样式设置
+ */
+em.error {
+	padding-left: 13px;
+	color: red;	
+	font-style: normal;
+	font-size: 12px;	
+}
+
 
 /**
  * 个人中心通用
@@ -155,6 +165,8 @@ aside h2 {
 }
 aside hr {
 	margin: 10px;
+	border: 0 none;
+	border-top: 1px solid #D3D3D3;	
 }
 aside a, aside h2 {
 	display: block;
@@ -185,11 +197,13 @@ aside a:hover, aside a.curr {
 /* page-nav
 ==================================================================== */
 .page-nav {
+	margin-bottom: 30px;
 	color: #4b4b4b;
 	line-height: 28px;
+	text-align: center;
 }
 .page-nav a, .page-nav-submit {
-	float: left;
+	display: inline-block;
 	height: 28px;
 	padding: 0 10px;
 	margin-right: 6px;
@@ -212,10 +226,26 @@ aside a:hover, aside a.curr {
 	border: 1px solid #c1c1c1;
 	border-radius: 3px;
 }
-
+.page-nav form {
+	display: inline;
+}
+.page-nav-submit {
+	float: none;
+}
+.page-nav .nothing {
+	margin-top: 30px;
+	color: #747474;
+	font-size: 22px;
+	font-family: arial,"微软雅黑";
+	font-style: italic;
+	letter-spacing: 5px;
+}
 /* footer
 ============================================================================ */
-
+#footer {
+	position: relative;
+	z-index: 2;
+}
 .footer-top {
 	height: 40px;	
 	background: #2b6656;
@@ -323,6 +353,13 @@ aside a:hover, aside a.curr {
 	text-decoration: ;
 	font-style: italic;
 }
+.mod-wrapper h2 a {
+	color: #096801;
+	font-size: 14px;
+	font-weight: normal;
+	margin-right: 60px;
+	font-style: normal;
+}
 .mod-video-item {
 	float: left;
 	width: 204px;
@@ -401,4 +438,16 @@ aside a:hover, aside a.curr {
 }
 .form-con .btn-pill {
 	margin: 30px 0 0 140px;
+}
+
+/**
+ * 我的课程myCourse.jsp
+ */
+
+#myCourse .mod-wrapper {
+	background: none;
+}
+#myCourse #main {
+	min-height: 670px;
+	padding-bottom: 20px;
 }

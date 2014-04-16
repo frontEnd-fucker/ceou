@@ -10,6 +10,7 @@
 	<link href="css/normalize.css" rel="stylesheet">
 	<!-- <link href="css/base.css" rel="stylesheet"> -->
 	<link href="css/userCenter.css" rel="stylesheet">
+	<link href="css/baseUI.css" rel="stylesheet">
 	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
 
@@ -20,7 +21,7 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a>
+			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
 			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
 			<a class="log-out" href="user!outLogin">退出</a>
@@ -66,11 +67,11 @@
 		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
 		<p style="margin-left: -17px;"><strong>我的等级：</strong>
 			<span class="red">
-				<s:if test='perBean.privilegeid == "1"'>普通会员</s:if>
-				<s:if test='perBean.privilegeid == "2"'>白金会员</s:if>
-				<s:if test='perBean.privilegeid == "3"'>黄金会员</s:if>
-				<s:if test='perBean.privilegeid == "4"'>铂金会员</s:if>
-				<s:if test='perBean.privilegeid == "5"'>钻石会员</s:if>
+				<s:if test='perBean.privilegeid == "0"'>普通会员</s:if>
+				<s:if test='perBean.privilegeid == "1"'>白金会员</s:if>
+				<s:if test='perBean.privilegeid == "2"'>黄金会员</s:if>
+				<s:if test='perBean.privilegeid == "3"'>铂金会员</s:if>
+				<s:if test='perBean.privilegeid == "4"'>钻石会员</s:if>
 			</span>
 		</p>
 		<hr>
@@ -199,12 +200,12 @@ $(function() {
 		var work = $('select[name="upBean.position"] option:selected').val();		
 		var companyName = $('#companyName').val();
 		var positionName = $('#positionName').val();
-		console.log(province, city, work, companyName, positionName);
+
 		$.post('personal!editUserPosition', {'upBean.province':province, 'upBean.city':city, 'upBean.position':work, 'upBean.companyName':companyName,'upBean.positionName':positionName }, function(data) {
 			if(data == 1){
-				alert('ok');
+				yu.popFadeoutLayer(1, '保存成功');
 			}else{
-				alert('fail');
+				yu.popFadeoutLayer(-1, '保存失败，请重新提交');
 			}			
 		});
 		return false;
