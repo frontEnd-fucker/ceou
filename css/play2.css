@@ -6,6 +6,7 @@
 
 /*	视频播放模块
 =============================================== */
+
 .mod-play {
 	width: 100%;
 	overflow: hidden;
@@ -22,7 +23,7 @@
 	height: 490px;
 	overflow: hidden;
 }
-/* mod_1 */
+
 .mod-play .p_recommend {
 	width: 330px;
 	height: 490px;
@@ -39,7 +40,6 @@
 	letter-spacing: 3px;
 	line-height: 36px;
 }
-
 .p_recommend-list .recommend-item {
 	position: relative;
 	width: 100%;
@@ -47,9 +47,6 @@
 	margin-bottom: 8px;
 	overflow: hidden;
 	background: #444444;
-}
-.p_recommend-list .recommend-item .pd {
-	padding: 8px 8px 8px 18px;
 }
 .recommend-item .hd {
 	float: left;
@@ -62,33 +59,60 @@
 	width: 130px;
 	height: 86px;
 }
-.recommend-item .bd {
-	height: 86px;	
-}
-.recommend-item .bd{
-	padding-top: 4px;
-	color: #cccccc;
-	line-height: 20px;
-	font-size: 12px;
-}
-.recommend-item .bd a {
-	color: #cccccc;
-	line-height: 20px;
-	font-size: 12px;
-}
-.recommend-item .bd .icon-start {
-	margin: -3px 3px 0 0;
-}
-.recommend-item .bd .start {
-	position: absolute;
-	bottom: 5px;
-	left: 162px;
-}
-/* mod_2 */
 .recommend-item a {
 	display: block;
 	padding: 8px 8px 8px 18px;
+	color: #cccccc;
+	font-size: 12px;
+	line-height: 20px;
+	overflow: hidden;
 }
-.recommend-item hd {
-	
+.recommend-item a:hover {
+	background: #555;
 }
+.recommend-item a span {
+	display: block;
+}
+.recommend-item .start {
+	position: absolute;
+	bottom: 9px;
+	left: 162px;
+}
+.recommend-item .icon-start {
+	margin: -3px 3px 0 0;
+}
+
+
+/* 标签页区域 
+==================================================== */
+
+.tab {
+	margin-bottom: 70px;
+	border: 1px solid #dbdbdb;
+}
+.tab-nav {
+	height: 34px;
+	line-height: 34px;
+	background: #f2f2f2;
+}
+.tab-nav li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	background: url(../whimg/play2/tab-seperator.jpg) no-repeat right center;
+}
+.tab-nav li.last {
+	background: none;
+}
+.tab-nav li a {
+	display: block;
+	color: #777676;
+	font-size: 14px;
+	font-weight: bold;
+	text-shadow: 1px 1px #fff;
+}
+.tab-nav li a:hover {
+	color: #f8f8f8;
+	text-shadow: rgba(106, 148, 11, .5);
+	background: #87b911;
+};

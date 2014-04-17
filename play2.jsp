@@ -41,47 +41,45 @@
 					</a>
 				</li>	
 				<li class="recommend-item">
-					<div class="pd">
-						<div class="hd">
-							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
-						</div>
-						<div class="bd">
-							<p class="course-name"><a href="#">如何获取大客户</a></p>
-							<p class="teacher">讲师：<a href="#">XXX</a></p>
-							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
-						</div>
-					</div>
-				</li>	
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>
 				<li class="recommend-item">
-					<div class="pd">
-						<div class="hd">
-							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
-						</div>
-						<div class="bd">
-							<p class="course-name"><a href="#">如何获取大客户</a></p>
-							<p class="teacher">讲师：<a href="#">XXX</a></p>
-							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
-						</div>
-					</div>
-				</li>	
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>
 				<li class="recommend-item">
-					<div class="pd">
-						<div class="hd">
-							<a href="#"><img src="whimg/play2/recommend-hd.jpg"></a>
-						</div>
-						<div class="bd">
-							<p class="course-name"><a href="#">如何获取大客户</a></p>
-							<p class="teacher">讲师：<a href="#">XXX</a></p>
-							<p class="start"><i class="icon-start"></i><a href="#">开始学习</a></p>
-						</div>
-					</div>
-				</li>													
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>																				
 			</ul>
 		</div>		
 	</div>
 	<!-- end 视频播放模块 -->
 
-	<!--  -->
+	<!-- 标签页区域 -->
+	<div class="tab">
+		<ul class="tab-nav">
+			<li class="curr"><a href="#">课程选集</a></li>
+			<li><a href="#">课程大纲</a></li>
+			<li><a href="#">老师简介</a></li>
+			<li class="last"><a href="#">观看讲义</a></li>
+		</ul>
+		<div class="tab-content"></div>
+	</div>
+	<!-- end 标签页区域 -->
 </div>
 <!-- end main -->
 
