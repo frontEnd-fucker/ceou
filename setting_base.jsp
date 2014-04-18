@@ -175,7 +175,6 @@ $(function() {
 			var tel = $('#tel').val();
 			var qq = $('#qq').val();
 			var addr = $('#addr').val();
-			console.log(sex, cname, tel, qq, addr);
 			$.post('personal!editUserInfo', {'perBean.gender':sex, 'perBean.realname':cname, 'perBean.phone':tel, 'perBean.qq':qq, 'perBean.mailaddress':addr }, function(data) {
 				if(data == 1){
 					yu.popFadeoutLayer(1, '保存成功');
