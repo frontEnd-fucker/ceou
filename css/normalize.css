@@ -54,6 +54,16 @@ em {
     line-height: 0;
 }
 
+.triangle {
+    border-color: #000 transparent transparent;
+    border-style: solid dashed dashed;
+    border-width: 6px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
 /* HTML5 display definitions
 ========================================================================== */
 
