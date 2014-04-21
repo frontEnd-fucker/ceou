@@ -1,0 +1,122 @@
+
+/* helper classes 
+================================================= */
+
+.italic-title {
+	margin-bottom: 18px;
+	color: #323232;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-style: italic;
+}
+
+/* 教师简介 
+====================================== */
+
+.t_intro {
+	margin-top: 18px;
+	padding: 30px 60px;
+	border: 1px solid #dbdbdb;
+	box-shadow: inset 0 3px 0 rgba(255, 255, 255, 1);
+
+	background: #f7f7f7; /* Old browsers */
+	background: -moz-linear-gradient(top, #fafff3 0%, #ffffff 71%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafff3), color-stop(71%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* IE10+ */
+	background: linear-gradient(to bottom, #fafff3 0%,#ffffff 71%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafff3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */	
+}
+.t_intro .hd {
+	float: left;
+	width: 348px;
+	height: 430px;
+	margin-right: 67px;
+	overflow: hidden;
+}
+.t_intro .hd img {
+	width: 348px;	
+	height: 430px;	
+}
+.t_intro .bd {
+	overflow: hidden;
+}
+.t_intro .t_name {
+	margin: 8px 0 34px;
+	color: #141414;
+	font-size: 14px;
+	font-weight: bold;
+}
+.t_intro p {
+	color: #141414;
+	font-size: 12px;
+	line-height: 36px;
+}
+
+/* 专家介绍
+========================================================= */
+.t_course {
+	margin-top: 50px;
+}
+.t_course-list {
+	width: 1060px;
+}
+.t_course-item {
+	float: left;
+	width: 475px;
+	margin-right: 54px;
+	margin-bottom: 58px;
+}
+.t_course-item .top{
+	height: 230px;
+	background: #fbfbfb;
+}
+.t_course-item .top .pd {
+	padding: 44px 35px 41px 15px;
+}
+.t_course-item .hd {
+	overflow: hidden;
+	float: left;	
+	width: 166px;
+	height: 145px;
+	margin-right: 17px;
+	background: #aeaeae;
+}
+.t_course-item .hd img {
+	width: 166px;
+	height: 145px;	
+}
+.t_course-item .bd {
+	overflow: hidden;
+}
+.t_course-item .bd h3 {
+	margin-bottom: 18px;
+	color: #141414;
+	font-size: 14px;
+	font-weight: bold;
+}
+.t_course-item .bd .cnt {
+	height: 54px;
+	margin-bottom: 22px;
+	line-height: 18px;
+	overflow: hidden;
+}
+.t_course-item .bottom {
+	width: 100%;
+	height: 10px;
+	background: url(../whimg/teacher_intro/t_course-item-bottom.png) no-repeat center bottom;
+}
+
+/* 专家活动
+=================================================== */
+.t_activity {
+	margin-bottom: 90px;
+}
+.activity-list {
+	padding: 30px 35px 1px;
+	background: #fbfbfb;
+}
+.activity-list li {
+	margin-bottom: 25px;
+}
