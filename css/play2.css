@@ -13,8 +13,9 @@
 	margin-bottom: 20px;
 }
 .mod-play .title {
+	margin-bottom: 10px;
 	color: #5a5a5a;
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: bold;
 }
 
@@ -114,7 +115,7 @@
 	font-weight: bold;
 }
 .tab-content .course-intro dd {
-	padding: 0 24px;
+	padding: 18px 24px;
 	color: #3b3b3b;
 	line-height: 30px;
 	background: #f6f6f6;
