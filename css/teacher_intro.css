@@ -1,0 +1,69 @@
+
+/* helper classes 
+================================================= */
+
+.italic-title {
+	color: #323232;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	
+}
+
+/* 教师简介 
+====================================== */
+
+.t_intro {
+	margin-top: 18px;
+	padding: 30px 60px;
+	border: 1px solid #dbdbdb;
+	box-shadow: inset 0 3px 0 rgba(255, 255, 255, 1);
+
+	background: #f7f7f7; /* Old browsers */
+	background: -moz-linear-gradient(top, #fafff3 0%, #ffffff 71%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafff3), color-stop(71%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fafff3 0%,#ffffff 71%); /* IE10+ */
+	background: linear-gradient(to bottom, #fafff3 0%,#ffffff 71%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafff3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */	
+}
+.t_intro .hd {
+	float: left;
+	width: 348px;
+	height: 430px;
+	margin-right: 67px;
+	overflow: hidden;
+}
+.t_intro .hd img {
+	width: 348px;	
+	height: 430px;	
+}
+.t_intro .bd {
+	overflow: hidden;
+}
+.t_intro .t_name {
+	margin: 8px 0 34px;
+	color: #141414;
+	font-size: 14px;
+	font-weight: bold;
+}
+.t_intro p {
+	color: #141414;
+	font-size: 12px;
+	line-height: 36px;
+}
+
+/* 专家介绍
+========================================================= */
+.t_course {
+	margin-top: 50px;
+}
+.t_course-item {
+	float: left;
+	width: 475px;
+	margin-right: 54px;
+}
+.t_course-item .top{
+	height: 230px;
+	background: #fbfbfb;
+}
