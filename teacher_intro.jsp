@@ -41,16 +41,82 @@
 	<!-- 专家课程 -->
 	<section class="t_course">
 		<h2 class="italic-title">专家课程</h2>
-		<ul class="t_course-list">
+		<ul class="t_course-list cf">
 			<li class="t_course-item">
 				<div class="top">
-					<div class="hd"></div>
-					<div class="bd"></div>
+					<div class="pd">
+						<div class="hd">							
+						</div>
+						<div class="bd">
+							<h3>课程标题</h3>
+							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
+							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
+							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
+						</div>
+					</div>
 				</div>
 				<div class="bottom"></div>
 			</li>
-		</ul>
+
+			<li class="t_course-item">
+				<div class="top">
+					<div class="pd">
+						<div class="hd">							
+						</div>
+						<div class="bd">
+							<h3>课程标题</h3>
+							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
+							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
+							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom"></div>
+			</li>
+
+			<li class="t_course-item">
+				<div class="top">
+					<div class="pd">
+						<div class="hd">							
+						</div>
+						<div class="bd">
+							<h3>课程标题</h3>
+							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
+							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
+							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom"></div>
+			</li>
+
+			<li class="t_course-item">
+				<div class="top">
+					<div class="pd">
+						<div class="hd">							
+						</div>
+						<div class="bd">
+							<h3>课程标题</h3>
+							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
+							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
+							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom"></div>
+			</li>									
+		</ul>		
 	</section>
+
+	<!-- 专家活动 -->
+	<section class="t_activity">
+		<h2 class="italic-title">专家活动</h2>
+		<ul class="activity-list">
+			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
+			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
+			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
+		</ul>
+	</section>	
 </div>
 <!-- end main -->
 
