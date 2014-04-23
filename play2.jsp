@@ -194,10 +194,7 @@
 						<div class="bd">
 							<p class="info">
 								<span class="user-name"><s:property value="username" /></span>
-								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>
-								<!-- 
-								<span class="floor fr">${status.index+1}</span>		
-								 -->		
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>	
 							</p>
 							<p class="cnt"><s:property value="comment"/> </p>
 							<p class="bottom">
@@ -213,6 +210,13 @@
 		</div>
 
 		<!-- page-nav -->
+		<div id="page-nav">
+			<a href="#">上一页</a>
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">下一页</a>
+		</div>
         <!-- end page-nav -->
 	</div>
 	<!-- end 评论区 -->
@@ -227,34 +231,71 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/base.js"></script>	
 <script src="js/play2.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('#comment-submit').click(function(){
-			var seriesnumber = '${courseDetail.seriesnumber}';
-			var courseid = '${courseDetail.couid}';
-			var comment = $('#comment').val();
-			$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
-				if(data){
-					alert(data.username+'评论成功');
-				}else{
-					alert('对不起，只有登录后才能评论');
-				}
-			});
+<script>
+$(function(){
+
+	// 将播放器的width改为675px
+	$('embed').attr('width', 675);
+
+	// 评论
+	$('#comment-submit').click(function(){
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var comment = $('#comment').val();
+		$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+			// data.ret = 1为评论成功
+			// data.ret = -1为还没登录
+			if(data.ret == 1){
+				alert(data.username+'评论成功');
+				var html = [
+					'<li class="comment-item">',
+						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
+						'<div class="bd">',
+							'<p class="info">',
+								'<span class="user-name">',data.username,'</span>',
+								'<span class="date">刚刚</span>',
+							'</p>',
+							'<p class="cnt">',comment,'</p>',
+						'</div>',
+					'</li>'
+				].join('');
+				$('.comment-list').prepend(html);
+				$('#comment').val('');
+			}else if(data.ret == -1){
+				alert('对不起，只有登录后才能评论');
+			}else {
+				alert('网络错误，请重新提交');
+			}
 		});
-		
-		$('.J_praise').click(function() {
-			var commentid = $(this).data('commentid');
-			//alert(commentid);
-			$.post('comment!addPraise',{'commentid':commentid},function(data){
-				if(data == 1){
-					alert('点赞成功');
-				}
-				else{
-					alert('点赞失败');
-				}
+	});
+	
+	//点赞
+	$('.J_praise').click(function() {
+		var commentid = $(this).data('commentid');
+		$.post('comment!addPraise',{'commentid':commentid},function(data){
+			if(data == 1){
+				alert('点赞成功');
+			}
+			if(data == -1) {
+				alert('请先登录');
+			}
+			else{
+				alert('网络错误，请重新提交');
+			}
+		});
+	});
+
+	// 分页
+	$('#page-nav').on('click', 'a', function(e) {
+		e.preventDefault();
+		$.post('comment', function(data) {
+			$('.comment-list').fadeOut(700, function() {
+				$(this).html(data).show();
+				$("html,body").animate({scrollTop: $(".all-comment").offset().top}, 1500);
 			});
 		});
 	});
+});
 </script>
 </body>
 </html>
