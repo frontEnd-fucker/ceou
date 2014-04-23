@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -21,11 +22,11 @@
 
 	<!-- 视频播放模块 -->
 	<div class="mod-play">
-		<h2 class="title">如何获取大客户</h2>
+		<h2 class="title"><s:property value="courseDetail.couname"/></h2>
 
 		<!-- 播放区域 -->
 		<div class="p_area fl">
-			<script src="http://p.bokecc.com/player?vid=16F70EE580B0B8209C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=false&width=675&height=490&playerid=BF73B0FF969BF52C&playertype=1" type="text/javascript"></script>			
+			${courseDetail.couvideourl }			
 		</div>
 
 		<!-- 热门推荐 -->
@@ -72,13 +73,14 @@
 			<div class="pd">
 				<h3>选集</h3>
 				<ul class="series-list">
-					<li class="series-item curr"><a href="#">01</a></li>
-					<li class="series-item"><a href="#">02</a></li>
-					<li class="series-item"><a href="#">03</a></li>
-					<li class="series-item"><a href="#">04</a></li>
-					<li class="series-item"><a href="#">05</a></li>
-					<li class="series-item"><a href="#">06</a></li>
-					<li class="series-item"><a href="#">07</a></li>
+					<s:iterator value="seriesCouList" status="status">
+						<s:if test="%{courseDetail.cousequence==cousequence}">
+							<li class="series-item curr"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:if>
+						<s:else>
+							<li class="series-item"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:else>
+					</s:iterator>
 				</ul>
 			</div>	
 		</div>
@@ -99,10 +101,7 @@
 				<dl>
 					<dt>课程简介</dt>
 					<dd>
-						<p>沟通能力是核心竞争力之一，而意愿沟通又是深层次的沟通。</p>
-						<p>授人以鱼不如授人以“欲”，沟通以别人的意愿为出发点，事半功倍。</p>
-						<p>本课程讲解如何站在别人的位置思考问题，站在别人的角度进行沟通。尤其在企业管理过程中，如何从别人以及自己的意愿出发，更好地将意
-愿落实。</p>
+						<s:property value="courseDetail.couprofile"/>
 					</dd>
 				</dl>
 				<dl>
@@ -183,47 +182,33 @@
 	<!-- 评论区 -->
 	<div class="comment">
 		<form class="cf">
-			<textarea></textarea>
-			<input class="btn-pill btn-pill-yellow fr" type="submit" value="提交">
+			<textarea id="comment" name="comment" ></textarea>
+			<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="提交">
 		</form>
 		<div class="all-comment">
 			<h2>全部评论</h2>
 			<ul class="comment-list">
-				<li class="comment-item">
-					<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
-					<div class="bd">
-						<p class="info">
-							<span class="user-name">李信念</span>
-							<span class="date">2014.04.09</span>
-							<span class="floor fr">1F</span>				
-						</p>
-						<p class="cnt">一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论</p>
-						<p class="bottom">
-							<a href="#">回复</a>	
-							<span>|</span>
-							<a href="#">赞同</a>
-							<span>(0)</span>					
-						</p>
-					</div>
-				</li>	
-				<li class="comment-item">
-					<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
-					<div class="bd">
-						<p class="info">
-							<span class="user-name">李信念</span>
-							<span class="date">2014.04.09</span>
-							<span class="floor fr">1F</span>				
-						</p>
-						<p class="cnt">一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论
-						</p>
-						<p class="bottom">
-							<a href="#">回复</a>	
-							<span>|</span>
-							<a href="#">赞同</a>
-							<span>(0)</span>					
-						</p>
-					</div>
-				</li>
+				<s:iterator value="commmentList" status="status">
+					<li class="comment-item">
+						<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
+						<div class="bd">
+							<p class="info">
+								<span class="user-name"><s:property value="username" /></span>
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>
+								<!-- 
+								<span class="floor fr">${status.index+1}</span>		
+								 -->		
+							</p>
+							<p class="cnt"><s:property value="comment"/> </p>
+							<p class="bottom">
+								<a href="#">回复</a>	
+								<span>|</span>
+								<a class="J_praise" href="#" data-commentid="<s:property value="id" />">赞同</a>
+								<span>(<s:property value="praise"/>)</span>					
+							</p>
+						</div>
+					</li>
+				</s:iterator>
 			</ul>
 		</div>
 
@@ -242,5 +227,34 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/base.js"></script>	
 <script src="js/play2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#comment-submit').click(function(){
+			var seriesnumber = '${courseDetail.seriesnumber}';
+			var courseid = '${courseDetail.couid}';
+			var comment = $('#comment').val();
+			$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+				if(data){
+					alert(data.username+'评论成功');
+				}else{
+					alert('对不起，只有登录后才能评论');
+				}
+			});
+		});
+		
+		$('.J_praise').click(function() {
+			var commentid = $(this).data('commentid');
+			//alert(commentid);
+			$.post('comment!addPraise',{'commentid':commentid},function(data){
+				if(data == 1){
+					alert('点赞成功');
+				}
+				else{
+					alert('点赞失败');
+				}
+			});
+		});
+	});
+</script>
 </body>
 </html>
