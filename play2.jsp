@@ -9,6 +9,7 @@
 	<title>中国企业在线-视频播放</title>
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/base2.css" rel="stylesheet">
+	<link href="css/baseUI.css" rel="stylesheet">
 	<link href="css/play2.css" rel="stylesheet">
 	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
@@ -26,7 +27,15 @@
 
 		<!-- 播放区域 -->
 		<div class="p_area fl">
-			${courseDetail.couvideourl }			
+			<s:if test="%{courseDetail.couvideourl==1}">
+				<div id="noPermission">
+					<p>对不起，该视频需要登录之后才能观看。<a href="login.html">马上登录</a></p>
+					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
+				</div>
+			</s:if>
+			<s:else>
+				${courseDetail.couvideourl }
+			</s:else>		
 		</div>
 
 		<!-- 热门推荐 -->
@@ -183,7 +192,9 @@
 	<div class="comment">
 		<form class="cf">
 			<textarea id="comment" name="comment" ></textarea>
-			<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="提交">
+			<div id="J_action-con" class="fr">
+				<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="发表评论">
+			</div>
 		</form>
 		<div class="all-comment">
 			<h2>全部评论</h2>
@@ -194,7 +205,7 @@
 						<div class="bd">
 							<p class="info">
 								<span class="user-name"><s:property value="username" /></span>
-								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>	
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd HH:mm"/></span>	
 							</p>
 							<p class="cnt"><s:property value="comment"/> </p>
 							<p class="bottom">
@@ -210,13 +221,96 @@
 		</div>
 
 		<!-- page-nav -->
-		<div id="page-nav">
-			<a href="#">上一页</a>
-			<a href="#">1</a>
-			<a href="#">2</a>
-			<a href="#">3</a>
-			<a href="#">下一页</a>
-		</div>
+		<div class="page-nav cf">
+            <div class="page-num">			
+				<!-- previous page -->
+				<s:if test="%{totalPage<=1}">
+					
+				</s:if>
+				<s:else>
+					<a data-page="1" href="#">首页</a>
+	                <s:if test="page==1">
+	                	<a href="#">上一页</a>
+	                </s:if>
+	                <s:else>
+	                	<a data-page="<s:property value="page-1"/>" href="#" >上一页</a>
+	                </s:else>
+				</s:else>				
+                <!-- end previous page -->
+                
+                <!-- test1 -->                
+            	<s:if test="%{totalPage<=5}">
+            		<s:if test="%{totalPage<=1}">
+            			<s:if test="%{totalPage==0}">
+            				<p class="nothing">沙发空缺中，还不快抢！</p>
+            			</s:if>
+            		</s:if>
+            		<s:else>
+            			<s:iterator begin="1" end="totalPage" var="p">
+							<s:if test="#p==page">
+	                    		<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+	                    	</s:if>
+	                    	<s:else>
+	                    		<a data-page="<s:property />" href="#"><s:property/></a>
+	                    	</s:else>
+                    	</s:iterator>
+            		</s:else>
+            	</s:if>            	
+            	<!-- end test1 -->
+            	
+            	<!-- test2 -->
+            	<s:else>
+            		<s:if test="%{page<=3}">
+            			<s:iterator begin="1" end="5" var="p">
+							<s:if test="#p==page">
+                    			<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    		</s:if>
+                    		<s:else>
+                    			<a data-page="<s:property />" href="#"><s:property/></a>
+                    		</s:else>
+                    	</s:iterator>
+            		</s:if>
+            		<s:else>
+            			<s:if test="%{page>=(totalPage-3)}">
+            				<s:iterator begin="totalPage-4" end="totalPage" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:if>
+            			<s:else>
+            				<s:iterator begin="page-2" end="page+2" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:else>
+            		</s:else>
+            	</s:else>            	
+            	<!-- end test2 -->
+            	
+            	<!-- next page -->
+        		<s:if test="%{totalPage<=1}">
+        		
+        		</s:if>
+        		<s:else>
+        			<s:if test="page==totalPage">
+                		<a href="#">下一页</a>
+                	</s:if>
+                    <s:else>
+                    	<a class="next" data-page="<s:property value="page+1"/>" href="comment!getCommentByPage?seriesnumber=<s:property value="courseDetail.seriesnumber"/>&courseid=<s:property value="courseDetail.couid"/>&page=<s:property value="page+1"/>">下一页</a>
+                    </s:else>
+                    <a data-page="<s:property value="totalPage"/>" href="#">末页</a>
+        		</s:else>
+            	<!-- end next page -->
+            </div>                	
+        </div>		
         <!-- end page-nav -->
 	</div>
 	<!-- end 评论区 -->
@@ -238,15 +332,30 @@ $(function(){
 	$('embed').attr('width', 675);
 
 	// 评论
-	$('#comment-submit').click(function(){
+	$('#comment-submit').click(function(e){
+		e.preventDefault();
+
+		$(this).attr('disabled', true).addClass('btn-pill-disabled').val('提交中...');
+
+		var _this = this;
 		var seriesnumber = '${courseDetail.seriesnumber}';
 		var courseid = '${courseDetail.couid}';
 		var comment = $('#comment').val();
+
+		if(comment == '') {
+			yu.popFadeoutLayer(-1, '评论内容不能为空', $('#J_action-con'), function() {
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+			});			
+			return;
+		}		
+
 		$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+
 			// data.ret = 1为评论成功
 			// data.ret = -1为还没登录
 			if(data.ret == 1){
-				alert(data.username+'评论成功');
+				
+				//alert(data.username+'评论成功');
 				var html = [
 					'<li class="comment-item">',
 						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
@@ -261,6 +370,8 @@ $(function(){
 				].join('');
 				$('.comment-list').prepend(html);
 				$('#comment').val('');
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+				$('.page-nav .nothing').hide();
 			}else if(data.ret == -1){
 				alert('对不起，只有登录后才能评论');
 			}else {
@@ -286,12 +397,20 @@ $(function(){
 	});
 
 	// 分页
-	$('#page-nav').on('click', 'a', function(e) {
+	$('.page-nav').on('click', 'a', function(e) {
 		e.preventDefault();
-		$.post('comment', function(data) {
+
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var page = $(this).data('page');
+
+		$(this).addClass('curr')
+			.siblings().removeClass('curr');
+
+		$.post('comment!getCommentByPage',{'seriesnumber':seriesnumber,'courseid':courseid,'page':page}, function(data) {
 			$('.comment-list').fadeOut(700, function() {
 				$(this).html(data).show();
-				$("html,body").animate({scrollTop: $(".all-comment").offset().top}, 1500);
+				$("html,body").animate({scrollTop: $(".all-comment").offset().top - 55}, 800);
 			});
 		});
 	});

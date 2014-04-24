@@ -1,3 +1,41 @@
+/**
+ * 常规函数
+ * 命名空间为yu
+ */
+
+var yu = {};	
+
+/**
+ *	可以自动关闭的提示层
+ *	@param { Number } 1为成功，-1为失败
+ *	@param { string } 提示的内容
+ *  @param { jqObject } 提示层相对于哪个元素定位 
+ *  @param { fn } 提示层关闭后的回调函数
+ */
+yu.popFadeoutLayer = function(type, content, $el, callback) {
+	var str = '',
+		fadeOutLayer = document.createElement('div');
+
+	switch(type) {
+		case 1: str = '<div class="cont success"><p>' + content + '</p></div>';
+			break;
+		case -1: str = '<div class="cont error"><p>' + content + '</p></div>';
+	}
+	
+	fadeOutLayer.id = 'fadeOutLayer';
+	fadeOutLayer.innerHTML = str;
+
+	$el.css('position', 'relative');
+	$el.append(fadeOutLayer);
+
+	setTimeout(function(){
+		$('#fadeOutLayer').fadeOut(500, function() {
+			$(this).remove();
+			callback && callback();
+		});			
+	}, 2000);	
+}	
+
 //slider效果
 $(function() {	
 	var sliderTimer = null;

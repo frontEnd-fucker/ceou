@@ -23,9 +23,21 @@
 	width: 675px;
 	height: 490px;
 	overflow: hidden;
+	text-align: center;
 	background: #2e2e2e;
 }
-
+#noPermission {
+	margin-top: 180px;
+	color: #C5C5C5;
+	font-size: 18px;	
+	line-height: 40px;
+}
+#noPermission a {
+	color: #94c225;
+}
+#noPermission a:hover {
+	text-decoration: underline;
+}
 .mod-play .fr {
 	width: 330px;
 	height: 490px;
@@ -185,7 +197,7 @@
 	overflow: hidden;
 }
 .recommend-item a:hover {
-	background: #555;
+	yu-background: #555;
 }
 .recommend-item a span {
 	display: block;
@@ -223,7 +235,10 @@
 	text-indent: 40px;
 	background: #fbfbfb;
 }
-
+#play2 .page-nav .nothing {
+	margin: -10px 0 10px;
+	font-style: normal;
+}
 /* 评论列表 */
 
 .comment-list {

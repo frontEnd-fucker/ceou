@@ -34,6 +34,7 @@
 		<action name="teacher" class="com.ceou.action.TeacherAction">
 			<result name="show">/teachers.jsp</result>
 			<result name="showCouByteacher">/teacherCouList.jsp</result>
+			<result name="getTeacherIntro">/teacher_intro.jsp</result>
 		</action>
 
 		<!-- 商学院模块 -->
@@ -244,12 +245,17 @@
 		<action name="comment" class="com.ceou.action.CommentAction">
 			<result name="addComment" type="json">
 				<param name="root">
-					commentBean
+					commentVO
 				</param>
 			</result>
 			<result name="addPraise" type="json">
 				<param name="root">
 					addPraiseStatus
+				</param>
+			</result>
+			<result name="getCommentByPage" type="json">
+				<param name="root">
+					commentHtml
 				</param>
 			</result>
 		</action>
@@ -356,7 +362,8 @@
             <!-- 系列管理 -->
             <!-- 显示 -->            
             <result name ="showadminallseries">/ad/adminallseries.jsp</result>	
-            
+             <!--添加 --> 	
+            <result name="addseries">/ad/addseries.jsp</result> 
             
 		</action>  
 
