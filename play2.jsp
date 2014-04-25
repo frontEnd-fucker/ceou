@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 	<title>中国企业在线-视频播放</title>
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/base2.css" rel="stylesheet">
+	<link href="css/baseUI.css" rel="stylesheet">
 	<link href="css/play2.css" rel="stylesheet">
 	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
@@ -21,64 +23,34 @@
 
 	<!-- 视频播放模块 -->
 	<div class="mod-play">
-		<h2 class="title">如何获取大客户</h2>
+		<h2 class="title"><s:property value="courseDetail.couname"/></h2>
 
 		<!-- 播放区域 -->
 		<div class="p_area fl">
-			<script src="http://p.bokecc.com/player?vid=16F70EE580B0B8209C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=false&width=675&height=490&playerid=BF73B0FF969BF52C&playertype=1" type="text/javascript"></script>			
+			<s:if test="%{courseDetail.couvideourl==1}">
+				<div id="noPermission">
+					<p>对不起，该视频需要登录之后才能观看。<a id="J_login-now" href="#">马上登录</a></p>
+					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
+				</div>
+			</s:if>
+			<s:else>
+				${courseDetail.couvideourl }
+			</s:else>		
 		</div>
-
-		<!-- 热门推荐 -->
-		<!-- <div class="p_recommend fr">
-			<h3>热门推荐</h3>
-			<ul class="p_recommend-list">
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>	
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>																				
-			</ul>
-		</div>	 -->	
 
 		<!-- 选集模块 -->
 		<div class="p_series fr">
 			<div class="pd">
 				<h3>选集</h3>
 				<ul class="series-list">
-					<li class="series-item curr"><a href="#">01</a></li>
-					<li class="series-item"><a href="#">02</a></li>
-					<li class="series-item"><a href="#">03</a></li>
-					<li class="series-item"><a href="#">04</a></li>
-					<li class="series-item"><a href="#">05</a></li>
-					<li class="series-item"><a href="#">06</a></li>
-					<li class="series-item"><a href="#">07</a></li>
+					<s:iterator value="seriesCouList" status="status">
+						<s:if test="%{courseDetail.cousequence==cousequence}">
+							<li class="series-item curr"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:if>
+						<s:else>
+							<li class="series-item"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:else>
+					</s:iterator>
 				</ul>
 			</div>	
 		</div>
@@ -99,10 +71,7 @@
 				<dl>
 					<dt>课程简介</dt>
 					<dd>
-						<p>沟通能力是核心竞争力之一，而意愿沟通又是深层次的沟通。</p>
-						<p>授人以鱼不如授人以“欲”，沟通以别人的意愿为出发点，事半功倍。</p>
-						<p>本课程讲解如何站在别人的位置思考问题，站在别人的角度进行沟通。尤其在企业管理过程中，如何从别人以及自己的意愿出发，更好地将意
-愿落实。</p>
+						<s:property value="courseDetail.couprofile"/>
 					</dd>
 				</dl>
 				<dl>
@@ -127,6 +96,11 @@
 					<li>中国MBA联盟<span>主 席</span></li>
 					<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
 				</ul>
+			</div>
+
+			<!-- 观看讲义 -->
+			<div class="tab-pane ppt-con">
+				<div class="nothing">该课程暂时没有讲义:(</div>
 			</div>
 		</div>
 	</div>
@@ -183,51 +157,126 @@
 	<!-- 评论区 -->
 	<div class="comment">
 		<form class="cf">
-			<textarea></textarea>
-			<input class="btn-pill btn-pill-yellow fr" type="submit" value="提交">
+			<textarea id="comment" name="comment" ></textarea>
+			<div id="J_action-con" class="fr">
+				<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="发表评论">
+			</div>
 		</form>
 		<div class="all-comment">
 			<h2>全部评论</h2>
 			<ul class="comment-list">
-				<li class="comment-item">
-					<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
-					<div class="bd">
-						<p class="info">
-							<span class="user-name">李信念</span>
-							<span class="date">2014.04.09</span>
-							<span class="floor fr">1F</span>				
-						</p>
-						<p class="cnt">一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论</p>
-						<p class="bottom">
-							<a href="#">回复</a>	
-							<span>|</span>
-							<a href="#">赞同</a>
-							<span>(0)</span>					
-						</p>
-					</div>
-				</li>	
-				<li class="comment-item">
-					<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
-					<div class="bd">
-						<p class="info">
-							<span class="user-name">李信念</span>
-							<span class="date">2014.04.09</span>
-							<span class="floor fr">1F</span>				
-						</p>
-						<p class="cnt">一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论一些评论
-						</p>
-						<p class="bottom">
-							<a href="#">回复</a>	
-							<span>|</span>
-							<a href="#">赞同</a>
-							<span>(0)</span>					
-						</p>
-					</div>
-				</li>
+				<s:iterator value="commmentList" status="status">
+					<li class="comment-item">
+						<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
+						<div class="bd">
+							<p class="info">
+								<span class="user-name"><s:property value="username" /></span>
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd HH:mm"/></span>	
+							</p>
+							<p class="cnt"><s:property value="comment"/> </p>
+							<p class="bottom">
+								<a href="#">回复</a>	
+								<span>|</span>
+								<a class="J_like" href="javascript:;" data-commentid="<s:property value="id" />">赞同</a>
+								<span class="count-like-con">(<em class="count-like"><s:property value="praise"/></em>)</span>
+							</p>
+						</div>
+					</li>
+				</s:iterator>
 			</ul>
 		</div>
 
 		<!-- page-nav -->
+		<div class="page-nav cf">
+            <div class="page-num">			
+				<!-- previous page -->
+				<s:if test="%{totalPage<=1}">
+					
+				</s:if>
+				<s:else>
+					<a data-page="1" href="#">首页</a>
+	                <s:if test="page==1">
+	                	<a href="#">上一页</a>
+	                </s:if>
+	                <s:else>
+	                	<a data-page="<s:property value="page-1"/>" href="#" >上一页</a>
+	                </s:else>
+				</s:else>				
+                <!-- end previous page -->
+                
+                <!-- test1 -->                
+            	<s:if test="%{totalPage<=5}">
+            		<s:if test="%{totalPage<=1}">
+            			<s:if test="%{totalPage==0}">
+            				<p class="nothing">沙发空缺中，还不快抢！</p>
+            			</s:if>
+            		</s:if>
+            		<s:else>
+            			<s:iterator begin="1" end="totalPage" var="p">
+							<s:if test="#p==page">
+	                    		<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+	                    	</s:if>
+	                    	<s:else>
+	                    		<a data-page="<s:property />" href="#"><s:property/></a>
+	                    	</s:else>
+                    	</s:iterator>
+            		</s:else>
+            	</s:if>            	
+            	<!-- end test1 -->
+            	
+            	<!-- test2 -->
+            	<s:else>
+            		<s:if test="%{page<=3}">
+            			<s:iterator begin="1" end="5" var="p">
+							<s:if test="#p==page">
+                    			<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    		</s:if>
+                    		<s:else>
+                    			<a data-page="<s:property />" href="#"><s:property/></a>
+                    		</s:else>
+                    	</s:iterator>
+            		</s:if>
+            		<s:else>
+            			<s:if test="%{page>=(totalPage-3)}">
+            				<s:iterator begin="totalPage-4" end="totalPage" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:if>
+            			<s:else>
+            				<s:iterator begin="page-2" end="page+2" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:else>
+            		</s:else>
+            	</s:else>            	
+            	<!-- end test2 -->
+            	
+            	<!-- next page -->
+        		<s:if test="%{totalPage<=1}">
+        		
+        		</s:if>
+        		<s:else>
+        			<s:if test="page==totalPage">
+                		<a href="#">下一页</a>
+                	</s:if>
+                    <s:else>
+                    	<a class="next" data-page="<s:property value="page+1"/>" href="comment!getCommentByPage?seriesnumber=<s:property value="courseDetail.seriesnumber"/>&courseid=<s:property value="courseDetail.couid"/>&page=<s:property value="page+1"/>">下一页</a>
+                    </s:else>
+                    <a data-page="<s:property value="totalPage"/>" href="#">末页</a>
+        		</s:else>
+            	<!-- end next page -->
+            </div>                	
+        </div>		
         <!-- end page-nav -->
 	</div>
 	<!-- end 评论区 -->
@@ -240,7 +289,119 @@
 	
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/vendor/baseUI.js"></script>
 <script src="js/base.js"></script>	
 <script src="js/play2.js"></script>
+<script>
+$(function(){
+
+	// 将播放器的width改为675px
+	$('embed').attr('width', 675);
+
+	// 点击马上登录弹出登录模态框
+	$('#J_login-now').click(function() {
+		yu.popLogin();
+		return false;
+	});
+
+
+	// 评论
+	$('#comment-submit').click(function(e){
+		e.preventDefault();
+
+		$(this).attr('disabled', true).addClass('btn-pill-disabled').val('提交中...');
+
+		var _this = this;
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var comment = $('#comment').val();
+
+		if(comment == '') {
+			yu.popFadeoutLayer(-1, '评论内容不能为空', $('#J_action-con'), function() {
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+			});			
+			return;
+		}		
+
+		$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+
+			// data.ret = 1为评论成功
+			// data.ret = -1为还没登录
+			if(data.ret == 1){
+				
+				//alert(data.username+'评论成功');
+				var html = [
+					'<li class="comment-item">',
+						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
+						'<div class="bd">',
+							'<p class="info">',
+								'<span class="user-name">',data.username,'</span>',
+								'<span class="date">刚刚</span>',
+							'</p>',
+							'<p class="cnt">',comment,'</p>',
+						'</div>',
+					'</li>'
+				].join('');
+				$('.comment-list').prepend(html);
+				$('#comment').val('');
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+				$('.page-nav .nothing').hide();
+			}else if(data.ret == -1){
+				yu.popLogin();
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+			}else {
+				alert('网络错误，请重新提交');
+			}
+		});
+	});
+	
+	//点赞
+	$('.J_like').click(function(e) {
+
+		var _this = this;
+		var commentid = $(this).data('commentid');
+
+		$.post('comment!addPraise',{'commentid':commentid},function(data){
+
+			/**
+			 * data=1为评论成功
+			 * data=-1为用户还没登录
+			 */
+			if(data == 1){
+				var $countLike = $(_this).parent().find('.count-like');
+				var likeSum = parseInt($countLike.text());
+				likeSum++;
+				yu.popFadeoutLayer(1, '+1', $(_this).parents('.comment-item'), function() {
+					$countLike.text(likeSum);
+					$(_this).off('click');
+				});				
+			}else if(data == -1) {
+				yu.popLogin();
+			}else{
+				alert('网络错误，请重新提交');
+			}
+		});
+	});
+
+	// 分页
+	$('.page-nav').on('click', 'a', function(e) {
+		e.preventDefault();
+
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var page = $(this).data('page');
+
+		$(this).addClass('curr')
+			.siblings().removeClass('curr');
+
+		$.post('comment!getCommentByPage',{'seriesnumber':seriesnumber,'courseid':courseid,'page':page}, function(data) {
+			$('.comment-list').fadeOut(700, function() {
+				$(this).html(data).show();
+				$("html,body").animate({scrollTop: $(".all-comment").offset().top - 55}, 800);
+			});
+		});
+	});
+});
+</script>
 </body>
 </html>

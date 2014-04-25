@@ -2,6 +2,7 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
 	<!--  -->
 	<package name="struts2" extends="json-default" namespace="/">
 		<!-- 防止同一时间同时登录拦截器 -->
@@ -23,7 +24,7 @@
 			
 			<result name="show">/course.jsp</result>
 			<result name="showList">/courseList.jsp</result>
-			<result name="showCouDetailCC">/videoCourseCC.jsp</result>
+			<result name="showCouDetailCC">/play2.jsp</result>
 			<result name="showCouDetail">/videoCourse.jsp</result>
 			<result name="insufficient">/testPage/bh.gif</result>
 			<result name="reLogin">/login.html</result>
@@ -33,6 +34,7 @@
 		<action name="teacher" class="com.ceou.action.TeacherAction">
 			<result name="show">/teachers.jsp</result>
 			<result name="showCouByteacher">/teacherCouList.jsp</result>
+			<result name="getTeacherIntro">/teacher_intro.jsp</result>
 		</action>
 
 		<!-- 商学院模块 -->
@@ -239,6 +241,25 @@
 			<result name="examSuccess">/examSuccess.jsp</result>
 		</action>
 		
+		<!-- 评论模块 -->
+		<action name="comment" class="com.ceou.action.CommentAction">
+			<result name="addComment" type="json">
+				<param name="root">
+					commentVO
+				</param>
+			</result>
+			<result name="addPraise" type="json">
+				<param name="root">
+					addPraiseStatus
+				</param>
+			</result>
+			<result name="getCommentByPage" type="json">
+				<param name="root">
+					commentHtml
+				</param>
+			</result>
+		</action>
+		
     </package>
     
     <package name="struts" extends="json-default" namespace="/ad">
@@ -338,6 +359,11 @@
 			<param name="startDate">${startDate}</param>
 			<param name="endDate">${endDate}</param>
             </result> 
+            <!-- 系列管理 -->
+            <!-- 显示 -->            
+            <result name ="showadminallseries">/ad/adminallseries.jsp</result>	
+             <!--添加 --> 	
+            <result name="addseries">/ad/addseries.jsp</result> 
             
 		</action>  
 

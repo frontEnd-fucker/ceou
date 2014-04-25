@@ -1,3 +1,4 @@
+
 //slider效果
 $(function() {	
 	var sliderTimer = null;

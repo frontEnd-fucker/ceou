@@ -1,209 +1,391 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>videoCourse</title>
-<link href="css/base.css" rel="stylesheet" type="text/css" />
-<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
-<script src="js/base.js"></script>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<title>中国企业在线-视频播放</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/base2.css" rel="stylesheet">
+	<link href="css/play2.css" rel="stylesheet">
+	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
 
-<body id="introPage">
+<body id="play2">
 
-<!-- header -->
 <jsp:include page="head.jsp" flush="true" />
-<!-- end header -->
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><img src="img/slider2.jpg" /></div>
-    
-    <div class="floor cf">
-    	<!-- floor-l -->
-    	<div class="floor-l">
-        	<div class="crumb">
-            	<a href="/CEOU">首页</a>
-                <span>></span>
-                <s:if test="courseDetail.catid==1" ><a href="course!show">培训课程</a> </s:if>
-                <s:if test="courseDetail.catid==2" ><s:if test="courseDetail.ifceou==0"><a href="teacher!show">名师堂</a></s:if><s:if test="courseDetail.ifceou==1"><a href="business!showbeizeng">倍增学院</a><span>></span><a href="business!showBZCouByTh?catId=2&ifceou=1&couPosition=-1">名师堂</a></s:if></s:if>
-                <s:if test="courseDetail.catid==3" ><a href="business!show">商学院</a> <span>></span> <a href="business!showbeizeng">倍增学院</a></s:if>
-                <s:if test="courseDetail.catid==4" ><a href="business!show">商学院</a> <span>></span> <a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=-1">企业商学院</a></s:if>
-                <s:if test="courseDetail.catid==6" ><a href="edu!show">在线学历院</a> <span>></span> <a href="edu!showCoubyskill?couSkill=-1">技能院校</a></s:if>
-                <s:if test="courseDetail.catid==7" ><a href="edu!show">在线学历院</a> <span>></span> <a href="edu!showCoubyindustry?couIndustry=1">知名学府</a></s:if>     
-                <span>></span>      
-                <a href="#">正文</a>      
-            </div>      
-            
-            <!--视频-->
-            <div class="tile-box">
-            	<div class="tile-top cf">
-                	<h2 class="tile-title">
-                    	培训课程
-                    </h2>                
-                </div>
-                
-                <div class="tile-content">
-                	<!-- ccPlayer -->
-                	<!--<div class="ccPlayer-con">
-						<script src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=false&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1" type="text/javascript"></script>
-                    </div>--><!-- end ccPlayer -->        
-                    <embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>        
-                </div>
-            </div><!--end 视频-->                  
-            
-            <div class="tile-box">
-            	<div class="tile-top cf">
-            		<h2 class="tile-title">课程简介</h2>
-                </div>
-                <div class="tile-content cf">
-                	<dl class="course-intro cf">
-                    	<dt>
-                        	<img src="<s:property value="courseDetail.coupicurl"/>" />
-                            <!-- JiaThis Button BEGIN -->
-                            <div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
-                            <a class="jiathis_button_qzone"></a>
-                            <a class="jiathis_button_tsina"></a>
-                            <a class="jiathis_button_tqq"></a>
-                            <a class="jiathis_button_renren"></a>
-                            <a class="jiathis_button_kaixin001"></a>
-                            <a href="http://www.jiathis.com/share?uid=1868491" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-                            <a class="jiathis_counter_style"></a>
-                            </div>
-                            <script type="text/javascript" >
-                            var jiathis_config={
-                                data_track_clickback:true,
-                                summary:"",
-                                shortUrl:false,
-                                hideMore:false
-                            }
-                            </script>
-                            <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1868491" charset="utf-8"></script>
-                            <!-- JiaThis Button END -->                             
-                        </dt>
-                        <dd>
-                        	<h3><s:property value="courseDetail.couname"/> </h3>
-                            <p class="course-meta cf">
-                            	<span>讲师：<s:property value="courseDetail.coulecturer"/></span>
-                                <span class="rate">评分:</span>
-                            </p>
-                            <p class="course-intro-content"><strong>课程简介：</strong><s:property value="courseDetail.couprofile"/> </p>
-                        </dd>
-						<a class="learn-btn" href="#"></a>
-                    </dl>                
-                </div>
-            </div>            
-            
-            <!-- 猜你喜欢 -->
-            <!--<div class="tile-box">
-            	<div class="tile-top cf">
-                	<h2 class="tile-title">
-                    	<img src="img/beixunkechen.jpg" />
-                    </h2>
-                </div>
-                <div class="tile-content cf">
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box last">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>      
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>
-                    <div class="post-box last">
-                        <a href="#"><img src="img/post-placeholder.jpg" /></a>
-                        <p class="post-info">5S推行实用手法和步骤<br /><span>讲师：安岷</span></p>
-                    </div>                                	
-                </div>
-            </div>--><!-- end 猜你喜欢 -->
-        </div><!-- end floor-l -->
-        
-        <!-- floor-r -->
-        <div class="floor-r">
-            <div class="aside-box" style="background: #eff4e3; padding: 5px;">
-                <img src="whimg/goodness.jpg" />
-            </div>   
-            <!-- weibo -->
-            <div class="weixin-con aside-box">
-                <h2>关注微博</h2>
-                <div class="weibo-content cf">
-                    <img class="hd" src="whimg/weibo-logo.jpg" />
-                    <div class="bd">
-                        <p>关注中国企业在线官方微博，第一时间获取信息！</p>
-                        <wb:follow-button uid="3970272720" type="red_1" width="67" height="24" ></wb:follow-button>
-                    </div>
-                </div>                
-            </div><!-- end weibo -->    	
-        	<div class="aside-box" style="height: 452px">
-            	<h2><span>最新新闻</span><a class="more" href="business!showArticleByCondition">更多>></a></h2>
-                <s:iterator value="randArticleList">
-	            	<dl>
-	                	<dt><s:date name="updatetime" format="yyyy-MM-dd" /></dt>
-	                    <dd><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></dd>
-	                </dl> 
-                </s:iterator>                
-            </div>            
-        </div><!-- end floor-r -->
-    </div>
-</div><!-- end main -->
 
-<!-- footer -->
+	<!-- 视频播放模块 -->
+	<div class="mod-play">
+		<h2 class="title"><s:property value="courseDetail.couname"/></h2>
+
+		<!-- 播放区域 -->
+		<div class="p_area fl">
+			<embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>        
+		</div>
+
+		<!-- 热门推荐 -->
+		<!-- <div class="p_recommend fr">
+			<h3>热门推荐</h3>
+			<ul class="p_recommend-list">
+				<li class="recommend-item">
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>	
+				<li class="recommend-item">
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>
+				<li class="recommend-item">
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>
+				<li class="recommend-item">
+					<a href="#">
+						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+						<span class="course-name">如何获取大客户</span>
+						<span class="teacher">讲师：<em>XXX</em></span>
+						<span class="start"><i class="icon-start"></i>开始学习</span>
+					</a>
+				</li>																				
+			</ul>
+		</div>	 -->	
+
+		<!-- 选集模块 -->
+		<div class="p_series fr">
+			<div class="pd">
+				<h3>选集</h3>
+				<ul class="series-list">
+					<s:iterator value="seriesCouList" status="status">
+						<s:if test="%{courseDetail.cousequence==cousequence}">
+							<li class="series-item curr"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:if>
+						<s:else>
+							<li class="series-item"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="cousequence"/> </a></li>
+						</s:else>
+					</s:iterator>
+				</ul>
+			</div>	
+		</div>
+	</div>
+	<!-- end 视频播放模块 -->
+
+	<!-- 标签页区域 -->
+	<div class="tab fl">
+		<ul class="tab-nav">
+			<li class="curr"><a href="#">课程简介</a><i class="triangle"></i></li>
+			<li><a href="#">老师简介</a><i class="triangle"></i></li>
+			<li class="last"><a href="#">观看讲义</a><i class="triangle"></i></li>
+		</ul>
+		<div class="tab-content">
+
+			<!-- 课程简介 -->
+			<div class="tab-pane course-intro">				
+				<dl>
+					<dt>课程简介</dt>
+					<dd>
+						<s:property value="courseDetail.couprofile"/>
+					</dd>
+				</dl>
+				<dl>
+					<dt>课程大纲</dt>
+					<dd>
+						<p>1.什么是意愿</p>
+						<p>引用“空中跳板”的实例，介绍什么是意愿</p>
+						<p>2.意愿=欲望</p>
+						<p>授人以鱼不如授人以渔，授人以渔不如授人以欲。</p>
+						<p>有了欲望、意愿，人们可以主动寻求解决方案，自己做鱼杆，找鱼下勾。没有意愿，即便有金鱼杆，他不去钓鱼，也是枉然。</p>
+					</dd>
+				</dl>
+			</div>
+
+			<!-- 老师介绍 -->
+			<div class="tab-pane teacher-intro cf">
+				<div class="fl">
+					<img src="whimg/play2/teacher.jpg">
+				</div>
+				<ul class="fr">
+					<li>中国菁英联盟<span>首席顾问</span></li>
+					<li>中国MBA联盟<span>主 席</span></li>
+					<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end 标签页区域 -->
+
+	<!-- 热门推荐 -->
+	<div class="recommend fr">
+		<h2>热门推荐</h2>
+		<ul class="recommend-list">
+			<li class="recommend-item">
+				<a href="#">
+					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+					<span class="course-name">如何获取大客户</span>
+					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="start"><i class="icon-start"></i>开始学习</span>
+				</a>				
+			</li>
+			<li class="recommend-item">
+				<a href="#">
+					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+					<span class="course-name">如何获取大客户</span>
+					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="start"><i class="icon-start"></i>开始学习</span>
+				</a>				
+			</li>
+			<li class="recommend-item">
+				<a href="#">
+					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+					<span class="course-name">如何获取大客户</span>
+					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="start"><i class="icon-start"></i>开始学习</span>
+				</a>				
+			</li>	
+			<li class="recommend-item">
+				<a href="#">
+					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+					<span class="course-name">如何获取大客户</span>
+					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="start"><i class="icon-start"></i>开始学习</span>
+				</a>				
+			</li>
+			<li class="recommend-item">
+				<a href="#">
+					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
+					<span class="course-name">如何获取大客户</span>
+					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="start"><i class="icon-start"></i>开始学习</span>
+				</a>				
+			</li>											
+		</ul>
+	</div>
+	<!-- end 热门推荐 -->
+
+	<!-- 评论区 -->
+	<div class="comment">
+		<form class="cf">
+			<textarea id="comment" name="comment" ></textarea>
+			<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="提交">
+		</form>
+		<div class="all-comment">
+			<h2>全部评论</h2>
+			<ul class="comment-list">
+				<s:iterator value="commmentList" status="status">
+					<li class="comment-item">
+						<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
+						<div class="bd">
+							<p class="info">
+								<span class="user-name"><s:property value="username" /></span>
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>	
+							</p>
+							<p class="cnt"><s:property value="comment"/> </p>
+							<p class="bottom">
+								<a href="#">回复</a>	
+								<span>|</span>
+								<a class="J_praise" href="#" data-commentid="<s:property value="id" />">赞同</a>
+								<span>(<s:property value="praise"/>)</span>					
+							</p>
+						</div>
+					</li>
+				</s:iterator>
+			</ul>
+		</div>
+
+		<!-- page-nav -->
+		<div class="page-nav cf">
+            <div class="page-num">			
+				<!-- previous page -->
+				<s:if test="%{totalPage<=1}">
+					
+				</s:if>
+				<s:else>
+					<a data-page="1" href="#">首页</a>
+	                <s:if test="page==1">
+	                	<a href="#">上一页</a>
+	                </s:if>
+	                <s:else>
+	                	<a data-page="<s:property value="page-1"/>" href="#" >上一页</a>
+	                </s:else>
+				</s:else>				
+                <!-- end previous page -->
+                
+                <!-- test1 -->                
+            	<s:if test="%{totalPage<=5}">
+            		<s:if test="%{totalPage<=1}">
+            			<s:if test="%{totalPage==0}">
+            				<p></p>
+            			</s:if>
+            		</s:if>
+            		<s:else>
+            			<s:iterator begin="1" end="totalPage" var="p">
+							<s:if test="#p==page">
+	                    		<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+	                    	</s:if>
+	                    	<s:else>
+	                    		<a data-page="<s:property />" href="#"><s:property/></a>
+	                    	</s:else>
+                    	</s:iterator>
+            		</s:else>
+            	</s:if>            	
+            	<!-- end test1 -->
+            	
+            	<!-- test2 -->
+            	<s:else>
+            		<s:if test="%{page<=3}">
+            			<s:iterator begin="1" end="5" var="p">
+							<s:if test="#p==page">
+                    			<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    		</s:if>
+                    		<s:else>
+                    			<a data-page="<s:property />" href="#"><s:property/></a>
+                    		</s:else>
+                    	</s:iterator>
+            		</s:if>
+            		<s:else>
+            			<s:if test="%{page>=(totalPage-3)}">
+            				<s:iterator begin="totalPage-4" end="totalPage" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:if>
+            			<s:else>
+            				<s:iterator begin="page-2" end="page+2" var="p">
+                    			<s:if test="#p==page">
+                    				<a data-page="<s:property />" href="#" class="curr"><s:property/></a>
+                    			</s:if>
+                    			<s:else>
+                    				<a data-page="<s:property />" href="#"><s:property/></a>
+                    			</s:else>
+                    		</s:iterator>
+            			</s:else>
+            		</s:else>
+            	</s:else>            	
+            	<!-- end test2 -->
+            	
+            	<!-- next page -->
+        		<s:if test="%{totalPage<=1}">
+        		
+        		</s:if>
+        		<s:else>
+        			<s:if test="page==totalPage">
+                		<a href="#">下一页</a>
+                	</s:if>
+                    <s:else>
+                    	<a class="next" data-page="<s:property value="page+1"/>" href="comment!getCommentByPage?seriesnumber=<s:property value="courseDetail.seriesnumber"/>&courseid=<s:property value="courseDetail.couid"/>&page=<s:property value="page+1"/>">下一页</a>
+                    </s:else>
+                    <a data-page="<s:property value="totalPage"/>" href="#">末页</a>
+        		</s:else>
+            	<!-- end next page -->
+            </div>                	
+        </div>		
+        <!-- end page-nav -->
+	</div>
+	<!-- end 评论区 -->
+</div>
+<!-- end main -->
+
+<div class="clear-both"></div>
+
 <jsp:include page="footer.jsp" flush="true" />
-<!-- end footer -->
+	
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/base.js"></script>	
+<script src="js/play2.js"></script>
+<script>
+$(function(){
+
+	// 将播放器的width改为675px
+	$('embed').attr('width', 675);
+
+	// 评论
+	$('#comment-submit').click(function(){
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var comment = $('#comment').val();
+		$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+			// data.ret = 1为评论成功
+			// data.ret = -1为还没登录
+			if(data.ret == 1){
+				alert(data.username+'评论成功');
+				var html = [
+					'<li class="comment-item">',
+						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
+						'<div class="bd">',
+							'<p class="info">',
+								'<span class="user-name">',data.username,'</span>',
+								'<span class="date">刚刚</span>',
+							'</p>',
+							'<p class="cnt">',comment,'</p>',
+						'</div>',
+					'</li>'
+				].join('');
+				$('.comment-list').prepend(html);
+				$('#comment').val('');
+			}else if(data.ret == -1){
+				alert('对不起，只有登录后才能评论');
+			}else {
+				alert('网络错误，请重新提交');
+			}
+		});
+	});
+	
+	//点赞
+	$('.J_praise').click(function() {
+		var commentid = $(this).data('commentid');
+		$.post('comment!addPraise',{'commentid':commentid},function(data){
+			if(data == 1){
+				alert('点赞成功');
+			}
+			if(data == -1) {
+				alert('请先登录');
+			}
+			else{
+				alert('网络错误，请重新提交');
+			}
+		});
+	});
+
+	// 分页
+	$('.page-nav').on('click', 'a', function(e) {
+		e.preventDefault();
+
+		var seriesnumber = '${courseDetail.seriesnumber}';
+		var courseid = '${courseDetail.couid}';
+		var page = $(this).data('page');
+		$.post('comment!getCommentByPage',{'seriesnumber':seriesnumber,'courseid':courseid,'page':page}, function(data) {
+			//alert(data);
+			$('.comment-list').fadeOut(700, function() {
+				$(this).html(data).show();
+				//$("html,body").animate({scrollTop: $(".all-comment h2").offset().top - 50}, 1500);
+				$("html,body").animate({scrollTop: $("#comment-submit").offset().bottom}, 1500);
+				console.log($(".all-comment").offset().top);
+			});
+		});
+	});
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

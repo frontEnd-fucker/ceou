@@ -12,7 +12,37 @@ yu.addMask = function() {
 	var mask = document.createElement('div');
 	mask.id = 'mask';
 	$('body').append(mask);
-}
+}	
+
+/**
+ * 可以自动关闭的提示层；
+ * $el需要包囊go action 按钮，以便定位
+ * @param { Number } 1为成功，-1为失败
+ * @param { string } 提示的内容
+ * @param { jqObject } 提示层相对于哪个元素定位 
+ * @param { fn } 提示层关闭后的回调函数
+ */
+yu.popFadeoutLayer = function(type, content, $el, callback) {
+	var str = '',
+		fadeOutLayer = document.createElement('div');
+
+	switch(type) {
+		case 1: str = '<div class="cont success"><p>' + content + '</p></div>';
+			break;
+		case -1: str = '<div class="cont error"><p>' + content + '</p></div>';
+	}
+	
+	fadeOutLayer.id = 'fadeOutLayer';
+	fadeOutLayer.innerHTML = str;
+
+	$el.css('position', 'relative');
+	$el.append(fadeOutLayer);
+
+	setTimeout(function(){
+		$('#fadeOutLayer').remove();
+		callback && callback();		
+	}, 1500);	
+}	
 
 /**
  * 弹出登录模态框
@@ -30,7 +60,7 @@ yu.popLogin = function() {
 			    	'<label for="pwd">密码：</label>',
 			        '<input id="pwd" class="text" type="password" />',
 			    '</p>',
-			    '<span id="J_popout-login-tips" class="popout-login-tips">密码错误</span>',
+			    '<span id="J_popout-login-tips" class="popout-login-tips"></span>',
 			    '<div class="bottom">',
 			    	'<a id="J_btn-login" class="h-loginBtn" href="javascript:;">登录</a>',			    
 			    	'<ul>',
@@ -50,12 +80,12 @@ yu.popLogin = function() {
 
 	// input的focus&blur效果
 	$('#username').focus(function() {
-		$('#J_usernameTips').hide();
+		$('#J_popout-login-tips').hide();
 	}).keydown(function() {
 		$(this).removeClass('error');
 	});
 	$('#pwd').focus(function() {
-		$('#J_pwdTips').hide();
+		$('#J_popout-login-tips').hide();
 	}).keydown(function() {
 		$(this).removeClass('error');
 	});	
