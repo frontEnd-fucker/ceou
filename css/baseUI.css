@@ -28,6 +28,20 @@
 	background: url(../whimg/baseUI/error.png) no-repeat 16px center;
 }
 
+/* 遮罩层
+=================================== */
+#mask {
+	z-index: 999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .15;
+	filter: alpha(opacity=15);
+}
+
 
 /* 登录模态框
 =================================== */
@@ -59,7 +73,7 @@
 	width: 25px;
 	height: 26px;
 	margin: 6px 9px 0 0;
-	background: url(../whimg/icon-close.png) no-repeat center center;
+	background: url(../whimg/baseUI/icon-close.png) no-repeat center center;
 	cursor: pointer;
 }
 .popout-login .pd {
@@ -89,8 +103,8 @@
 .popout-login-tips {
 	display: none;
 	position: absolute;
-	left: 70px;
-	top: 125px;
+	left: 124px;
+	top: 170px;
 	padding-left: 14px;
 	color: #ff1818;
 	background: url(../whimg/error.jpg) no-repeat left center;

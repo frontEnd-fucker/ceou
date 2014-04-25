@@ -239,8 +239,8 @@
 	margin: -10px 0 10px;
 	font-style: normal;
 }
-/* 评论列表 */
 
+/* 评论列表 */
 .comment-list {
 	padding: 0 17px 46px;
 }
@@ -285,4 +285,8 @@
 }
 .comment-item .bd .bottom a {
 	color: #4095ce;
+}
+.comment-item .count-like-con {
+	color: #ACACAC;
+	font-family: Arial;
 }

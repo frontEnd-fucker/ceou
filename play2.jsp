@@ -29,7 +29,7 @@
 		<div class="p_area fl">
 			<s:if test="%{courseDetail.couvideourl==1}">
 				<div id="noPermission">
-					<p>对不起，该视频需要登录之后才能观看。<a href="login.html">马上登录</a></p>
+					<p>对不起，该视频需要登录之后才能观看。<a id="J_login-now" href="#">马上登录</a></p>
 					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
 				</div>
 			</s:if>
@@ -37,45 +37,6 @@
 				${courseDetail.couvideourl }
 			</s:else>		
 		</div>
-
-		<!-- 热门推荐 -->
-		<!-- <div class="p_recommend fr">
-			<h3>热门推荐</h3>
-			<ul class="p_recommend-list">
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>	
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>																				
-			</ul>
-		</div>	 -->	
 
 		<!-- 选集模块 -->
 		<div class="p_series fr">
@@ -211,8 +172,8 @@
 							<p class="bottom">
 								<a href="#">回复</a>	
 								<span>|</span>
-								<a class="J_praise" href="#" data-commentid="<s:property value="id" />">赞同</a>
-								<span>(<s:property value="praise"/>)</span>					
+								<a class="J_like" href="javascript:;" data-commentid="<s:property value="id" />">赞同</a>
+								<span class="count-like-con">(<em class="count-like"><s:property value="praise"/></em>)</span>
 							</p>
 						</div>
 					</li>
@@ -323,6 +284,7 @@
 	
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/vendor/baseUI.js"></script>
 <script src="js/base.js"></script>	
 <script src="js/play2.js"></script>
 <script>
@@ -330,6 +292,13 @@ $(function(){
 
 	// 将播放器的width改为675px
 	$('embed').attr('width', 675);
+
+	// 点击马上登录弹出登录模态框
+	$('#J_login-now').click(function() {
+		yu.popLogin();
+		return false;
+	});
+
 
 	// 评论
 	$('#comment-submit').click(function(e){
@@ -373,7 +342,8 @@ $(function(){
 				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
 				$('.page-nav .nothing').hide();
 			}else if(data.ret == -1){
-				alert('对不起，只有登录后才能评论');
+				yu.popLogin();
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
 			}else {
 				alert('网络错误，请重新提交');
 			}
@@ -381,16 +351,28 @@ $(function(){
 	});
 	
 	//点赞
-	$('.J_praise').click(function() {
+	$('.J_like').click(function(e) {
+
+		var _this = this;
 		var commentid = $(this).data('commentid');
+
 		$.post('comment!addPraise',{'commentid':commentid},function(data){
+
+			/**
+			 * data=1为评论成功
+			 * data=-1为用户还没登录
+			 */
 			if(data == 1){
-				alert('点赞成功');
-			}
-			if(data == -1) {
-				alert('请先登录');
-			}
-			else{
+				var $countLike = $(_this).parent().find('.count-like');
+				var likeSum = parseInt($countLike.text());
+				likeSum++;
+				yu.popFadeoutLayer(1, '+1', $(_this).parents('.comment-item'), function() {
+					$countLike.text(likeSum);
+					$(_this).off('click');
+				});				
+			}else if(data == -1) {
+				yu.popLogin();
+			}else{
 				alert('网络错误，请重新提交');
 			}
 		});
