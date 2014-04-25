@@ -26,3 +26,104 @@
 	border: 1px solid #e17777;
 	background: url(../whimg/baseUI/error.png) no-repeat 16px center;
 }
+
+
+/* 登录模态框
+=================================== */
+.popout-login {
+	position: fixed;
+	left: 50%;
+	top: 50%;	
+	z-index: 1001;	
+	width: 425px;
+	height: 280px;
+	margin-left: -212px;
+	margin-top: -140px;
+	background: #fff;
+	border: 3px solid #93c527;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+}
+.popout-login .title {
+	height: 37px;
+	padding-left: 17px;
+	color: #848484;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 37px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+	background: #f8f8f8;
+}
+.popout-login .btn-close {
+	width: 25px;
+	height: 26px;
+	margin: 6px 9px 0 0;
+	background: url(../whimg/icon-close.png) no-repeat center center;
+	cursor: pointer;
+}
+.popout-login .pd {
+	padding: 37px 0 0 77px;
+}
+.popout-login input {	
+	color: #2f2f2f;
+	text-indent: 5px;
+}
+.popout-login .input-con {
+	margin-bottom: 25px;
+}
+.popout-login label {
+	color: #2f2f2f;
+	font-size: 14px;
+	line-height: 26px;
+}
+.popout-login input.text {
+	width: 200px;
+	height: 26px;	
+	line-height: 26px;
+	border: 1px solid #B9C3DF;
+}
+.popout-login .error {
+	background: #FCBABA;
+}
+.popout-login-tips {
+	display: none;
+	position: absolute;
+	left: 70px;
+	top: 125px;
+	padding-left: 14px;
+	color: #ff1818;
+	background: url(../whimg/error.jpg) no-repeat left center;
+}
+.popout-login .bottom {
+	margin-top: 40px;
+}
+.popout-login .h-loginBtn {
+	float: left;
+	width: 103px;
+	height: 39px;
+	margin-left: 45px;
+	margin-right: 6px;
+	text-indent: -9999px;
+	background: url(../whimg/h-login-btn.jpg) no-repeat center center;
+}
+.popout-login ul {
+  padding-top: 5px;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  *zoom: 1;	
+}
+.popout-login li {
+  float: left;
+  margin-left: -1px;	
+}
+.popout-login li a{
+  display: block;
+  padding: 0 10px;
+  color: #363737;
+  font-size: 12px;
+  line-height: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;  
+  border-left: 1px solid #bbb;
+}
