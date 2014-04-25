@@ -97,6 +97,11 @@
 					<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
 				</ul>
 			</div>
+
+			<!-- 观看讲义 -->
+			<div class="tab-pane ppt-con">
+				<div class="nothing">该课程暂时没有讲义:(</div>
+			</div>
 		</div>
 	</div>
 	<!-- end 标签页区域 -->

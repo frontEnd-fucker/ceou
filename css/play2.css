@@ -148,6 +148,14 @@
 .tab-content .teacher-intro li span {
 	float: right;
 }
+.tab-content .ppt-con .nothing{
+	height: 250px;
+	color: #747474;
+	line-height: 250px;
+	font-size: 22px;
+	font-family: arial,"微软雅黑";
+	text-align: center;
+}
 .tab-pane {
 	display: none;
 }

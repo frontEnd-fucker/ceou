@@ -39,10 +39,8 @@ yu.popFadeoutLayer = function(type, content, $el, callback) {
 	$el.append(fadeOutLayer);
 
 	setTimeout(function(){
-		$('#fadeOutLayer').fadeOut(500, function() {
-			$(this).remove();
-			callback && callback();
-		});			
+		$('#fadeOutLayer').remove();
+		callback && callback();		
 	}, 1500);	
 }	
 
