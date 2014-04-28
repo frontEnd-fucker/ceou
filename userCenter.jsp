@@ -103,7 +103,11 @@
 			<ul class="mod-video-list cf">
 				<s:iterator value="myCourseList">
 					<li class="mod-video-item">
-						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
+						<div class="hd">
+							<a href="course!showCouDetail?couid=<s:property value="couid"/>">
+								<img src="<s:property value="coupicurl"/>" onError="this.onerror=null;this.src='whimg/userCenter/ph.jpg';">
+							</a>
+						</div>
 						<div class="bd">
 							<div class="pd">
 								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
@@ -141,7 +145,11 @@
 			<ul class="mod-video-list cf">
 				<s:iterator value="listenList">
 					<li class="mod-video-item">
-						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
+						<div class="hd">
+							<a href="course!showCouDetail?couid=<s:property value="couid"/>">
+								<img src="<s:property value="coupicurl"/>" onError="this.onerror=null;this.src='whimg/userCenter/ph.jpg';">
+							</a>
+						</div>
 						<div class="bd">
 							<div class="pd">
 								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
@@ -160,7 +168,11 @@
 			<ul class="mod-video-list cf">
 				<s:iterator value="recomList">
 					<li class="mod-video-item">
-						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
+						<div class="hd">
+							<a href="course!showCouDetail?couid=<s:property value="couid"/>">
+								<img src="<s:property value="coupicurl"/>" onError="this.onerror=null;this.src='whimg/userCenter/ph.jpg';">
+							</a>
+						</div>
 						<div class="bd">
 							<div class="pd">
 								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
