@@ -370,6 +370,7 @@ aside a:hover, aside a.curr {
 .mod-video-item .hd{
 	width: 204px;
 	height: 154px;
+	background: url(../whimg/userCenter/ph.jpg) no-repeat center center;
 }
 .mod-video-item .hd img {
 	width: 204px;
