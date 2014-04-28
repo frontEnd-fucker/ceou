@@ -156,7 +156,9 @@
 					<label>部门/职位：</label>
 					<input id="positionName" class="input-txt" name="upBean.positionName" value="${upBean.positionName}" type="text">
 				</p>
-				<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">				
+				<div id="J_action-con" class="fl">
+					<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">
+				</div>				
 			</form>
 		</div>	
 	</div>
@@ -170,6 +172,7 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/vendor/jquery.validate.min.js"></script>
 <script src="js/vendor/areaUtil.js"></script>
+<script src="js/vendor/baseUI.js"></script>
 <script src="js/userCenter.js"></script>
 
 <script>
@@ -203,9 +206,9 @@ $(function() {
 
 		$.post('personal!editUserPosition', {'upBean.province':province, 'upBean.city':city, 'upBean.position':work, 'upBean.companyName':companyName,'upBean.positionName':positionName }, function(data) {
 			if(data == 1){
-				yu.popFadeoutLayer(1, '保存成功');
+				yu.popFadeoutLayer(1, '保存成功', $('#J_action-con'));
 			}else{
-				yu.popFadeoutLayer(-1, '保存失败，请重新提交');
+				yu.popFadeoutLayer(-1, '保存失败，请重新提交', $('#J_action-con'));
 			}			
 		});
 		return false;
