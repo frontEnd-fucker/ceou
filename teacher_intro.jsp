@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!doctype html>
 <html>
 <head>
@@ -25,16 +26,8 @@
 			<img src="whimg/teacher_intro/zhangwen.jpg">
 		</div>
 		<div class="bd">
-			<h2 class="t_name">张文</h2>
-			<p>中国绩效管理第一人</p>
-			<p>原蒙牛乳业集团副总裁、人力资源总监</p>
-			<p>联想集团管理学院培训顾问</p>
-			<p>香港商学院副院长</p>
-			<p>清华大学、人民大学、北方交大等多所高校的客座教授、MBA班主讲导师</p>
-			<p>国际认证专业培训师，曾任某大型保健品企业总经理</p>
-			<p>出版专著二十余部，长期为联想集团、ABB公司、中国工商银行总行、中国银行总行
-中国建设银行总行、中国电信、中国移动等百余家企业提供咨询及培训服务</p>
-			<p>主讲课程《全员目标管理与绩效考核》</p>
+			<h2 class="t_name"><s:property value="secondTB.tname"/></h2>
+			<s:property value="secondTB.tintro"/>
 		</div>
 	</section>
 
@@ -42,87 +35,45 @@
 	<section class="t_course">
 		<h2 class="italic-title">专家课程</h2>
 		<ul class="t_course-list cf">
-			<li class="t_course-item">
-				<div class="top">
-					<div class="pd">
-						<div class="hd">							
-						</div>
-						<div class="bd">
-							<h3>课程标题</h3>
-							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
-							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
-							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
-						</div>
-					</div>
-				</div>
-				<div class="bottom"></div>
-			</li>
-
-			<li class="t_course-item">
-				<div class="top">
-					<div class="pd">
-						<div class="hd">							
-						</div>
-						<div class="bd">
-							<h3>课程标题</h3>
-							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
-							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
-							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
+			<s:iterator value="teacherSeriesCourse">
+				<li class="t_course-item">
+					<div class="top">
+						<div class="pd">
+							<div class="hd">							
+							</div>
+							<div class="bd">
+								<h3><s:property value="serName"/></h3>
+								<p class="cnt"><strong>课程简介：</strong><s:property value="couprofile"/></p>
+								<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>" class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
+								<!-- <a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a> -->
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="bottom"></div>
-			</li>
-
-			<li class="t_course-item">
-				<div class="top">
-					<div class="pd">
-						<div class="hd">							
-						</div>
-						<div class="bd">
-							<h3>课程标题</h3>
-							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
-							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
-							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
-						</div>
-					</div>
-				</div>
-				<div class="bottom"></div>
-			</li>
-
-			<li class="t_course-item">
-				<div class="top">
-					<div class="pd">
-						<div class="hd">							
-						</div>
-						<div class="bd">
-							<h3>课程标题</h3>
-							<p class="cnt"><strong>课程简介：</strong>some 课程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介程简介。。。课程简介课程简介课程简介课程简介课程简介课程简介</p>
-							<a class="btn-pill btn-pill-small btn-pill-g_yellow fl" href="#">播放课程</a>
-							<a class="btn-pill btn-pill-small btn-pill-g_green fr" href="#">课后练习</a>
-						</div>
-					</div>
-				</div>
-				<div class="bottom"></div>
-			</li>									
+					<div class="bottom"></div>
+				</li>
+			</s:iterator>
+		
 		</ul>		
 	</section>
 
 	<!-- 专家活动 -->
-	<section class="t_activity">
+	<!-- <section class="t_activity">
 		<h2 class="italic-title">专家活动</h2>
 		<ul class="activity-list">
 			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
 			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
 			<li><span>2014年4月11号</span>深圳举行XXX活动</li>
 		</ul>
-	</section>	
+	</section>	 -->
 </div>
 <!-- end main -->
 
 <div class="clear-both"></div>
 
 <jsp:include page="footer.jsp" flush="true" />
-	
+
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/base.js"></script>	
 </body>
 </html>
