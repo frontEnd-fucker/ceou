@@ -21,7 +21,7 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
+			<a class="avatar" href="personal!show"><img src="<s:property value="perBean.smallpic"/>"></a>
 			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
 			<a class="log-out" href="user!outLogin">退出</a>
@@ -60,18 +60,18 @@
 	<aside>
 		<div class="avatar-con dib">
 			<div class="pd">
-				<a href="#"><img class="avatar-big" src="whimg/userCenter/avatar-default.jpg"></a>
+				<a href="personal!toAvatar"><img class="avatar-big" src="<s:property value="perBean.bigpic"/>"></a>
 			</div>	
 		</div>
 		<p><strong><s:property value="perBean.name"/></strong></p>
 		<p style="margin-left: -37px;"><strong>我的积分：<span class="red"><s:property value="perBean.integral"/> </span></strong></p>
 		<p style="margin-left: -17px;"><strong>我的等级：</strong>
 			<span class="red">
-				<s:if test='perBean.privilegeid == "0"'>普通会员</s:if>
-				<s:if test='perBean.privilegeid == "1"'>白金会员</s:if>
-				<s:if test='perBean.privilegeid == "2"'>黄金会员</s:if>
-				<s:if test='perBean.privilegeid == "3"'>铂金会员</s:if>
-				<s:if test='perBean.privilegeid == "4"'>钻石会员</s:if>
+				<s:if test='perBean.privilegeid == "1"'>普通会员</s:if>
+				<s:if test='perBean.privilegeid == "2"'>白金会员</s:if>
+				<s:if test='perBean.privilegeid == "3"'>黄金会员</s:if>
+				<s:if test='perBean.privilegeid == "4"'>铂金会员</s:if>
+				<s:if test='perBean.privilegeid == "5"'>钻石会员</s:if>
 			</span>
 		</p>
 		<hr>
@@ -100,22 +100,82 @@
 		<div class="form-con">
 
 			<!-- 更换头像表单 -->
-			<form id="form-avatar" style="margin: -47px 0 0 -110px;">
-				<img src="whimg/userCenter/avatar-default.jpg">
-				<p class="input-con">
-					请选择一张图片<input type="file">
+			<!-- <form id="form-avatar" style="margin: -47px 0 0 -110px;"> -->
+
+			<div style="margin-left: -80px;">
+			<!-- <h1 style="text-align: center">
+			富头像上传编辑器演示
+			</h1> -->
+				<div>
+				<p id="swfContainer">
+					本组件需要安装Flash Player后才可使用，请从
+					<a href="http://www.adobe.com/go/getflashplayer">这里</a> 下载安装。
 				</p>
-			</form>
+				</div>
+			<!-- <button type="button" id="upload">
+			自定义上传按钮
+			</button> -->
+			</div>
+		<!-- </form>  -->
 		</div>	
 	</div>
 </div>
 
 <div class="clear-both"></div>
 
+
 <jsp:include page="footer.jsp" flush="true" />
+
+
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfobject.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/fullAvatarEditor.js"></script>
+
+<script type="text/javascript">
+	swfobject.addDomLoadEvent(function() {
+		var swf = new fullAvatarEditor("swfContainer", {
+			id : 'swf',
+			upload_url : './upload.jsp',
+			//src_url : "./image/couid10.jpg",
+			src_upload : 2
+		}, function(msg) {
+			switch (msg.code) {
+			case 1:
+				//alert("页面成功加载了组件！");
+				break;
+			case 2:
+				//alert("已成功加载默认指定的图片到编辑面板。");
+				break;
+			case 3:
+				if (msg.type == 0) {
+					alert("摄像头已准备就绪且用户已允许使用。");
+				} else if (msg.type == 1) {
+					alert("摄像头已准备就绪但用户未允许使用！");
+				} else {
+					alert("摄像头被占用！");
+				}
+				break;
+			case 5:
+				if (msg.type == 0) {
+					if (msg.content.sourceUrl) {
+						alert("原图片已成功保存至服务器，url为：\n" + msg.content.sourceUrl);
+					}
+					//alert("头像已成功保存至服务器，url为：\n"
+				//	+ msg.content.avatarUrls.join("\n"));
+				//window.location="all.jsp?content="+msg.content.avatarUrls;
+				//showModalDialog("temp.jsp");//在关闭模式窗体前，不能操作其它窗体
+				location.reload();
+			}
+			break;
+		}
+	}	);
+		document.getElementById("upload").onclick = function() {
+			swf.call("upload");
+		};
+	});
+</script>
 </body>
 </html>
