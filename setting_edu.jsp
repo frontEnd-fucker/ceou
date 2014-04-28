@@ -21,7 +21,7 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
+			<a class="avatar" href="personal!show"><img src="<s:property value="perBean.smallpic"/>"></a>
 			<a class="user-name" href="#"><s:property value="perBean.name"/></a>
 			<span>|</span>
 			<a class="log-out" href="user!outLogin">退出</a>
@@ -60,7 +60,7 @@
 	<aside>
 		<div class="avatar-con dib">
 			<div class="pd">
-				<a href="#"><img class="avatar-big" src="whimg/userCenter/avatar-default.jpg"></a>
+				<a href="personal!toAvatar"><img class="avatar-big" src="<s:property value="perBean.bigpic"/>"></a>
 			</div>	
 		</div>
 		<p><strong><s:property value="perBean.name"/></strong></p>
@@ -119,7 +119,9 @@
 					<label>院系：</label>
 					<input id="college" class="input-txt" name="ueBean.college" value="${ueBean.college }" type="text">
 				</p>	
-				<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">								
+				<div id="J_action-con" class="fl">
+					<input id="btnSubmit" type="submit" class="btn-pill btn-pill-green" value="提交">	
+				</div>							
 			</form>
 		</div>	
 	</div>
@@ -131,7 +133,9 @@
 
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
-<script src="js/userCenter.js"></script><script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/baseUI.js"></script>
+<script src="js/userCenter.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
 
 <script>
 $(function() {
@@ -141,9 +145,9 @@ $(function() {
 		var college = $('#college').val();
 		$.post('personal!editUserEdu', {'ueBean.universityType': edu,'ueBean.universityName':universityName,'ueBean.college':college}, function(data) {
 			if(data == 1){
-				yu.popFadeoutLayer(1, '保存成功');
+				yu.popFadeoutLayer(1, '保存成功', $('#J_action-con'));
 			}else{
-				yu.popFadeoutLayer(-1, '保存失败，请重新提交');
+				yu.popFadeoutLayer(-1, '保存失败，请重新提交'), $('#J_action-con');
 			}
 			
 		});
