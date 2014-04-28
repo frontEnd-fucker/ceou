@@ -20,7 +20,7 @@
 	<div class="wrapper">
 		<div class="fl">欢迎来到中国企业在线大学</div>
 		<div class="fr">
-			<!-- <a class="avatar" href="#"><img src="whimg/userCenter/avatar.jpg"></a> -->
+			<a class="avatar" href="personal!show"><img src="<s:property value="perBean.smallpic"/>"></a>
 			<a class="user-name" href="#"><s:property value="perBean.name"/> </a>
 			<span>|</span>
 			<a class="log-out" href="user!outLogin">退出</a>
@@ -59,7 +59,7 @@
 	<aside>
 		<div class="avatar-con dib">
 			<div class="pd">
-				<a href="#"><img class="avatar-big" src="whimg/userCenter/avatar-default.jpg"></a>
+				<a href="personal!toAvatar"><img class="avatar-big" src="<s:property value="perBean.bigpic"/>"></a>
 			</div>	
 		</div>
 		<p><strong><s:property value="perBean.name"/></strong></p>
@@ -108,7 +108,11 @@
 			<ul class="mod-video-list cf">
 				<s:iterator value="myCourseList">
 					<li class="mod-video-item">
-						<div class="hd"><a href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>"></a></div>
+						<div class="hd">
+							<a href="course!showCouDetail?couid=<s:property value="couid"/>">
+								<img src="<s:property value="coupicurl"/>" onError="this.onerror=null;this.src='whimg/userCenter/ph.jpg';">
+							</a>
+						</div>
 						<div class="bd">
 							<div class="pd">
 								<p class="author-name">讲师：<a href="teacher!showCouByTeacher?thid=<s:property value="teacherid"/>&page=1"><s:property value="coulecturer"/></a></p>
