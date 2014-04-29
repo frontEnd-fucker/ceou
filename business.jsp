@@ -40,7 +40,7 @@
                             	<li>|</li>
                             	<li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>
                         	 -->
-                              <li><a href="business!showBeizengCou?catId=3">更多>></a></li>
+                              <li><a href="business!showBusinessList?catId=1&ifceou=0">更多>></a></li>
                        </ul>                  	
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <h2 class="tile-title">倍增名师堂</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="business!showBZCouByTh?catId=2&ifceou=1">更多>></a></li>
+                            <li><a href="business!showBusinessList?catId=1&ifceou=1">更多>></a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        
@@ -107,7 +107,7 @@
                            		<li>|</li>
                             	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=4">财务管理系列</a></li>
                         	 -->
-                            <li><a href="business!showEnterpriseCou?catId=4&ifceou=-1">更多>></a></li>
+                            <li><a href="business!showBusinessList?catId=3&ifceou=1">更多>></a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->  

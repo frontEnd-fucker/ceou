@@ -31,13 +31,13 @@
 .t_intro .hd {
 	float: left;
 	width: 348px;
-	height: 430px;
+	height: 350px;
 	margin-right: 67px;
 	overflow: hidden;
 }
 .t_intro .hd img {
 	width: 348px;	
-	height: 430px;	
+	height: 350px;	
 }
 .t_intro .bd {
 	overflow: hidden;
@@ -81,7 +81,7 @@
 	width: 166px;
 	height: 145px;
 	margin-right: 17px;
-	background: #aeaeae;
+	background: #aeaeae url(../whimg/teacher_intro/ph.jpg) no-repeat center center;
 }
 .t_course-item .hd img {
 	width: 166px;

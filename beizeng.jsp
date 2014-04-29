@@ -41,7 +41,7 @@
                             	<li>|</li>
                             	<li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>  
                         	 -->
-                            <li><a class="more" href="business!showBeizengCou?catId=3">更多>></a></li>
+                            <li><a class="more" href="business!showBusinessList?catId=1&ifceou=0">更多>></a></li>
                        </ul>                  	
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     <h2 class="tile-title">实战堂</h2>
                     <div class="tile-top-nav">
                         <ul>
-							<li><a class="more" href="business!showBeizengCou?catId=5">更多>></a></li>   
+							<li><a class="more" href="business!showBusinessList?catId=1&ifceou=2">更多>></a></li>   
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        
@@ -105,7 +105,7 @@
                     <h2 class="tile-title">名师堂</h2>
                     <div class="tile-top-nav">
                         <ul>
-							<li><a class="more" href="business!showBZCouByTh?catId=2&ifceou=1">更多>></a></li>
+							<li><a class="more" href="business!showBusinessList?catId=1&ifceou=1">更多>></a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->        

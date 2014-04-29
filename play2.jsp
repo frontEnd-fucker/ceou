@@ -34,10 +34,10 @@
 				</div>
 			</s:if>
 			<s:else>
-				<!-- ${courseDetail.couvideourl } -->
-								<script
+				${courseDetail.couvideourl }
+								<!--<script
 									src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=true&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1"
-									type="text/javascript"></script>
+									type="text/javascript"></script>-->
 			</s:else>		
 		</div>
 
@@ -72,12 +72,15 @@
 
 				<div class="teacher-intro cf">
 					<div class="fl">
-						<img src="whimg/play2/teacher.jpg">
+						<img src="whimg/play2/ph-play2.jpg">						
 					</div>
 					<ul class="fr">
+						<!-- <li>李某某</li>
 						<li>中国菁英联盟<span>首席顾问</span></li>
 						<li>中国MBA联盟<span>主 席</span></li>
-						<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
+						<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li> -->
+						<li><s:property value="teacherIntro.tname"/></li>
+						<s:property value="teacherIntro.tintro"/>
 					</ul>
 				</div>		
 							
@@ -108,44 +111,36 @@
 		<ul class="recommend-list">
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-1.jpg"></span>
+					<span class="course-name">简易化经营12招</span>
+					<span class="teacher">讲师：<em>严世华</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-2.jpg"></span>
+					<span class="course-name">信任管理</span>
+					<span class="teacher">讲师：<em>赵喜刚</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-3.jpg"></span>
+					<span class="course-name">总裁倍增绩效</span>
+					<span class="teacher">讲师：<em>张文</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>	
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-4.jpg"></span>
+					<span class="course-name">总裁管控六法则</span>
+					<span class="teacher">讲师：<em>红智博</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
-			</li>
-			<li class="recommend-item">
-				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
-					<span class="start"><i class="icon-start"></i>开始学习</span>
-				</a>				
-			</li>											
+			</li>										
 		</ul>
 	</div>
 	<!-- end 热门推荐 -->
@@ -171,11 +166,17 @@
 							</p>
 							<p class="cnt"><s:property value="comment"/> </p>
 							<p class="bottom">
-								<a href="#">回复</a>	
+								<a class="J_reply" href="#">回复</a>	
 								<span>|</span>
 								<a class="J_like" href="javascript:;" data-commentid="<s:property value="id" />">赞同</a>
 								<span class="count-like-con">(<em class="count-like"><s:property value="praise"/></em>)</span>
 							</p>
+						</div>
+						<div class="reply-con cf">
+							<textarea id="reply" name="reply" ></textarea>
+							
+							<a class="btn-pill btn-pill-yellow fr btn-pill-disabled" href="#" style="margin-left: 20px">取消回复</a>
+							<input id="reply-submit" class="btn-pill btn-pill-yellow fr" type="button" value="确认回复">
 						</div>
 					</li>
 				</s:iterator>
@@ -350,6 +351,11 @@ $(function(){
 			}
 		});
 	});
+
+	// 回复
+	// $('.J_reply').click(function() {
+	// 	var html = 
+	// });
 	
 	//点赞
 	$('.J_like').click(function(e) {
