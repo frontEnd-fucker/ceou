@@ -34,7 +34,10 @@
 				</div>
 			</s:if>
 			<s:else>
-				${courseDetail.couvideourl }
+				<!-- ${courseDetail.couvideourl } -->
+								<script
+									src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=true&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1"
+									type="text/javascript"></script>
 			</s:else>		
 		</div>
 
@@ -61,20 +64,30 @@
 	<div class="tab fl">
 		<ul class="tab-nav">
 			<li class="curr"><a href="#">课程简介</a><i class="triangle"></i></li>
-			<li><a href="#">老师简介</a><i class="triangle"></i></li>
-			<li class="last"><a href="#">观看讲义</a><i class="triangle"></i></li>
 		</ul>
 		<div class="tab-content">
 
 			<!-- 课程简介 -->
-			<div class="tab-pane course-intro">				
+			<div class="course-intro">		
+
+				<div class="teacher-intro cf">
+					<div class="fl">
+						<img src="whimg/play2/teacher.jpg">
+					</div>
+					<ul class="fr">
+						<li>中国菁英联盟<span>首席顾问</span></li>
+						<li>中国MBA联盟<span>主 席</span></li>
+						<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
+					</ul>
+				</div>		
+							
 				<dl>
 					<dt>课程简介</dt>
 					<dd>
 						<s:property value="courseDetail.couprofile"/>
 					</dd>
 				</dl>
-				<dl>
+				<!-- <dl>
 					<dt>课程大纲</dt>
 					<dd>
 						<p>1.什么是意愿</p>
@@ -83,24 +96,7 @@
 						<p>授人以鱼不如授人以渔，授人以渔不如授人以欲。</p>
 						<p>有了欲望、意愿，人们可以主动寻求解决方案，自己做鱼杆，找鱼下勾。没有意愿，即便有金鱼杆，他不去钓鱼，也是枉然。</p>
 					</dd>
-				</dl>
-			</div>
-
-			<!-- 老师介绍 -->
-			<div class="tab-pane teacher-intro cf">
-				<div class="fl">
-					<img src="whimg/play2/teacher.jpg">
-				</div>
-				<ul class="fr">
-					<li>中国菁英联盟<span>首席顾问</span></li>
-					<li>中国MBA联盟<span>主 席</span></li>
-					<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
-				</ul>
-			</div>
-
-			<!-- 观看讲义 -->
-			<div class="tab-pane ppt-con">
-				<div class="nothing">该课程暂时没有讲义:(</div>
+				</dl> -->
 			</div>
 		</div>
 	</div>
@@ -291,7 +287,7 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
 <script src="js/vendor/baseUI.js"></script>
 <script src="js/base.js"></script>	
-<script src="js/play2.js"></script>
+<!-- <script src="js/play2.js"></script> -->
 <script>
 $(function(){
 
@@ -401,7 +397,59 @@ $(function(){
 			});
 		});
 	});
+
+	//标签页效果
+	// $('.tab-nav li').mouseenter(function() {		
+	// 	var index = $(this).index();
+		
+	// 	$(this).addClass('curr')
+	// 		.siblings().removeClass('curr');
+	// 	$('.tab-pane').eq(index).show()
+	// 		.siblings().hide();
+	// }).first().mouseenter();
+
 });
+
+/**
+* cc player API
+*/
+
+function customFullScreen(){
+//TODO 自定义全屏
+}
+
+function onPlayPaused(){
+// 已暂停播放
+}
+
+function onPlayStop(){	
+	var episodeSum = $('.series-item').length;
+	var currEpisode = $('.series-list .curr').index() + 1;
+	var nextHref = $('.series-list .curr').next().find('a').attr('href');
+	
+	if(currEpisode < episodeSum) {		
+		location.href = nextHref;
+	}
+}
+
+function on_cc_player_init( vid, objectID ){
+var config = {};
+//config.fullscreen_enable = 1; //启用自定义全屏
+//config.fullscreen_function = "customFullScreen"; //设置自定义全屏函数的名称
+config.on_player_pause = "onPlayPaused"; //设置当暂停播放时的回调函数的名称
+config.on_player_stop="onPlayStop";//播放结束后回调函数的名称
+
+var player = getSWF( objectID );
+	player.setConfig( config );
+}
+
+function getSWF( swfID ) {
+	if( navigator.appName.indexOf( "Microsoft" ) != -1 ){
+	  return window[ swfID ];
+	} else {
+	  return document[ swfID ];
+	}
+}	
 </script>
 </body>
 </html>
