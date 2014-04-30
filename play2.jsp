@@ -33,6 +33,12 @@
 					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
 				</div>
 			</s:if>
+			<s:if test="%{courseDetail.couvideourl==2}">
+				<div id="noPermission">
+					<p id="noPermission">对不起，您的权限暂时无法观看该视频。请<a target="_blank" href="memberIntro.jsp">点击这里</a>获得权限</p>
+				</div>
+			</s:if>
+
 			<s:else>
 				${courseDetail.couvideourl }
 								<!--<script

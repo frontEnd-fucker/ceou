@@ -17,7 +17,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><img src="img/slider2.jpg" /></div>
+	
     
 	<div class="floor">
     
@@ -214,7 +214,7 @@
             </div>                            
             
         	<div class="aside-box weibo-con cf">
-            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
@@ -262,16 +262,13 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+                
         	</div>                                            
         </div><!-- end floor-r -->
     </div>
 </div><!-- end main -->
 
 <div class="clear-both"></div>
-
-<div class="ad"><img src="img/ad-placeholder.jpg" /></div>
-
 <jsp:include page="footer.jsp" flush="true" />
 </body>
 </html>

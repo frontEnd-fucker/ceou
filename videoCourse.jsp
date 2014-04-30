@@ -9,6 +9,7 @@
 	<title>中国企业在线-视频播放</title>
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/base2.css" rel="stylesheet">
+	<link href="css/baseUI.css" rel="stylesheet">
 	<link href="css/play2.css" rel="stylesheet">
 	<script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
@@ -26,47 +27,19 @@
 
 		<!-- 播放区域 -->
 		<div class="p_area fl">
-			<embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="680" height="600" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>        
+			<s:if test="%{courseDetail.couvideourl==1}">
+				<div id="noPermission">
+					<p>对不起，该视频需要登录之后才能观看。<a id="J_login-now" href="#">马上登录</a></p>
+					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
+				</div>
+			</s:if>
+			<s:else>
+				<embed src="<s:property value="courseDetail.couvideourl"/>" quality="high" width="600" height="490" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+								<!--<script
+									src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=true&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1"
+									type="text/javascript"></script>-->
+			</s:else>		
 		</div>
-
-		<!-- 热门推荐 -->
-		<!-- <div class="p_recommend fr">
-			<h3>热门推荐</h3>
-			<ul class="p_recommend-list">
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>	
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>
-				<li class="recommend-item">
-					<a href="#">
-						<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-						<span class="course-name">如何获取大客户</span>
-						<span class="teacher">讲师：<em>XXX</em></span>
-						<span class="start"><i class="icon-start"></i>开始学习</span>
-					</a>
-				</li>																				
-			</ul>
-		</div>	 -->	
 
 		<!-- 选集模块 -->
 		<div class="p_series fr">
@@ -91,20 +64,33 @@
 	<div class="tab fl">
 		<ul class="tab-nav">
 			<li class="curr"><a href="#">课程简介</a><i class="triangle"></i></li>
-			<li><a href="#">老师简介</a><i class="triangle"></i></li>
-			<li class="last"><a href="#">观看讲义</a><i class="triangle"></i></li>
 		</ul>
 		<div class="tab-content">
 
 			<!-- 课程简介 -->
-			<div class="tab-pane course-intro">				
+			<div class="course-intro">		
+
+				<div class="teacher-intro cf">
+					<div class="fl">
+						<img src="whimg/play2/ph-play2.jpg">						
+					</div>
+					<ul class="fr">
+						<!-- <li>李某某</li>
+						<li>中国菁英联盟<span>首席顾问</span></li>
+						<li>中国MBA联盟<span>主 席</span></li>
+						<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li> -->
+						<li><s:property value="teacherIntro.tname"/></li>
+						<s:property value="teacherIntro.tintro"/>
+					</ul>
+				</div>		
+							
 				<dl>
 					<dt>课程简介</dt>
 					<dd>
 						<s:property value="courseDetail.couprofile"/>
 					</dd>
 				</dl>
-				<dl>
+				<!-- <dl>
 					<dt>课程大纲</dt>
 					<dd>
 						<p>1.什么是意愿</p>
@@ -113,19 +99,7 @@
 						<p>授人以鱼不如授人以渔，授人以渔不如授人以欲。</p>
 						<p>有了欲望、意愿，人们可以主动寻求解决方案，自己做鱼杆，找鱼下勾。没有意愿，即便有金鱼杆，他不去钓鱼，也是枉然。</p>
 					</dd>
-				</dl>
-			</div>
-
-			<!-- 老师介绍 -->
-			<div class="tab-pane teacher-intro cf">
-				<div class="fl">
-					<img src="whimg/play2/teacher.jpg">
-				</div>
-				<ul class="fr">
-					<li>中国菁英联盟<span>首席顾问</span></li>
-					<li>中国MBA联盟<span>主 席</span></li>
-					<li>北京市东城区中小企业服务中心<span>特聘顾问</span></li>
-				</ul>
+				</dl> -->
 			</div>
 		</div>
 	</div>
@@ -137,44 +111,36 @@
 		<ul class="recommend-list">
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-1.jpg"></span>
+					<span class="course-name">简易化经营12招</span>
+					<span class="teacher">讲师：<em>严世华</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-2.jpg"></span>
+					<span class="course-name">信任管理</span>
+					<span class="teacher">讲师：<em>赵喜刚</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-3.jpg"></span>
+					<span class="course-name">总裁倍增绩效</span>
+					<span class="teacher">讲师：<em>张文</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
 			</li>	
 			<li class="recommend-item">
 				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
+					<span class="hd"><img src="whimg/play2/recommend-4.jpg"></span>
+					<span class="course-name">总裁管控六法则</span>
+					<span class="teacher">讲师：<em>红智博</em></span>
 					<span class="start"><i class="icon-start"></i>开始学习</span>
 				</a>				
-			</li>
-			<li class="recommend-item">
-				<a href="#">
-					<span class="hd"><img src="whimg/play2/recommend-hd.jpg"></span>
-					<span class="course-name">如何获取大客户</span>
-					<span class="teacher">讲师：<em>XXX</em></span>
-					<span class="start"><i class="icon-start"></i>开始学习</span>
-				</a>				
-			</li>											
+			</li>										
 		</ul>
 	</div>
 	<!-- end 热门推荐 -->
@@ -183,7 +149,9 @@
 	<div class="comment">
 		<form class="cf">
 			<textarea id="comment" name="comment" ></textarea>
-			<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="提交">
+			<div id="J_action-con" class="fr">
+				<input id="comment-submit" class="btn-pill btn-pill-yellow fr" type="button" value="发表评论">
+			</div>
 		</form>
 		<div class="all-comment">
 			<h2>全部评论</h2>
@@ -194,16 +162,16 @@
 						<div class="bd">
 							<p class="info">
 								<span class="user-name"><s:property value="username" /></span>
-								<span class="date"><s:date name="comtime" format="yyyy-MM-dd hh:mm:ss"/></span>	
+								<span class="date"><s:date name="comtime" format="yyyy-MM-dd HH:mm"/></span>	
 							</p>
 							<p class="cnt"><s:property value="comment"/> </p>
 							<p class="bottom">
-								<a href="#">回复</a>	
+								<a class="J_reply" href="#">回复</a>	
 								<span>|</span>
-								<a class="J_praise" href="#" data-commentid="<s:property value="id" />">赞同</a>
-								<span>(<s:property value="praise"/>)</span>					
+								<a class="J_like" href="javascript:;" data-commentid="<s:property value="id" />">赞同</a>
+								<span class="count-like-con">(<em class="count-like"><s:property value="praise"/></em>)</span>
 							</p>
-						</div>
+						</div>						
 					</li>
 				</s:iterator>
 			</ul>
@@ -231,7 +199,7 @@
             	<s:if test="%{totalPage<=5}">
             		<s:if test="%{totalPage<=1}">
             			<s:if test="%{totalPage==0}">
-            				<p></p>
+            				<p class="nothing">沙发空缺中，还不快抢！</p>
             			</s:if>
             		</s:if>
             		<s:else>
@@ -312,24 +280,47 @@
 	
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/scirpt>')</script>
+<script src="js/vendor/baseUI.js"></script>
 <script src="js/base.js"></script>	
-<script src="js/play2.js"></script>
+<!-- <script src="js/play2.js"></script> -->
 <script>
 $(function(){
 
 	// 将播放器的width改为675px
 	$('embed').attr('width', 675);
 
+	// 点击马上登录弹出登录模态框
+	$('#J_login-now').click(function() {
+		yu.popLogin();
+		return false;
+	});
+
+
 	// 评论
-	$('#comment-submit').click(function(){
+	$('#comment-submit').click(function(e){
+		e.preventDefault();
+
+		$(this).attr('disabled', true).addClass('btn-pill-disabled').val('提交中...');
+
+		var _this = this;
 		var seriesnumber = '${courseDetail.seriesnumber}';
 		var courseid = '${courseDetail.couid}';
 		var comment = $('#comment').val();
+
+		if(comment == '') {
+			yu.popFadeoutLayer(-1, '评论内容不能为空', $('#J_action-con'), function() {
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+			});			
+			return;
+		}		
+
 		$.post('comment!addComment',{'seriesnumber':seriesnumber,'courseid':courseid,'comment':comment},function(data){
+
 			// data.ret = 1为评论成功
 			// data.ret = -1为还没登录
 			if(data.ret == 1){
-				alert(data.username+'评论成功');
+				
+				//alert(data.username+'评论成功');
 				var html = [
 					'<li class="comment-item">',
 						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
@@ -344,25 +335,47 @@ $(function(){
 				].join('');
 				$('.comment-list').prepend(html);
 				$('#comment').val('');
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
+				$('.page-nav .nothing').hide();
 			}else if(data.ret == -1){
-				alert('对不起，只有登录后才能评论');
+				yu.popLogin();
+				$(_this).attr('disabled', false).removeClass('btn-pill-disabled').val('发表评论');
 			}else {
 				alert('网络错误，请重新提交');
 			}
 		});
 	});
+
+	// 回复
+	$('.J_reply').click(function(e) {
+		e.preventDefault();
+		var userName = $(this).parents('.comment-item').find('.user-name').text();
+		$('#comment').focus().val('回复' + userName + ':');
+	});
 	
 	//点赞
-	$('.J_praise').click(function() {
+	$('.J_like').click(function(e) {
+
+		var _this = this;
 		var commentid = $(this).data('commentid');
+
 		$.post('comment!addPraise',{'commentid':commentid},function(data){
+
+			/**
+			 * data=1为评论成功
+			 * data=-1为用户还没登录
+			 */
 			if(data == 1){
-				alert('点赞成功');
-			}
-			if(data == -1) {
-				alert('请先登录');
-			}
-			else{
+				var $countLike = $(_this).parent().find('.count-like');
+				var likeSum = parseInt($countLike.text());
+				likeSum++;
+				yu.popFadeoutLayer(1, '+1', $(_this).parents('.comment-item'), function() {
+					$countLike.text(likeSum);
+					$(_this).off('click');
+				});				
+			}else if(data == -1) {
+				yu.popLogin();
+			}else{
 				alert('网络错误，请重新提交');
 			}
 		});
@@ -375,17 +388,70 @@ $(function(){
 		var seriesnumber = '${courseDetail.seriesnumber}';
 		var courseid = '${courseDetail.couid}';
 		var page = $(this).data('page');
+
+		$(this).addClass('curr')
+			.siblings().removeClass('curr');
+
 		$.post('comment!getCommentByPage',{'seriesnumber':seriesnumber,'courseid':courseid,'page':page}, function(data) {
-			//alert(data);
 			$('.comment-list').fadeOut(700, function() {
 				$(this).html(data).show();
-				//$("html,body").animate({scrollTop: $(".all-comment h2").offset().top - 50}, 1500);
-				$("html,body").animate({scrollTop: $("#comment-submit").offset().bottom}, 1500);
-				console.log($(".all-comment").offset().top);
+				$("html,body").animate({scrollTop: $(".all-comment").offset().top - 55}, 800);
 			});
 		});
 	});
+
+	//标签页效果
+	// $('.tab-nav li').mouseenter(function() {		
+	// 	var index = $(this).index();
+		
+	// 	$(this).addClass('curr')
+	// 		.siblings().removeClass('curr');
+	// 	$('.tab-pane').eq(index).show()
+	// 		.siblings().hide();
+	// }).first().mouseenter();
+
 });
+
+/**
+* cc player API
+*/
+
+function customFullScreen(){
+//TODO 自定义全屏
+}
+
+function onPlayPaused(){
+// 已暂停播放
+}
+
+function onPlayStop(){	
+	var episodeSum = $('.series-item').length;
+	var currEpisode = $('.series-list .curr').index() + 1;
+	var nextHref = $('.series-list .curr').next().find('a').attr('href');
+	
+	if(currEpisode < episodeSum) {		
+		location.href = nextHref;
+	}
+}
+
+function on_cc_player_init( vid, objectID ){
+var config = {};
+//config.fullscreen_enable = 1; //启用自定义全屏
+//config.fullscreen_function = "customFullScreen"; //设置自定义全屏函数的名称
+config.on_player_pause = "onPlayPaused"; //设置当暂停播放时的回调函数的名称
+config.on_player_stop="onPlayStop";//播放结束后回调函数的名称
+
+var player = getSWF( objectID );
+	player.setConfig( config );
+}
+
+function getSWF( swfID ) {
+	if( navigator.appName.indexOf( "Microsoft" ) != -1 ){
+	  return window[ swfID ];
+	} else {
+	  return document[ swfID ];
+	}
+}	
 </script>
 </body>
 </html>

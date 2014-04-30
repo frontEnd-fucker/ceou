@@ -56,7 +56,7 @@
                 </div>
             </div>                
         </div><!-- end weibo -->
-        <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
+        
     </div><!-- end floor-r -->
 </div><!-- end main -->
 

@@ -70,8 +70,8 @@
                 <!-- tile-content -->   
                 <div class="tile-content cf" >   
                     <div class="video-box">
-						<a class="video-cover" href="activity!showCouDetail?couid=528"><img src="image/couid528.jpg"></a>
-                        <p class="video-info"><a href="activity!showCouDetail?couid=528">总裁倍增绩效</a><br /><span>讲师：张文</span></p>
+						<a class="video-cover" href="course!showCouDetail?couid=428"><img src="image/couid528.jpg"></a>
+                        <p class="video-info"><a href="course!showCouDetail?couid=428">总裁倍增绩效</a><br /><span>讲师：张文</span></p>
                     </div>
                     <div class="video-list">
                         <h3><span>培训课程</span><!--<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a>--><i class="triangle"></i></h3>
@@ -238,9 +238,7 @@
                     <h2 class="tile-title">在线学历院</h2>
                     <div class="tile-top-nav">
                         <ul>
-                            <li><a href="edu!showCoubyskill?catId=4&ifceou=1">技能学院</a></li>
-                            <li>|</li>
-                            <li><a href="edu!showCoubyskill?catId=4&ifceou=2">知名学府</a></li>
+                            <li><a class="more" href="edu!showCoubyskill?catId=4">更多</a></li>
                         </ul>
                     </div>                
                 </div><!-- end tile-top -->      
@@ -311,7 +309,7 @@
         <!-- floor-r -->
         <div class="floor-r">
         	<div class="aside-box weibo-con cf" style="*margin-bottom: 10px;">
-            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
@@ -359,7 +357,7 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <!--<a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>-->
+                <!---->
         	</div>
             
             <!-- weibo -->

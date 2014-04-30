@@ -17,9 +17,6 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad">
-    	<img src="img/slider2.jpg">
-    </div>
 	<div class="floor">
     	<div class="floor-l">
         	<div class="crumb">

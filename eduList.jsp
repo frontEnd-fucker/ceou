@@ -17,7 +17,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><img src="img/slider2.jpg" /></div>
+	
     
 	<div class="floor">
     
@@ -308,7 +308,7 @@
                     </div>
                 </div>                
             </div><!-- end weibo -->
-            <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
+            
         	<div class="aside-box">
             	<h2><span>最新课程</span><a class="more" href="course!showList">更多>></a></h2>
                  <s:iterator value="randCourseList">
@@ -342,7 +342,7 @@
             </div>
             
         	<div class="aside-box weibo-con cf">
-            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>

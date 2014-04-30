@@ -17,7 +17,7 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><img src="img/slider2.jpg" /></div>
+	
     
     <div class="floor cf">
     	<!-- floor-l -->
@@ -109,7 +109,7 @@
             <div class="aside-box" style="background: #eff4e3; padding: 5px;">
                 <img src="whimg/goodness.jpg" />
             </div>  
-            <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
+            
             
         	<div class="aside-box">
             	<h2><span>最新课程</span><a class="more" href="course!show">更多>></a></h2>
@@ -133,7 +133,7 @@
             </div>            
             
         	<div class="aside-box weibo-con cf">
-            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
@@ -181,7 +181,7 @@
                         <a class="follow-btn" href="http://weibo.com/jiuyuan99"></a>                        
                     </li>                                                                                              
                 </ul>
-                <a class="green-btn" href="#" style="margin: 8px auto 7px;">一键关注</a>
+                
         	</div>                   
         </div><!-- end floor-r -->
     </div>

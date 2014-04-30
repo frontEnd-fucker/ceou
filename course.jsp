@@ -16,7 +16,6 @@
 
 <!-- main -->
 <div id="main" class="wrapper">
-	<div class="ad"><a href="#"><img src="img/slider2.jpg" /></a></div> 
     
     <!-- floor_1 -->
     <div class="floor">    
@@ -162,7 +161,7 @@
             </div> 
             
         	<div class="aside-box weibo-con cf">
-            	<h2><span>倍增在线专家微博</span><a class="more" href="#">更多>></a></h2>
+            	<h2><span>倍增在线专家微博</span></h2>
                 <ul class="weibo-list cf">
                 	<li>
                     	<a href="http://weibo.com/512566567"><img src="img/wb/wangzhanwei.jpg" /></a>
@@ -212,13 +211,10 @@
                 </ul>
         	</div>       
         </div><!-- end floor-r -->        
-    </div><!-- end floor_1 -->
-
-    <div class="ad"><a href="#"><img src="img/add1.jpg" /></a></div>
-    
-    
+    </div><!-- end floor_1 -->        
 </div><!-- end main -->
 
+<div class="clear-both"></div>
 <jsp:include page="footer.jsp" flush="true" />
 
 </body>

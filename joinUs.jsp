@@ -231,7 +231,7 @@
         <!-- floor-r -->
         <div class="floor-r" style="margin-top: 32px; *margin-top: 30px;">
             <div class="weixin-con"><img src="img/weixin.jpg" /></div>
-            <div class="weixin-con"><img src="img/kechenyoushi.jpg" /></div>
+            
         </div><!-- end floor-r -->
     </div><!-- end floor -->
 </div><!-- end main -->
