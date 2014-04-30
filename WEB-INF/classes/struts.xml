@@ -227,6 +227,12 @@
 			
 			<!-- 上传头像 -->
 			<result name="toAvatar">/setting_avatar.jsp</result>
+			<!-- 判断用户是否登录 -->
+			<result name="islogin" type="json">
+				<param name="root">
+					islogin
+				</param>
+			</result>
 		</action>
 		
 		<!-- 活动 -->
@@ -320,6 +326,7 @@
 			<param name="page">${page}</param>
 			<param name="startDate">${startDate}</param>
 			<param name="endDate">${endDate}</param>
+			<param name="seriesNumber">${seriesNumber}</param>
             </result> 
             <!-- 显示修改页面 -->
             <result name="showupdatecourse">/ad/updatecourse.jsp</result>
@@ -334,6 +341,7 @@
 			<param name="str">${str}</param>
 			<param name="startDate">${startDate}</param>
 			<param name="endDate">${endDate}</param>
+			<param name="seriesNumber">${seriesNumber}</param>
             </result> 
             <!-- 上传错误 -->
             <result name="input">/ad/error.jsp</result>
@@ -364,7 +372,28 @@
             <result name ="showadminallseries">/ad/adminallseries.jsp</result>	
              <!--添加 --> 	
             <result name="addseries">/ad/addseries.jsp</result> 
-            
+             <!-- 删除 -->
+            <result name="deleteseries" type="redirectAction">
+			<param name="actionName">admincourse!showseries</param>
+			<param name="seriesNumber">-1</param>
+			<param name="page">${page}</param>
+            </result> 
+            <!-- 显示修改页面 -->
+            <result name="showupdateseries">/ad/updateseries.jsp</result>
+            <!-- 修改 -->
+            <result name="updateseries" type="redirectAction">
+			<param name="actionName">admincourse!show</param>
+			<param name="couPosition">${couPosition}</param>
+			<param name="couSkill">${couSkill}</param>
+			<param name="couIndustry">${couIndustry}</param>
+			<param name="catId">${catId}</param>
+			<param name="ifCeou">${ifCeou}</param>
+			<param name="str">${str}</param>
+			<param name="page">${page}</param>
+			<param name="startDate">${startDate}</param>
+			<param name="endDate">${endDate}</param>
+			<param name="seriesNumber">${seriesNumber}</param>
+            </result> 
 		</action>  
 
             	<!-- 文章管理 -->

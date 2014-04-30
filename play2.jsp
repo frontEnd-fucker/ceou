@@ -171,13 +171,7 @@
 								<a class="J_like" href="javascript:;" data-commentid="<s:property value="id" />">赞同</a>
 								<span class="count-like-con">(<em class="count-like"><s:property value="praise"/></em>)</span>
 							</p>
-						</div>
-						<div class="reply-con cf">
-							<textarea id="reply" name="reply" ></textarea>
-							
-							<a class="btn-pill btn-pill-yellow fr btn-pill-disabled" href="#" style="margin-left: 20px">取消回复</a>
-							<input id="reply-submit" class="btn-pill btn-pill-yellow fr" type="button" value="确认回复">
-						</div>
+						</div>						
 					</li>
 				</s:iterator>
 			</ul>
@@ -353,9 +347,11 @@ $(function(){
 	});
 
 	// 回复
-	// $('.J_reply').click(function() {
-	// 	var html = 
-	// });
+	$('.J_reply').click(function(e) {
+		e.preventDefault();
+		var userName = $(this).parents('.comment-item').find('.user-name').text();
+		$('#comment').focus().val('回复' + userName + ':');
+	});
 	
 	//点赞
 	$('.J_like').click(function(e) {
