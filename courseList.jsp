@@ -34,7 +34,7 @@
             	<h2 class="cate-title">管理分类</h2>
                 <div class="cate-content">
                 
-                	<s:if test="couPosition==-1 && couSkill==-1">
+                	<s:if test="couSkill==-1">
 	                	<dl class="cf">
 	                    	<dt>通用课程:</dt>
 	                        <dd>
@@ -214,86 +214,114 @@
 	                    </dl>
                     </s:iterator>
                     
-					<!-- page-nav -->
-                    <div class="page-nav cf">
-                    	<div class="page-num">
-		                    <a class="page-home" href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
-		                    <s:if test="page==1">
-		                		<a href="#">上一页</a>
-		                	</s:if>
-		                	<s:else>
-		                		<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page-1"/>" >上一页</a>
-		                	</s:else>
-		                    
-		                    
-		                    <!-- test1 begin -->
-		                    <s:if test="%{(page<=3)}">
-		                     	<s:if test="%{(totalPage<=5)}">
-		                         	<s:iterator begin="1" end="totalPage" var="p">
-										<s:if test="#p==page">
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
-		                    			</s:if>
-		                    			<s:else>
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
-		                    			</s:else>
-		                    		</s:iterator>		                     
-		                     	</s:if>
-			                 	<s:else>
-			                 		<s:iterator begin="1" end="5" var="p">
-										<s:if test="#p==page">
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
-		                    			</s:if>
-		                    			<s:else>
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
-		                    			</s:else>
-		                    		</s:iterator>		
-			                 	</s:else>		                 			                 
-		                    </s:if>
-		                   <!-- test1 end -->   
-		                   <!-- test2 begin -->  
-		                    <s:if test="%{page>3}">
-		                    	<s:if test="%{totalPage-page>2}">
-		                      		<s:iterator begin="page-2" end="page+2" var="p">
-		                    			<s:if test="#p==page">
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
-		                    			</s:if>
-		                    			<s:else>
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
-		                    			</s:else>
-		                    		</s:iterator>
-		                    	</s:if>
-		                    	<s:else>
-		                    	 	<s:iterator begin="totalPage-4" end="totalPage" var="p">
-		                    			<s:if test="#p==page">
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
-		                    			</s:if>
-		                    			<s:else>
-		                    				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />"><s:property/></a>
-		                    			</s:else>
-		                    		</s:iterator>
-		                    	</s:else>
-		                    </s:if>
-		                    <!-- test2 end  -->
-		                    
-		                    <s:if test="page==totalPage">
-		                    	<a href="#">下一页</a>
-		                    </s:if>
-		                    <s:else>
-		                    	<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page+1"/>">下一页</a>
-		                    </s:else>
-		                    <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="totalPage"/>">末页</a>
-                        </div>
-                        <div class="page-skip">
-                        	<form action="course!showList">
+		
+        <!-- page_nav -->
+		<div class="page-nav cf">
+        <div class="page-num">
+	
+			<!-- previous page -->
+			<s:if test="%{totalPage<=1}">
+				
+			</s:if>
+			<s:else>
+				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=1">首页</a>
+                <s:if test="page==1">
+                	<a href="#">上一页</a>
+                </s:if>
+                <s:else>
+                	<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page-1"/>" >上一页</a>
+                </s:else>
+			</s:else>
+			
+            <!-- end previous page -->
+            
+            <!-- test1 -->
+            
+        	<s:if test="%{totalPage<=5}">
+        		<s:if test="%{totalPage<=1}">
+        			<s:if test="%{totalPage==0}">
+        				<p class="nothing">你暂时没有课程哦:(</p>
+        			</s:if>
+        		</s:if>
+        		<s:else>
+        			<s:iterator begin="1" end="totalPage" var="p">
+						<s:if test="#p==page">
+                    		<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+                    	</s:if>
+                    	<s:else>
+                    		<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" ><s:property/></a>
+                    	</s:else>
+                	</s:iterator>
+        		</s:else>
+        	</s:if>
+        	
+        	<!-- end test1 -->
+        	
+        	<!-- test2 -->
+        	<s:else>
+        		<s:if test="%{page<=3}">
+        			<s:iterator begin="1" end="5" var="p">
+						<s:if test="#p==page">
+                			<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+                		</s:if>
+                		<s:else>
+                			<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" ><s:property/></a>
+                		</s:else>
+                	</s:iterator>
+        		</s:if>
+        		<s:else>
+        			<s:if test="%{page>=(totalPage-3)}">
+        				<s:iterator begin="totalPage-4" end="totalPage" var="p">
+                			<s:if test="#p==page">
+                				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" ><s:property/></a>
+                			</s:else>
+                		</s:iterator>
+        			</s:if>
+        			<s:else>
+        				<s:iterator begin="page-2" end="page+2" var="p">
+                			<s:if test="#p==page">
+                				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" class="page-home"><s:property/></a>
+                			</s:if>
+                			<s:else>
+                				<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property />" ><s:property/></a>
+                			</s:else>
+                		</s:iterator>
+        			</s:else>
+        		</s:else>
+        	</s:else>        	
+        	<!-- end test2 -->
+        	
+        	<!-- next page -->
+    		<s:if test="%{totalPage<=1}">
+    		
+    		</s:if>
+    		<s:else>
+    			<s:if test="page==totalPage">
+            		<a href="#">下一页</a>
+            	</s:if>
+                <s:else>
+                	<a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="page+1"/>">下一页</a>
+                </s:else>
+                <a href="course!showList?couPosition=<s:property value="couPosition"/>&couSkill=<s:property value="couSkill"/>&couIndustry=<s:property value="couIndustry"/>&page=<s:property value="totalPage"/>">末页</a>
+				 <div class="page-skip">
+                       <form action="course!showList">
                         		<input type="hidden" name="couPosition" value="<s:property value="couPosition"/>"/>
                         		<input type="hidden" name="couSkill" value="<s:property value="couSkill"/>"/>
                         		<input type="hidden" name="couIndustry" value="<s:property value="couIndustry"/>"/>
                         		
-                            	跳至第<input class="page-input" type="text" name="page" />页
-                            	<input type="submit" value="确定"/>
-                            </form>  
-                    	</div>
-                    </div><!-- end page-nav -->                                    
+                            	第<input class="page-input" type="text" name="page" />页
+                            	<input type="submit" value="跳转"/>
+                       </form>
+                 </div>               
+    		</s:else>
+    		</div>
+        	<!-- end next page -->
+        </div>
+        <!-- end page_nav -->
+                    
                 </div>                             	
             </div>         
         </div><!-- end floor-l -->

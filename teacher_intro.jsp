@@ -23,7 +23,8 @@
 	<!-- 讲师简介 -->
 	<section class="t_intro cf">
 		<div class="hd">
-			<img src="whimg/teacher_intro/zhangwen.jpg">
+			<!-- <img src="whimg/teacher_intro/zhangwen.jpg"> -->
+			<img src="whimg/teacher_intro/ph-teacher.jpg">
 		</div>
 		<div class="bd">
 			<h2 class="t_name"><s:property value="secondTB.tname"/></h2>

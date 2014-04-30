@@ -71,7 +71,7 @@
         	<div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title">最新岗位培训</h2>
+                    <h2 class="tile-title">最新通用课程</h2>
                     <div class="tile-top-nav">
                         <ul>
                             <li><a href="course!showList?couPosition=1&page=1">更多>></a></li>                            
@@ -101,7 +101,7 @@
             <div class="tile-box">
                 <!-- tile-top -->
                 <div class="tile-top cf">
-                    <h2 class="tile-title">最新管理培训</h2>
+                    <h2 class="tile-title">最新行业课程</h2>
                     <div class="tile-top-nav">
                         <ul>
                             <li><a href="course!showList?couPosition=2&page=1">更多>></a></li>                                                      

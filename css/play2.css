@@ -135,8 +135,9 @@
 }
 .tab-content .teacher-intro {
 	yu-padding: 25px 35px;
-	margin-bottom: 20px;
+	margin-bottom: 42px;
 }
+
 .tab-content .teacher-intro img {
 	border: 5px solid #e3e2e2;
 }
@@ -298,4 +299,14 @@
 .comment-item .count-like-con {
 	color: #ACACAC;
 	font-family: Arial;
+}
+
+/* 回复 */
+.comment .reply-con {
+	margin-top: 10px;
+	margin-left: 60px;
+}
+.comment .reply-con textarea {
+	width: 851px;
+	height: 94px;
 }
