@@ -36,10 +36,10 @@
                 </div>
                 <div class="tile-content cf" style="padding-bottom: 17px;">
                     <div class="video-box">
-                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
-                        <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
-                        <p class="video-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
-                    </div>  
+                        <a class="video-cover" href="course!showCouDetail?couid=523"><img src="whimg/index/hot3.jpg"></a>
+                        <p class="video-info"><a href="course!showCouDetail?couid=523">职业生涯规划</a><br /><span>讲师：程社明</span></p>
+                        <a href="course!showCouDetail?couid=523" class="icon-play"></a>
+                    </div>
                     <div class="color-list">
                         <ul>
                         	<s:iterator value="BZCouList" status="status">

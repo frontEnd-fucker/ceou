@@ -426,11 +426,29 @@ a.read-more {
 /* end aside-box通用样式 */
 
 .video-box {
+	position: relative;
 	float: left;
 	width: 313px;
 	height: 285px;
 	border: 1px solid #cfe2a1;
 	background: #faf9f9;
+}
+.video-box .icon-play {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: none;
+	width: 65px;
+	height: 51px;
+	margin-left: -32px;
+	margin-top: -40px;
+	background: url(../whimg/icon/icon-play.png) no-repeat center center;
+}
+.video-box:hover img{
+	opacity: .8;
+}
+.video-box:hover .icon-play {
+	display: block;
 }
 .video-cover img {
 	width: 100%;

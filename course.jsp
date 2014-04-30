@@ -81,9 +81,9 @@
                 <!-- tile-content -->   
                 <div class="tile-content cf">   
                     <div class="video-box">
-                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
-                        <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
-                        <p class="video-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
+                        <a class="video-cover" href="course!showCouDetail?couid=480"><img src="whimg/index/hot4.jpg"></a>
+                        <p class="video-info"><a href="course!showCouDetail?couid=480">智取订单</a><br /><span>讲师：周斌</span></p>
+                        <a href="course!showCouDetail?couid=480" class="icon-play"></a>
                     </div>
                     <div class="video-list">
                         <h3>课程推荐<a href="course!showList?couPosition=1&page=1">更多>></a></h3>

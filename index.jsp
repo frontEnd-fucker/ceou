@@ -70,8 +70,9 @@
                 <!-- tile-content -->   
                 <div class="tile-content cf" >   
                     <div class="video-box">
-						<a class="video-cover" href="course!showCouDetail?couid=428"><img src="image/couid528.jpg"></a>
+						<a class="video-cover" href="course!showCouDetail?couid=428"><img src="whimg/index/hot.jpg"></a>
                         <p class="video-info"><a href="course!showCouDetail?couid=428">总裁倍增绩效</a><br /><span>讲师：张文</span></p>
+                        <a href="course!showCouDetail?couid=428" class="icon-play"></a>
                     </div>
                     <div class="video-list">
                         <h3><span>培训课程</span><!--<a href="course!showList?couPosition=-1&couSkill=-1&couIndustry=-1&page=1">更多>></a>--><i class="triangle"></i></h3>
