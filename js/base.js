@@ -111,21 +111,22 @@ $(function() {
 		}				
 	});
 });
+
 //滚动固定nav功能
-$(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() > 120) {
-			$('#nav').css({
-				position: 'fixed',
-				top: 0
-			});
-		}else if($(this).scrollTop() <= 120) {
-			$('#nav').css({
-				position: 'static'
-			});
-		}
-	});
-});
+// $(function() {
+// 	$(window).scroll(function() {
+// 		if($(this).scrollTop() > 120) {
+// 			$('#nav').css({
+// 				position: 'fixed',
+// 				top: 0
+// 			});
+// 		}else if($(this).scrollTop() <= 120) {
+// 			$('#nav').css({
+// 				position: 'static'
+// 			});
+// 		}
+// 	});
+// });
 
 
 //当nav中有二级菜单的连接hover时，将nav的border-bottom改为31px
