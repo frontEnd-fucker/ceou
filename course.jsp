@@ -88,7 +88,7 @@
                     <div class="video-list">
                         <h3>课程推荐<a href="course!showList?couPosition=1&page=1">更多>></a></h3>
                         <ul>
-                            <s:iterator value="subposlist">
+                            <s:iterator value="subGeneralCouList">
                             	<li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                             </s:iterator>
                         </ul>
@@ -110,20 +110,20 @@
                 <div class="tile-content">
                 	<dl class="course-intro cf">
                     	<dt>
-							<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><img src="<s:property value="firstCouBySki.coupicurl"/>" /></a>
+							<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstIndustryCou.couid"/>"><img src="<s:property value="firstIndustryCou.coupicurl"/>" /></a>
 						</dt>
                         <dd>
-                        	<h3><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstCouBySki.couid"/>"><s:property value="firstCouBySki.couname"/></a></h3>
+                        	<h3><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstIndustryCou.couid"/>"><s:property value="firstIndustryCou.couname"/></a></h3>
                             <p class="course-meta">
-                            	<span>讲师：<s:property value="firstCouBySki.coulecturer"/></span>
+                            	<span>讲师：<s:property value="firstIndustryCou.coulecturer"/></span>
                                 <span class="rate">评分：</span>
                             </p>
-                            <p class="course-intro-content"><strong>课程简介：</strong><s:property value="firstCouBySki.couprofile"/></p>
+                            <p class="course-intro-content"><strong>课程简介：</strong><s:property value="firstIndustryCou.couprofile"/></p>
                         </dd>
                     </dl>
 
                     <div class="post-box-con cf" style="margin-top: 10px;">
-						<s:iterator value="subsklist">
+						<s:iterator value="subIndustryList">
                         <div class="post-box">
                             <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
                             <p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br />

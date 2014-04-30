@@ -30,13 +30,6 @@
                 	<h2 class="tile-title">倍增最新课程</h2>
                     <div class="tile-top-nav">
                         <ul>
-                        	<!-- 
-                        		<li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>
-                        	 -->
                               <li><a href="business!showBusinessList?catId=1&ifceou=0">更多>></a></li>
                        </ul>                  	
                     </div>
@@ -49,7 +42,7 @@
                     </div>  
                     <div class="color-list">
                         <ul>
-                        	<s:iterator value="subceoulist" status="status">
+                        	<s:iterator value="BZCouList" status="status">
                             	<li class="item_<s:property value="#status.index"/>"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /></span></li>
                             </s:iterator>                         
                         </ul>
@@ -70,7 +63,7 @@
                 
                 <div class="tile-content">
 					<div class="post-box-con cf">
-	                    <s:iterator value="ceouvideolist">
+	                    <s:iterator value="subBZTeacherCouList1">
 	                    <div class="post-box">
 	                        <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
 	                        <p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span>讲师：<s:property value="coulecturer"/></span></p>
@@ -80,7 +73,7 @@
                     
                     <div class="post-list-bottom cf">
                         <ul>
-                        	<s:iterator value="ceouvideolist1">
+                        	<s:iterator value="subBZTeacherCouList2">
                         	<li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         	</s:iterator>
                         </ul>
@@ -95,15 +88,6 @@
                     <h2 class="tile-title">企业商学院</h2>
                     <div class="tile-top-nav">
                         <ul>
-                        	<!-- 
-                        		<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=1">效率提升系列</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=2">员工管理系列</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=3">领导人系列</a></li>
-                           		<li>|</li>
-                            	<li><a href="business!showEnterpriseCou?catId=4&ifceou=-1&couPosition=4">财务管理系列</a></li>
-                        	 -->
                             <li><a href="business!showBusinessList?catId=3&ifceou=1">更多>></a></li>
                         </ul>
                     </div>                
@@ -113,21 +97,13 @@
                     
                     <!-- 标签页 -->
                     <div class="tab-con">
-                        <!--<div class="tab-nav">
-                            <ul class="cf">
-                                <li class="cur" id="tab-nav_1"><a href="#">高校沟通技能</a><i class="triangle"></i></li>
-                                <li id="tab-nav_2"><a href="#">高效人士的时间管理</a><i class="triangle"></i></li>  
-                                <li id="tab-nav_3"><a href="#">如何开会才有效</a><i class="triangle"></i></li>                             
-                                <li id="tab-nav_4" class="last"><a href="#">压力与情绪管理</a><i class="triangle"></i></li>
-                            </ul> 
-                        </div>-->
                         <div class="tab-pages">
                             <div class="tab-page" id="page_1">
-			                    <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstceoubybusi.couid"/>">
-			                        <img src="<s:property value="firstceoubybusi.coupicurl"/>" />
+			                    <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="firstEnterpriseCou.couid"/>">
+			                        <img src="<s:property value="firstEnterpriseCou.coupicurl"/>" />
 			                    </a>                     
                                 <ul class="color-list">
-                                	<s:iterator value="subusilist1" status="status">
+                                	<s:iterator value="subEnterpriseCouList2" status="status">
                                     	<li class="item_<s:property value="#status.index"/>"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /> </span></li>
                                     </s:iterator>                                     
                                 </ul>
@@ -138,7 +114,7 @@
                     <div class="clear-both"></div>
                     
                     <div class="post-box-con cf" style="margin-top: 10px;">
-	                	<s:iterator value="subusilist">
+	                	<s:iterator value="subEnterpriseCouList1">
 	                    <div class="post-box">
 	                        <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
 	                        <p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span>讲师：<s:property value="coulecturer"/></span></p>

@@ -31,26 +31,18 @@
                 	<h2 class="tile-title">最新课程</h2>
                     <div class="tile-top-nav">
                         <ul>
-                        	<!-- 
-                        		<li><a href="business!showBeizengCou?catId=3&couPosition=1">绩效管理真谛</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showBeizengCou?catId=3&couPosition=2">职业经理人素质</a></li>
-                            	<li>|</li>
-                            	<li><a href="business!showBeizengCou?catId=3&couPosition=3">绩效文化的建立</a></li>  
-                        	 -->
                             <li><a class="more" href="business!showBusinessList?catId=1&ifceou=0">更多>></a></li>
                        </ul>                  	
                     </div>
                 </div>
                 <div class="tile-content cf" style="padding-bottom: 17px;">
                     <div class="video-box">
-                        <!--<a href="course!showCouDetail?couid=44"><img src="img/video-placeholder.jpg" /></a>-->
                         <iframe height=227 width=313 src="http://player.youku.com/player.php/sid/XMzAxODA4ODk2/v.swf" frameborder=0 allowfullscreen></iframe>
                         <p class="video-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=44">如何应对演说忘词</a><br /><span>讲师：<a href="teacher!showCouByTeacher?thid=7&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">王风范</a></span></p>
                     </div> 
                     <div class="color-list">
                         <ul>
-                        	<s:iterator value="subceoulist" status="status">
+                        	<s:iterator value="BZCouList" status="status">
                             	<li class="item_<s:property value="#status.index"/>"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><span><s:date name="updatetime" format="yyyy-MM-dd" /></span></li>
                             </s:iterator>                         
                         </ul>
@@ -72,7 +64,7 @@
                 
                 <div class="tile-content">
 					<div class="post-box-con cf">
-						<s:iterator value="ceoufightlist1">
+						<s:iterator value="BZFightList1">
 	                    <div class="post-box">
                         	<a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>">
 								<img src="<s:property value="coupicurl"/>" />
@@ -87,7 +79,7 @@
                     
                     <div class="post-list-bottom cf">
                         <ul>
-                        	<s:iterator value="ceoufightlist2">
+                        	<s:iterator value="BZFightList2">
                             <li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                             </s:iterator>
                         </ul>
@@ -109,7 +101,7 @@
                 
                 <div class="tile-content">                   
                     <div class="post-box-con cf">
-	                    <s:iterator value="ceouvideolist">
+	                    <s:iterator value="subBZTeacherCouList1">
 	                    <div class="post-box">
 	                        <a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><img src="<s:property value="coupicurl"/>" /></a>
 	                        <p class="post-info"><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a><br /><span>讲师：<s:property value="coulecturer"/></span></p>
@@ -118,7 +110,7 @@
 					</div>
                     <div class="post-list-bottom cf">
                         <ul>
-                        	<s:iterator value="ceouvideolist1">
+                        	<s:iterator value="subBZTeacherCouList2">
                             <li><a onclick="couclicks(<s:property value="couid"/>)" href="course!showCouDetail?couid=<s:property value="couid"/>"><s:property value="couname"/></a></li>
                         	</s:iterator>
                         </ul>
@@ -134,7 +126,7 @@
                 </div>   
                 <div class="tile-content">
                 	<ul class="kejian-list cf">
-	            	    <s:iterator value="articleBeanlist">
+	            	    <s:iterator value="articleBeanList">
 	                    <li><a onclick="clicks(<s:property value="artid"/>)" href="business!showDetailArticle?artid=<s:property value="artid"/>"><s:property value="artname"/></a></li>
 	                    </s:iterator>
                     </ul>
