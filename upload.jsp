@@ -70,7 +70,7 @@
 			//如果是原始图片 file 域的名称或者以默认的头像域名称的部分“__avatar”打头
 			else if (isSourcePic || fieldName.startsWith("__avatar")) {
 
-				File dir = new File(application.getRealPath("/upload")
+				File dir = new File(application.getRealPath("/avatar")
 						+ File.separator + useremail);
 				if (!dir.exists()) {
 					dir.mkdir();
@@ -94,7 +94,7 @@
 						.openStream());
 				outputStream = new BufferedOutputStream(
 						new FileOutputStream(application
-								.getRealPath("/upload")
+								.getRealPath("/avatar")
 								+ virtualPath.replace("/", "\\")));
 				Streams.copy(inputStream, outputStream, true);
 				inputStream.close();
@@ -136,7 +136,7 @@
 
 		imgData = imgData.replace('"', ' ');//将有引号的“字符都替换成空格
 		//System.out.println("sds:" + imgData);
-		imgData = imgData.replaceAll("/" + useremail, "upload/"
+		imgData = imgData.replaceAll("/" + useremail, "avatar/"
 				+ useremail);//将所有是斜杠/的字符串都替换成文件夹：”upload/“ 
 
 		//System.out.println(imgData);//存入的3张头像，可以添加到数据库

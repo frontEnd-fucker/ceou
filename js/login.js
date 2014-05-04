@@ -39,7 +39,7 @@ $(function() {
 			}else if(data==1) {
 				//登录成功，设置账户cookie
 				//$.cookie('cookieUsername', username, {expires: 365, path: '/'});
-				location.href = 'http://www.ceou.com.cn/personal!show';
+				location.href = 'personal!show';
 			}
 		});
 	});

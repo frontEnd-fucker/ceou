@@ -166,7 +166,7 @@
 			<ul class="comment-list">
 				<s:iterator value="commmentList" status="status">
 					<li class="comment-item">
-						<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>
+						<div class="hd"><img src="<s:property value="smallAvatar" />"></div>
 						<div class="bd">
 							<p class="info">
 								<span class="user-name"><s:property value="username" /></span>
@@ -329,9 +329,10 @@ $(function(){
 			if(data.ret == 1){
 				
 				//alert(data.username+'评论成功');
+				var avatarSrc = '${perBean.smallpic}';				
 				var html = [
 					'<li class="comment-item">',
-						'<div class="hd"><img src="whimg/play2/comment-avatar.jpg"></div>',
+						'<div class="hd"><img src="',avatarSrc,'"></div>',
 						'<div class="bd">',
 							'<p class="info">',
 								'<span class="user-name">',data.username,'</span>',
