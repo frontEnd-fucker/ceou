@@ -65,7 +65,7 @@
                     <div class="post-bd">
                     	<div class="post-summary"><s:property value="articleDetail.artprofile"/></div>
 						<div class="post-content">
-                        	<s:property value="articleDetail.artcontent" escape="false"/>
+                        	<s:property value="articleDetail.arteditor" escape="false"/>
                         </div>
                     </div>
                     <div class="post-ft">
