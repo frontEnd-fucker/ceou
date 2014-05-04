@@ -33,18 +33,20 @@
 					<p>没有帐号？<a href="reg.jsp">马上注册</a></p>
 				</div>
 			</s:if>
-			<s:if test="%{courseDetail.couvideourl==2}">
+			<s:else>
+				<s:if test="%{courseDetail.couvideourl==2}">
 				<div id="noPermission">
 					<p id="noPermission">对不起，您的权限暂时无法观看该视频。请<a target="_blank" href="memberIntro.jsp">点击这里</a>获得权限</p>
 				</div>
-			</s:if>
-
-			<s:else>
-				${courseDetail.couvideourl }
-								<!--<script
-									src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=true&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1"
-									type="text/javascript"></script>-->
-			</s:else>		
+				</s:if>
+				<s:else>
+					${courseDetail.couvideourl }
+									<!--<script
+										src="http://union.bokecc.com/player?vid=1A029C9B04B74E9B9C33DC5901307461&siteid=96BC359D1BE46EA9&autoStart=true&width=600&height=490&playerid=BF73B0FF969BF52C&playertype=1"
+										type="text/javascript"></script>-->
+				</s:else>
+			</s:else>
+					
 		</div>
 
 		<!-- 选集模块 -->
