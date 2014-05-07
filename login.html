@@ -10,6 +10,7 @@
 <script src="js/jquery.cookie.js"></script>
 <script src="js/login.js"></script>
 <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101080086" data-redirecturi="http://www.ceou.com.cn" charset="utf-8"></script>
+<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -52,16 +53,20 @@
                     <a class="forget-btn" href="findPwdStep1.jsp">忘记密码？</a>
                 </div>
             </form>
-            <!--<div class="other-accounts">
+            <div class="other-accounts">
             	<h2>使用其他帐号登录</h2>
-				<wb:login-button type="2,2" onlogin="login" onlogout="logout">登录按钮</wb:login-button>			
-            </div>-->      
-            <span id="qqLoginBtn" style="margin-left: 40px;"></span>
-            <script type="text/javascript">
-                QC.Login( {
-                    btnId : "qqLoginBtn" //插入按钮的节点id
-                });
-            </script>                
+
+                <!-- qq登录 -->
+                <span id="qqLoginBtn" style="display: block; margin: 10px;"></span>
+                <script type="text/javascript">
+                    QC.Login( {
+                        btnId : "qqLoginBtn" //插入按钮的节点id
+                    });
+                </script> 	
+
+                <!-- weibo登录 -->
+                <a href="javascript:;" id="wbLogin" style="display: block; margin: 10px;">sina login</a> 
+            </div>                                  
         </div>
     </div>
     <div class="copyright">
@@ -72,33 +77,52 @@
 <!--footer-->
 <div id="footer"></div><!-- end footer -->
 
-    <script type="text/javascript">
-    //从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
-    var paras = {};
-    QC
-    .api(
-    "https://graph.qq.com/user/get_user_info?access_token=DA6A963919C35F3BC7C7C33BAE6DBA3E&oauth_consumer_key=101080086&openid=B7EEFB50A503211A6575962C950485A5",
-    paras, "json", "post")//指定接口访问成功的接收函数，s为成功返回Response对象
-    .success(function(s) {
-    //成功回调，通过s.data获取OpenAPI的返回数据
-    //alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
-    })
-    //指定接口访问失败的接收函数，f为失败返回Response对象
-    .error(function(f) {
-    //失败回调
-    alert("获取用户信息失败！");
-    })
-    //指定接口完成请求后的接收函数，c为完成请求返回Response对象
-    .complete(function(c) {
-    //完成请求回调
-    //alert("获取用户信息完成！");
-    });
-    //用JS SDK调用OpenAPI
+<!-- qq登录 -->
+<script type="text/javascript">
+//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
+var paras = {};
+QC.api(
+"https://graph.qq.com/user/get_user_info?access_token=DA6A963919C35F3BC7C7C33BAE6DBA3E&oauth_consumer_key=101080086&openid=B7EEFB50A503211A6575962C950485A5",
+paras, "json", "post")//指定接口访问成功的接收函数，s为成功返回Response对象
+.success(function(s) {
+//成功回调，通过s.data获取OpenAPI的返回数据
+//alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
+})
+//指定接口访问失败的接收函数，f为失败返回Response对象
+.error(function(f) {
+//失败回调
+alert("获取用户信息失败！");
+})
+//指定接口完成请求后的接收函数，c为完成请求返回Response对象
+.complete(function(c) {
+//完成请求回调
+//alert("获取用户信息完成！");
+});
+//用JS SDK调用OpenAPI
 
-    //QC.Login.showPopup( {
-    //  appId : "101080086",
-    //  redirectURI : "http://www.ceou.com.cn"
-    //});
-    </script>
+//QC.Login.showPopup( {
+//  appId : "101080086",
+//  redirectURI : "http://www.ceou.com.cn"
+//});
+</script>
+
+<!-- wb登录 -->
+<script>
+WB2.anyWhere(function(W){
+    W.widget.connectButton({
+        id: "wbLogin",
+        type: '3,2',
+        callback : {
+            login:function(o){
+                //alert(o.screen_name)
+               // alert('login');
+            },
+            logout:function(){
+                //alert('logout');
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
