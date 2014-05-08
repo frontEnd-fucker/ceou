@@ -167,11 +167,11 @@
 				//	+ msg.content.avatarUrls.join("\n"));
 				//window.location="all.jsp?content="+msg.content.avatarUrls;
 				//showModalDialog("temp.jsp");//在关闭模式窗体前，不能操作其它窗体
-				location.reload();
+					location.reload();
+				}
+				break;
 			}
-			break;
-		}
-	}	);
+		});
 		document.getElementById("upload").onclick = function() {
 			swf.call("upload");
 		};
