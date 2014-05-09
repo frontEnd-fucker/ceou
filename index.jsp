@@ -27,7 +27,7 @@
 	<!-- slider -->
     <div id="slider">
     	<div class="slides">
-            <div class="slide"><a href="javascript:;"><img src="whimg/banner2.jpg" /></a></div>
+            <div class="slide"><a href="activity_momsday.jsp"><img src="whimg/banner2.jpg" /></a></div>
         	<div class="slide"><a href="#"><img src="whimg/banner1.jpg" /></a></div>            
             <div class="slide"><img src="whimg/banner3.jpg" /></div>
             <!--<div class="slide"><img src="whimg/4.jpg" /></div>-->
