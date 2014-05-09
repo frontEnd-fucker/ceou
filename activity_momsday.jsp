@@ -16,6 +16,7 @@
 .post-hd {padding: 0; border: 0;}
 .post-content {margin-top: 20px;text-align: left;font-size: 13px;}
 .post-content p {margin-bottom: 15px;line-height: 24px;text-indent: 0;}
+.videos {border-top: 1px dashed #D6D6D6;margin-top: 40px;}
 .videos li {float: left;}
 .videos ul {width: 715px;}
 .QR {text-align: center;font-weight: bold;color: #6F6F6F;}
@@ -30,6 +31,7 @@
     padding-left: 16px;
 }
 .momsday-blog a:hover {color: #8bc44e; background-position: 5px center; padding-left: 20px;}
+a.more {margin: 15px 5px 0 0;}
 </style>
 </head>
 
@@ -74,7 +76,7 @@
 
                         <!-- 视频 -->
                         <div class="videos cf">
-                            <h2 class="moms-title">免费观看课程</h2>
+                            <h2 class="moms-title">免费观看课程<a class="more" href="course!showList?couPosition=1&couSkill=5&couIndustry=150009&page=1">更多>></a></h2>
                             <ul>
                                 <li>
                                     <div class="video-box">
