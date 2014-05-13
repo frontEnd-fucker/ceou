@@ -10,9 +10,10 @@
 <meta name="description" content="中国企业在线大学一直为全国各类企业提供全方位的学习培训产品和服务，包括完全自主研发的网络学习平台、在线答疑系 统、视频会议系统、人才测评系统、培训计划与考核等多种学习系统，并开发出基于移动智能终端（iPhone/iPad,Android等）应用的互联学习，为学员提供随时、 随地、随身的便捷学习体验。" />
 <meta name="baidu-site-verification" content="dYQ0IqZcAh" />
 <title>中国企业在线大学-企业培训必选的在线学习平台</title>
-
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript"
+src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-callback="true"></script>
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
 </head>
@@ -379,5 +380,14 @@
 <div class="clear-both"></div>
 
 <jsp:include page="footer.jsp" flush="true" />
+<script type="text/javascript">
+if(QC.Login.check()){//如果已登录
+    QC.Login.getMe(function(openId, accessToken){
+        alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
+    });
+    //这里可以调用自己的保存接口
+    //...
+}
+</script>
 </body>
 </html>

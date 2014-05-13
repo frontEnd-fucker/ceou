@@ -87,6 +87,17 @@ paras, "json", "post")//指定接口访问成功的接收函数，s为成功返�
 .success(function(s) {
 //成功回调，通过s.data获取OpenAPI的返回数据
 //alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
+// QC.Login.getMe(function(openId, accessToken){
+//     alert(openId);
+// })
+if(QC.Login.check()){//如果已登录
+    QC.Login.getMe(function(openId, accessToken){
+        alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
+    });
+    //这里可以调用自己的保存接口
+    //...
+}
+location.href = 'index.jsp';
 })
 //指定接口访问失败的接收函数，f为失败返回Response对象
 .error(function(f) {
@@ -114,8 +125,9 @@ WB2.anyWhere(function(W){
         type: '3,2',
         callback : {
             login:function(o){
-                //alert(o.screen_name)
-               // alert('login');
+                $.post(url, {'username':o.screen_name, 'uid':o.id, 'avatarL':o.avatar_hd, 'avatarS':o.profile_image_url}, function() {
+                    location.href = 'index.jsp';
+                })
             },
             logout:function(){
                 //alert('logout');
