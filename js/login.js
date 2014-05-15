@@ -43,4 +43,52 @@ $(function() {
 			}
 		});
 	});
+
+	// popout弹出层的事件代理
+	$('#popout').on('click', 'a', function(e) {
+
+		var $otherLogin = $('#popout').find('.other-login'); 
+		var $otherBind = $('#popout').find('.other-bind');
+
+		switch (this.id) {
+
+			// 点击关闭按钮
+			case 'close':
+				$('#popout, .mask').hide();
+				return false;
+				break;
+
+			// 点击绑定
+			case 'J_bind':
+				$otherLogin.hide();
+				$otherBind.show();
+				return false;
+				break;
+
+			// 点击返回
+			case 'J_back':
+				$otherBind.hide();
+				$otherLogin.show();
+				return false;
+				break;
+
+			// 点击立即登录
+			case 'J_loginNow':
+				break;
+		}
+	});
+
+	// 处理placeholder
+	$('.placeholder').click(function() {
+		$(this).prev('.input-txt').trigger('focus');
+	});	
+	$('.input-txt').focus(function() {
+		if(!this.value.length) {
+			$(this).next().hide();
+		}
+	}).blur(function() {
+		if(!this.value.length) {
+			$(this).next().show();
+		}
+	});
 });

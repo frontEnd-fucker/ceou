@@ -9,7 +9,7 @@
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/login.js"></script>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101080086" data-redirecturi="http://www.ceou.com.cn" charset="utf-8"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101012547" data-redirecturi="http://www.ceou.com.cn/qc_back.html" charset="utf-8"></script>
 <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -77,44 +77,70 @@
 <!--footer-->
 <div id="footer"></div><!-- end footer -->
 
+<!-- popout -->
+<div id="popout" style="display: none;">
+    <div class="other-login" style="display: block;">
+        <h3>欢迎登录中国企业在线</h3>
+        <div class="sec">
+            <div class="note">如果您之前未注册过中国企业在线大学，请</div>
+            <div class="do">
+                <a href="#" class="green" id="J_loginNow">立即登录中国企业在线</a>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="note">如果您已经注册过中国企业在线大学，请</div>
+            <div class="do">
+                <a href="#" class="blue" id="J_bind">绑定中国企业在线账号</a>
+            </div>
+        </div>            
+    </div>    
+    <div class="other-bind" style="display: none;">
+        <h3>绑定已有中国在线帐号</h3>
+        <form>
+            <p class="input-con">
+                <input class="input-txt" type="text" title="请输入您的中国企业在线帐号">
+                <span class="placeholder">请输入您的中国企业在线帐号</span>                
+            </p>
+            <p class="input-con">
+                <input class="input-txt" type="password" value="">
+                <span class="placeholder">密码</span>
+            </p>
+            <p class="cf input-con">
+                <input type="submit" value="绑定" class="btn-bind">
+                <a class="btn-back" href="#" id="J_back">返回</a>
+            </p>
+        </form>
+    </div>
+    <a class="close" id="close"></a>
+    <div class="loading" style="display: none;"></div>
+</div>
+
+<!-- mask -->
+<div class="mask" style="display: none;"></div>
+
 <!-- qq登录 -->
 <script type="text/javascript">
 //从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
 var paras = {};
-QC.api(
-"https://graph.qq.com/user/get_user_info?access_token=DA6A963919C35F3BC7C7C33BAE6DBA3E&oauth_consumer_key=101080086&openid=B7EEFB50A503211A6575962C950485A5",
-paras, "json", "post")//指定接口访问成功的接收函数，s为成功返回Response对象
-.success(function(s) {
-//成功回调，通过s.data获取OpenAPI的返回数据
-//alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
-// QC.Login.getMe(function(openId, accessToken){
-//     alert(openId);
-// })
-if(QC.Login.check()){//如果已登录
-    QC.Login.getMe(function(openId, accessToken){
-        alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
-    });
-    //这里可以调用自己的保存接口
-    //...
-}
-location.href = 'index.jsp';
-})
-//指定接口访问失败的接收函数，f为失败返回Response对象
-.error(function(f) {
-//失败回调
-alert("获取用户信息失败！");
-})
-//指定接口完成请求后的接收函数，c为完成请求返回Response对象
-.complete(function(c) {
-//完成请求回调
-//alert("获取用户信息完成！");
-});
-//用JS SDK调用OpenAPI
 
-//QC.Login.showPopup( {
-//  appId : "101080086",
-//  redirectURI : "http://www.ceou.com.cn"
-//});
+//用JS SDK调用OpenAPI
+QC.api("get_user_info", paras)
+    //指定接口访问成功的接收函数，s为成功返回Response对象
+    .success(function(s){
+        //成功回调，通过s.data获取OpenAPI的返回数据
+        //alert("获取用户信息成功！当前用户昵称为："+s.data.nickname);
+        location.href = 'http://www.ceou.com.cn';
+    })
+    //指定接口访问失败的接收函数，f为失败返回Response对象
+    .error(function(f){
+        //失败回调
+        alert("获取用户信息失败！");
+    })
+    //指定接口完成请求后的接收函数，c为完成请求返回Response对象
+    .complete(function(c){
+        //完成请求回调
+        //alert("获取用户信息完成！");
+    });
 </script>
 
 <!-- wb登录 -->

@@ -12,8 +12,6 @@
 <title>中国企业在线大学-企业培训必选的在线学习平台</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript"
-src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-callback="true"></script>
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
 </head>
@@ -380,14 +378,5 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 <div class="clear-both"></div>
 
 <jsp:include page="footer.jsp" flush="true" />
-<script type="text/javascript">
-if(QC.Login.check()){//如果已登录
-    QC.Login.getMe(function(openId, accessToken){
-        alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
-    });
-    //这里可以调用自己的保存接口
-    //...
-}
-</script>
 </body>
 </html>
