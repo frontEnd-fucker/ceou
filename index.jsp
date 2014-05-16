@@ -10,7 +10,6 @@
 <meta name="description" content="中国企业在线大学一直为全国各类企业提供全方位的学习培训产品和服务，包括完全自主研发的网络学习平台、在线答疑系 统、视频会议系统、人才测评系统、培训计划与考核等多种学习系统，并开发出基于移动智能终端（iPhone/iPad,Android等）应用的互联学习，为学员提供随时、 随地、随身的便捷学习体验。" />
 <meta name="baidu-site-verification" content="dYQ0IqZcAh" />
 <title>中国企业在线大学-企业培训必选的在线学习平台</title>
-
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
@@ -27,7 +26,7 @@
 	<!-- slider -->
     <div id="slider">
     	<div class="slides">
-            <div class="slide"><a href="activity_momsday.jsp"><img src="whimg/banner2.jpg" /></a></div>
+            <div class="slide"><a href="activity_520.jsp"><img src="whimg/activity_520/banner_index.jpg" /></a></div>
         	<div class="slide"><a href="#"><img src="whimg/banner1.jpg" /></a></div>            
             <div class="slide"><img src="whimg/banner3.jpg" /></div>
             <!--<div class="slide"><img src="whimg/4.jpg" /></div>-->

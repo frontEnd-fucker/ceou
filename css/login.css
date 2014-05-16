@@ -205,8 +205,151 @@ body {
 }
 
 
+/* popout 
+======================================================== */
 
+#popout {
+	z-index: 999;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -230px;
+	width: 320px;
+	height: 368px;	
+	padding: 0 32px;
+	background: #fff;
+	border-radius: 5px;
+}
+#popout h3{
+	color: #404040;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 32px 0 24px;
+	line-height: 1;	
+}
+#popout .other-bind h3 {
+	padding-top: 72px;
+}
+#popout .sec {
+	padding-top: 28px;
+}
+#popout .note {
+	font-size: 16px;
+	color: #999;
+	line-height: 1;	
+}
+#popout .do {
+	margin-top: 16px;
+}
+#popout .do a {
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	padding: 0;
+	height: 40px;
+	line-height: 40px;	
+	color: #fff;
+	text-decoration: none;
+	background-color: #f60;	
+	border-radius: 3px;	
+	outline: 0;
+}
+#popout .do a.green {
+	background-color: #48B60A;
+}
+#popout .do a.blue {
+	background-color: #37a4e3;
+}
+#popout .close {
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	background: url(../whimg/close-login.png) 0 0 no-repeat;
+	position: absolute;
+	z-index: 999;
+	top: -8px;
+	right: -8px;	
+	cursor: pointer;
+}
 
+#popout .input-con {
+	margin: 0;
+	margin-top: 16px;
+	position: relative;
+}
+#popout .input-txt {
+	width: 308px;
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	height: 39px;
+	line-height: 39px;
+	padding: 0 5px;
+	font-size: 14px;
+	border-radius: 3px;	
+}
+#popout .placeholder {
+	color: #afafaf;
+	position: absolute;
+	left: 8px;
+	top: 12px;
+	font-size: 14px;	
+}
+#popout .btn-bind {
+	display: inline-block;
+	background: 0;
+	border: 0;
+	font-size: 18px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: 0;	
+	width: 152px;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	float: left;
+	padding: 0;	
+	margin-right: 16px;
+	color: #fff;
+	text-decoration: none;
+	background-color: #48B60A;
+}
+#popout .btn-back {
+	display: inline-block;
+	background: 0;
+	border: 0;
+	font-size: 18px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: 0;	
+	width: 152px;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	float: left;
+	padding: 0;	
+	text-decoration: none;
+	background-color: #eee;
+	color: gray;
+}
+#popout .loading {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	background: #fff url(../whimg/loading.gif) center center no-repeat;	
+}
+.mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .3);
+}
 
 
 
