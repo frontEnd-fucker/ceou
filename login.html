@@ -1,166 +1,269 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://open.weibo.com/wb">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta property="wb:webmaster" content="92e9db77c6634248" />
-<title>登录页面</title>
-<link href="css/login.css" rel="stylesheet" type="text/css" />
-<!--<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267" type="text/javascript" charset="utf-8"></script>-->
-<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
-<script src="js/jquery.cookie.js"></script>
-<script src="js/login.js"></script>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101012547" data-redirecturi="http://www.ceou.com.cn/qc_back.html" charset="utf-8"></script>
-<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267" type="text/javascript" charset="utf-8"></script>
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns="http://open.weibo.com/wb">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta property="wb:webmaster" content="92e9db77c6634248" />
+		<title>登录页面</title>
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<!--<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267" type="text/javascript" charset="utf-8"></script>-->
+		<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+		<script src="js/vendor/jquery.validate.min.js"></script>
+		<script src="js/login.js"></script>
+		<script type="text/javascript"
+			src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+			data-appid="101012547"
+			data-redirecturi="http://www.ceou.com.cn/qc_back.html"
+			charset="utf-8"></script>
+		<script
+			src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=804761267"
+			type="text/javascript" charset="utf-8"></script>
+	</head>
 
-<body>
-<!-- header -->
-<div id="header">
-	<div class="header-con">
-        <div class="top-nav">
-        	<ul>
-				<li><a href="/CEOU">返回主页</a></li>
-                <li class="separator">|</li>
-                <li><a>服务热线：0755-22315621</a></li>
-            </ul>        
-        </div>    	
-    </div>
-</div><!-- end header -->
+	<body>
+		<!-- header -->
+		<div id="header">
+			<div class="header-con">
+				<div class="top-nav">
+					<ul>
+						<li>
+							<a href="/CEOU">返回主页</a>
+						</li>
+						<li class="separator">
+							|
+						</li>
+						<li>
+							<a>服务热线：0755-22315621</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end header -->
 
-<!-- main -->
-<div id="main">
-	<div class="main-con">
-    	<div class="signup-form">
-        	<form>
-            	<div class="input-con">
-                	<label for="username">用户名：</label>
-                    <input id="username" name="username" type="text" maxlength="20"/>
-                    <p id="J_usernameTips">请输入用户名</p>
-                </div>
-                <div class="input-con">
-                	<label for="pwd">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
-                    <input id="pwd" name="pwd" type="password" maxlength="20"/>
-                    <p id="J_pwdTips">请输入密码</p>
-                </div>
-                <!--<div class="radio-con">
+		<!-- main -->
+		<div id="main">
+			<div class="main-con">
+				<div class="signup-form">
+					<form>
+						<div class="input-con">
+							<label for="username">
+								用户名：
+							</label>
+							<input id="username" name="username" type="text" maxlength="20" />
+							<p id="J_usernameTips">
+								请输入用户名
+							</p>
+						</div>
+						<div class="input-con">
+							<label for="pwd">
+								密&nbsp;&nbsp;&nbsp;&nbsp;码：
+							</label>
+							<input id="pwd" name="pwd" type="password" maxlength="20" />
+							<p id="J_pwdTips">
+								请输入密码
+							</p>
+						</div>
+						<!--<div class="radio-con">
                 	<input name="usertype" type="radio" checked="checked" style="margin-left:0;" />个人
                     <input name="usertype" type="radio" />企业
                     <input name="usertype" type="radio" />公务员
                 </div>-->
-                <div class="btn-con">
-                	<a id="J_loginBtn" class="blue-btn" href="#">登录</a>
-                    <a class="blue-btn" href="reg.jsp">注册</a>
-                    <a class="forget-btn" href="findPwdStep1.jsp">忘记密码？</a>
-                </div>
-            </form>
-            <div class="other-accounts">
-            	<h2>使用其他帐号登录</h2>
+						<div class="btn-con">
+							<a id="J_loginBtn" class="blue-btn" href="#">登录</a>
+							<a class="blue-btn" href="reg.jsp">注册</a>
+							<a class="forget-btn" href="findPwdStep1.jsp">忘记密码？</a>
+						</div>
+					</form>
+					<div class="other-accounts">
+						<h2>
+							使用其他帐号登录
+						</h2>
 
-                <!-- qq登录 -->
-                <span id="qqLoginBtn" style="display: block; margin: 10px;"></span>
-                <script type="text/javascript">
-                    QC.Login( {
-                        btnId : "qqLoginBtn" //插入按钮的节点id
-                    });
-                </script> 	
-
-                <!-- weibo登录 -->
-                <a href="javascript:;" id="wbLogin" style="display: block; margin: 10px;">sina login</a> 
-            </div>                                  
-        </div>
-    </div>
-    <div class="copyright">
-    	CopyRight &copy; 2003-2013 中国企业在线大学 粤ICP备08009054
-    </div>
-</div><!-- end main -->
-
-<!--footer-->
-<div id="footer"></div><!-- end footer -->
-
-<!-- popout -->
-<div id="popout" style="display: none;">
-    <div class="other-login" style="display: block;">
-        <h3>欢迎登录中国企业在线</h3>
-        <div class="sec">
-            <div class="note">如果您之前未注册过中国企业在线大学，请</div>
-            <div class="do">
-                <a href="#" class="green" id="J_loginNow">立即登录中国企业在线</a>
-            </div>
-        </div>
-        <div class="sec">
-            <div class="note">如果您已经注册过中国企业在线大学，请</div>
-            <div class="do">
-                <a href="#" class="blue" id="J_bind">绑定中国企业在线账号</a>
-            </div>
-        </div>            
-    </div>    
-    <div class="other-bind" style="display: none;">
-        <h3>绑定已有中国在线帐号</h3>
-        <form>
-            <p class="input-con">
-                <input class="input-txt" type="text" title="请输入您的中国企业在线帐号">
-                <span class="placeholder">请输入您的中国企业在线帐号</span>                
-            </p>
-            <p class="input-con">
-                <input class="input-txt" type="password" value="">
-                <span class="placeholder">密码</span>
-            </p>
-            <p class="cf input-con">
-                <input type="submit" value="绑定" class="btn-bind">
-                <a class="btn-back" href="#" id="J_back">返回</a>
-            </p>
-        </form>
-    </div>
-    <a class="close" id="close"></a>
-    <div class="loading" style="display: none;"></div>
-</div>
-
-<!-- mask -->
-<div class="mask" style="display: none;"></div>
-
-<!-- qq登录 -->
-<script type="text/javascript">
-//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
-var paras = {};
-
-//用JS SDK调用OpenAPI
-QC.api("get_user_info", paras)
-    //指定接口访问成功的接收函数，s为成功返回Response对象
-    .success(function(s){
-        //成功回调，通过s.data获取OpenAPI的返回数据
-        //alert("获取用户信息成功！当前用户昵称为："+s.data.nickname);
-        location.href = 'http://www.ceou.com.cn';
-    })
-    //指定接口访问失败的接收函数，f为失败返回Response对象
-    .error(function(f){
-        //失败回调
-        alert("获取用户信息失败！");
-    })
-    //指定接口完成请求后的接收函数，c为完成请求返回Response对象
-    .complete(function(c){
-        //完成请求回调
-        //alert("获取用户信息完成！");
-    });
+						<!-- qq登录 -->
+						<span id="qqLoginBtn" style="display: block; margin: 10px;"></span>
+						<script type="text/javascript">
+	QC.Login( {
+		btnId : "qqLoginBtn" //插入按钮的节点id
+		});
 </script>
 
-<!-- wb登录 -->
-<script>
-WB2.anyWhere(function(W){
-    W.widget.connectButton({
-        id: "wbLogin",
-        type: '3,2',
-        callback : {
-            login:function(o){
-                $.post(url, {'username':o.screen_name, 'uid':o.id, 'avatarL':o.avatar_hd, 'avatarS':o.profile_image_url}, function() {
-                    location.href = 'index.jsp';
-                })
-            },
-            logout:function(){
-                //alert('logout');
-            }
-        }
-    });
-});
+						<!-- weibo登录 -->
+						<a href="javascript:;" id="wbLogin"
+							style="display: block; margin: 10px;">sina login</a>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				CopyRight &copy; 2003-2013 中国企业在线大学 粤ICP备08009054
+			</div>
+		</div>
+		<!-- end main -->
+
+		<!--footer-->
+		<div id="footer"></div>
+		<!-- end footer -->
+
+		<!-- popout -->
+		<div id="popout" style="display: none;">
+			<div class="other-login" style="display: block;">
+				<h3>
+					欢迎登录中国企业在线
+				</h3>
+				<div class="sec">
+					<div class="note">
+						如果您之前未注册过中国企业在线大学，请
+					</div>
+					<div class="do">
+						<a href="#" class="green" id="J_loginNow">立即登录中国企业在线</a>
+					</div>
+				</div>
+				<div class="sec">
+					<div class="note">
+						如果您已经注册过中国企业在线大学，请
+					</div>
+					<div class="do">
+						<a href="#" class="blue" id="J_bind">绑定中国企业在线账号</a>
+					</div>
+				</div>
+			</div>
+			<div class="other-reg" style="display: none;">
+				<h3>
+					只差一步！即可注册成功
+				</h3>
+				<form action="user!otherLogin" method="post">
+					<p class="input-con">
+						<input class="input-txt" name="useremail" type="text"
+							title="请输入您的邮箱" />
+						<span class="placeholder">请输入您的邮箱</span>
+					</p>
+					<p class="input-con">
+						<input class="input-txt" type="password" value="" />
+						<span class="placeholder">密码</span>
+					</p>
+					<p class="input-con">
+						<input class="input-txt" name="pwd" type="password" value="" />
+						<input class="input-txt" type="hidden" name="openId" id="openIds" />
+						<input type="hidden" name="qqNames" id="qqName" />
+						<span class="placeholder">确认密码</span>
+					</p>
+					<p class="cf input-con">
+						<input type="submit" value="注册" class="btn-bind">
+							<a class="btn-back" href="#" id="J_regBack">返回</a>
+					</p>
+				</form>
+			</div>
+			<div class="other-bind" style="display: none;">
+				<h3>
+					绑定已有中国在线帐号
+				</h3>
+				<form action="user!isCountLogin" method="post">
+					<p class="input-con">
+						<input class="input-txt" name="username" type="text"
+							title="请输入您的中国企业在线帐号">
+							<span class="placeholder">请输入您的中国企业在线帐号</span>
+					</p>
+					<p class="input-con">
+						<input class="input-txt" name="pwd" type="password" value="">
+							<span class="placeholder">密码</span> <input type="hidden" class="input-txt"
+								name="openId" id="openIds2" />
+							<input type="hidden" name="qqNames" id="qqName2" />
+					</p>
+					<p class="cf input-con">
+						<input type="submit" value="绑定" class="btn-bind">
+							<a class="btn-back" href="#" id="J_bindBack">返回</a>
+					</p>
+				</form>
+			</div>
+			<a class="close" id="close"></a>
+			<div class="loading" style="display: none;"></div>
+		</div>
+
+		<!-- mask -->
+		<div class="mask" style="display: none;"></div>
+
+		<!-- qq登录 -->
+		<script type="text/javascript">
+	//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
+	var paras = {};
+
+	//用JS SDK调用OpenAPI
+	QC
+			.api("get_user_info", paras)
+			//指定接口访问成功的接收函数，s为成功返回Response对象
+			.success(function(s) {
+				//成功回调，通过s.data获取OpenAPI的返回数据
+					//alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
+					if (QC.Login.check()) {//如果已登录
+						QC.Login
+								.getMe(function(openId, accessToken) {
+									//alert( [ "当前登录用户的", "openId为：" + openId,
+									//		"accessToken为：" + accessToken ]
+									//		.join("\n"));
+											$.ajax( {
+												type : "post",
+												url : "user!postData",
+												data : "openId=" + openId,//2为微博登录
+												success : function(msg) {
+													if (msg == -1) {
+														$('#popout, .mask').show();
+
+														$("#J_loginNow").click(function() {
+                                                            if() {
+
+                                                            }
+															$("#openIds").val(openId);
+															$("#qqName").val(s.data.nickname);
+														});
+														$("#J_bind").click(function() {
+															$("#openIds2").val(openId);
+															$("#qqName2").val(s.data.nickname);
+														});
+													} else if (msg == 1) {
+														//登录成功
+														window.location.href = 'personal!show';
+														//window.location.href = 'index.jsp';
+													}
+												}
+											});
+								});
+					}//这里可以调用自己的保存接口
+				})
+			//指定接口访问失败的接收函数，f为失败返回Response对象
+			.error(function(f) {
+				//失败回调
+					//alert("获取用户信息失败！");
+				})
+			//指定接口完成请求后的接收函数，c为完成请求返回Response对象
+			.complete(function(c) {
+				//完成请求回调
+					//alert("获取用户信息完成！");
+				});
 </script>
-</body>
+
+		<!-- wb登录 -->
+		<script>
+	WB2.anyWhere(function(W) {
+		W.widget.connectButton( {
+			id : "wbLogin",
+			type : '3,2',
+			callback : {
+				login : function(o) {
+					$.post(url, {
+						'username' : o.screen_name,
+						'uid' : o.id,
+						'avatarL' : o.avatar_hd,
+						'avatarS' : o.profile_image_url
+					}, function() {
+						location.href = 'index.jsp';
+					})
+				},
+				logout : function() {
+					//alert('logout');
+			}
+			}
+		});
+	});
+</script>
+	</body>
 </html>

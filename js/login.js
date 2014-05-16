@@ -49,6 +49,7 @@ $(function() {
 
 		var $otherLogin = $('#popout').find('.other-login'); 
 		var $otherBind = $('#popout').find('.other-bind');
+		var $otherReg = $('#popout').find('.other-reg');
 
 		switch (this.id) {
 
@@ -65,16 +66,26 @@ $(function() {
 				return false;
 				break;
 
-			// 点击返回
-			case 'J_back':
+			// 绑定时点击返回
+			case 'J_bindBack':
 				$otherBind.hide();
 				$otherLogin.show();
 				return false;
 				break;
 
+			// 注册时点击返回
+			case 'J_regBack':
+				$otherReg.hide();
+				$otherLogin.show();
+				return false;
+				break;			
+
 			// 点击立即登录
 			case 'J_loginNow':
-				break;
+				$otherLogin.hide();
+				$otherReg.show();
+				return false;
+				break;				
 		}
 	});
 
