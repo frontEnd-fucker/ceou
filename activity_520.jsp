@@ -9,9 +9,10 @@
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/base.js"></script>
 <style>
-.moms-title-top {color:#646464;}
+
 .post {padding: 0 24px; border: 0;}
-.moms-title {margin: 30px 0 20px 0; color: #979797; font-weight: bold; font-size: 24px; font-family: 微软雅黑;text-align: center; line-height: 1.7}
+.moms-title {margin: 30px 0 20px 0; color: #646464; font-weight: bold; font-size: 24px; font-family: 微软雅黑;text-align: center; line-height: 1.7}
+.moms-title-top {color: #8bc44e;}
 .banner img {width: 100%;}
 .post-hd {padding: 0; border: 0;}
 .post-content {margin-top: 20px;text-align: left;font-size: 13px;}
@@ -75,21 +76,21 @@ a.more {margin: 15px 5px 0 0;}
                         </div>         
 
                         <!-- 视频 -->
-                        <!-- <div class="videos cf">
-                            <h2 class="moms-title">免费观看课程<a class="more" href="course!showList?couPosition=1&couSkill=5&couIndustry=150009&page=1">更多>></a></h2>
+                        <div class="videos cf">
+                            <h2 class="moms-title" style="text-align: left; margin-left: 41px;">免费观看课程<!-- <a class="more" href="course!showList?couPosition=1&couSkill=5&couIndustry=150009&page=1">更多>></a> --></h2>
                             <ul>
                                 <li>
                                     <div class="video-box">
-                                        <a class="video-cover" href="teacher!getTeacherIntro?thid=23&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="whimg/activity_momsday/v1.jpg"></a>
+                                        <a class="video-cover" href="http://www.ceou.com.cn/course!showCouDetail?couid=531"><img src="whimg/activity_520/v.jpg"></a>
                                         <p class="video-info">
-                                            <a href="teacher!getTeacherIntro?thid=23&couPosition=-1&couSkill=-1&couIndustry=-1&page=1">揭开让孩子主动学习的法宝</a>
+                                            <a href="http://www.ceou.com.cn/course!showCouDetail?couid=531">幸福的起点</a>
                                             <br>
-                                            <span>讲师：赵宏亮</span>
+                                            <span>讲师：姚鸿昌</span>
                                         </p>
-                                        <a href="teacher!getTeacherIntro?thid=23&couPosition=-1&couSkill=-1&couIndustry=-1&page=1" class="icon-play"></a>
+                                        <a href="http://www.ceou.com.cn/course!showCouDetail?couid=531" class="icon-play"></a>
                                     </div>
                                 </li>         
-                                <li>
+                                <!-- <li>
                                     <div class="video-box">
                                         <a class="video-cover" href="teacher!getTeacherIntro?thid=12&couPosition=-1&couSkill=-1&couIndustry=-1&page=1"><img src="whimg/activity_momsday/v2.jpg"></a>
                                         <p class="video-info">
@@ -110,9 +111,9 @@ a.more {margin: 15px 5px 0 0;}
                                         </p>
                                         <a href="teacher!getTeacherIntro?thid=12&couPosition=-1&couSkill=-1&couIndustry=-1&page=1" class="icon-play"></a>
                                     </div>
-                                </li>  
+                                </li>  --> 
                             </ul>
-                        </div> -->
+                        </div>
 
                         <!-- 精文 -->
                         <!-- <div class="momsday-blog">
