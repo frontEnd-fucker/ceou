@@ -81,13 +81,13 @@ a.more {margin: 15px 5px 0 0;}
                             <ul>
                                 <li>
                                     <div class="video-box">
-                                        <a class="video-cover" href="http://www.ceou.com.cn/course!showCouDetail?couid=531"><img src="whimg/activity_520/v.jpg"></a>
+                                        <a class="video-cover" href="http://www.ceou.com.cn/course!showCouDetail?couid=567"><img src="whimg/activity_mayLove/v.jpg"></a>
                                         <p class="video-info">
-                                            <a href="http://www.ceou.com.cn/course!showCouDetail?couid=531">幸福的起点</a>
+                                            <a href="http://www.ceou.com.cn/course!showCouDetail?couid=567">营心企业管理</a>
                                             <br>
-                                            <span>讲师：姚鸿昌</span>
+                                            <span>讲师：包晴天</span>
                                         </p>
-                                        <a href="http://www.ceou.com.cn/course!showCouDetail?couid=531" class="icon-play"></a>
+                                        <a href="http://www.ceou.com.cn/course!showCouDetail?couid=567" class="icon-play"></a>
                                     </div>
                                 </li>         
                                 <!-- <li>
